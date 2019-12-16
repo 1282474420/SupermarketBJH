@@ -355,8 +355,8 @@
 	        oid: '5',
 	        oname: '已完成'
 	      }],
-	      ordersFor: [{oId: 1,ctradeimg: '/static/img/goods/p1.jpg',cSelPointTitle: '商品标题test1',cprice: 127.5,odCommodityquantity: 1},
-					  {oId: 2,ctradeimg: '/static/img/goods/p1.jpg',cSelPointTitle: '商品标题test2',cprice: 127.5,odCommodityquantity: 2}],
+	      ordersFor: [{oId: 1,ctradeimg: '/static/images/img/goods/p1.jpg',cSelPointTitle: '商品标题test1',cprice: 200.5,odCommodityquantity: 1},
+						{oId: 2,ctradeimg: '/static/images/img/goods/p2.jpg',cSelPointTitle: '商品标题test2',cprice: 127.5,odCommodityquantity: 2}],
 	      ordersForGoods: [],
 	      currentTpye: "",
 	      curren: "",
@@ -371,9 +371,10 @@
 	   * 生命周期函数--监听页面加载
 	   */
 	  onLoad: function (options) {
-	    // var that = this;
-	    // getApp().globalData.initPage(that);
-	    // var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
+		  
+	//     var that = this;
+	//     getApp().globalData.initPage(that);
+	//     var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
 	
 	//     uni.request({
 	//       url: getApp().globalData.url + '/order/getCountByOrderState?oCustomerInfo=' + id,
@@ -400,33 +401,33 @@
 	//       }
 	//     });
 	
-	    // uni.request({
-	    //   url: getApp().globalData.url + '/order/orderSelectByCustomerInfo?oCustomerInfo=' + id,
-	    //   data: {},
-	    //   header: {
-	    //     'content-type': 'application/json'
-	    //   },
-	    //   method: 'POST',
-	    //   dataType: 'json',
-	    //   success: function (res) {
-	    //     that.setData({
-	    //       ordersFor: res.data.data,
-	    //       num: res.data[4]
-	    //     });
-	    //     console.log(res.data);
-	    //     console.log(res.data[4]);
-	    //   }
-	    // }); // 调用函数时，传入new Date()参数，返回值是日期和时间
+	//     uni.request({
+	//       url: getApp().globalData.url + '/order/orderSelectByCustomerInfo?oCustomerInfo=' + id,
+	//       data: {},
+	//       header: {
+	//         'content-type': 'application/json'
+	//       },
+	//       method: 'POST',
+	//       dataType: 'json',
+	//       success: function (res) {
+	//         that.setData({
+	//           ordersFor: res.data.data,
+	//           num: res.data[4]
+	//         });
+	//         console.log(res.data);
+	//         console.log(res.data[4]);
+	//       }
+	//     }); // 调用函数时，传入new Date()参数，返回值是日期和时间
 	
 	
-	    // var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+	//     var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 	
-	    // this.setData({
-	    //   time: time
-	    // });
-	    // this.setData({
-	    //   currentTpye: currentTpye
-	    // });
+	//     this.setData({
+	//       time: time
+	//     });
+	//     this.setData({
+	//       currentTpye: currentTpye
+	//     });
 	  },
 	
 	  methods: {
@@ -436,35 +437,42 @@
 	      });
 	    },
 	    tagChoose: function (e) {
+			console.log(e);
+			console.log(this.ordersForGoods);
+			
+			console.log(this.currentTpye);
+			console.log(this.ordersFor.length);
+			
 	      var that = this;
-	      getApp().globalData.initPage(that);
-	      var id = getApp().globalData.userInfo.userId;
+	      // getApp().globalData.initPage(that);
+	      // var id = getApp().globalData.userInfo.userId;
 	      var curType = e.currentTarget.id;
 	      console.log(curType);
 	
-	      // uni.request({
-	      //   url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
-	      //   data: {},
-	      //   header: {
-	      //     'content-type': 'application/json'
-	      //   },
-	      //   method: 'POST',
-	      //   dataType: 'json',
-	      //   success: function (res) {
-	      //     that.setData({
-	      //       ordersForGoods: res.data.data
-	      //     });
-	      //     console.log("11111111", res.data);
-	      //     console.log("11112222222221111", curType);
-	      //   }
-	      // });
+	  //     uni.request({
+	  //       // url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
+			// url: getApp().globalData.url + '/order/orderSelectById?o_orderStatus=' + curType,
+	  //       data: {},
+	  //       header: {
+	  //         'content-type': 'application/json'
+	  //       },
+	  //       method: 'POST',
+	  //       dataType: 'json',
+	  //       success: function (res) {
+	  //         that.setData({
+	  //           ordersForGoods: res.data.data
+	  //         });
+	  //         console.log("11111111", res.data);
+	  //         console.log("11112222222221111", curType);
+	  //       }
+	  //     });
 	
-	      var cur = e.currentTarget.oid;
+	      var cur = e.currentTarget.id;
 	      this.setData({
 	        currentTpye: curType,
 	        curren: cur
 	      });
-	      console.log(e.currentTarget.oid);
+	      console.log(e.currentTarget.id);
 	    },
 	    show: function () {},
 	    getId: function (e) {

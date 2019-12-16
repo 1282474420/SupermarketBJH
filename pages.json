@@ -1,6 +1,11 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
 		{
 		    "path" : "pages/shopcart/myorder/forpayment/forpayment",
 		    "style" : {
@@ -8,12 +13,7 @@
 				"navigationBarBackgroundColor":"#FF8000"
 			}
 		}
-		,{
-			"path": "pages/home/home",
-			"style": {
-				"navigationBarTitleText": "首页"
-			}
-		}
+		
 		,{
 		    "path" : "pages/producttype/producttype",
 		    "style" : {
