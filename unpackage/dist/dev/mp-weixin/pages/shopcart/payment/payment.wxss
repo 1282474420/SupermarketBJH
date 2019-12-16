@@ -1,0 +1,49 @@
+
+.titlesuccess{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 80rpx;
+	margin-left: 250rpx;
+}
+.imgs{
+    display: inline-block;
+    vertical-align: middle;
+}
+.successtext{
+	display: inline-block;
+	font: bold;
+	font-size: 45rpx;
+	margin-left: 10rpx;
+}
+.viewpt{
+	padding-bottom: 50rpx;
+	border-bottom: 0.5rpx solid #C8C7CC;
+}
+.titlename{
+	width: 100%;
+	margin-top: 50rpx;
+}
+.viewname{
+	width: 20%;
+	text-align: left;
+	display: inline-block;
+	margin-left: 40rpx;
+	color: #C0C0C0;
+}
+.viewtext{
+	width: 70%;
+	text-align: right;
+	display: inline-block;
+}
+.btnorder{
+	width: 70%;
+	line-height: 100rpx;
+	background-color: #ff4433;
+	color: #F8F8F8;
+}
+.btnhome{
+	margin-top: 30rpx;
+	width: 70%;
+	line-height: 100rpx;
+}
+
