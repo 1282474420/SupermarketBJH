@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/shopcart/myorder/forpayment/forpayment",
     "pages/home/home",
     "pages/producttype/producttype",
     "pages/spellgroup/spellgroup",
     "pages/goodrecommend/goodrecommend",
     "pages/my/my",
     "pages/bottom/bottom",
-    "pages/shopcart/myorder/forpayment/forpayment",
     "pages/shopcart/applyRefund/arefund/arefund",
     "pages/shopcart/applyRefund/applyRefund",
     "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
@@ -60,6 +60,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

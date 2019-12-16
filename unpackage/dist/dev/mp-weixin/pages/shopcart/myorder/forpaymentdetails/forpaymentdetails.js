@@ -296,7 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 //index.js
 //获取应用实例
 var app = getApp().globalData;
-var util = __webpack_require__(/*! ../../../../utils/util.js */ 57);
+var util = __webpack_require__(/*! ../../../../utils/util.js */ 21);
 var oid = "";
 var oids = "";
 var cids = "";var _default =
