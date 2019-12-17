@@ -1,0 +1,13 @@
+.search_input{
+  height:74rpx;
+  padding: 10rpx;
+  background-color: #FF8C00; 
+}
+.a{
+  height: 100%;
+  display: flex;
+  font-size: 30rpx;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
