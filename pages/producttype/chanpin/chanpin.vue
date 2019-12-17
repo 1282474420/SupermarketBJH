@@ -33,9 +33,9 @@
 						<view class="goods_price">￥{{right.price}}</view>
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
-					<navigator url="../chanpinList/chanpinList">
-						<image class="img" src="../../../static/images/img/jiahao.png" />
-					</navigator>
+					<view>
+						<image @click="GouWu()" class="img" src="../../../static/images/img/jiahao.png" />
+					</view>
 				</view>
 			</view>
 		</scroll-view>
@@ -138,6 +138,11 @@
 			});
 		},
 		methods: {
+			GouWu:function(e){
+				uni.navigateTo({
+					url:'../chanpinList/chanpinList'
+				})
+			},
 			XQ:function(e){
 
 				uni.showToast({
@@ -217,8 +222,8 @@
 	.img {
 		width: 70rpx;
 		height: 70rpx;
-		padding-top: 100rpx;
-		padding-right: 20rpx;
+		margin-top: 100rpx;
+		margin-right: 20rpx;
 		display: inline-block;
 	}
 

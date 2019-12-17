@@ -32,7 +32,7 @@
 </navigator>
 </view>
 
-<view class="ys"><text class="mc">库存：</text><text class="kucun">{{kucun}}</text></view>
+<view class="ys"><text class="mc">库存：</text><text class="kucun">666</text></view>
 
 <view class="ys">
 <text class="mc">规格</text>
