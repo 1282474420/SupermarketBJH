@@ -100,6 +100,35 @@
 			}
 		}
 		
+		
+		
+		
+		,{
+			"path": "pages/producttype/chanpinList/chanpinList",
+			"style": {"navigationBarTitleText": "产品列表"}
+		},{
+			"path": "pages/producttype/ProductDetails/ProductDetails",
+			"style": {
+				"navigationBarTitleText": "产品详情"
+			}
+		},{
+		    "path" : "pages/producttype/chanpin/chanpin",
+		    "style" : {
+				"navigationBarTitleText": "产品分类"
+			}
+		},{
+            "path" : "pages/goodrecommend/haowu/haowu",
+            "style" : {
+				"navigationBarTitleText": "好物推荐"
+			}
+        }
+        ,{
+            "path" : "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
+            "style" : {
+				"navigationBarTitleText": "咨询详情"
+			}
+        }
+		
 	  
     ],
 	"globalStyle": {
@@ -122,7 +151,7 @@
 	      {
 	        "iconPath": "static/images/dbimg/sy_02_03.png",
 	        "selectedIconPath": "static/images/dbimg/sy_002_03.png",
-	        "pagePath": "pages/producttype/producttype",
+	        "pagePath": "pages/producttype/chanpin/chanpin",
 	        "text": "分类"
 	      },
 	      {

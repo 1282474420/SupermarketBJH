@@ -1,0 +1,35 @@
+
+.cates_container {
+  height:calc(100vh - 90rpx);
+  display: flex;
+}
+.left_menu{
+
+	  float: left;
+	  width: 186rpx;
+	  height: 1242rpx;
+	  background-color: #efefef;
+	  font-size: 26rpx;
+	  color: #666;
+	  text-align: center;
+  flex: 6;
+/* 	 */
+}
+.right_content{
+  flex: 18;
+
+}
+
+.tab1{
+	  width: 186rpx;
+	  height: 64rpx;
+	  padding-top: 36rpx;
+	text-align: center;
+}
+
+.active1 {
+
+  background-color: #16CC80;
+
+}
+
