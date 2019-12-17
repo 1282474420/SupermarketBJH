@@ -1,18 +1,26 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	
 		{
 			"path": "pages/home/home",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
-		},
-		{
+		}
+		,{
 		    "path" : "pages/shopcart/myorder/forpayment/forpayment",
 		    "style" : {
 				"navigationBarTitleText": "我的订单",
 				"navigationBarBackgroundColor":"#FF8000"
 			}
 		}
+		,{
+		    "path" : "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
+		    "style" : {
+				"navigationBarTitleText": "订单详情"
+			}
+		}
+		
 		
 		,{
 		    "path" : "pages/producttype/producttype",
@@ -70,12 +78,7 @@
 			}
 		}
 		
-		,{
-		    "path" : "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
-		    "style" : {
-				"navigationBarTitleText": "订单详情"
-			}
-		}
+		
 		,{
 		    "path" : "pages/shopcart/order/order",
 		    "style" : {

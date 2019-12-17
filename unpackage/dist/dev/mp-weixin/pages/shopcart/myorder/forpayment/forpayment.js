@@ -479,8 +479,7 @@ var curren = 0;var _default =
         oid: '5',
         oname: '已完成' }],
 
-      ordersFor: [{ oId: 1, ctradeimg: '/static/images/img/goods/p1.jpg', cSelPointTitle: '商品标题test1', cprice: 200.5, odCommodityquantity: 1 },
-      { oId: 2, ctradeimg: '/static/images/img/goods/p2.jpg', cSelPointTitle: '商品标题test2', cprice: 127.5, odCommodityquantity: 2 }],
+      ordersFor: [],
       ordersForGoods: [],
       currentTpye: "",
       curren: "",
@@ -573,23 +572,24 @@ var curren = 0;var _default =
       var curType = e.currentTarget.id;
       console.log(curType);
 
-      //     uni.request({
-      //       // url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
-      // url: getApp().globalData.url + '/order/orderSelectById?o_orderStatus=' + curType,
-      //       data: {},
-      //       header: {
-      //         'content-type': 'application/json'
-      //       },
-      //       method: 'POST',
-      //       dataType: 'json',
-      //       success: function (res) {
-      //         that.setData({
-      //           ordersForGoods: res.data.data
-      //         });
-      //         console.log("11111111", res.data);
-      //         console.log("11112222222221111", curType);
-      //       }
-      //     });
+      uni.request({
+        // url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
+        url: "localhost:8080/OrderFormApi/summary?userld=" + "1" + "&shopld=" + "1",
+        data: {},
+        header: {
+          'content-type': 'application/json' },
+
+        method: 'GET',
+        dataType: 'json',
+        success: function success(res) {
+          console.log("123456789+", res);
+          that.setData({
+            ordersForGoods: res.data.data });
+
+          console.log("11111111", res.data);
+          console.log("11112222222221111", curType);
+        } });
+
 
       var cur = e.currentTarget.id;
       this.setData({

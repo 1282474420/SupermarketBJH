@@ -3,7 +3,7 @@
 	<view class="container">
 		<view class="ding2">
 			<view class="ding">
-				<image class="ding1" src="../../static/img/tu1_03.png" @tap="back"></image>
+				<image class="ding1" src="../../../../static/images/img/tu1_03.png" @tap="back"></image>
 				<view class="text1 text4">
 					<text>订单详情</text>
 				</view>
@@ -31,7 +31,7 @@
 				</view>
 
 				<view class="ww2">
-					<image :src="'../img/daizhifu' + (oid==oid? oid:'1') + '.png'"></image>
+					<image :src="'../../../../static/images/img/daizhifu' + (oid==oid? oid:'1') + '.png'"></image>
 				</view>
 
 			</view>
@@ -44,7 +44,7 @@
 						<text>{{item.oCustomerinfo.username}} {{item.oCustomerinfo.cellPhone}}</text>
 					</view>
 					<view class="address4">
-						<image src="../../static/img/tu4.png"></image>
+						<image src="../../../../static/images/img/tu4.png"></image>
 						<view class="address5">
 							<text>{{item.address.xAddress}}{{item.address.detailsAds}}</text>
 						</view>
@@ -208,60 +208,60 @@
 		components: {},
 		props: {},
 		onLoad: function(e) {
-			var that = this;
-			getApp().globalData.initPage(that);
-			console.log('订单id', e.oid);
-			console.log('用户id', e.cid);
-			let oid = JSON.parse(e.oid);
-			let cid = e.cid;
-			var id = getApp().globalData.userInfo.userId;
-			that.setData({
-				oids: oid,
-				cids: cid
-			});
+			// var that = this;
+			// getApp().globalData.initPage(that);
+			// console.log('订单id', e.oid);
+			// console.log('用户id', e.cid);
+			// let oid = JSON.parse(e.oid);
+			// let cid = e.cid;
+			// var id = getApp().globalData.userInfo.userId;
+			// that.setData({
+			// 	oids: oid,
+			// 	cids: cid
+			// });
 
-			uni.request({
-				url: getApp().globalData.url + '/order/orderSelectByIOpayStatus?oId=' + oid + '&' + 'o_customerInfo=' + id,
-				data: {},
-				header: {
-					'content-type': 'application/json'
-				},
-				method: 'POST',
-				dataType: 'json',
-				success: function(res) {
-					that.setData({
-						ordersForGoods: res.data.data
-					});
-					console.log(res.data.data);
-				}
-			});
+			// uni.request({
+			// 	url: getApp().globalData.url + '/order/orderSelectByIOpayStatus?oId=' + oid + '&' + 'o_customerInfo=' + id,
+			// 	data: {},
+			// 	header: {
+			// 		'content-type': 'application/json'
+			// 	},
+			// 	method: 'POST',
+			// 	dataType: 'json',
+			// 	success: function(res) {
+			// 		that.setData({
+			// 			ordersForGoods: res.data.data
+			// 		});
+			// 		console.log(res.data.data);
+			// 	}
+			// });
 
-			uni.request({
-				url: getApp().globalData.url + '/order/getSelectOrderoId?o_id=' + oid,
-				data: {},
-				header: {
-					'content-type': 'application/json'
-				},
-				method: 'POST',
-				dataType: 'json',
-				success: function(res) {
-					that.setData({
-						oid: res.data
-					});
-					console.log("s" + res.data);
-				}
-			});
+			// uni.request({
+			// 	url: getApp().globalData.url + '/order/getSelectOrderoId?o_id=' + oid,
+			// 	data: {},
+			// 	header: {
+			// 		'content-type': 'application/json'
+			// 	},
+			// 	method: 'POST',
+			// 	dataType: 'json',
+			// 	success: function(res) {
+			// 		that.setData({
+			// 			oid: res.data
+			// 		});
+			// 		console.log("s" + res.data);
+			// 	}
+			// });
 
-			var id = this.show();
-			this.setData({
-				oid: id
-			}); // 调用函数时，传入new Date()参数，返回值是日期和时间
+			// var id = this.show();
+			// this.setData({
+			// 	oid: id
+			// }); // 调用函数时，传入new Date()参数，返回值是日期和时间
 
-			var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+			// var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 
-			this.setData({
-				time: time
-			});
+			// this.setData({
+			// 	time: time
+			// });
 		},
 		methods: {
 			show: function() {
