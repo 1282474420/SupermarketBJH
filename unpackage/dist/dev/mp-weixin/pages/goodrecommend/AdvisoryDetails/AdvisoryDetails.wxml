@@ -1,0 +1,1 @@
+<view><block wx:for="{{content}}" wx:for-item="con" wx:for-index="__i0__" wx:key="id"><view><view class="top"><text class="font">{{con.title}}</text></view><view class="button"><text>来源</text><text class="time">时间：2019-09-09</text><view class="content">{{''+con.font+''}}</view><image src="../../static/images/tupian1.png"></image></view></view></block></view>

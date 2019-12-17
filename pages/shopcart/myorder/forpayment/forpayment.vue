@@ -44,17 +44,17 @@
 	  </view>
 	
 	  <!-- 待付款 -->
-	  <block v-if="currentTpye==1">
+	  <block v-if="currentTpye==0">
 	    <block v-if="ordersFor.length>0">
 	      <view class="information">
 	        <view class="information2">
 	          <block v-for="(item, index) in ordersFor" :key="index">
-	            <block v-if="item.oPaystatus==1">
+	            <block v-if="item.status==0">
 	              <view class="information3">
 	                <view class="information4">
 	                  <view class="information5">
-	                    <block v-if="item.oPaystatus==1">
-	                      <text class="time">{{time}}</text>
+	                    <block v-if="item.status==0">
+	                      <text class="time">{{item.time}}</text>
 	                      <text class="time2">待付款</text>
 	                    </block>
 	                  </view>
@@ -62,25 +62,25 @@
 	                <view class="information6">
 	                  <view class="goods2">
 	                    <view class="goods3">
-	                      <image :src="item.commodity.ctradeimg"></image>
+	                      <image :src="item.goodsImgUrl"></image>
 	                    </view>
 	                    <view class="goods4">
 	                      <view class="goods5">
-	                        <text class="gg1">{{item.commodity.cSelPointTitle}}</text>
+	                        <text class="gg1">{{item.name}}</text>
 	                      </view>
 	                      <view class="goods6">
-	                        <text class="te">¥{{item.commodity.cprice}}</text>
-	                        <text class="te2">X{{item.orderDetails.odCommodityquantity}}</text>
+	                        <text class="te">¥{{item.amount}}</text>
+	                        <text class="te2">X{{item.count}}</text>
 	                      </view>
 	                    </view>
 	                  </view>
 	                </view>
 	                <view class="information7">
 	                    <button @tap="bb" data-id class="information9">去支付</button>
-	                  <button @tap="tuiku" :id="item.oId" :data-oidd="item.oId" class="information8">取消订单</button>
+	                  <button @tap="tuiku" :id="item.orderId" :data-oidd="item.orderId" class="information8">取消订单</button>
 	                </view>
 	              </view>
-	            </block>
+	           </block>
 	          </block>
 	        </view>
 	      </view>
@@ -93,42 +93,42 @@
 	  </block>
 	
 	  <!-- 待配送 -->
-	  <block v-if="currentTpye==2">
+	  <block v-if="currentTpye==1">
 	    <block v-if="ordersForGoods.length>0">
 	      <view class="information">
 	        <view class="information2">
 	          <block v-for="(item, index) in ordersForGoods" :key="index">
-	            <block v-if="item.oOrderStatus==2">
+	            <block v-if="item.status==1">
 	              <view class="information3">
 	                <view class="information4">
 	                  <view class="information5">
-	                    <block v-if="item.oOrderStatus==2">
-	                      <text class="time">{{time}}</text>
-	                      <text class="time2">{{item.orderInfo.oiInfo}}</text>
+	                    <block v-if="item.status==1">
+	                      <text class="time">{{item.time}}</text>
+	                      <text class="time2">待配送</text>
 	                    </block>
 	                  </view>
 	                </view>
 	                <view class="information6">
 	                  <view class="goods2">
 	                    <view class="goods3">
-	                      <image :src="item.commodity.ctradeimg"></image>
+	                      <image :src="item.goodsImgUrl"></image>
 	                    </view>
 	                    <view class="goods4">
 	                      <view class="goods5">
-	                        <text class="gg">{{item.commodity.cSelPointTitle}}</text>
+	                        <text class="gg">{{item.name}}</text>
 	                      </view>
 	                      <view class="goods9">
-	                        <text class="te3">¥{{item.commodity.cprice}}</text>
+	                        <text class="te3">¥{{item.amount}}</text>
 	                        <view></view>
-	                        <text class="te4">X{{item.orderDetails.odCommodityquantity}}</text>
+	                        <text class="te4">X{{item.count}}</text>
 	                        <view></view>
-	                        <text class="sdf">共1件商品,总金额￥{{item.orderDetails.oMoney}}</text>
+	                        <text class="sdf">共1件商品,总金额￥{{item.count*item.amount}}</text>
 	                      </view>
 	                    </view>
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <view @tap="getId" :data-oid="item.oId" :data-cid="item.commodity.cid">
+	                  <view @tap="getId" :data-oid="item.orderId" :data-cid="item.orderId">
 	                    <button class="information9">查看订单</button>
 	                  </view>
 	                </view>
@@ -146,47 +146,47 @@
 	  </block>
 	
 	  <!-- 配送中 -->
-	  <block v-if="currentTpye==3">
+	  <block v-if="currentTpye==2">
 	    <block v-if="ordersForGoods.length>0">
 	      <view class="information">
 	        <view class="information2">
 	          <block v-for="(item, index) in ordersForGoods" :key="index">
-	            <block v-if="item.oOrderStatus==3">
+	            <block v-if="item.status==2">
 	              <view class="information3">
 	                <view class="information4">
 	                  <view class="information5">
-	                    <block v-if="item.oOrderStatus==3">
-	                      <text class="time">{{time}}</text>
-	                      <text class="time2">{{item.orderInfo.oiInfo}}</text>
+	                    <block v-if="item.status==2">
+	                      <text class="time">{{item.time}}</text>
+	                      <text class="time2">配送中</text>
 	                    </block>
 	                  </view>
 	                </view>
 	                <view class="information6">
 	                  <view class="goods2">
 	                    <view class="goods3">
-	                      <image :src="item.commodity.ctradeimg"></image>
+	                      <image :src="item.goodsImgUrl"></image>
 	                    </view>
 	                    <view class="goods4">
 	                      <view class="goods5">
-	                        <text class="gg">{{item.commodity.cSelPointTitle}}</text>
+	                        <text class="gg">{{item.name}}</text>
 	                      </view>
 	                      <view class="goods9">
-	                        <text class="te3">¥{{item.commodity.cprice}}</text>
+	                        <text class="te3">¥{{item.amount}}</text>
 	                        <view></view>
-	                        <text class="te4">X{{item.orderDetails.odCommodityquantity}}</text>
+	                        <text class="te4">X{{item.count}}</text>
 	                        <view></view>
-	                        <text class="sdf">共1件商品,总金额￥{{item.orderDetails.oMoney}}</text>
+	                        <text class="sdf">共1件商品,总金额￥{{item.count*item.amount}}</text>
 	                      </view>
 	                    </view>
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <view @tap="getId" :data-oid="item.oId">
+	                  <view @tap="getId" :data-oid="item.orderId">
 	                    <button class="information9">查看订单</button>
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <view @tap="getId2" :data-oid="item.oId">
+	                  <view @tap="getId2" :data-oid="item.orderId">
 	                    <button class="information10">确认收货</button>
 	                  </view>
 	                </view>
@@ -205,42 +205,42 @@
 	
 	
 	  <!-- 待评价 -->
-	  <block v-if="currentTpye==4">
+	  <block v-if="currentTpye==3">
 	    <block v-if="ordersForGoods.length>0">
 	      <view class="information">
 	        <view class="information2">
 	          <block v-for="(item, index) in ordersForGoods" :key="index">
-	            <block v-if="item.oOrderStatus==4">
+	            <block v-if="item.status==3">
 	              <view class="information3">
 	                <view class="information4">
 	                  <view class="information5">
-	                    <block v-if="item.oOrderStatus==4">
-	                      <text class="time">{{time}}</text>
-	                      <text class="time2">{{item.orderInfo.oiInfo}}</text>
+	                    <block v-if="item.status==3">
+	                      <text class="time">{{item.time}}</text>
+	                      <text class="time2">待评价</text>
 	                    </block>
 	                  </view>
 	                </view>
 	                <view class="information6">
 	                  <view class="goods2">
 	                    <view class="goods3">
-	                      <image :src="item.commodity.ctradeimg"></image>
+	                      <image :src="item.goodsImgUrl"></image>
 	                    </view>
 	                    <view class="goods4">
 	                      <view class="goods5">
-	                        <text class="gg">{{item.commodity.cSelPointTitle}}</text>
+	                        <text class="gg">{{item.name}}</text>
 	                      </view>
 	                      <view class="goods9">
-	                        <text class="te3">¥{{item.commodity.cprice}}</text>
+	                        <text class="te3">¥{{item.amount}}</text>
 	                        <view></view>
-	                        <text class="te4">X{{item.orderDetails.odCommodityquantity}}</text>
+	                        <text class="te4">X{{item.count}}</text>
 	                        <view></view>
-	                        <text class="sdf">共1件商品,总金额￥{{item.orderDetails.oMoney}}</text>
+	                        <text class="sdf">共1件商品,总金额￥{{item.count*item.amount}}</text>
 	                      </view>
 	                    </view>
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <view @tap="getId4" :data-oid="item.oId">
+	                  <view @tap="getId4" :data-oid="item.orderId">
 	                    <button class="information9">去评价</button>
 	                  </view>
 	                </view>
@@ -258,36 +258,36 @@
 	  </block>
 	
 	  <!-- 已完成 -->
-	  <block v-if="currentTpye==5">
+	  <block v-if="currentTpye==4">
 	    <block v-if="ordersForGoods.length>0">
 	      <view class="information">
 	        <view class="information2">
 	          <block v-for="(item, index) in ordersForGoods" :key="index">
-	            <block v-if="item.oOrderStatus==5">
+	            <block v-if="item.status==4">
 	              <view class="information3">
 	                <view class="information4">
 	                  <view class="information5">
-	                    <block v-if="item.oOrderStatus==5">
-	                      <text class="time">{{time}}</text>
-	                      <text class="time2">{{item.orderInfo.oiInfo}}</text>
+	                    <block v-if="item.status==4">
+	                      <text class="time">{{item.time}}</text>
+	                      <text class="time2">已完成</text>
 	                    </block>
 	                  </view>
 	                </view>
 	                <view class="information6">
 	                  <view class="goods2">
 	                    <view class="goods3">
-	                      <image :src="item.commodity.ctradeimg"></image>
+	                      <image :src="item.goodsImgUrl"></image>
 	                    </view>
 	                    <view class="goods4">
 	                      <view class="goods5">
-	                        <text class="gg">{{item.commodity.cSelPointTitle}}</text>
+	                        <text class="gg">{{item.name}}</text>
 	                      </view>
 	                      <view class="goods9">
-	                        <text class="te3">¥{{item.commodity.cprice}}</text>
+	                        <text class="te3">¥{{item.amount}}</text>
 	                        <view></view>
-	                        <text class="tex">X{{item.orderDetails.odCommodityquantity}}</text>
+	                        <text class="tex">X{{item.count}}</text>
 	                        <view></view>
-	                        <text class="sdf">共{{item.orderDetails.odCommodityquantity}}商品,总金额￥{{item.commodity.cprice}}</text>
+	                        <text class="sdf">共{{item.count}}商品,总金额￥{{item.count*item.amount}}</text>
 	                      </view>
 	                    </view>
 	                  </view>
@@ -315,7 +315,7 @@
 
 <script>
 	var util = require("../../../../utils/util.js");
-	var currentTpye = 1;
+	var currentTpye = 0;
 	var curren = 0;
 	
 	export default {
@@ -324,42 +324,42 @@
 	      num: 0,
 	      sum: [],
 	      axis: [{
-	        id: '1',
+	        id: '0',
 	        name: '待付款'
 	      }, {
-	        id: '2',
+	        id: '1',
 	        name: '待配送'
 	      }, {
-	        id: '3',
+	        id: '2',
 	        name: '配送中'
 	      }, {
-	        id: '4',
+	        id: '3',
 	        name: '待评价'
 	      }, {
-	        id: '5',
+	        id: '4',
 	        name: '已完成'
 	      }],
 	      order: [{
-	        oid: '1',
+	        oid: '0',
 	        oname: '待付款'
 	      }, {
-	        oid: '2',
+	        oid: '1',
 	        oname: '待配送'
 	      }, {
-	        oid: '3',
+	        oid: '2',
 	        oname: '配送中'
 	      }, {
-	        oid: '4',
+	        oid: '3',
 	        oname: '待评价'
 	      }, {
-	        oid: '5',
+	        oid: '4',
 	        oname: '已完成'
 	      }],
 	      ordersFor: [],
 	      ordersForGoods: [],
 	      currentTpye: "",
 	      curren: "",
-	      time: "2019-12-14 12:00:00"
+	      time: ""
 	    };
 	  },
 	
@@ -371,9 +371,9 @@
 	   */
 	  onLoad: function (options) {
 		  
-	//     var that = this;
-	//     getApp().globalData.initPage(that);
-	//     var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
+	    var that = this;
+	    // getApp().globalData.initPage(that);
+	    // var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
 	
 	//     uni.request({
 	//       url: getApp().globalData.url + '/order/getCountByOrderState?oCustomerInfo=' + id,
@@ -400,33 +400,33 @@
 	//       }
 	//     });
 	
-	//     uni.request({
-	//       url: getApp().globalData.url + '/order/orderSelectByCustomerInfo?oCustomerInfo=' + id,
-	//       data: {},
-	//       header: {
-	//         'content-type': 'application/json'
-	//       },
-	//       method: 'POST',
-	//       dataType: 'json',
-	//       success: function (res) {
-	//         that.setData({
-	//           ordersFor: res.data.data,
-	//           num: res.data[4]
-	//         });
-	//         console.log(res.data);
-	//         console.log(res.data[4]);
-	//       }
-	//     }); // 调用函数时，传入new Date()参数，返回值是日期和时间
+	    uni.request({
+	      url: "http://localhost:8080/OrderFormApi/summary?userId="+"1"+"&stat="+"0"+"&shopId="+"1",
+	      data: {},
+	      header: {
+	        'content-type': 'application/json'
+	      },
+	      method: 'GET',
+	      dataType: 'json',
+	      success: function (res) {
+	        that.setData({
+	          ordersFor: res.data.data,
+	          num: res.data.data.length
+	        });
+	        console.log(res.data.data);
+	        console.log(res.data.data.length);
+	      }
+	    }); // 调用函数时，传入new Date()参数，返回值是日期和时间
 	
 	
-	//     var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+	    var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 	
-	//     this.setData({
-	//       time: time
-	//     });
-	//     this.setData({
-	//       currentTpye: currentTpye
-	//     });
+	    this.setData({
+	      time: time
+	    });
+	    this.setData({
+	      currentTpye: currentTpye
+	    });
 	  },
 	
 	  methods: {
@@ -436,21 +436,13 @@
 	      });
 	    },
 	    tagChoose: function (e) {
-			console.log(e);
-			console.log(this.ordersForGoods);
-			
-			console.log(this.currentTpye);
-			console.log(this.ordersFor.length);
-			
 	      var that = this;
-	      // getApp().globalData.initPage(that);
-	      // var id = getApp().globalData.userInfo.userId;
 	      var curType = e.currentTarget.id;
-	      console.log(curType);
+	      console.log("状态"+curType);
 	
 	      uni.request({
 	        // url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
-			url: "localhost:8080/OrderFormApi/summary?userld="+"1"+"&shopld="+"1",
+			url: "http://localhost:8080/OrderFormApi/summary?userId="+"1"+"&stat="+curType+"&shopId="+"1",
 	        data: {},
 	        header: {
 	          'content-type': 'application/json'
@@ -460,10 +452,11 @@
 	        success: function (res) {
 			console.log("123456789+", res);
 	          that.setData({
-	            ordersForGoods: res.data.data
+	            ordersForGoods: res.data.data,
+				num: res.data.data.length
 	          });
-	          console.log("11111111", res.data);
-	          console.log("11112222222221111", curType);
+	          console.log("data", res.data);
+	          console.log("curType", curType);
 	        }
 	      });
 	

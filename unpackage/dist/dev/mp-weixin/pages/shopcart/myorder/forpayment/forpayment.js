@@ -439,7 +439,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 var util = __webpack_require__(/*! ../../../../utils/util.js */ 27);
-var currentTpye = 1;
+var currentTpye = 0;
 var curren = 0;var _default =
 
 {
@@ -448,42 +448,42 @@ var curren = 0;var _default =
       num: 0,
       sum: [],
       axis: [{
-        id: '1',
+        id: '0',
         name: '待付款' },
       {
-        id: '2',
+        id: '1',
         name: '待配送' },
       {
-        id: '3',
+        id: '2',
         name: '配送中' },
       {
-        id: '4',
+        id: '3',
         name: '待评价' },
       {
-        id: '5',
+        id: '4',
         name: '已完成' }],
 
       order: [{
-        oid: '1',
+        oid: '0',
         oname: '待付款' },
       {
-        oid: '2',
+        oid: '1',
         oname: '待配送' },
       {
-        oid: '3',
+        oid: '2',
         oname: '配送中' },
       {
-        oid: '4',
+        oid: '3',
         oname: '待评价' },
       {
-        oid: '5',
+        oid: '4',
         oname: '已完成' }],
 
       ordersFor: [],
       ordersForGoods: [],
       currentTpye: "",
       curren: "",
-      time: "2019-12-14 12:00:00" };
+      time: "" };
 
   },
 
@@ -495,9 +495,9 @@ var curren = 0;var _default =
               */
   onLoad: function onLoad(options) {
 
-    //     var that = this;
-    //     getApp().globalData.initPage(that);
-    //     var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
+    var that = this;
+    // getApp().globalData.initPage(that);
+    // var id = getApp().globalData.userInfo.userId; //根据订单类型查询记录数
 
     //     uni.request({
     //       url: getApp().globalData.url + '/order/getCountByOrderState?oCustomerInfo=' + id,
@@ -524,33 +524,33 @@ var curren = 0;var _default =
     //       }
     //     });
 
-    //     uni.request({
-    //       url: getApp().globalData.url + '/order/orderSelectByCustomerInfo?oCustomerInfo=' + id,
-    //       data: {},
-    //       header: {
-    //         'content-type': 'application/json'
-    //       },
-    //       method: 'POST',
-    //       dataType: 'json',
-    //       success: function (res) {
-    //         that.setData({
-    //           ordersFor: res.data.data,
-    //           num: res.data[4]
-    //         });
-    //         console.log(res.data);
-    //         console.log(res.data[4]);
-    //       }
-    //     }); // 调用函数时，传入new Date()参数，返回值是日期和时间
+    uni.request({
+      url: "http://localhost:8080/OrderFormApi/summary?userId=" + "1" + "&stat=" + "0" + "&shopId=" + "1",
+      data: {},
+      header: {
+        'content-type': 'application/json' },
+
+      method: 'GET',
+      dataType: 'json',
+      success: function success(res) {
+        that.setData({
+          ordersFor: res.data.data,
+          num: res.data.data.length });
+
+        console.log(res.data.data);
+        console.log(res.data.data.length);
+      } });
+    // 调用函数时，传入new Date()参数，返回值是日期和时间
 
 
-    //     var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+    var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 
-    //     this.setData({
-    //       time: time
-    //     });
-    //     this.setData({
-    //       currentTpye: currentTpye
-    //     });
+    this.setData({
+      time: time });
+
+    this.setData({
+      currentTpye: currentTpye });
+
   },
 
   methods: {
@@ -560,21 +560,13 @@ var curren = 0;var _default =
 
     },
     tagChoose: function tagChoose(e) {
-      console.log(e);
-      console.log(this.ordersForGoods);
-
-      console.log(this.currentTpye);
-      console.log(this.ordersFor.length);
-
       var that = this;
-      // getApp().globalData.initPage(that);
-      // var id = getApp().globalData.userInfo.userId;
       var curType = e.currentTarget.id;
-      console.log(curType);
+      console.log("状态" + curType);
 
       uni.request({
         // url: getApp().globalData.url + '/order/orderSelectById?o_customerInfo=' + id + '&' + 'o_orderStatus=' + curType,
-        url: "localhost:8080/OrderFormApi/summary?userld=" + "1" + "&shopld=" + "1",
+        url: "http://localhost:8080/OrderFormApi/summary?userId=" + "1" + "&stat=" + curType + "&shopId=" + "1",
         data: {},
         header: {
           'content-type': 'application/json' },
@@ -584,10 +576,11 @@ var curren = 0;var _default =
         success: function success(res) {
           console.log("123456789+", res);
           that.setData({
-            ordersForGoods: res.data.data });
+            ordersForGoods: res.data.data,
+            num: res.data.data.length });
 
-          console.log("11111111", res.data);
-          console.log("11112222222221111", curType);
+          console.log("data", res.data);
+          console.log("curType", curType);
         } });
 
 

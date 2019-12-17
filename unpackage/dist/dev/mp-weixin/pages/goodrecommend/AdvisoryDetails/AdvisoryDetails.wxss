@@ -1,0 +1,19 @@
+
+.top{
+	text-align: center;
+	height: 180rpx;
+	border-bottom: 1rpx #AAAAAA solid;
+}
+.font{
+	display: block;
+	padding-top: 66rpx;
+	font-size: 38rpx;
+}
+.time{
+	float: right;
+}
+.content{
+	margin-top: 20rpx;
+}
+
+

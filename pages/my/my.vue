@@ -241,9 +241,9 @@ export default {
       });
     },
     dingdan: function (e) {
-      var zz = e.currentTarget.dataset.url;
+      
       uni.navigateTo({
-        url: zz
+        url:"../shopcart/myorder/forpayment/forpayment"
       });
     },
     cxyhxx: function () {
