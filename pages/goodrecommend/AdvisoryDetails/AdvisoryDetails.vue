@@ -1,15 +1,15 @@
 <template>
 	<view>
-		<view v-for="(con) in content" :key="con.id">
+		<view v-for="(con) in content" :key="con.artId">
 			<view class="top">
-				<text class="font">{{con.title}}</text>
+				<text class="font">{{con.artName}}</text>
 			</view>
 			<view class="button">
-				<text>来源</text><text class="time">时间：2019-09-09</text>
+				<text>来源</text><text class="time">时间：{{con.gmtModifed}}</text>
 				<view class="content">
-					{{con.font}}
+					{{con.gmtModifed}}
 				</view>
-				<image src="../../static/images/tupian1.png"></image>
+				<image class="ee" :src="con.artImages"></image>
 			</view>
 		</view>
 	</view>
@@ -20,7 +20,7 @@
 		data() {
 			return {
 				content:[
-					{id:0,title:'dadada',font:'年少无知的时候， 洗发乳和护发素均直接涂抹于',img:'../../static/images/tupian1.png'}
+					/* {id:0,title:'dadada',font:'年少无知的时候， 洗发乳和护发素均直接涂抹于',img:'../../static/images/tupian1.png'} */
 				]
 			}
 		},
@@ -28,7 +28,19 @@
 			
 		},
 		onLoad:function(options){
-			 
+			 var id = options.id;
+			 //获得当前对象
+			 var that = this
+			  uni.request({
+			  	url: 'http://localhost:8080/getArticleApplet.do?id='+id,
+			  	method: 'POST',
+			  	data: {},
+			  	success: res => {
+			 		this.content=res.data;
+			 	},
+			  	fail: () => {},
+			  	complete: () => {}
+			  });
 		}
 	}
 </script>

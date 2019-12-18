@@ -20,24 +20,24 @@
 		
 		<view class="biaoti1">推荐文章</view>
 		<view>
-			    <view class="first_tab">
-			         <view class="goods_item"
-					 v-for="(good) in advisory" :key="good.id"
-					 
-			        > 
-			            <!-- 左侧 商品容器 -->
-			            <view class="goods_info_wrap">
-			              <view class="goods_name">{{good.name}}<!-- 水产生鲜 篇一：生鲜购买必坑指南（猪牛羊肉篇） --></view>
-						  <view class="goods_price"><text>200浏览</text><text>160点赞</text></view>
-			            </view>
-						<!-- 右侧 图片容器 -->
-						<view class="goods_img_wrap">
-						  <image mode="widthFix" src="../../../static/images/img/goods/p3.jpg" ></image>
-						</view>
-			          </view>
-			    </view>
+				    <view class="first_tab">
+				         <view class="goods_item"
+						 v-for="(good) in advisory" :key="good.artId"
+						 @clike="HaowuXQ(1)"
+				        > 
+				            <!-- 左侧 商品容器 -->
+				            <view class="goods_info_wrap">
+				              <view class="goods_name">{{good.artName}}</view>
+							  <view class="goods_price"><text>{{good.artId}}浏览</text><text>160点赞</text></view>
+				            </view>
+							<!-- 右侧 图片容器 -->
+							<view class="goods_img_wrap">
+							  <image mode="widthFix" src="../../../static/images/img/goods/p3.jpg" ></image>
+							</view>
+				          </view>
+				    </view>
+			</view>
 		</view>
-	</view>
 </template>
 
 <script>
@@ -59,8 +59,28 @@
 					console.log(res.data.message)
 				}
 			});
+			uni.request({
+				url: 'http://localhost:8080/listArticleApplet.do',
+				method: 'POST',
+				data: {},
+				success: res => {
+					this.advisory = res.data;
+					console.log(res.data+"666")
+				},
+				fail: () => {},
+				complete: () => {}
+			});
 		},
 		methods: {
+			HaowuXQ:function(e){
+				uni.showToast({
+					title: "编号" + e,
+					icon: "none"
+				});
+				uni.navigateTo({
+					url:"../AdvisoryDetails/AdvisoryDetails?id="+e
+				})
+			},
 			XQ:function(e){
 				uni.showToast({
 					title: "编号" + e,
