@@ -21,20 +21,20 @@
 		<view class="biaoti1">推荐文章</view>
 		<view>
 				    <view class="first_tab">
-				         <view class="goods_item"
+				         <navigator class="goods_item"
 						 v-for="(good) in advisory" :key="good.artId"
-						 @clike="HaowuXQ(1)"
+						 @click="HWXQ(good.artId)"
 				        > 
-				            <!-- 左侧 商品容器 -->
+				            <!-- 左侧容器 -->
 				            <view class="goods_info_wrap">
 				              <view class="goods_name">{{good.artName}}</view>
 							  <view class="goods_price"><text>{{good.artId}}浏览</text><text>160点赞</text></view>
 				            </view>
 							<!-- 右侧 图片容器 -->
 							<view class="goods_img_wrap">
-							  <image mode="widthFix" src="../../../static/images/img/goods/p3.jpg" ></image>
+							  <image mode="widthFix" :src="good.artImages" ></image>
 							</view>
-				          </view>
+				          </navigator>
 				    </view>
 			</view>
 		</view>
@@ -46,7 +46,7 @@
 			return {
 				goodsList:[],
 				advisory:[
-					{id:0,name:'水产生鲜 篇一：生鲜购买必坑指南（猪牛羊肉篇6666)'}
+					
 				]
 			}
 		},
@@ -72,7 +72,7 @@
 			});
 		},
 		methods: {
-			HaowuXQ:function(e){
+			HWXQ:function(e){
 				uni.showToast({
 					title: "编号" + e,
 					icon: "none"
@@ -118,8 +118,12 @@
 	border-bottom:4rpx solid #FF0000;
 }
 //推荐文章
+.first_tab{
+	height: 300rpx;
+}
 .first_tab .goods_item {
   display: flex;
+  height: 70%;
   border-bottom: 1px solid #ccc;
 }
 .first_tab .goods_item .goods_img_wrap {
@@ -131,23 +135,26 @@
 .first_tab .goods_item .goods_img_wrap image {
   width: 70%;
 }
-.first_tab .goods_item .goods_info_wrap {
+.goods_info_wrap {
   flex: 3;
   display: flex;
+  width: 70%;
   flex-direction: column;
   justify-content: space-around;
 }
-.first_tab .goods_item .goods_info_wrap .goods_name {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+
+.goods_name{
+	padding-left: 30rpx;
+	font-weight: bold;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
-.first_tab .goods_item .goods_info_wrap .goods_price {
-  color: var(--themeColor);
-  font-size: 32rpx;
-}
+
 .goods_price text{
+	color: var(--themeColor);
+	font-size: 32rpx;
 	padding-left: 20rpx;
 }
 
