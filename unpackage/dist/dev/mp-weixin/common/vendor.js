@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */,
-/* 1 */
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1527,7 +1527,115 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 14:
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -7489,7 +7597,167 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
+
+/***/ 21:
+/*!****************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+}
+
+function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+}
+/** 
+   * 时间戳转化为年 月 日 时 分 秒 
+   * number: 传入时间戳 
+   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
+  */
+
+
+function formatTimeTwo(number, format) {
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+  var date = new Date(number * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+
+  return format;
+}
+
+module.exports = {
+  formatTime: formatTime,
+  formatTimeTwo: formatTimeTwo };
+
+/***/ }),
+
+/***/ 247:
+/*!********************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/components/uni-icons/icons.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  'contact': "\uE100",
+  'person': "\uE101",
+  'personadd': "\uE102",
+  'contact-filled': "\uE130",
+  'person-filled': "\uE131",
+  'personadd-filled': "\uE132",
+  'phone': "\uE200",
+  'email': "\uE201",
+  'chatbubble': "\uE202",
+  'chatboxes': "\uE203",
+  'phone-filled': "\uE230",
+  'email-filled': "\uE231",
+  'chatbubble-filled': "\uE232",
+  'chatboxes-filled': "\uE233",
+  'weibo': "\uE260",
+  'weixin': "\uE261",
+  'pengyouquan': "\uE262",
+  'chat': "\uE263",
+  'qq': "\uE264",
+  'videocam': "\uE300",
+  'camera': "\uE301",
+  'mic': "\uE302",
+  'location': "\uE303",
+  'mic-filled': "\uE332",
+  'speech': "\uE332",
+  'location-filled': "\uE333",
+  'micoff': "\uE360",
+  'image': "\uE363",
+  'map': "\uE364",
+  'compose': "\uE400",
+  'trash': "\uE401",
+  'upload': "\uE402",
+  'download': "\uE403",
+  'close': "\uE404",
+  'redo': "\uE405",
+  'undo': "\uE406",
+  'refresh': "\uE407",
+  'star': "\uE408",
+  'plus': "\uE409",
+  'minus': "\uE410",
+  'circle': "\uE411",
+  'checkbox': "\uE411",
+  'close-filled': "\uE434",
+  'clear': "\uE434",
+  'refresh-filled': "\uE437",
+  'star-filled': "\uE438",
+  'plus-filled': "\uE439",
+  'minus-filled': "\uE440",
+  'circle-filled': "\uE441",
+  'checkbox-filled': "\uE442",
+  'closeempty': "\uE460",
+  'refreshempty': "\uE461",
+  'reload': "\uE462",
+  'starhalf': "\uE463",
+  'spinner': "\uE464",
+  'spinner-cycle': "\uE465",
+  'search': "\uE466",
+  'plusempty': "\uE468",
+  'forward': "\uE470",
+  'back': "\uE471",
+  'left-nav': "\uE471",
+  'checkmarkempty': "\uE472",
+  'home': "\uE500",
+  'navigate': "\uE501",
+  'gear': "\uE502",
+  'paperplane': "\uE503",
+  'info': "\uE504",
+  'help': "\uE505",
+  'locked': "\uE506",
+  'more': "\uE507",
+  'flag': "\uE508",
+  'home-filled': "\uE530",
+  'gear-filled': "\uE532",
+  'info-filled': "\uE534",
+  'help-filled': "\uE535",
+  'more-filled': "\uE537",
+  'settings': "\uE560",
+  'list': "\uE562",
+  'bars': "\uE563",
+  'loop': "\uE565",
+  'paperclip': "\uE567",
+  'eye': "\uE568",
+  'arrowup': "\uE580",
+  'arrowdown': "\uE581",
+  'arrowleft': "\uE582",
+  'arrowright': "\uE583",
+  'arrowthinup': "\uE584",
+  'arrowthindown': "\uE585",
+  'arrowthinleft': "\uE586",
+  'arrowthinright': "\uE587",
+  'pulldown': "\uE588",
+  'closefill': "\uE589",
+  'sound': "\uE590",
+  'scan': "\uE612" };exports.default = _default;
+
+/***/ }),
+
+/***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -7519,7 +7787,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /*!*************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json ***!
   \*************************************************/
@@ -7530,7 +7799,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 5 */
+
+/***/ 5:
 /*!*******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/dist/index.js ***!
   \*******************************************************/
@@ -8416,7 +8686,8 @@ main();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 6 */
+
+/***/ 6:
 /*!******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
   \******************************************************/
@@ -8426,7 +8697,8 @@ main();
 module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id":"@dcloudio/uni-stat@2.0.0-v3-24020191018001","_inBundle":false,"_integrity":"sha512-nYBm5pRrYzrj2dKMqucWSF2PwInUMnn3MLHM/ik3gnLUEKSW61rzcY1RPlUwaH7c+Snm6N+bAJzmj3GvlrlVXA==","_location":"/@dcloudio/uni-stat","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","name":"@dcloudio/uni-stat","escapedName":"@dcloudio%2funi-stat","scope":"@dcloudio","rawSpec":"^2.0.0-alpha-24420191128001","saveSpec":null,"fetchSpec":"^2.0.0-alpha-24420191128001"},"_requiredBy":["/","/@dcloudio/vue-cli-plugin-uni"],"_resolved":"https://registry.npmjs.org/@dcloudio/uni-stat/-/uni-stat-2.0.0-v3-24020191018001.tgz","_shasum":"6ef04326cc0b945726413eebe442ab8f47c7536c","_spec":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_where":"/Users/guoshengqiang/Documents/dcloud-plugins/alpha/uniapp-cli","author":"","bugs":{"url":"https://github.com/dcloudio/uni-app/issues"},"bundleDependencies":false,"deprecated":false,"description":"","devDependencies":{"@babel/core":"^7.5.5","@babel/preset-env":"^7.5.5","eslint":"^6.1.0","rollup":"^1.19.3","rollup-plugin-babel":"^4.3.3","rollup-plugin-clear":"^2.0.7","rollup-plugin-commonjs":"^10.0.2","rollup-plugin-copy":"^3.1.0","rollup-plugin-eslint":"^7.0.0","rollup-plugin-json":"^4.0.0","rollup-plugin-node-resolve":"^5.2.0","rollup-plugin-replace":"^2.2.0","rollup-plugin-uglify":"^6.0.2"},"files":["dist","package.json","LICENSE"],"gitHead":"197e8df53cc9d4c3f6eb722b918ccf51672b5cfe","homepage":"https://github.com/dcloudio/uni-app#readme","license":"Apache-2.0","main":"dist/index.js","name":"@dcloudio/uni-stat","repository":{"type":"git","url":"git+https://github.com/dcloudio/uni-app.git","directory":"packages/uni-stat"},"scripts":{"build":"NODE_ENV=production rollup -c rollup.config.js","dev":"NODE_ENV=development rollup -w -c rollup.config.js"},"version":"2.0.0-v3-24020191018001"};
 
 /***/ }),
-/* 7 */
+
+/***/ 7:
 /*!******************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json?{"type":"style"} ***!
   \******************************************************************/
@@ -8434,10 +8706,11 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/home/home": { "navigationBarTitleText": "首页", "usingComponents": {} }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/spellgroup/spellgroup": { "navigationBarTitleText": "在线拼团", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/home/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/spellgroup/spellgroup": { "navigationBarTitleText": "在线拼团", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心", "usingComponents": {} }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表", "usingComponents": { "uni-section": "/components/uni-section/uni-section", "uni-list": "/components/uni-list/uni-list", "uni-list-item": "/components/uni-list-item/uni-list-item" } }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服", "usingComponents": {} }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
-/* 8 */
+
+/***/ 8:
 /*!*****************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json?{"type":"stat"} ***!
   \*****************************************************************/
@@ -8447,183 +8720,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__9752050" };exports.default = _default;
 
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */
-/*!****************************************************!*\
-  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
-}
-
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
-}
-/** 
-   * 时间戳转化为年 月 日 时 分 秒 
-   * number: 传入时间戳 
-   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
-  */
-
-
-function formatTimeTwo(number, format) {
-  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
-  var returnArr = [];
-  var date = new Date(number * 1000);
-  returnArr.push(date.getFullYear());
-  returnArr.push(formatNumber(date.getMonth() + 1));
-  returnArr.push(formatNumber(date.getDate()));
-  returnArr.push(formatNumber(date.getHours()));
-  returnArr.push(formatNumber(date.getMinutes()));
-  returnArr.push(formatNumber(date.getSeconds()));
-
-  for (var i in returnArr) {
-    format = format.replace(formateArr[i], returnArr[i]);
-  }
-
-  return format;
-}
-
-module.exports = {
-  formatTime: formatTime,
-  formatTimeTwo: formatTimeTwo };
-
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

@@ -14,4 +14,7 @@
 
 <style>
 	/*每个页面公共css */
+	/* #ifndef MP-WEIXIN */
+		@import "/wxcomponents/vant/dist/common/index.wxss";
+	/* #endif */
 </style>

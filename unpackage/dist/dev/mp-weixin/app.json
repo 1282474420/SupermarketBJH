@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/home/home/home",
     "pages/shopcart/myorder/forpayment/forpayment",
-    "pages/home/home",
     "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
     "pages/producttype/producttype",
     "pages/spellgroup/spellgroup",
@@ -19,7 +19,11 @@
     "pages/producttype/ProductDetails/ProductDetails",
     "pages/producttype/chanpin/chanpin",
     "pages/goodrecommend/haowu/haowu",
-    "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails"
+    "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
+    "pages/home/coupons/coupons",
+    "pages/home/stores/stores",
+    "pages/home/chat/chat",
+    "pages/home/search_Page/search_Page"
   ],
   "subPackages": [],
   "window": {
@@ -36,7 +40,7 @@
       {
         "iconPath": "static/images/dbimg/sy_01_03.png",
         "selectedIconPath": "static/images/dbimg/sy_001_03.png",
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/home/home/home",
         "text": "首页"
       },
       {
@@ -54,7 +58,7 @@
       {
         "iconPath": "static/images/dbimg/sy_04_03.png",
         "selectedIconPath": "static/images/dbimg/sy_004_03.png",
-        "pagePath": "pages/bottom/bottom",
+        "pagePath": "pages/home/stores/stores",
         "text": "门店"
       },
       {

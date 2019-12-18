@@ -1,0 +1,19 @@
+
+.card {
+	width: 90%;
+	height: 100rpx;
+	background-color: white;
+	margin: auto;
+	border-bottom: #D9D9D9 1rpx solid ;
+	margin-top: 30rpx;
+}
+.nocard{
+	width: 90%;
+	height: 100rpx;
+	background-color: white;
+	margin: 0 auto 42rpx auto;
+	position: relative;
+	margin-top: 10rpx;
+	margin-bottom: 10rpx;
+}
+

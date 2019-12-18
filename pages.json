@@ -1,136 +1,164 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path" : "pages/shopcart/myorder/forpayment/forpayment",
-			"style" : {
-				"navigationBarTitleText": "我的订单",
-				"navigationBarBackgroundColor":"#FF8000"
-			}
-		}
-		,{
-			"path": "pages/home/home",
+			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
 		}
-		
 		,{
-		    "path" : "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
-		    "style" : {
+			"path": "pages/shopcart/myorder/forpayment/forpayment",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"navigationBarBackgroundColor": "#FF8000"
+			}
+		}
+		, {
+			"path": "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
+			"style": {
 				"navigationBarTitleText": "订单详情"
 			}
 		}
-		
-		
-		,{
-		    "path" : "pages/producttype/producttype",
-		    "style" : {
+
+
+		, {
+			"path": "pages/producttype/producttype",
+			"style": {
 				"navigationBarTitleText": "产品分类"
 			}
-		}
-		,{
-		    "path" : "pages/spellgroup/spellgroup",
-		    "style" : {
+		}, {
+			"path": "pages/spellgroup/spellgroup",
+			"style": {
 				"navigationBarTitleText": "在线拼团"
 			}
 		}
-		       
-		,{
-		    "path" : "pages/goodrecommend/goodrecommend",
-		    "style" : {
+
+		, {
+			"path": "pages/goodrecommend/goodrecommend",
+			"style": {
 				"navigationBarTitleText": "好物推荐"
 			}
-		}
-		,{
-		    "path" : "pages/my/my",
-		    "style" : {
+		}, {
+			"path": "pages/my/my",
+			"style": {
 				"navigationBarTitleText": "我的"
 			}
-		}
-		,{
-		    "path" : "pages/bottom/bottom",
-		    "style" : {
+		}, {
+			"path": "pages/bottom/bottom",
+			"style": {
 				"navigationBarTitleText": "底部导航"
 			}
-		}		
-		,{
-		    "path" : "pages/shopcart/applyRefund/arefund/arefund",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/applyRefund/arefund/arefund",
+			"style": {
 				"navigationBarTitleText": "商品评价"
 			}
-		}
-		,{
-		    "path" : "pages/shopcart/applyRefund/applyRefund",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/applyRefund/applyRefund",
+			"style": {
 				"navigationBarTitleText": "申请退款"
 			}
-		}
-		,{
-		    "path" : "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
+			"style": {
 				"navigationBarTitleText": "申请退款详情"
 			}
-		}
-		,{
-		    "path" : "pages/shopcart/comment/comment",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/comment/comment",
+			"style": {
 				"navigationBarTitleText": "发表评价"
 			}
 		}
-		
-		
-		,{
-		    "path" : "pages/shopcart/order/order",
-		    "style" : {
+
+
+		, {
+			"path": "pages/shopcart/order/order",
+			"style": {
 				"navigationBarTitleText": "提交订单"
 			}
-		}
-		,{
-		    "path" : "pages/shopcart/cart/cart",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/cart/cart",
+			"style": {
 				"navigationBarTitleText": "购物车",
-				"navigationBarBackgroundColor":"#FF8000",
-				"titleImage":"static/img/goods/p2.jpg"
+				"navigationBarBackgroundColor": "#FF8000",
+				"titleImage": "static/img/goods/p2.jpg"
 			}
-		}
-		,{
-		    "path" : "pages/shopcart/payment/payment",
-		    "style" : {
+		}, {
+			"path": "pages/shopcart/payment/payment",
+			"style": {
 				"navigationBarTitleText": "支付成功明细"
 			}
 		}
-		
-		
-		
-		
-		,{
+
+
+
+
+		, {
 			"path": "pages/producttype/chanpinList/chanpinList",
-			"style": {"navigationBarTitleText": "产品列表"}
-		},{
+			"style": {
+				"navigationBarTitleText": "产品列表"
+			}
+		}, {
 			"path": "pages/producttype/ProductDetails/ProductDetails",
 			"style": {
 				"navigationBarTitleText": "产品详情"
 			}
-		},{
-		    "path" : "pages/producttype/chanpin/chanpin",
-		    "style" : {
+		}, {
+			"path": "pages/producttype/chanpin/chanpin",
+			"style": {
 				"navigationBarTitleText": "产品分类"
 			}
-		},{
-            "path" : "pages/goodrecommend/haowu/haowu",
-            "style" : {
+		}, {
+			"path": "pages/goodrecommend/haowu/haowu",
+			"style": {
 				"navigationBarTitleText": "好物推荐"
 			}
-        }
-        ,{
-            "path" : "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
-            "style" : {
+		}, {
+			"path": "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
+			"style": {
 				"navigationBarTitleText": "咨询详情"
 			}
-        }
-		
-	  
-    ],
+		},
+
+
+
+
+		{
+			"path": "pages/home/coupons/coupons",
+			"style": {
+				"navigationBarTitleText": "领券中心",
+				"usingComponents": {
+					"van-popup": "/wxcomponents/vant/dist/popup/index",
+					"van-cell": "/wxcomponents/vant/dist/cell/index"
+				}
+			}
+		}, {
+			"path": "pages/home/stores/stores",
+			"style": {
+				"navigationBarTitleText": "门店列表"
+			}
+		}, {
+			"path": "pages/home/chat/chat",
+			"style": {
+				"navigationBarBackgroundColor": "#f2f2f2",
+				"backgroundColorTop": "#e5e5e5",
+				"backgroundColorBottom": "#e5e5e5",
+				"navigationBarTitleText": "客服",
+				"app-plus": {
+					"softinputNavBar": "none",
+					"bounce": "none"
+				}
+			}
+		}
+
+		, {
+			"path": "pages/home/search_Page/search_Page",
+			"style": {
+				"navigationBarTitleText": "搜索页面"
+			}
+		}
+
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -138,40 +166,39 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-	    "color": "#a9b7b7",
-	    "selectedColor": "#11cd6e",
-	    "borderStyle": "white",
-	    "list": [
-	      {
-	        "iconPath": "static/images/dbimg/sy_01_03.png",
-	        "selectedIconPath": "static/images/dbimg/sy_001_03.png",
-	        "pagePath": "pages/home/home",
-	        "text": "首页"
-	      },
-	      {
-	        "iconPath": "static/images/dbimg/sy_02_03.png",
-	        "selectedIconPath": "static/images/dbimg/sy_002_03.png",
-	        "pagePath": "pages/producttype/chanpin/chanpin",
-	        "text": "分类"
-	      },
-	      {
-	        "iconPath": "static/images/dbimg/sy_03_03.png",
-	        "selectedIconPath": "static/images/dbimg/sy_003_03.png",
-	        "pagePath": "pages/shopcart/cart/cart",
-	        "text": "购物车"
-	      },
-	      {
-	        "iconPath": "static/images/dbimg/sy_04_03.png",
-	        "selectedIconPath": "static/images/dbimg/sy_004_03.png",
-	        "pagePath": "pages/bottom/bottom",
-	        "text": "门店"
-	      },
-	      {
-	        "iconPath": "static/images/dbimg/sy_05_03.png",
-	        "selectedIconPath": "static/images/dbimg/sy_005_03.png",
-	        "pagePath": "pages/my/my",
-	        "text": "我的"
-	      }
-	    ]
-	  }
+		"color": "#a9b7b7",
+		"selectedColor": "#11cd6e",
+		"borderStyle": "white",
+		"list": [{
+				"iconPath": "static/images/dbimg/sy_01_03.png",
+				"selectedIconPath": "static/images/dbimg/sy_001_03.png",
+				"pagePath": "pages/home/home/home",
+				"text": "首页"
+			},
+			{
+				"iconPath": "static/images/dbimg/sy_02_03.png",
+				"selectedIconPath": "static/images/dbimg/sy_002_03.png",
+				"pagePath": "pages/producttype/chanpin/chanpin",
+				"text": "分类"
+			},
+			{
+				"iconPath": "static/images/dbimg/sy_03_03.png",
+				"selectedIconPath": "static/images/dbimg/sy_003_03.png",
+				"pagePath": "pages/shopcart/cart/cart",
+				"text": "购物车"
+			},
+			{
+				"iconPath": "static/images/dbimg/sy_04_03.png",
+				"selectedIconPath": "static/images/dbimg/sy_004_03.png",
+				"pagePath": "pages/home/stores/stores",
+				"text": "门店"
+			},
+			{
+				"iconPath": "static/images/dbimg/sy_05_03.png",
+				"selectedIconPath": "static/images/dbimg/sy_005_03.png",
+				"pagePath": "pages/my/my",
+				"text": "我的"
+			}
+		]
+	}
 }

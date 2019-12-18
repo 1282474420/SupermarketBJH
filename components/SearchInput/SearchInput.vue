@@ -1,6 +1,6 @@
 <template>
 <view class="search_input">
-  <navigator class="a" url="../../goodrecommend/haowu/haowu" open-type="navigate">
+  <navigator url="/pages/home/search_Page/search_Page" open-type="navigate">
     搜索
   </navigator>
 </view>
