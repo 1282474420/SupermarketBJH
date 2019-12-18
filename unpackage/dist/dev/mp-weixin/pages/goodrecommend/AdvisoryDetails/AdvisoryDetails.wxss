@@ -1,4 +1,8 @@
 
+.ee{
+	width: 100%;
+	height: 666rpx;
+}
 .top{
 	text-align: center;
 	height: 180rpx;

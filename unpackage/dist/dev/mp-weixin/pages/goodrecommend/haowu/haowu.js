@@ -169,8 +169,8 @@ var _default =
   data: function data() {
     return {
       goodsList: [],
-      advisory: [
-      { id: 0, name: '水产生鲜 篇一：生鲜购买必坑指南（猪牛羊肉篇6666)' }] };
+      advisory: [] };
+
 
 
   },
@@ -196,7 +196,7 @@ var _default =
 
   },
   methods: {
-    HaowuXQ: function HaowuXQ(e) {
+    HWXQ: function HWXQ(e) {
       uni.showToast({
         title: "编号" + e,
         icon: "none" });

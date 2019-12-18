@@ -143,9 +143,7 @@ var _default =
 {
   data: function data() {
     return {
-      content: [
-        /* {id:0,title:'dadada',font:'年少无知的时候， 洗发乳和护发素均直接涂抹于',img:'../../static/images/tupian1.png'} */] };
-
+      content: {} };
 
   },
   methods: {},
@@ -156,7 +154,7 @@ var _default =
     //获得当前对象
     var that = this;
     uni.request({
-      url: 'http://localhost:8080/getArticleApplet.do?id=' + id,
+      url: 'http://localhost:8080/getArticleApplet.do?artId=' + id,
       method: 'POST',
       data: {},
       success: function success(res) {
