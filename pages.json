@@ -158,7 +158,11 @@
 			}
 		}
 
-	],
+	    ,{
+            "path" : "pages/home/index/index",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
