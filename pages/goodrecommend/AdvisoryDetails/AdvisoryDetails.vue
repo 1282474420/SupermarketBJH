@@ -1,15 +1,15 @@
 <template>
 	<view>
-		<view v-for="(con) in content" :key="con.artId">
+		<view >
 			<view class="top">
-				<text class="font">{{con.artName}}</text>
+				<text class="font">{{content.artName}}</text>
 			</view>
 			<view class="button">
-				<text>来源</text><text class="time">时间：{{con.gmtModifed}}</text>
+				<text>来源</text><text class="time">时间：{{content.gmtModifed}}</text>
 				<view class="content">
-					{{con.gmtModifed}}
+					{{content.artContent}}
 				</view>
-				<image class="ee" :src="con.artImages"></image>
+				<image class="ee" :src="content.artImages"></image>
 			</view>
 		</view>
 	</view>
@@ -19,9 +19,7 @@
 	export default {
 		data() {
 			return {
-				content:[
-					/* {id:0,title:'dadada',font:'年少无知的时候， 洗发乳和护发素均直接涂抹于',img:'../../static/images/tupian1.png'} */
-				]
+				content:{}
 			}
 		},
 		methods: {
@@ -32,7 +30,7 @@
 			 //获得当前对象
 			 var that = this
 			  uni.request({
-			  	url: 'http://localhost:8080/getArticleApplet.do?id='+id,
+			  	url: 'http://localhost:8080/getArticleApplet.do?artId='+id,
 			  	method: 'POST',
 			  	data: {},
 			  	success: res => {
@@ -46,6 +44,10 @@
 </script>
 
 <style>
+	.ee{
+		width: 100%;
+		height: 666rpx;
+	}
 	.top{
 		text-align: center;
 		height: 180rpx;
