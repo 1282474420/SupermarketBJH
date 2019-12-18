@@ -23,8 +23,7 @@
     "pages/home/coupons/coupons",
     "pages/home/stores/stores",
     "pages/home/chat/chat",
-    "pages/home/search_Page/search_Page",
-    "pages/home/index/index"
+    "pages/home/search_Page/search_Page"
   ],
   "subPackages": [],
   "window": {

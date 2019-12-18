@@ -157,11 +157,6 @@
 				"navigationBarTitleText": "搜索页面"
 			}
 		}
-
-	    ,{
-            "path" : "pages/home/index/index",
-            "style" : {}
-        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
