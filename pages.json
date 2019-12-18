@@ -13,6 +13,7 @@
 				"navigationBarTitleText": "首页"
 			}
 		}
+		
 		,{
 		    "path" : "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
 		    "style" : {

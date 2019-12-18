@@ -183,8 +183,28 @@ var _default =
         console.log(res.data.message);
       } });
 
+    uni.request({
+      url: 'http://localhost:8080/listArticleApplet.do',
+      method: 'POST',
+      data: {},
+      success: function success(res) {
+        _this.advisory = res.data;
+        console.log(res.data + "666");
+      },
+      fail: function fail() {},
+      complete: function complete() {} });
+
   },
   methods: {
+    HaowuXQ: function HaowuXQ(e) {
+      uni.showToast({
+        title: "编号" + e,
+        icon: "none" });
+
+      uni.navigateTo({
+        url: "../AdvisoryDetails/AdvisoryDetails?id=" + e });
+
+    },
     XQ: function XQ(e) {
       uni.showToast({
         title: "编号" + e,

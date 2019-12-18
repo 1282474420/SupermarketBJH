@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -144,16 +144,29 @@ var _default =
   data: function data() {
     return {
       content: [
-      { id: 0, title: 'dadada', font: '年少无知的时候， 洗发乳和护发素均直接涂抹于', img: '../../static/images/tupian1.png' }] };
+        /* {id:0,title:'dadada',font:'年少无知的时候， 洗发乳和护发素均直接涂抹于',img:'../../static/images/tupian1.png'} */] };
 
 
   },
   methods: {},
 
 
-  onLoad: function onLoad(options) {
+  onLoad: function onLoad(options) {var _this = this;
+    var id = options.id;
+    //获得当前对象
+    var that = this;
+    uni.request({
+      url: 'http://localhost:8080/getArticleApplet.do?id=' + id,
+      method: 'POST',
+      data: {},
+      success: function success(res) {
+        _this.content = res.data;
+      },
+      fail: function fail() {},
+      complete: function complete() {} });
 
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

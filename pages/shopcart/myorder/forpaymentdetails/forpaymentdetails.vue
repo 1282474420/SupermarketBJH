@@ -27,26 +27,27 @@
 						<block v-for="(item, index) in axis" :key="index">
 							<text :class="'weui-cell-name name' + item.id + ' ' + (oid==item.id ?'weuicellname':'')">{{item.name}}</text>
 						</block>
-					</view>
+					</view> 
 				</view>
 
 				<view class="ww2">
-					<image :src="'../../../../static/images/img/daizhifu' + (oid==oid? oid:'1') + '.png'"></image>
+					<!-- <image :src="'../img/daizhifu' + (oid==oid? oid:'1') + '.png'"></image> -->
+					<image :src="'../../../../static/images/img/daizhifu1.png' "></image>
 				</view>
 
 			</view>
 		</view>
 
-		<block v-for="(item, index) in ordersForGoods" :key="index">
+		<block >
 			<view class="address">
 				<view class="address2">
 					<view class="address3">
-						<text>{{item.contact}} {{item.phone}}</text>
+						<text>{{ordersForGoods.contact}} {{ordersForGoods.phone}}</text>
 					</view>
 					<view class="address4">
 						<image src="../../../../static/images/img/tu4.png"></image>
 						<view class="address5">
-							<text>{{item.address}}</text>
+							<text>{{ordersForGoods.address}}</text>
 						</view>
 					</view>
 				</view>
@@ -55,15 +56,15 @@
 			<view class="goods">
 				<view class="goods2">
 					<view class="goods3">
-						<image :src="item.goodsImgUrl"></image>
+						<image :src="ordersForGoods.goodsImgUrl"></image>
 					</view>
 					<view class="goods4">
 						<view class="goods5">
-							<text>{{item.goodsName}}</text>
+							<text>{{ordersForGoods.goodsName}}</text>
 						</view>
 						<view class="goods6">
-							<text class="te">¥{{item.price}}</text>
-							<text class="te2">X{{item.count}}</text>
+							<text class="te">¥{{ordersForGoods.price}}</text>
+							<text class="te2">X{{ordersForGoods.count}}</text>
 						</view>
 					</view>
 				</view>
@@ -74,14 +75,14 @@
 					<view class="theorder3">
 						<view class="serialnumber6 serialnumber">
 							<text class="numbertext">订单编号</text>
-							<button @tap="copyText" :data-text="item.tradeId">复制</button>
-							<text class="d">{{item.tradeId}}</text>
+							<button @tap="copyText" :data-text="ordersForGoods.tradeId">复制</button>
+							<text class="d">{{ordersForGoods.tradeId}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">下单时间</text>
-							<text class="timetext">{{item.time}}</text>
+							<text class="timetext">{{ordersForGoods.time}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
@@ -103,13 +104,13 @@
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">支付金额</text>
-							<text class="timetext">￥{{item.price*item.count}}</text>
+							<text class="timetext">￥{{ordersForGoods.price*ordersForGoods.count}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">实付款</text>
-							<text class="timetext2">￥{{item.price*item.count}}</text>
+							<text class="timetext2">￥{{ordersForGoods.price*ordersForGoods.count}}</text>
 						</view>
 					</view>
 				</view>
@@ -119,7 +120,7 @@
 			<view class="Orderssubmitted">
 				<block v-if="oid==1">
 					<view class="Orderssubmitted5">
-						<button class="Orderssubmitted2 Orderssubmitted4">取消订单</button>
+						<button @tap="tuiku" :data-oids="oids" :data-coids="cids" class="Orderssubmitted2 Orderssubmitted4">取消订单</button>
 						<button class="Orderssubmitted2 Orderssubmitted3">立即付款</button>
 					</view>
 				</block>
@@ -160,11 +161,6 @@
 			</view>
 		</block>
 
-
-
-
-
-
 	</view>
 </template>
 
@@ -195,12 +191,13 @@
 					id: '5',
 					name: '已完成'
 				}],
-				ordersForGoods: [],
+				ordersForGoods: {},
 				or: "",
 				oids: "",
 				cids: "",
 				oid: "",
-				time: ""
+				time: "",
+				dates:""
 			};
 		},
 
@@ -231,7 +228,9 @@
 					console.log(res.data);
 					console.log(res.data.data);
 					that.setData({
-						ordersForGoods: res.data
+						ordersForGoods: res.data.data,
+						dates:util.formatTime(new Date(new Date(res.data.data.time).valueOf()+30*60*1000)).split(" ")[1],
+						time:res.data.data.time
 					});
 				}
 			});
@@ -257,12 +256,11 @@
 				oid: id
 			}); // 调用函数时，传入new Date()参数，返回值是日期和时间
 
-			var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
-
-			this.setData({
-				time: time
-				
-			});
+			// var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+			
+			// this.setData({
+			// 	time: time
+			// });
 		},
 		methods: {
 			show: function() {
@@ -282,25 +280,32 @@
 					success: function(res) {
 						if (res.confirm) {
 							//这里是点击了确定以后
-							wx: wx.request({
-								url: getApp().globalData.url + '/order/cancelTheorDer?oid=' + id,
+							uni.request({
+								url: "http://localhost:8080/OrderFormApi/cancel?id="+id,
 								data: {},
 								header: {
 									'content-type': 'application/json'
 								},
-								method: 'POST',
+								method: 'GET',
 								dataType: 'json',
 								success: function(res) {
-									wx.showToast({
-										title: '取消订单成功',
-										icon: 'success',
-										duration: 500
-									});
-									that.tiaozhuan();
+									if(res.data.data>0){
+										uni.showToast({
+											title: '取消订单成功',
+											icon: 'success',
+											duration: 500
+										});
+										that.tiaozhuan();
+									}else{
+										uni.showToast({
+										  title: '操作太快',
+										  icon: 'warning',
+										  duration: 500
+										});
+									}
 								}
 							});
-						}
-						else {
+						}else {
 							//这里是点击了取消以后
 							console.log('用户点击取消');
 						}
@@ -309,7 +314,7 @@
 			},
 			tiaozhuan: function() {
 				uni.navigateTo({
-					url: '/pages/payment/payment'
+					url: '/pages/shopcart/myorder/forpayment/forpayment'
 				});
 			},
 			refund: function(e) {

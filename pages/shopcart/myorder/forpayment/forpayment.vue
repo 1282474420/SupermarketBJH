@@ -284,9 +284,12 @@
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <navigator url="../addRefund/addRefund">
+						<view @tap="bb" >
+						  <button class="information9">再次购买</button>
+						</view>
+	                  <!-- <navigator url="../../../producttype/chanpin/chanpin">
 	                    <button class="information9">再次购买</button>
-	                  </navigator>
+	                  </navigator> -->
 	                </view>
 	              </view>
 	            </block>
@@ -494,7 +497,7 @@
 	      let oid = JSON.stringify(oids);
 	      let cido = JSON.stringify(cids);
 	      uni.navigateTo({
-	        url: '/pages/wddd/index?oid=' + oid + '&cid=' + cido
+	        url: '/pages/ww/chwwanpin/ww'
 	      });
 	    },
 	    getId2: function (e) {
@@ -572,7 +575,11 @@
 	        }
 	      }); 
 	    },
-	    bb: function (e) {},
+	    bb: function (e) {
+			uni.reLaunch({
+				url:"../../../producttype/chanpin/chanpin"
+			})
+		},
 	    setData: function (obj, callback) {
 	      let that = this;
 	      let keys = [];
