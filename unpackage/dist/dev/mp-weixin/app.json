@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/shopcart/myorder/forpayment/forpayment",
+    "pages/home/home",
     "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
     "pages/producttype/producttype",
     "pages/spellgroup/spellgroup",
@@ -66,5 +66,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap69.json"
+  "sitemapLocation": "sitemap68.json"
 }

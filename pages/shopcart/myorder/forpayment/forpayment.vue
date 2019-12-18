@@ -9,17 +9,8 @@
 	      </view>
 	    </view>
 	  </view>
-	
 	  <view class="dingdan">
-	    <view class="dingdan1">
-	      <view class="text1 text2">
-	        <text>订单信息</text>
-	      </view>
-	      <view class="text3">
-	        <text>消费订单{{num}}</text>
-	        <text style="margin-left: 52rpx">总消费：￥0</text>
-	      </view>
-	    </view>
+	    <view class="dingdan1"></view>
 	  </view>
 	
 	  <view class="details">
@@ -77,7 +68,7 @@
 	                </view>
 	                <view class="information7">
 	                    <button @tap="bb" data-id class="information9">去支付</button>
-	                  <button @tap="tuiku" :id="item.orderId" :data-oidd="item.orderId" class="information8">取消订单</button>
+	                  <button @tap="tuiku" :id="item.id" :data-oidd="item.id" class="information8">取消订单</button>
 	                </view>
 	              </view>
 	           </block>
@@ -128,7 +119,7 @@
 	                  </view>
 	                </view>
 	                <view class="information7">
-	                  <view @tap="getId" :data-oid="item.orderId" :data-cid="item.orderId">
+	                  <view @tap="getId" :data-oid="item.id" :data-cid="item.id">
 	                    <button class="information9">查看订单</button>
 	                  </view>
 	                </view>
@@ -414,7 +405,6 @@
 	          num: res.data.data.length
 	        });
 	        console.log(res.data.data);
-	        console.log(res.data.data.length);
 	      }
 	    }); // 调用函数时，传入new Date()参数，返回值是日期和时间
 	
@@ -450,13 +440,11 @@
 	        method: 'GET',
 	        dataType: 'json',
 	        success: function (res) {
-			console.log("123456789+", res);
 	          that.setData({
 	            ordersForGoods: res.data.data,
 				num: res.data.data.length
 	          });
-	          console.log("data", res.data);
-	          console.log("curType", curType);
+			console.log(res.data.data);
 	        }
 	      });
 	
@@ -465,18 +453,37 @@
 	        currentTpye: curType,
 	        curren: cur
 	      });
-	      console.log(e.currentTarget.id);
+	      
 	    },
-	    show: function () {},
+	    load() {
+			let that = this;
+			uni.request({
+			  url: "http://localhost:8080/OrderFormApi/summary?userId="+"1"+"&stat="+"0"+"&shopId="+"1",
+			  data: {},
+			  header: {
+			    'content-type': 'application/json'
+			  },
+			  method: 'GET',
+			  dataType: 'json',
+			  success: function (res) {
+			    that.setData({
+			      ordersFor: res.data.data,
+			      num: res.data.data.length
+			    });
+			    console.log(res.data.data);
+			  }
+			});
+		},
 	    getId: function (e) {
 	      console.log(e.currentTarget.dataset.oid);
-	      console.log('sdfgsdthtsrh-------' + e.currentTarget.dataset.cid);
+	      // console.log('sdfgsdthtsrh-------' + e.currentTarget.dataset.cid);
 	      let oids = e.currentTarget.dataset.oid;
-	      let cids = e.currentTarget.dataset.cid;
+	      // let cids = e.currentTarget.dataset.cid;
 	      let oid = JSON.stringify(oids);
-	      let cido = JSON.stringify(cids);
+		  console.log(oid);
+	      // let cido = JSON.stringify(cids);
 	      uni.navigateTo({
-	        url: '/pages/wddd/index?oid=' + oid + '&cid=' + cido
+	        url: '/pages/shopcart/myorder/forpaymentdetails/forpaymentdetails?oid=' + oid
 	      });
 	    },
 	    getId4: function (e) {
@@ -519,30 +526,43 @@
 	        }
 	      });
 	    },
-	    tuiku: function (e) {
+	    
+		tuiku: function (e) {
 	      var that = this;
-	      var soid = e.currentTarget.dataset.oidd;
-	      console.log('sdfhserht' + soid);
+	      var soid = e.currentTarget.id;
+	      console.log('取消 ' + soid);
 	      uni.showModal({
 	        title: '确定要取消支付吗',
 	        success: function (res) {
 	          if (res.confirm) {
 	            //这里是点击了确定以后
-	            uni: uni.request({
-	              url: getApp().globalData.url + '/order/cancelTheorDer?oid=' + soid,
+	            uni.request({
+	              url: "http://localhost:8080/OrderFormApi/cancel?id="+soid,
 	              data: {},
 	              header: {
 	                'content-type': 'application/json'
 	              },
-	              method: 'POST',
+	              method: 'GET',
 	              dataType: 'json',
 	              success: function (res) {
-	                uni.showToast({
-	                  title: '取消成功',
-	                  icon: 'success',
-	                  duration: 500
-	                });
-	                that.onLoad();
+					  console.log(res);
+					  console.log(res.data);
+					  console.log(res.data.data);
+					if(res.data.data>0){
+						uni.showToast({
+						  title: '取消订单成功',
+						  icon: 'success',
+						  duration: 500
+						});
+					}else{
+						uni.showToast({
+						  title: '操作太快',
+						  icon: 'warning',
+						  duration: 500
+						});
+					}
+					// this.$set(this.ordersFor,res.data.data)
+					that.load();
 	              }
 	            });
 	          } else {
@@ -550,7 +570,7 @@
 	            console.log('用户点击取消');
 	          }
 	        }
-	      });
+	      }); 
 	    },
 	    bb: function (e) {},
 	    setData: function (obj, callback) {

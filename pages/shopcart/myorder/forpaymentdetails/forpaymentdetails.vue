@@ -41,12 +41,12 @@
 			<view class="address">
 				<view class="address2">
 					<view class="address3">
-						<text>{{item.oCustomerinfo.username}} {{item.oCustomerinfo.cellPhone}}</text>
+						<text>{{item.contact}} {{item.phone}}</text>
 					</view>
 					<view class="address4">
 						<image src="../../../../static/images/img/tu4.png"></image>
 						<view class="address5">
-							<text>{{item.address.xAddress}}{{item.address.detailsAds}}</text>
+							<text>{{item.address}}</text>
 						</view>
 					</view>
 				</view>
@@ -55,15 +55,15 @@
 			<view class="goods">
 				<view class="goods2">
 					<view class="goods3">
-						<image :src="item.commodity.ctradeimg"></image>
+						<image :src="item.goodsImgUrl"></image>
 					</view>
 					<view class="goods4">
 						<view class="goods5">
-							<text>{{item.commodity.cSelPointTitle}}</text>
+							<text>{{item.goodsName}}</text>
 						</view>
 						<view class="goods6">
-							<text class="te">¥{{item.commodity.cprice}}</text>
-							<text class="te2">X{{item.orderDetails.odCommodityquantity}}</text>
+							<text class="te">¥{{item.price}}</text>
+							<text class="te2">X{{item.count}}</text>
 						</view>
 					</view>
 				</view>
@@ -74,26 +74,26 @@
 					<view class="theorder3">
 						<view class="serialnumber6 serialnumber">
 							<text class="numbertext">订单编号</text>
-							<button @tap="copyText" :data-text="item.oId">复制</button>
-							<text class="d">{{item.oId}}</text>
+							<button @tap="copyText" :data-text="item.tradeId">复制</button>
+							<text class="d">{{item.tradeId}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">下单时间</text>
-							<text class="timetext">{{item.oOrdertime}}</text>
+							<text class="timetext">{{item.time}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">支付状态</text>
-							<text class="timetext">以支付</text>
+							<text class="timetext">已支付</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">支付方式</text>
-							<text class="timetext">{{item.oPayway}}</text>
+							<text class="timetext">微信</text>
 						</view>
 					</view>
 				</view>
@@ -103,13 +103,13 @@
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">支付金额</text>
-							<text class="timetext">￥{{item.commodity.cprice}}</text>
+							<text class="timetext">￥{{item.price*item.count}}</text>
 						</view>
 					</view>
 					<view class="theorder3 theorder4">
 						<view class="serialnumber serialnumber6">
 							<text class="numbertext">实付款</text>
-							<text class="timetext2">￥{{item.oMoney}}</text>
+							<text class="timetext2">￥{{item.price*item.count}}</text>
 						</view>
 					</view>
 				</view>
@@ -171,7 +171,6 @@
 <script>
 	//index.js
 	//获取应用实例
-	const app = getApp().globalData;
 	var util = require("../../../../utils/util.js");
 	var oid = "";
 	var oids = "";
@@ -208,33 +207,34 @@
 		components: {},
 		props: {},
 		onLoad: function(e) {
-			// var that = this;
-			// getApp().globalData.initPage(that);
-			// console.log('订单id', e.oid);
+			var that = this;
+			console.log('订单id', e.oid);
 			// console.log('用户id', e.cid);
-			// let oid = JSON.parse(e.oid);
+			let oid = JSON.parse(e.oid);
 			// let cid = e.cid;
 			// var id = getApp().globalData.userInfo.userId;
-			// that.setData({
-			// 	oids: oid,
-			// 	cids: cid
-			// });
+			that.setData({
+				oids: oid,
+				// cids: cid
+			});
 
-			// uni.request({
-			// 	url: getApp().globalData.url + '/order/orderSelectByIOpayStatus?oId=' + oid + '&' + 'o_customerInfo=' + id,
-			// 	data: {},
-			// 	header: {
-			// 		'content-type': 'application/json'
-			// 	},
-			// 	method: 'POST',
-			// 	dataType: 'json',
-			// 	success: function(res) {
-			// 		that.setData({
-			// 			ordersForGoods: res.data.data
-			// 		});
-			// 		console.log(res.data.data);
-			// 	}
-			// });
+			uni.request({
+				url: "http://localhost:8080/OrderFormApi/detail?id="+oid,
+				data: {},
+				header: {
+					'content-type': 'application/json'
+				},
+				method: 'GET',
+				dataType: 'json',
+				success: function(res) {
+					console.log(res);
+					console.log(res.data);
+					console.log(res.data.data);
+					that.setData({
+						ordersForGoods: res.data
+					});
+				}
+			});
 
 			// uni.request({
 			// 	url: getApp().globalData.url + '/order/getSelectOrderoId?o_id=' + oid,
@@ -252,16 +252,17 @@
 			// 	}
 			// });
 
-			// var id = this.show();
-			// this.setData({
-			// 	oid: id
-			// }); // 调用函数时，传入new Date()参数，返回值是日期和时间
+			var id = this.show();
+			this.setData({
+				oid: id
+			}); // 调用函数时，传入new Date()参数，返回值是日期和时间
 
-			// var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+			var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 
-			// this.setData({
-			// 	time: time
-			// });
+			this.setData({
+				time: time
+				
+			});
 		},
 		methods: {
 			show: function() {

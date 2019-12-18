@@ -295,8 +295,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //index.js
 //获取应用实例
-var app = getApp().globalData;
-var util = __webpack_require__(/*! ../../../../utils/util.js */ 27);
+var util = __webpack_require__(/*! ../../../../utils/util.js */ 21);
 var oid = "";
 var oids = "";
 var cids = "";var _default =
@@ -332,33 +331,34 @@ var cids = "";var _default =
   components: {},
   props: {},
   onLoad: function onLoad(e) {
-    // var that = this;
-    // getApp().globalData.initPage(that);
-    // console.log('订单id', e.oid);
+    var that = this;
+    console.log('订单id', e.oid);
     // console.log('用户id', e.cid);
-    // let oid = JSON.parse(e.oid);
+    var oid = JSON.parse(e.oid);
     // let cid = e.cid;
     // var id = getApp().globalData.userInfo.userId;
-    // that.setData({
-    // 	oids: oid,
-    // 	cids: cid
-    // });
+    that.setData({
+      oids: oid
+      // cids: cid
+    });
 
-    // uni.request({
-    // 	url: getApp().globalData.url + '/order/orderSelectByIOpayStatus?oId=' + oid + '&' + 'o_customerInfo=' + id,
-    // 	data: {},
-    // 	header: {
-    // 		'content-type': 'application/json'
-    // 	},
-    // 	method: 'POST',
-    // 	dataType: 'json',
-    // 	success: function(res) {
-    // 		that.setData({
-    // 			ordersForGoods: res.data.data
-    // 		});
-    // 		console.log(res.data.data);
-    // 	}
-    // });
+    uni.request({
+      url: "http://localhost:8080/OrderFormApi/detail?id=" + oid,
+      data: {},
+      header: {
+        'content-type': 'application/json' },
+
+      method: 'GET',
+      dataType: 'json',
+      success: function success(res) {
+        console.log(res);
+        console.log(res.data);
+        console.log(res.data.data);
+        that.setData({
+          ordersForGoods: res.data });
+
+      } });
+
 
     // uni.request({
     // 	url: getApp().globalData.url + '/order/getSelectOrderoId?o_id=' + oid,
@@ -376,16 +376,17 @@ var cids = "";var _default =
     // 	}
     // });
 
-    // var id = this.show();
-    // this.setData({
-    // 	oid: id
-    // }); // 调用函数时，传入new Date()参数，返回值是日期和时间
+    var id = this.show();
+    this.setData({
+      oid: id });
+    // 调用函数时，传入new Date()参数，返回值是日期和时间
 
-    // var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
+    var time = util.formatTime(new Date()); // 再通过setData更改Page()里面的data，动态更新页面的数据
 
-    // this.setData({
-    // 	time: time
-    // });
+    this.setData({
+      time: time });
+
+
   },
   methods: {
     show: function show() {

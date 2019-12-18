@@ -33,7 +33,7 @@ page{
 }
 .dingdan1 {
   width: 690rpx;
-  height: 220rpx;
+  height: 60rpx;
   margin: 0 auto;
 }
 .ding1 {

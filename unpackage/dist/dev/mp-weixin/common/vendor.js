@@ -8434,7 +8434,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "navigationBarTitleText": "首页" }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000" }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情" }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类" }, "pages/spellgroup/spellgroup": { "navigationBarTitleText": "在线拼团" }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐" }, "pages/my/my": { "navigationBarTitleText": "我的" }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航" }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价" }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款" }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情" }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价" }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单" }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg" }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细" }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表" }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情" }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐" }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000" }, "pages/home/home": { "navigationBarTitleText": "首页" }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情" }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类" }, "pages/spellgroup/spellgroup": { "navigationBarTitleText": "在线拼团" }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐" }, "pages/my/my": { "navigationBarTitleText": "我的" }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航" }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价" }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款" }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情" }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价" }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单" }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg" }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细" }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表" }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情" }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐" }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8565,13 +8565,7 @@ function normalizeComponent (
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
+/* 21 */
 /*!****************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
   \****************************************************/
