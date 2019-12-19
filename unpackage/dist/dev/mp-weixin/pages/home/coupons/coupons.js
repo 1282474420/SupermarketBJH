@@ -161,9 +161,9 @@ var _default =
 {
   data: function data() {
     return {
-      coupons: [{ price: '6', availability: '满29可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' }],
+      coupons: [{ price: '6', availability: '满29可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
+      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
+      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' }],
       show: false };
 
   },
@@ -184,6 +184,22 @@ var _default =
 
     onClose: function onClose() {
       this.show = false;
+    },
+    openchanpin: function openchanpin() {
+      uni.reLaunch({
+        url: '/pages/producttype/chanpin/chanpin',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
+    },
+    openstores: function openstores() {
+      uni.reLaunch({
+        url: '/pages/home/stores/stores',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -26,10 +26,10 @@
 			<view class="row" v-for="(row,index) in buylist" :key="index">
 				<view class="goods-info"  @tap="toGoods(row)">
 					<view class="img">
-						<image :src="row.img"></image>
+						<image :src="row.picturepath"></image>
 					</view>
 					<view class="info">
-						<view class="title">{{row.name}}</view>
+						<view class="title">{{row.goodsName}}</view>
 						<view class="spec">数量:{{row.number}}</view>
 						<view class="price-number">
 							<view class="price">￥{{row.price*row.number}}</view>

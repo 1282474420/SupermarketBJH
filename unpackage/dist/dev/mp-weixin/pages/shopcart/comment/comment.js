@@ -297,33 +297,33 @@ var util = __webpack_require__(/*! ../../../utils/util.js */ 29);var _default =
     var oidd = options.oids;
     console.log('订单id', oidd);
 
-    uni.request({
-      url: getApp().globalData.url + '/order/orderSelectByIOpayStatus',
-      data: {
-        oId: oidd,
-        o_customerInfo: id },
+    // uni.request({
+    // 	url: getApp().globalData.url + '/order/orderSelectByIOpayStatus',
+    // 	data: {
+    // 		oId: oidd,
+    // 		o_customerInfo: id
+    // 	},
+    // 	header: {
+    // 		"Content-Type": "application/x-www-form-urlencoded"
+    // 	},
+    // 	method: 'POST',
+    // 	dataType: 'json',
+    // 	success: function(res) {
+    // 		that.setData({
+    // 			ordersForGoods: res.data.data,
+    // 			oId: oidd
+    // 		});
 
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded" },
+    // 		for (var i = 0; i < that.ordersForGoods.length; i++) {
+    // 			that.setData({
+    // 				cidc: that.ordersForGoods[i].commodity.cid
+    // 			});
+    // 		}
 
-      method: 'POST',
-      dataType: 'json',
-      success: function success(res) {
-        that.setData({
-          ordersForGoods: res.data.data,
-          oId: oidd });
-
-
-        for (var i = 0; i < that.ordersForGoods.length; i++) {
-          that.setData({
-            cidc: that.ordersForGoods[i].commodity.cid });
-
-        }
-
-        console.log('商品信息', that.ordersForGoods);
-        console.log('商品id', that.cidc);
-      } });
-
+    // 		console.log('商品信息', that.ordersForGoods);
+    // 		console.log('商品id', that.cidc);
+    // 	}
+    // });
   },
 
   methods: {

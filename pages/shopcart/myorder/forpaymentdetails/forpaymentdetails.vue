@@ -29,14 +29,15 @@
 						</block>
 					</view> 
 				</view>
-
+				
 				<view class="ww2">
-					<!-- <image :src="'../img/daizhifu' + (oid==oid? oid:'1') + '.png'"></image> -->
-					<image :src="'../../../../static/images/img/daizhifu1.png' "></image>
+				  <image :src="'../../../../static/images/img/daizhifu5.png'"></image>
 				</view>
-
+				
 			</view>
 		</view>
+		
+		
 
 		<block >
 			<view class="address">

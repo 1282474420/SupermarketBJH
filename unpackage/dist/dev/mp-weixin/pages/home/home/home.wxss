@@ -144,7 +144,10 @@
 }
 
 /* 夏日冰鲜 */
-.adv .advImg {
+.swiper{
+	height: 340rpx;
+}
+swiper-item image {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;
@@ -285,8 +288,8 @@
 .hour {
 	display: inline-block;
 	position: absolute;
-	right: 250rpx;
-	bottom: -340rpx;
+	right: 245rpx;
+	bottom: -425rpx;
 }
 
 /* .countdown .hour, .minute, .second {

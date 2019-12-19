@@ -36,7 +36,11 @@
 		  </view>
 		  <!-- 夏日冰鲜广告 -->
 		  <view class="adv">
-		    <image src="../../../static/images/adv_03.jpg" class="advImg"></image>
+			  <swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+			  	<swiper-item v-for="(item,index) in imagesList" :key="index">
+					<image :src="item.img" mode="aspectFill" class="advImg"></image>
+			  	</swiper-item>
+			  </swiper>
 		    <view class="adv_service">
 		      <block v-for="(item, index) in service" :key="index">
 		        <navigator :url="item.url" class="serviceblock">
@@ -128,7 +132,7 @@
 		    <image src="../../../static/images/ttth_03.png" class="title"></image>
 		    <view class="content1" @tap="myyhj">
 		      <text>天天优惠领不停</text>
-		      <image src="../../../static/images/jt_03.png" class="jt"></image>
+		      <image src='../../../static/images/djt.png' class='jt'></image>
 		    </view>
 		  </view>
 		  <!-- 天天优惠券及商品 -->
@@ -416,7 +420,22 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 						price: 280
 						}],
 				      // 优惠券
-				      yhj: [],
+				      yhj: [{
+						  cId:0,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  },{
+						  cId:1,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  },{
+						  cId:2,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  }],
 				      // 天天优惠商品
 				      ttyhsp: [{
 				        title: "组合购",
@@ -533,7 +552,16 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      hyh: true,
 				      //判断换一批按钮是否可以使用
 				      stock: '',
-					  name:''
+					  name:'',
+					  imagesList:[{ 
+							img: "../../../static/images/adv_03.jpg"
+						},{ 
+							img: "../../../static/images/ban001_03.png"
+						},{ 
+							img: "../../../static/images/ban002_03.png"
+						},{ 
+							img: "../../../static/images/banana_03.png"
+						}]
 			}
 		},
 		onLoad(e) {
@@ -569,6 +597,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				    uni.navigateTo({
 				        url: tzlj2
 				    });
+<<<<<<< HEAD
 				},
 				// 预售好物
 				product_type(e){
@@ -581,6 +610,8 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 							complete: () => {}
 						});
 					}
+=======
+>>>>>>> 890d15d38628be9879f8212c37fedf7d0e01a4ef
 				}
 		}
 	}
@@ -744,7 +775,11 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 
 /* 夏日冰鲜 */
 
-.adv .advImg {
+.swiper{
+	height: 340rpx;
+}
+
+swiper-item image {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;
@@ -900,8 +935,8 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 .hour {
 	display: inline-block;
 	position: absolute;
-	right: 250rpx;
-	bottom: -340rpx;
+	right: 245rpx;
+	bottom: -425rpx;
 }
 
 /* .countdown .hour, .minute, .second {

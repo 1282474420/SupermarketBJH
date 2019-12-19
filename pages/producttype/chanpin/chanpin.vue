@@ -20,22 +20,22 @@
 			<scroll-view scroll-y class="right_content">
 				<view class="first_tab">
 					<view class="goods_item" v-for="(right) in rightContent" :key="right.id" 
-					@click="XQ(right.id)"
+					
 					>
 		            <!-- 左侧 图片容器 -->
-		          <view class="goods_img_wrap">
+		          <view class="goods_img_wrap" @click="XQ(right.id)">
 		          	<image mode="widthFix" :src="right.picturepath" class="img1"></image>
 		          </view>
 					<!-- 右侧 商品容器 -->
-					<view class="goods_info_wrap">
+					<view class="goods_info_wrap" @click="XQ(right.id)">
 						<view class="goods_name">{{right.goodsName}}</view>
 						<view class="goods_name">{{right.weight}}g </view>
 						<view class="goods_price">￥{{right.price}}</view>
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
-					<view>
-						<image @click="GouWu()" class="img" src="../../../static/images/img/jiahao.png" />
-					</view>
+						<view >
+						<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
+						</view>
 				</view>
 			</view>
 		</scroll-view>
@@ -133,15 +133,33 @@
 				method: 'POST',
 				success: res => {
 					this.rightContent = res.data.message;
-					console.log(res.data.message)
 				}
 			});
 		},
 		methods: {
-			GouWu:function(e){
-				uni.navigateTo({
-					url:'../chanpinList/chanpinList'
-				})
+			GouWu(){
+				// 1 获取缓存中的购物车 数组
+				let cart = uni.getStorageSync("cart") || [];
+				// 2 判断 商品对象是否存在于购物车数组中
+				let index = cart.findIndex(v => v.id === this.rightContent.id);
+				if (index === -1) {
+				  //3  不存在 第一次添加
+				  this.rightContent.num = 1;
+				  this.rightContent.checked = true;
+				  cart.push(this.rightContent);
+				} else {
+				  // 4 已经存在购物车数据 执行 num++
+				  cart[index].num++;
+				}
+				// 5 把购物车重新添加回缓存中
+				uni.setStorageSync("cart", cart);
+				// 6 弹窗提示
+				uni.showToast({
+				  title: '加入成功',
+				  icon: 'success',
+				  // true 防止用户 手抖 疯狂点击按钮 
+				  mask: true
+				});
 			},
 			XQ:function(e){
 

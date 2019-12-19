@@ -1,9 +1,9 @@
 <template>
 	<view class="content">
-		<view class="head">
-			<navigator class="mall" url="../stores/stores">
+		<view class="head" @tap="openstores">
+			<view class="mall">
 				<text>全部商场<text class="active"> > </text></text>
-			</navigator>
+			</view>
 		</view>
 		<view class="middle">
 			<view class="uni-list">
@@ -25,7 +25,7 @@
 						<view class="uni-media-text">温馨提示</view>
 						<hr/>
 						<view class="uni-media-text1">恭喜您领券成功，现在就去使用吧~</view>
-						<button class="uni-media" type="primary" style="background-color: #4CD964;">去使用</button>
+						<button class="uni-media" type="primary" style="background-color: #4CD964;" @tap="openchanpin">去使用</button>
 					</van-popup>
 				</view>
 			</view>
@@ -37,9 +37,9 @@
 	export default {
 		data() {
 			return {
-				coupons:[{price:'6',availability:'满29可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'}],
+				coupons:[{price:'6',availability:'满29可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
+				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
+				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'}],
 				show: false
 			}
 		},
@@ -55,12 +55,28 @@
 		},
 		methods: {
 			showPopup() {
-			     this.show = true ;
-			  },
+			    this.show = true ;
+			},
 			
-			  onClose() {
+			onClose() {
 			    this.show = false ;
-			  }
+			},
+			openchanpin() {
+				uni.reLaunch({
+				  	url: '/pages/producttype/chanpin/chanpin',
+				  	success: res => {},
+				  	fail: () => {},
+				  	complete: () => {}
+				});
+			},
+			openstores() {
+				uni.reLaunch({
+				  	url: '/pages/home/stores/stores',
+				  	success: res => {},
+				  	fail: () => {},
+				  	complete: () => {}
+				});
+			}
 		}
 	}
 </script>
@@ -151,11 +167,15 @@
 	margin-top: 30rpx;
 }
 .uni-media{
-	margin-top: 50rpx;
+	margin-top: 40rpx;
 	width: 400rpx;
 }
 .uni-media-popup{
 	border-radius:10rpx 10rpx 10rpx 10rpx;
 	width: ;
+}
+#period{
+	font-size: 25rpx;
+	color: #999999;
 }
 </style>

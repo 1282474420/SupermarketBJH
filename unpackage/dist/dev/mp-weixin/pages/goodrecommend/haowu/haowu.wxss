@@ -194,7 +194,8 @@
           font-weight: 600;
 }
 .goods-list .product-list .product .info .slogan {
-          color: #807c87;
-          font-size: 24rpx;
+          width: 70rpx;
+          height: 70rpx;
+          display: inline-block;
 }
 

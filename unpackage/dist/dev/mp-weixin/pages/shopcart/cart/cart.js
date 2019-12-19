@@ -209,51 +209,12 @@ var _default =
       showHeader: true,
       selectedList: [],
       isAllselected: false,
-      goodsList: [{
-        id: 1,
-        img: '/static/images/img/goods/p1.jpg',
-        name: '商品标题test1',
-        price: 127.5,
-        number: 1,
-        selected: false },
-
-      {
-        id: 2,
-        img: '/static/images/img/goods/p2.jpg',
-        name: '商品标题test2',
-        price: 127.5,
-        number: 1,
-        selected: false },
-
-      {
-        id: 3,
-        img: '/static/images/img/goods/p3.jpg',
-        name: '商品标题test3',
-        price: 127.5,
-        number: 1,
-        selected: false },
-
-      {
-        id: 4,
-        img: '/static/images/img/goods/p4.jpg',
-        name: '商品标题test4',
-        price: 127.5,
-        number: 1,
-        selected: false },
-
-      {
-        id: 5,
-        img: '/static/images/img/goods/p5.jpg',
-        name: '商品标题test5',
-        price: 127.5,
-        number: 1,
-        selected: false }],
-
-
+      goodsList: [],
       //控制滑动效果
       theIndex: null,
       oldIndex: null,
-      isStop: false };
+      isStop: false,
+      num: 0 };
 
   },
   onPageScroll: function onPageScroll(e) {
@@ -268,7 +229,32 @@ var _default =
       uni.stopPullDownRefresh();
     }, 1000);
   },
-  onLoad: function onLoad() {
+  onShow: function onShow() {var _this = this;
+    var me = this;
+    if (me.num > 0) {
+      uni.getStorage({
+        key: "cart",
+        success: function success(res) {
+          console.log(JSON.stringify(res.data.length));
+          _this.goodsList = res.data;
+          console.log(_this.goodsList);
+        } });
+
+    }
+    me.num++;
+  },
+  onLoad: function onLoad() {var _this2 = this;
+    uni.getStorage({
+      key: "cart",
+      success: function success(res) {
+        console.log(JSON.stringify(res.data.length));
+        _this2.goodsList = res.data;
+        console.log(_this2.goodsList);
+        console.log(_this2.goodsList.data);
+      } });
+
+
+
     //查询页面初始数据的方法
     // uni.request({
     // 	url: '',
@@ -319,7 +305,7 @@ var _default =
       //初始坐标
       this.initXY = [event.touches[0].pageX, event.touches[0].pageY];
     },
-    touchMove: function touchMove(index, event) {var _this = this;
+    touchMove: function touchMove(index, event) {var _this3 = this;
       //多点触控不触发
       if (event.touches.length > 1) {
         this.isStop = true;
@@ -346,7 +332,7 @@ var _default =
           this.theIndex = null;
           this.isStop = true;
           setTimeout(function () {
-            _this.oldIndex = null;
+            _this3.oldIndex = null;
           }, 150);
         }
       }
@@ -403,10 +389,12 @@ var _default =
           break;
         }
       }
+      uni.setStorageSync("cart", this.goodsList);
       this.selectedList.splice(this.selectedList.indexOf(id), 1);
       this.sum();
       this.oldIndex = null;
       this.theIndex = null;
+
     },
     // 删除商品s
     deleteList: function deleteList() {
@@ -445,11 +433,21 @@ var _default =
       }
       this.goodsList[index].number--;
       this.sum();
+
+      var cartnew = uni.getStorageSync("cart") || [];
+      cartnew[index].number--;
+      //把购物车重新添加回缓存中
+      uni.setStorageSync("cart", cartnew);
     },
     // 增加数量
     add: function add(index) {
       this.goodsList[index].number++;
       this.sum();
+
+      var cartnew = uni.getStorageSync("cart") || [];
+      cartnew[index].number++;
+      //把购物车重新添加回缓存中
+      uni.setStorageSync("cart", cartnew);
     },
     // 合计
     sum: function sum(e, index) {
