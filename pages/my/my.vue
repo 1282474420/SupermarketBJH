@@ -72,11 +72,11 @@
       </image>
       <view class="grzx_title">地址管理</view>
   </view>
-  <view @tap="nav" class="grzx_block">
+  <navigator url="../home/chat/chat" @tap="nav" class="grzx_block">
     <image class="grzx_img" src="../../static/images/img/my/service_13.png" role="img">
     </image>
     <view class="grzx_title">在线客服</view>
-  </view>
+  </navigator>
   <view @tap="nav" class="grzx_block border">
     <image class="grzx_img" src="../../static/images/img/my/service_05.png" role="img">
     </image>

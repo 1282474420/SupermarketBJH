@@ -184,6 +184,22 @@ var _default =
 
     onClose: function onClose() {
       this.show = false;
+    },
+    openchanpin: function openchanpin() {
+      uni.reLaunch({
+        url: '/pages/producttype/chanpin/chanpin',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
+    },
+    openstores: function openstores() {
+      uni.reLaunch({
+        url: '/pages/home/stores/stores',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

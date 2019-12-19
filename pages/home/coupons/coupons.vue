@@ -1,9 +1,9 @@
 <template>
 	<view class="content">
-		<view class="head">
-			<navigator class="mall" url="../stores/stores">
+		<view class="head" @tap="openstores">
+			<view class="mall">
 				<text>全部商场<text class="active"> > </text></text>
-			</navigator>
+			</view>
 		</view>
 		<view class="middle">
 			<view class="uni-list">
@@ -25,7 +25,7 @@
 						<view class="uni-media-text">温馨提示</view>
 						<hr/>
 						<view class="uni-media-text1">恭喜您领券成功，现在就去使用吧~</view>
-						<button class="uni-media" type="primary" style="background-color: #4CD964;">去使用</button>
+						<button class="uni-media" type="primary" style="background-color: #4CD964;" @tap="openchanpin">去使用</button>
 					</van-popup>
 				</view>
 			</view>
@@ -55,12 +55,28 @@
 		},
 		methods: {
 			showPopup() {
-			     this.show = true ;
-			  },
+			    this.show = true ;
+			},
 			
-			  onClose() {
+			onClose() {
 			    this.show = false ;
-			  }
+			},
+			openchanpin() {
+				uni.reLaunch({
+				  	url: '/pages/producttype/chanpin/chanpin',
+				  	success: res => {},
+				  	fail: () => {},
+				  	complete: () => {}
+				});
+			},
+			openstores() {
+				uni.reLaunch({
+				  	url: '/pages/home/stores/stores',
+				  	success: res => {},
+				  	fail: () => {},
+				  	complete: () => {}
+				});
+			}
 		}
 	}
 </script>
@@ -151,7 +167,7 @@
 	margin-top: 30rpx;
 }
 .uni-media{
-	margin-top: 50rpx;
+	margin-top: 30rpx;
 	width: 400rpx;
 }
 .uni-media-popup{

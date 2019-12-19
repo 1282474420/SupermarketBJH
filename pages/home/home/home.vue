@@ -888,8 +888,8 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 .hour {
 	display: inline-block;
 	position: absolute;
-	right: 250rpx;
-	bottom: -340rpx;
+	right: 245rpx;
+	bottom: -465rpx;
 }
 
 /* .countdown .hour, .minute, .second {
