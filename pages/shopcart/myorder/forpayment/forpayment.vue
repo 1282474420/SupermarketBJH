@@ -287,9 +287,7 @@
 						<view @tap="bb" >
 						  <button class="information9">再次购买</button>
 						</view>
-	                  <!-- <navigator url="../../../producttype/chanpin/chanpin">
-	                    <button class="information9">再次购买</button>
-	                  </navigator> -->
+	          
 	                </view>
 	              </view>
 	            </block>
