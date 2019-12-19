@@ -5,7 +5,7 @@
 				<text class="font">{{content.artName}}</text>
 			</view>
 			<view class="button">
-				<text>来源</text><text class="time">时间：{{content.gmtModifed}}</text>
+				<text class="LY">来源</text><text class="time">时间：{{content.gmtModifed}}</text>
 				<view class="content">
 					{{content.artContent}}
 				</view>
@@ -60,6 +60,10 @@
 	}
 	.time{
 		float: right;
+		font-size: 30rpx;
+	}
+	.LY{
+			font-size: 30rpx;
 	}
 	.content{
 		margin-top: 20rpx;
