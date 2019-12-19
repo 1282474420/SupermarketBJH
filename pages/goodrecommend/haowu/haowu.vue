@@ -5,8 +5,8 @@
 		   <view class="goods-list">
 		   	<view class="product-list" >
 		   		<view class="product" v-for="(goods) in goodsList" :key="goods.id" 
-				@click="XQ(goods.id)">
-		   			<image mode="widthFix" :src="goods.picturepath"></image>
+				>
+		   			<image mode="widthFix" :src="goods.picturepath" @click="XQ(goods.id)"></image>
 		   			<view class="name">{{goods.goodsName}}</view>
 		   			<view class="info">
 		   				<view class="price">￥{{goods.price}}</view>
@@ -129,7 +129,7 @@
 
 .biaoti1{
 	margin-top: 20rpx;
-	margin-left:30rpx;
+	margin-left:35rpx;
 	width: 150rpx;
 	color: #FF0000;
 	border-bottom:4rpx solid #FF0000;
@@ -219,7 +219,7 @@
 				}
 				.name{
 					width: 92%;
-					padding: 10upx 4%;
+					padding-left: 10upx;
 					display: -webkit-box;
 					-webkit-box-orient: vertical;
 					-webkit-line-clamp: 2;
