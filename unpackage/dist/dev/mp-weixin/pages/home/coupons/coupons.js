@@ -161,9 +161,9 @@ var _default =
 {
   data: function data() {
     return {
-      coupons: [{ price: '6', availability: '满29可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '2019年11月27日' }],
+      coupons: [{ price: '6', availability: '满29可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
+      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
+      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' }],
       show: false };
 
   },

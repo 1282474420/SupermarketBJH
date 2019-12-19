@@ -36,7 +36,11 @@
 		  </view>
 		  <!-- 夏日冰鲜广告 -->
 		  <view class="adv">
-		    <image src="../../../static/images/adv_03.jpg" class="advImg"></image>
+			  <swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+			  	<swiper-item v-for="(item,index) in imagesList" :key="index">
+					<image :src="item.img" mode="aspectFill" class="advImg"></image>
+			  	</swiper-item>
+			  </swiper>
 		    <view class="adv_service">
 		      <block v-for="(item, index) in service" :key="index">
 		        <navigator :url="item.url" class="serviceblock">
@@ -128,7 +132,7 @@
 		    <image src="../../../static/images/ttth_03.png" class="title"></image>
 		    <view class="content1" @tap="myyhj">
 		      <text>天天优惠领不停</text>
-		      <image src="../../../static/images/jt_03.png" class="jt"></image>
+		      <image src='../../../static/images/djt.png' class='jt'></image>
 		    </view>
 		  </view>
 		  <!-- 天天优惠券及商品 -->
@@ -548,7 +552,16 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      hyh: true,
 				      //判断换一批按钮是否可以使用
 				      stock: '',
-					  name:''
+					  name:'',
+					  imagesList:[{ 
+							img: "../../../static/images/adv_03.jpg"
+						},{ 
+							img: "../../../static/images/ban001_03.png"
+						},{ 
+							img: "../../../static/images/ban002_03.png"
+						},{ 
+							img: "../../../static/images/banana_03.png"
+						}]
 			}
 		},
 		onLoad(e) {
@@ -747,7 +760,11 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 
 /* 夏日冰鲜 */
 
-.adv .advImg {
+.swiper{
+	height: 340rpx;
+}
+
+swiper-item image {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;
