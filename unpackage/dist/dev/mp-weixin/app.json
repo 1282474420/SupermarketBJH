@@ -4,7 +4,6 @@
     "pages/shopcart/myorder/forpayment/forpayment",
     "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
     "pages/producttype/producttype",
-    "pages/spellgroup/spellgroup",
     "pages/goodrecommend/goodrecommend",
     "pages/my/my",
     "pages/bottom/bottom",
@@ -20,6 +19,13 @@
     "pages/producttype/chanpin/chanpin",
     "pages/goodrecommend/haowu/haowu",
     "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
+    "pages/spellgroup/presale/presale",
+    "pages/spellgroup/presale_goods/presale_goods",
+    "pages/spellgroup/flash_sale/flash_sale",
+    "pages/spellgroup/flash_sale_goods/flash_sale_goods",
+    "pages/spellgroup/group_buying/group_buying",
+    "pages/spellgroup/group_buying_goods/group_buying_goods",
+    "pages/spellgroup/group/group",
     "pages/home/coupons/coupons",
     "pages/home/stores/stores",
     "pages/home/chat/chat",
@@ -69,6 +75,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap23.json"
+  "usingComponents": {}
 }
