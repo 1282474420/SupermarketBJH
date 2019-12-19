@@ -29,8 +29,8 @@
 					</view>
 					<view class="info">
 						<view class="price">￥{{goods.price}}</view>
-						 <view class="slogan">
-							 <image class="slogan" src="../../../static/images/img/jiahao.png"></image>
+						 <view class="slogan" @click="GW">
+							 <image class="slogan"  src="../../../static/images/img/jiahao.png"></image>
 						 </view> 
 					</view>
 					
@@ -65,6 +65,29 @@
 			});
 		  },
 		  methods:{
+			  GW(){
+				  // 1 获取缓存中的购物车 数组
+				  let cart = uni.getStorageSync("cart") || [];
+				  // 2 判断 商品对象是否存在于购物车数组中
+				  let index = cart.findIndex(v => v.id === this.goodsList.id);
+				  if (index === -1) {
+				    //3  不存在 第一次添加
+				    
+				    cart.push(this.goodsList);
+				  } else {
+				    // 4 已经存在购物车数据 执行 num++
+				    cart[index].num++;
+				  }
+				  // 5 把购物车重新添加回缓存中
+				  uni.setStorageSync("cart", cart);
+				  // 6 弹窗提示
+				  uni.showToast({
+				    title: '加入成功',
+				    icon: 'success',
+				    // true 防止用户 手抖 疯狂点击按钮 
+				    mask: true
+				  });
+			  },
 			  XQ:function(e){
 				  uni.navigateTo({
 				  	url:'../ProductDetails/ProductDetails?id='+e

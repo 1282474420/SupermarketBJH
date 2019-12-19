@@ -24,21 +24,23 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.uni-list.data-v-21840af0 {
+.uni-list.data-v-15197ebd {
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   background-color: #ffffff;
   position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
+      -ms-flex-direction: column;
           flex-direction: column;
 }
-.uni-list.data-v-21840af0:before {
+.uni-list.data-v-15197ebd:before {
   height: 0;
 }
-.uni-list.data-v-21840af0:after {
+.uni-list.data-v-15197ebd:after {
   height: 0;
 }
 
