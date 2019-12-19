@@ -569,7 +569,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				    uni.navigateTo({
 				        url: tzlj2
 				    });
-				},
+				}
 		}
 	}
 </script>
