@@ -49,7 +49,7 @@
 		  <!-- 产品分类 -->
 		  <view class="product_type">
 		    <block v-for="(item, index) in product" :key="index">
-		      <view :data-productId="item.pcatClassId" @tap="product_type" class="productblock">
+		      <view class="productblock" @tap="product_type(index)">
 		        <image :src="item.pcatClassImg" class="productblock_img"></image>
 		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
 		      </view>
@@ -77,10 +77,10 @@
 		        <text class='minute'>{{countDownMinute}}</text> :
 		        <text class='second'>{{countDownSecond}}</text> -->
 		      </view>
-		      <view class='content1'>
+		      <navigator class='content1' url="../../spellgroup/flash_sale/flash_sale">
 		        <text>更多优惠</text>
 		        <image src='../../../static/images/djt.png' class='jt'></image>
-		      </view>
+		      </navigator>
 		    </view>
 		  <!-- 限时抢购商品 -->
 		  <view class='xsqgsp'>
@@ -102,10 +102,10 @@
 		  <!-- 超值拼团 -->
 		  <view class='xsqg green'>
 		    <image src='../../../static/images/czpt_07.png' class='title'></image>
-		    <view class='content1' @tap="gdpt">
+		    <navigator class='content1' url="../../spellgroup/group_buying/group_buying">
 		      <text>更多拼团</text>
 		      <image src='../../../static/images/djt.png' class='jt'></image>
-		    </view>
+		    </navigator>
 		  </view>
 		  <!-- 超值拼团商品 -->
 		  <view class='czptsp'>
@@ -570,6 +570,18 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				        url: tzlj2
 				    });
 				},
+				// 预售好物
+				product_type(e){
+					console.log(e)
+					if(e==8){
+						uni.navigateTo({
+							url: '../../spellgroup/presale/presale',
+							success: res => {},
+							fail: () => {},
+							complete: () => {}
+						});
+					}
+				}
 		}
 	}
 </script>
