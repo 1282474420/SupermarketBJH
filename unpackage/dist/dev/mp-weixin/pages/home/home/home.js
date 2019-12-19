@@ -549,7 +549,22 @@ __webpack_require__.r(__webpack_exports__);
         price: 280 }],
 
       // 优惠券
-      yhj: [],
+      yhj: [{
+        cId: 0,
+        cCouponAmount: 50,
+        cCouponName: '清风优惠',
+        cActual: '满100元减50，限定商品' },
+      {
+        cId: 1,
+        cCouponAmount: 50,
+        cCouponName: '清风优惠',
+        cActual: '满100元减50，限定商品' },
+      {
+        cId: 2,
+        cCouponAmount: 50,
+        cCouponName: '清风优惠',
+        cActual: '满100元减50，限定商品' }],
+
       // 天天优惠商品
       ttyhsp: [{
         title: "组合购",

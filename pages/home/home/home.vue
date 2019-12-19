@@ -416,7 +416,22 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 						price: 280
 						}],
 				      // 优惠券
-				      yhj: [],
+				      yhj: [{
+						  cId:0,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  },{
+						  cId:1,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  },{
+						  cId:2,
+						  cCouponAmount:50,
+						  cCouponName:'清风优惠',
+						  cActual:'满100元减50，限定商品'
+					  }],
 				      // 天天优惠商品
 				      ttyhsp: [{
 				        title: "组合购",
@@ -889,7 +904,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	display: inline-block;
 	position: absolute;
 	right: 245rpx;
-	bottom: -465rpx;
+	bottom: -425rpx;
 }
 
 /* .countdown .hour, .minute, .second {
