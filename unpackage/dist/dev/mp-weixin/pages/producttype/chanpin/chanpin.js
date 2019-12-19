@@ -257,14 +257,32 @@ __webpack_require__.r(__webpack_exports__);
       method: 'POST',
       success: function success(res) {
         _this.rightContent = res.data.message;
-        console.log(res.data.message);
       } });
 
   },
   methods: {
-    GouWu: function GouWu(e) {
-      uni.navigateTo({
-        url: '../chanpinList/chanpinList' });
+    GouWu: function GouWu() {var _this2 = this;
+      // 1 获取缓存中的购物车 数组
+      var cart = uni.getStorageSync("cart") || [];
+      // 2 判断 商品对象是否存在于购物车数组中
+      var index = cart.findIndex(function (v) {return v.id === _this2.rightContent.id;});
+      if (index === -1) {
+        //3  不存在 第一次添加
+        this.rightContent.num = 1;
+        this.rightContent.checked = true;
+        cart.push(this.rightContent);
+      } else {
+        // 4 已经存在购物车数据 执行 num++
+        cart[index].num++;
+      }
+      // 5 把购物车重新添加回缓存中
+      uni.setStorageSync("cart", cart);
+      // 6 弹窗提示
+      uni.showToast({
+        title: '加入成功',
+        icon: 'success',
+        // true 防止用户 手抖 疯狂点击按钮 
+        mask: true });
 
     },
     XQ: function XQ(e) {
@@ -277,7 +295,7 @@ __webpack_require__.r(__webpack_exports__);
         url: '../ProductDetails/ProductDetails?id=' + e });
 
     },
-    change: function change(e) {var _this2 = this;
+    change: function change(e) {var _this3 = this;
       console.log(e);
       uni.showToast({
         title: "编号" + e.id,
@@ -288,7 +306,7 @@ __webpack_require__.r(__webpack_exports__);
         method: 'POST',
         data: {},
         success: function success(res) {
-          _this2.rightContent = res.data.message;
+          _this3.rightContent = res.data.message;
         },
         fail: function fail() {},
         complete: function complete() {} });

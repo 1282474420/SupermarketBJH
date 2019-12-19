@@ -26,11 +26,6 @@
 			"style": {
 				"navigationBarTitleText": "产品分类"
 			}
-		}, {
-			"path": "pages/spellgroup/spellgroup",
-			"style": {
-				"navigationBarTitleText": "在线拼团"
-			}
 		}
 
 		, {
@@ -118,12 +113,46 @@
 			"style": {
 				"navigationBarTitleText": "咨询详情"
 			}
-		},
+		},{
+			"path": "pages/spellgroup/presale/presale",
+			"style": {
+				"navigationBarTitleText": "预售列表"
+			}
+		},{
+			"path": "pages/spellgroup/presale_goods/presale_goods",
+			"style": {
+				"navigationBarTitleText": "预售详情"
+			}
+		},{
+			"path":"pages/spellgroup/flash_sale/flash_sale",
+			"style": {
+				"navigationBarTitleText": "限时抢购"
+			}
+		},{
+            "path" : "pages/spellgroup/flash_sale_goods/flash_sale_goods",
+            "style" : {
+				"navigationBarTitleText": "抢购详情"
+			}
+        } ,{
+            "path" : "pages/spellgroup/group_buying/group_buying",
+            "style" : {
+				"navigationBarTitleText": "在线拼团"
+			}
+        }
+        ,{
+            "path" : "pages/spellgroup/group_buying_goods/group_buying_goods",
+            "style" : {
+				"navigationBarTitleText": "拼团详情"
+			}
+        },{
+            "path" : "pages/spellgroup/group/group",
+            "style" : {
+				"navigationBarTitleText": "我的团"
+			}
+        }
 
 
-
-
-		{
+		,{
 			"path": "pages/home/coupons/coupons",
 			"style": {
 				"navigationBarTitleText": "领券中心",
