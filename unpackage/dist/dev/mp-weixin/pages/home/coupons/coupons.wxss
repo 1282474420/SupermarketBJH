@@ -96,11 +96,15 @@
 	margin-top: 30rpx;
 }
 .uni-media{
-	margin-top: 30rpx;
+	margin-top: 40rpx;
 	width: 400rpx;
 }
 .uni-media-popup{
 	border-radius:10rpx 10rpx 10rpx 10rpx;
 	width: ;
+}
+#period{
+	font-size: 25rpx;
+	color: #999999;
 }
 

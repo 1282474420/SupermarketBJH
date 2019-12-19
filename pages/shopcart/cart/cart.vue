@@ -29,10 +29,10 @@
 					<!-- 商品信息 -->
 					<view class="goods-info" @tap="toGoods(row)">
 						<view class="img">
-							<image :src="row.img"></image>
+							<image :src="row.picturepath"></image>
 						</view>
 						<view class="info">
-							<view class="title">{{row.name}}</view>
+							<view class="title">{{row.goodsName}}</view>
 							<view class="price-number">
 								<view class="price">￥{{row.price}}</view>
 								<view class="number">
@@ -85,51 +85,12 @@
 				showHeader: true,
 				selectedList: [],
 				isAllselected: false,
-				goodsList: [{
-						id: 1,
-						img: '/static/images/img/goods/p1.jpg',
-						name: '商品标题test1',
-						price: 127.5,
-						number: 1,
-						selected: false
-					},
-					{
-						id: 2,
-						img: '/static/images/img/goods/p2.jpg',
-						name: '商品标题test2',
-						price: 127.5,
-						number: 1,
-						selected: false
-					},
-					{
-						id: 3,
-						img: '/static/images/img/goods/p3.jpg',
-						name: '商品标题test3',
-						price: 127.5,
-						number: 1,
-						selected: false
-					},
-					{
-						id: 4,
-						img: '/static/images/img/goods/p4.jpg',
-						name: '商品标题test4',
-						price: 127.5,
-						number: 1,
-						selected: false
-					},
-					{
-						id: 5,
-						img: '/static/images/img/goods/p5.jpg',
-						name: '商品标题test5',
-						price: 127.5,
-						number: 1,
-						selected: false
-					}
-				],
+				goodsList:[],
 				//控制滑动效果
 				theIndex: null,
 				oldIndex: null,
-				isStop: false
+				isStop: false,
+				num:0
 			}
 		},
 		onPageScroll(e) {
@@ -144,7 +105,32 @@
 				uni.stopPullDownRefresh();
 			}, 1000);
 		},
+		 onShow: function() {
+			let me = this;
+			if(me.num>0){
+				uni.getStorage({
+					key:"cart",
+					success: (res) => {
+						console.log(JSON.stringify(res.data.length))
+						this.goodsList=res.data 
+						console.log(this.goodsList)
+					}
+				});
+			}
+			me.num++;
+		}, 
 		onLoad:function(){
+			uni.getStorage({
+				key:"cart",
+				success: (res) => {
+					console.log(JSON.stringify(res.data.length))
+					this.goodsList=res.data 
+					console.log(this.goodsList)
+					console.log(this.goodsList.data)
+				}
+			});
+			
+			
 			//查询页面初始数据的方法
 			// uni.request({
 			// 	url: '',
@@ -279,10 +265,12 @@
 						break;
 					}
 				}
+				uni.setStorageSync("cart",this.goodsList);
 				this.selectedList.splice(this.selectedList.indexOf(id), 1);
 				this.sum();
 				this.oldIndex = null;
 				this.theIndex = null;
+
 			},
 			// 删除商品s
 			deleteList() {
@@ -290,7 +278,7 @@
 				while (this.selectedList.length > 0) {
 					this.deleteGoods(this.selectedList[0]);
 				}
-				this.selectedList = [];
+				this.selectedList = []; 
 				this.isAllselected = this.selectedList.length == this.goodsList.length && this.goodsList.length > 0;
 				this.sum();
 			},
@@ -321,11 +309,21 @@
 				}
 				this.goodsList[index].number--;
 				this.sum();
+				
+				let cartnew = uni.getStorageSync("cart") || [];
+				cartnew[index].number--;
+				//把购物车重新添加回缓存中
+				uni.setStorageSync("cart", cartnew);
 			},
 			// 增加数量
 			add(index) {
 				this.goodsList[index].number++;
 				this.sum();
+	
+				let cartnew = uni.getStorageSync("cart") || [];
+				cartnew[index].number++;
+				//把购物车重新添加回缓存中
+				uni.setStorageSync("cart", cartnew);
 			},
 			// 合计
 			sum(e, index) {

@@ -410,6 +410,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
 {
   components: { uniCountdown: uniCountdown },
   data: function data() {
@@ -681,7 +685,16 @@ __webpack_require__.r(__webpack_exports__);
       hyh: true,
       //判断换一批按钮是否可以使用
       stock: '',
-      name: '' };
+      name: '',
+      imagesList: [{
+        img: "../../../static/images/adv_03.jpg" },
+      {
+        img: "../../../static/images/ban001_03.png" },
+      {
+        img: "../../../static/images/ban002_03.png" },
+      {
+        img: "../../../static/images/banana_03.png" }] };
+
 
   },
   onLoad: function onLoad(e) {

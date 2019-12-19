@@ -144,7 +144,10 @@
 }
 
 /* 夏日冰鲜 */
-.adv .advImg {
+.swiper{
+	height: 340rpx;
+}
+swiper-item image {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;

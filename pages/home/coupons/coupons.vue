@@ -37,9 +37,9 @@
 	export default {
 		data() {
 			return {
-				coupons:[{price:'6',availability:'满29可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'2019年11月27日'}],
+				coupons:[{price:'6',availability:'满29可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
+				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
+				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'}],
 				show: false
 			}
 		},
@@ -167,11 +167,15 @@
 	margin-top: 30rpx;
 }
 .uni-media{
-	margin-top: 30rpx;
+	margin-top: 40rpx;
 	width: 400rpx;
 }
 .uni-media-popup{
 	border-radius:10rpx 10rpx 10rpx 10rpx;
 	width: ;
+}
+#period{
+	font-size: 25rpx;
+	color: #999999;
 }
 </style>

@@ -208,13 +208,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
-
 {
   data: function data() {
     return {
       GoodsObj: {},
-      GoodsInfo: {} };
+      GoodsInfo: {},
+      GoodsInfonew: {} };
 
   },
 
@@ -283,18 +291,22 @@ var _default =
     },
     //点击加入购物车
     handleCartAdd: function handleCartAdd() {var _this2 = this;
+      console.log(this.GoodsInfo);
       // 1 获取缓存中的购物车 数组
       var cart = uni.getStorageSync("cart") || [];
       // 2 判断 商品对象是否存在于购物车数组中
-      var index = cart.findIndex(function (v) {return v.goods_id === _this2.GoodsInfo.goods_id;});
+      var index = cart.findIndex(function (v) {return v.id === _this2.GoodsInfo.id;});
       if (index === -1) {
         //3  不存在 第一次添加
-        this.GoodsInfo.num = 1;
-        this.GoodsInfo.checked = true;
-        cart.push(this.GoodsInfo);
+        this.GoodsInfonew.goodsName = this.GoodsInfo.goodsName;
+        this.GoodsInfonew.price = this.GoodsInfo.price;
+        this.GoodsInfonew.picturepath = this.GoodsInfo.picturepath;
+        this.GoodsInfonew.number = 1;
+        this.GoodsInfonew.id = this.GoodsInfo.id;
+        cart.push(this.GoodsInfonew);
       } else {
         // 4 已经存在购物车数据 执行 num++
-        cart[index].num++;
+        cart[index].number++;
       }
       // 5 把购物车重新添加回缓存中
       uni.setStorageSync("cart", cart);
