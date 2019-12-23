@@ -36,7 +36,7 @@
 							<image src="../../../static/groupImg/groupxia.png" class="slide-image"></image>
 							<view class="goods-info-item">
 								<view class="title">大龙虾</view>
-								<view class="m-price">单买价¥88</view>
+								<view class="m-price">单买价¥89</view>
 								<view class="price">拼团价<text>¥59</text></view>
 								<view class="jiesheng">拼团为您节省501.1元</view>
 							</view>
