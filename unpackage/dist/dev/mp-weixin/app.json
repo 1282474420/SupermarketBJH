@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/shopcart/addresslist/addresslist",
+    "pages/shopcart/addresslist/addressadd/addressadd",
+    "pages/shopcart/addresslist/addressupd/addressupd",
     "pages/home/home/home",
     "pages/shopcart/myorder/forpayment/forpayment",
     "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
@@ -75,5 +78,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap91.json"
 }
