@@ -1,0 +1,137 @@
+.yi{
+  background-color: #f5f5f5;
+  padding-top: 31rpx;
+}
+.er{
+margin: 0 32rpx
+}
+.san{
+  background-color: #ffffff;
+  height: 351rpx;
+
+}
+.eryi{
+  line-height: 98rpx;
+    margin-left: 31rpx;
+     margin-right: 31rpx;
+   border-bottom: 1px solid #ededed;
+}
+.eryi .sany{
+    margin-top: 31rpx;
+  height: 85rpx;
+  width: 85rpx;
+}
+.eryi .sanyi{
+  font-size: 30rpx;
+  font-family: "Alibaba";
+  color: rgb(51, 51, 51);
+  position: relative;
+  top: -31rpx;
+  left: 31rpx
+}
+.eryi .sane{
+ 
+  width:47rpx; 
+  height: 51rpx;
+  float: right;
+  margin-right: 31rpx;
+  margin-top: 31rpx
+}
+.siwu{
+    font-size: 22rpx;
+     font-family: "Alibaba";
+   color:#333333; 
+float: right;
+right: 0;
+margin-top:30rpx;
+
+}
+.saner{
+  font-size: 22rpx;
+  font-family: "Alibaba";
+  color:#b4b4b4;
+  line-height: 2.096;
+   float: right;
+   margin-right:-57rpx;
+  margin-top: 84rpx
+}
+ .si {
+   
+    margin-left: 19rpx;
+     margin-right: 31rpx;
+    
+}
+  .siyi{
+  font-size: 30rpx;
+  font-family: "Alibaba";
+  color: rgb(153, 153, 153);
+  line-height:100rpx;
+  text-align: left;
+      border-bottom: 1px solid #ededed;
+}
+  
+
+.sier{
+  font-size: 30rpx;
+  font-family: "Alibaba";
+  color: rgb(51, 51, 51);
+  margin-left: 48rpx;
+}
+ .wu {
+    margin-left: 31rpx;
+     margin-right: 31rpx
+ }
+ .liu {
+margin:42rpx 31rpx 26rpx 31rpx
+
+}
+
+.sisan{
+  color:#333333; 
+  margin-left:51rpx;
+}
+
+.jiu{
+  margin-left: 33rpx;
+   margin-top:44rpx ;
+  height:322rpx; 
+}
+.jiuyi{
+  font-size: 30rpx;
+  font-family: "Alibaba";
+  color: rgb(51, 51, 51);
+}
+.jiuer{
+   margin-top:46rpx ;
+  font-size: 26rpx;
+  font-family: "Alibaba";
+  color: rgb(102, 102, 102);
+  line-height: 1.385;
+  text-align: justifyLeft;
+  width: 629rpx;
+  height: 169rpx;
+
+}
+.sanyi{
+  text-align: left
+}
+.qi{
+    margin-left: 31rpx;
+     margin-right: 31rpx;
+   background-color: #ffffff;
+  height: 400rpx;
+
+}
+.sas{
+  margin-left: 19rpx;
+}
+.sis{
+  float: right;
+  color: #333333; 
+}
+.ba{
+     margin-left: 31rpx;
+     margin-right: 31rpx;
+    background-color: #ffffff;
+  height: 300rpx;
+}

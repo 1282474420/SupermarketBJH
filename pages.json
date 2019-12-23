@@ -1,6 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+<<<<<<< HEAD
 		    "path" : "pages/shopcart/addresslist/addresslist",
 		    "style" : {
 				"navigationBarTitleText": "地址列表"
@@ -19,6 +20,46 @@
 			}
 		},
 		
+=======
+		    "path" : "pages/my/my/my",
+		    "style" : {
+				"navigationBarTitleText": "我的"
+			}
+		}
+		,{
+		    "path" : "pages/my/vipLogin/vipLogin",
+		    "style" : {
+				"navigationBarTitleText": "会员登录"
+			}
+		}
+		,{
+		    "path" : "pages/my/vipRegister/vipRegister",
+		    "style" : {
+				"navigationBarTitleText": "会员注册"
+			}
+		}
+		,{
+		    "path" : "pages/my/myVipCard/myVipCard",
+		    "style" : {
+				"navigationBarTitleText": "我的会员卡"
+			}
+		}
+		,{
+		    "path" : "pages/my/myFavorite/myFavorite",
+		    "style" : {
+				"navigationBarTitleText": "我的收藏"
+			}
+		}
+		,{
+		    "path" : "pages/my/myCoupons/myCoupons",
+		    "style" : {
+				"navigationBarTitleText": "我的优惠券"
+			}
+		},
+		
+		
+		
+>>>>>>> 388dd45ea8b1196145fb836f4e6e156db3283d67
 		{
 			"path": "pages/home/home/home",
 			"style": {
@@ -51,11 +92,6 @@
 			"path": "pages/goodrecommend/goodrecommend",
 			"style": {
 				"navigationBarTitleText": "好物推荐"
-			}
-		}, {
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "我的"
 			}
 		}, {
 			"path": "pages/bottom/bottom",
@@ -247,7 +283,7 @@
 			{
 				"iconPath": "static/images/dbimg/sy_05_03.png",
 				"selectedIconPath": "static/images/dbimg/sy_005_03.png",
-				"pagePath": "pages/my/my",
+				"pagePath": "pages/my/my/my",
 				"text": "我的"
 			}
 		]
