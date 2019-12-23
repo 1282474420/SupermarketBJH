@@ -80,7 +80,11 @@
   white-space: nowrap;
   font-family: Monaco;
   font-size: 25rpx;
-  background-color: #AAAAAA;
+  background-color: #EFEFEF;
+  /* margin-left: 40rpx;
+	display: inline-block;
+	width: 104rpx;
+	margin-top: 30rpx; */
 }
 .tab {
   display: inline-block;

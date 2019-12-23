@@ -597,7 +597,6 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				    uni.navigateTo({
 				        url: tzlj2
 				    });
-<<<<<<< HEAD
 				},
 				// 预售好物
 				product_type(e){
@@ -610,8 +609,6 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 							complete: () => {}
 						});
 					}
-=======
->>>>>>> 890d15d38628be9879f8212c37fedf7d0e01a4ef
 				}
 		}
 	}
