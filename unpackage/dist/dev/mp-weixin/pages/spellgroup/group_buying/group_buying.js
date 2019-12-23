@@ -151,43 +151,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 {
   components: { uniCountdown: uniCountdown },
   data: function data() {
     return {
-      goodsList: []
-      // productList: [
-      // 	{
-      // 		goods_id: 0,
-      // 		img: '../../static/images/pinlie.png',
-      // 		name: '波士顿进口鲜活大龙虾450g~500g',
-      // 		price: '1099',
-      // 		people: '570'
-      // 	},
-      // 	{
-      // 		goods_id: 1,
-      // 		img: '../../static/images/pinlie.png',
-      // 		name: '波士顿进口鲜活大龙虾450g~500g',
-      // 		price: '1099',
-      // 		people: '570'
-      // 	},
-      // 	{
-      // 		goods_id: 2,
-      // 		img: '../../static/images/pinlie.png',
-      // 		name: '波士顿进口鲜活大龙虾450g~500g',
-      // 		price: '1099',
-      // 		people: '570'
-      // 	},
-      // 	{
-      // 		goods_id: 3,
-      // 		img: '../../static/images/pinlie.png',
-      // 		name: '波士顿进口鲜活大龙虾450g~500g',
-      // 		price: '1099',
-      // 		people: '570'
-      // 	}
-      // ]
-    };
+      goodsList: [] };
+
   },
   onLoad: function onLoad() {var _this = this;
     // var ma = null;

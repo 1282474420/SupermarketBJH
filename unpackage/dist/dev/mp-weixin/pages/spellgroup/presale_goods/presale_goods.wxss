@@ -293,7 +293,6 @@
 .coupon-tip{
 	color: #8F8F94;
 	font-size: 24rpx;
-	margin-top: -13rpx;
 }
 .goods_text{
 	font-size: 24rpx;

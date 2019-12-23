@@ -273,6 +273,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   components: { uniCountdown: uniCountdown },
   data: function data() {
@@ -324,6 +344,11 @@ __webpack_require__.r(__webpack_exports__);
       this.specClass = 'show';
       this.specCallback = fun;
     },
+    toGroup: function toGroup() {
+      uni.navigateTo({
+        url: "../group/group" });
+
+    },
     // 首页
     toChat: function toChat() {
       uni.navigateTo({
@@ -331,9 +356,9 @@ __webpack_require__.r(__webpack_exports__);
 
     },
     // 客服
-    share: function share() {
-      uni.navigateTo({
-        url: "" });
+    chat: function chat() {
+      uni.reLaunch({
+        url: '/pages/home/chat/chat' });
 
     },
     //购物车
@@ -342,29 +367,24 @@ __webpack_require__.r(__webpack_exports__);
         url: "" });
 
     },
-    // 加入购物车
-    joinCart: function joinCart() {
-      if (this.selectSpec == null) {
-        return this.showSpec(function () {
-          uni.showToast({ title: "已加入购物车" });
-        });
-      }
-      uni.showToast({ title: "已加入购物车" });
-    },
     //点击加入购物车
     handleCartAdd: function handleCartAdd() {var _this3 = this;
+      console.log(this.GoodsInfo);
       // 1 获取缓存中的购物车 数组
       var cart = uni.getStorageSync("cart") || [];
       // 2 判断 商品对象是否存在于购物车数组中
-      var index = cart.findIndex(function (v) {return v.goods_id === _this3.GoodsInfo.goods_id;});
+      var index = cart.findIndex(function (v) {return v.id === _this3.GoodsInfo.id;});
       if (index === -1) {
         //3  不存在 第一次添加
-        this.GoodsInfo.num = 1;
-        this.GoodsInfo.checked = true;
-        cart.push(this.GoodsInfo);
+        this.GoodsInfonew.goodsName = this.GoodsInfo.goodsName;
+        this.GoodsInfonew.price = this.GoodsInfo.price;
+        this.GoodsInfonew.picturepath = this.GoodsInfo.bigpicturepath;
+        this.GoodsInfonew.number = 1;
+        this.GoodsInfonew.id = this.GoodsInfo.id;
+        cart.push(this.GoodsInfonew);
       } else {
         // 4 已经存在购物车数据 执行 num++
-        cart[index].num++;
+        cart[index].number++;
       }
       // 5 把购物车重新添加回缓存中
       uni.setStorageSync("cart", cart);
@@ -375,15 +395,6 @@ __webpack_require__.r(__webpack_exports__);
         // true 防止用户 手抖 疯狂点击按钮 
         mask: true });
 
-    },
-    //立即购买
-    buy: function buy() {var _this4 = this;
-      if (this.selectSpec == null) {
-        return this.showSpec(function () {
-          _this4.toConfirmation();
-        });
-      }
-      this.toConfirmation();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

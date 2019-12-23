@@ -14,15 +14,26 @@
 		</view>
 		
 		<view class="g-information">
+			<view class="g-info">
+				<image src="../../../static/groupImg/group.png" class="group-icon"></image>
+				<text class="g-icon-text">3人团</text>
+			</view>
+			<view class="g-price">
+				<view class="price-tip">¥</view>
+				<view class="price">{{goodsData.activityprice}}</view>
+				<view class="m-price">¥{{goodsData.price}}</view>
+				<view class="g-countdown">
+					<view class="g-time">还剩</view>
+					<uni-countdown color="white" border-radius="30rpx" background-color="#fe5c6a" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
+				</view>
+			</view>
 			
 		</view>
 		
 		<view class="flex-item">
 			<!-- 标题 价格 -->
 			<view class="info-box goods-info">
-				<text class="price-tip">¥</text>
-				<text class="price">{{goodsData.activityprice}}</text>
-				<text class="m-price">原价¥{{goodsData.price}}</text>
+				<view class="title">{{goodsData.goodsName}}</view>
 				<view class="content-item">
 					<image src="../../../static/groupImg/collect.png" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
 					<view class="coupon-tip">收藏</view>
@@ -34,7 +45,7 @@
 				</view>
 			</view>
 			<view class="info-box3 goods-info">
-				<view class="title">{{goodsData.goodsName}}</view>
+				
 				<!-- <view class="goods_text">{{goodsData.goodsTitle}}</view> -->
 			</view>
 		</view>
@@ -76,9 +87,10 @@
 							<view class="gname">nabi</view>
 							<view class="group-info2">
 								<view class="group-text">还差<text class="group-text2">1人</text>成团</view>
-								<uni-countdown class="countdown" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
+								<uni-countdown class="countdown" background-color="white" color="black" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 							</view>
-							<view class="cantuan" @tap="toGroup">去参团</view>
+							<!-- @click="goodsInfo(goods.id)" -->
+							<view class="cantuan" @tap="toGroup" >去参团</view>
 						</view>
 					</view>
 				</view>
@@ -124,21 +136,29 @@
 		<!-- 底部菜单 -->
 		<view class="footer">
 			<view class="icons">
-				<view class="box" @tap="share">
-					<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
-					<view class="text-di">首页</view>
+				<navigator open-type="switchTab" url="../../home/home/home">
+					<view class="box">
+						<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
+						<view class="text-di">首页</view>
+					</view>
+				</navigator>
+				
+				<view open-type="switchTab" @tap="chat()">
+					<view class="box">
+						<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
+						<view class="text-di">客服</view>
+					</view>
 				</view>
-				<view class="box" @tap="toChat">
-					<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
-					<view class="text-di">客服</view>
-				</view>
-				<view class="box" @tap="keep">
-					<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
-					<view class="text-di">购物车</view>
-				</view>
+				
+				<navigator open-type="switchTab" url="../../shopcart/cart/cart">
+					<view class="box" @tap="keep">
+						<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
+						<view class="text-di">购物车</view>
+					</view>
+				</navigator>
 			</view>
 			<view class="btn">
-				<view class="joinCart" @tap="joinCart">加入购物车</view>
+				<view class="joinCart" @click="handleCartAdd">加入购物车</view>
 				<view class="buy" @tap="buy">立即下单</view>
 			</view>
 		</view>
@@ -200,6 +220,11 @@
 				this.specClass = 'show';
 				this.specCallback = fun;
 			},
+			toGroup(){
+				uni.navigateTo({
+					url:"../group/group"
+				})
+			},
 			// 首页
 			toChat(){
 				uni.navigateTo({
@@ -207,9 +232,9 @@
 				})
 			},
 			// 客服
-			share(){
-				uni.navigateTo({
-					url:""
+			chat() {
+				uni.reLaunch({
+					url:'/pages/home/chat/chat'
 				})
 			},
 			//购物车
@@ -218,49 +243,41 @@
 					url:""
 				})
 			},
-			// 加入购物车
-			joinCart(){
-				if(this.selectSpec==null){
-					return this.showSpec(()=>{
-						uni.showToast({title: "已加入购物车"});
-					});
-				}
-				uni.showToast({title: "已加入购物车"});
-			},
 			//点击加入购物车
 			handleCartAdd() {
-			    // 1 获取缓存中的购物车 数组
-			    let cart = uni.getStorageSync("cart") || [];
-			    // 2 判断 商品对象是否存在于购物车数组中
-			    let index = cart.findIndex(v => v.goods_id === this.GoodsInfo.goods_id);
-			    if (index === -1) {
-			      //3  不存在 第一次添加
-			      this.GoodsInfo.num = 1;
-			      this.GoodsInfo.checked = true;
-			      cart.push(this.GoodsInfo);
-			    } else {
-			      // 4 已经存在购物车数据 执行 num++
-			      cart[index].num++;
-			    }
-			    // 5 把购物车重新添加回缓存中
-			    uni.setStorageSync("cart", cart);
-			    // 6 弹窗提示
-			    uni.showToast({
-			      title: '加入成功',
-			      icon: 'success',
-			      // true 防止用户 手抖 疯狂点击按钮 
-			      mask: true
-			    });
-			},
-			//立即购买
-			buy(){
-				if(this.selectSpec==null){
-					return this.showSpec(()=>{
-						this.toConfirmation();
-					});
+				console.log(this.GoodsInfo);
+				// 1 获取缓存中的购物车 数组
+				let cart = uni.getStorageSync("cart") || [];
+				// 2 判断 商品对象是否存在于购物车数组中
+				let index = cart.findIndex(v => v.id === this.GoodsInfo.id);
+				if (index === -1) {
+					//3  不存在 第一次添加
+					this.GoodsInfonew.goodsName = this.GoodsInfo.goodsName;
+					this.GoodsInfonew.price = this.GoodsInfo.price;
+					this.GoodsInfonew.picturepath = this.GoodsInfo.bigpicturepath;
+					this.GoodsInfonew.number = 1;
+					this.GoodsInfonew.id = this.GoodsInfo.id;
+					cart.push(this.GoodsInfonew);
+				} else {
+					// 4 已经存在购物车数据 执行 num++
+					cart[index].number++;
 				}
-				this.toConfirmation();
-			}
+				// 5 把购物车重新添加回缓存中
+				uni.setStorageSync("cart", cart);
+				// 6 弹窗提示
+				uni.showToast({
+					title: '加入成功',
+					icon: 'success',
+					// true 防止用户 手抖 疯狂点击按钮 
+					mask: true
+				});
+			},
+			// goodsInfo:function(e){
+			// 	uni.showToast({
+			// 		title: "编号" + e,
+			// 		icon: "none"
+			// 	});
+			// }
 		}
 	}
 </script>
@@ -306,7 +323,51 @@
 	}
 	
 	.g-information{
-		
+		background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
+		                    linear-gradient(#ffa549, #ffa549);
+		color: white;
+		height: 80rpx;
+		padding-top: 20rpx;
+		font-size: 27rpx;
+		display:flex;
+		align-items:baseline;
+	}
+	
+	.g-info{
+		border: 2rpx white solid;
+		width: 120rpx;
+		height: 45rpx;
+		margin-left: 30rpx;
+		border-radius: 10rpx;
+	}
+	
+	.group-icon{
+		width: 45rpx;
+		height: 45rpx;
+		background-color: white;
+		border-top-left-radius: 10rpx;
+		border-bottom-left-radius: 10rpx;
+	}
+	
+	.g-icon-text{
+		margin-bottom: 10rpx;
+		font-size: 26rpx;
+	}
+	
+	.g-price{
+		display:flex;
+		align-items:baseline;
+		margin-left: 20rpx;
+	}
+	
+	.g-time{
+		margin-left: 10rpx;
+	}
+	
+	.g-countdown{
+		display:flex;
+		align-items:baseline;
+		margin-left: 80rpx;
 	}
 	
 	.flex-item{
@@ -318,35 +379,35 @@
 		background-color: white;
 		font-size: 20upx;
 		padding-left: 30rpx;
-		padding-top: 10rpx;
+		padding-top: 20rpx;
 		padding-bottom: 50rpx;
 		display:flex;
 		align-items:baseline;
-		height: 65upx;
+		height: 40rpx;
 	}
 	
 	.price {
-		font-size: 60rpx;
+		font-size: 50rpx;
 		font-weight: 600;
-		color:#F44336;
+		color:white;
 		font-family: 华文细黑;
 	}
 	
 	.price-tip{
-		color:#F44336;
+		color:white;
 		font-weight: 600;
-		font-size: 30rpx;
+		font-size: 28rpx;
 	}
 	
 	.m-price{
-		margin-left: 60rpx;
+		margin-left: 30rpx;
 		font-size: 25rpx;
-		color:#8F8F94;
+		color:white;
 		text-decoration: line-through;
 	}
 	
 	.content-item{
-		padding-left: 250rpx;
+		padding-left: 410rpx;
 		padding-right: 35rpx;
 		margin-right: 35rpx;
 		border-right: 1rpx #D8D8D8 solid;
@@ -355,7 +416,6 @@
 	.coupon-tip{
 		color: #8F8F94;
 		font-size: 24rpx;
-		margin-top: -13rpx;
 	} 
 	
 	.info-box3{
@@ -450,6 +510,7 @@
 		height: 140rpx;
 		display: flex;
 		align-items: center;
+		margin-top: -20rpx;
 	}
 	
 	.gface{
@@ -490,7 +551,7 @@
 		height: 40rpx;
 		color: white;
 		background-color: #FF8000;
-		padding: 15rpx 30rpx;
+		padding: 10rpx 25rpx;
 		margin-top: 35rpx;
 		margin-left: 20rpx;
 		font-size: 25rpx;

@@ -9,7 +9,7 @@
 	background-color: #fff;
 	width: 335rpx;
 	position: relative;
-	margin-left: 20rpx;
+	margin-left: 30rpx;
 	margin-top: 20rpx;
 }
 .groupImg{
@@ -24,6 +24,7 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+	font-weight: bold;
 }
 .content-count{
 	display: -webkit-box;
@@ -81,7 +82,10 @@
 	/* justify-content: space-between; */
 	/* align-items: flex-end; */
 	width: 92%;
-	padding: 10rpx 0rpx 10rpx 25rpx;
+	padding-top: 10rpx;
+	padding-left: 20rpx;
+	padding-bottom: 10rpx;
+	/* padding: 10rpx 0rpx 10rpx 25rpx; */
 	border-bottom: 1rpx #D8D8D8 solid;
 }
 .info-item{
@@ -119,9 +123,12 @@
 	font-family: 华文细黑;
 	margin-top: -6rpx;
 }
+.info2{
+	padding-bottom: 20rpx;
+}
 .people{
 	color: #808080;
 	font-size: 25rpx;
-	/* margin-left: 20rpx; */
+	margin-left: 20rpx;
 }
 

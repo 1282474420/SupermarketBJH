@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "我的团",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
 }
