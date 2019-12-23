@@ -4,11 +4,10 @@
   display: flex;
 }
 .left_menu{
-
 	  float: left;
 	  width: 186rpx;
 	  height: 1242rpx;
-	  background-color: #efefef;
+	  background-color: #EFEFEF;
 	  font-size: 26rpx;
 	  color: #666;
 	  text-align: center;
@@ -17,7 +16,7 @@
 }
 .right_content{
   flex: 18;
-
+margin-top:76rpx ;
 }
 
 .tab1{
@@ -25,11 +24,5 @@
 	  height: 64rpx;
 	  padding-top: 36rpx;
 	text-align: center;
-}
-
-.active1 {
-
-  background-color: #16CC80;
-
 }
 

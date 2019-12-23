@@ -38,10 +38,10 @@
 }
 .biaoti1 {
   margin-top: 20rpx;
-  margin-left: 30rpx;
-  width: 150rpx;
+  margin-left: 35rpx;
+  width: 160rpx;
   color: #FF0000;
-  border-bottom: 4rpx solid #FF0000;
+  border-bottom: 6rpx solid #FF0000;
 }
 .first_tab {
   height: 300rpx;
@@ -148,7 +148,7 @@
 }
 .goods-list .product-list .product .name {
         width: 92%;
-        padding: 10rpx 4%;
+        padding-left: 10rpx;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
