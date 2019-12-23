@@ -42,6 +42,67 @@ swiper-item image {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 .g-information{
+	background-image: -webkit-gradient(linear, left top, right top, from(#ffa549), to(#fe5c6a)),
+	                    -webkit-gradient(linear, left top, left bottom, from(#ffa549), to(#ffa549));
+	background-image: -o-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
+	                    -o-linear-gradient(#ffa549, #ffa549);
+	background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
+	                    linear-gradient(#ffa549, #ffa549);
+	color: white;
+	height: 80rpx;
+	padding-top: 20rpx;
+	font-size: 27rpx;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:baseline;
+	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
+	        align-items:baseline;
+}
+.g-info{
+	border: 2rpx white solid;
+	width: 120rpx;
+	height: 45rpx;
+	margin-left: 30rpx;
+	border-radius: 10rpx;
+}
+.group-icon{
+	width: 45rpx;
+	height: 45rpx;
+	background-color: white;
+	border-top-left-radius: 10rpx;
+	border-bottom-left-radius: 10rpx;
+}
+.g-icon-text{
+	margin-bottom: 10rpx;
+	font-size: 26rpx;
+}
+.g-price{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:baseline;
+	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
+	        align-items:baseline;
+	margin-left: 20rpx;
+}
+.g-time{
+	margin-left: 10rpx;
+}
+.g-countdown{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:baseline;
+	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
+	        align-items:baseline;
+	margin-left: 80rpx;
 }
 .flex-item{
 	background-color: white;
@@ -51,7 +112,7 @@ swiper-item image {
 	background-color: white;
 	font-size: 20rpx;
 	padding-left: 30rpx;
-	padding-top: 10rpx;
+	padding-top: 20rpx;
 	padding-bottom: 50rpx;
 	display:-webkit-box;
 	display:-webkit-flex;
@@ -61,27 +122,27 @@ swiper-item image {
 	-webkit-align-items:baseline;
 	    -ms-flex-align:baseline;
 	        align-items:baseline;
-	height: 65rpx;
+	height: 40rpx;
 }
 .price {
-	font-size: 60rpx;
+	font-size: 50rpx;
 	font-weight: 600;
-	color:#F44336;
+	color:white;
 	font-family: 华文细黑;
 }
 .price-tip{
-	color:#F44336;
+	color:white;
 	font-weight: 600;
-	font-size: 30rpx;
+	font-size: 28rpx;
 }
 .m-price{
-	margin-left: 60rpx;
+	margin-left: 30rpx;
 	font-size: 25rpx;
-	color:#8F8F94;
+	color:white;
 	text-decoration: line-through;
 }
 .content-item{
-	padding-left: 250rpx;
+	padding-left: 410rpx;
 	padding-right: 35rpx;
 	margin-right: 35rpx;
 	border-right: 1rpx #D8D8D8 solid;
@@ -89,7 +150,6 @@ swiper-item image {
 .coupon-tip{
 	color: #8F8F94;
 	font-size: 24rpx;
-	margin-top: -13rpx;
 }
 .info-box3{
 	background-color: white;
@@ -198,6 +258,7 @@ swiper-item image {
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+	margin-top: -20rpx;
 }
 .gface{
 	width: 40rpx;
@@ -231,7 +292,7 @@ swiper-item image {
 	height: 40rpx;
 	color: white;
 	background-color: #FF8000;
-	padding: 15rpx 30rpx;
+	padding: 10rpx 25rpx;
 	margin-top: 35rpx;
 	margin-left: 20rpx;
 	font-size: 25rpx;

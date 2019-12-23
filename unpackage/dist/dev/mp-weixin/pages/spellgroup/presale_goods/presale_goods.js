@@ -253,13 +253,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
       goodsData: {}
-      // list:['领券','库存','规格','说明'],
-      // list2:['用户评价(0)'],
       // //轮播主图数据
       // swiperList: [
       // 	{ id: 1, img: '../../static/images/lunxia.png' },
@@ -270,33 +276,6 @@ var _default =
       // currentSwiper: 0,
       // anchorlist:[],//导航条锚点
       // selectAnchor:0,//选中锚点
-      // serviceClass: '',//服务弹窗css类，控制开关动画
-      // specClass: '',//规格弹窗css类，控制开关动画
-      // shareClass:'',//分享弹窗css类，控制开关动画
-      // // 商品信息
-      // goodsData:{
-      // 	id:1,
-      // 	name:"【预售】波士顿进口鲜活大龙虾...",
-      // 	goods_text:"波士顿大龙虾进口鲜活大龙虾450g~500g",
-      // 	price:"69.9",
-      // 	mprice:"2599",
-      // 	number:1,
-      // 	service:[
-      // 		{name:"正品保证",description:"此商品官方保证为正品"},
-      // 		{name:"极速退款",description:"此商品享受退货极速退款服务"},
-      // 		{name:"7天退换",description:"此商品享受7天无理由退换服务"}
-      // 	],
-      // 	spec:["XS","S","M","L","XL","XXL"],
-      // 	comment:{
-      // 		number:102,
-      // 		userface:'../../static/images/nabi.jpg',
-      // 		username:'nabi',
-      // 		time:'2019-12-06',
-      // 		contentt:'快递很快，发货到收获不到24小时，收到还很鲜活 口感新鲜，满满的虾肉，尤其是虾钳一口咬下去都是肉'
-      // 	}
-      // },
-      // //商品描述html
-      // descriptionStr:'<div style="text-align:center;"><img width="100%" src="../../static/images/xiangqing.png"/></div>'
     };
   },
   onLoad: function onLoad(e) {var _this = this;
@@ -376,18 +355,23 @@ var _default =
     },
     //点击加入购物车
     handleCartAdd: function handleCartAdd() {var _this3 = this;
+      console.log(this.goodsData);
       // 1 获取缓存中的购物车 数组
       var cart = uni.getStorageSync("cart") || [];
       // 2 判断 商品对象是否存在于购物车数组中
-      var index = cart.findIndex(function (v) {return v.goods_id === _this3.GoodsInfo.goods_id;});
+      var index = cart.findIndex(function (v) {return v.id === _this3.goodsData.id;});
       if (index === -1) {
         //3  不存在 第一次添加
-        this.GoodsInfo.num = 1;
-        this.GoodsInfo.checked = true;
-        cart.push(this.GoodsInfo);
+        this.GoodsInfonew.bigpicturepath = this.goodsData.bigpicturepath;
+        this.GoodsInfonew.activityprice = this.goodsData.activityprice;
+        this.GoodsInfonew.price = this.goodsData.price;
+        this.GoodsInfonew.goodsName = this.goodsData.goodsName;
+        this.GoodsInfonew.number = 1;
+        this.GoodsInfonew.id = this.goodsData.id;
+        cart.push(this.GoodsInfonew);
       } else {
         // 4 已经存在购物车数据 执行 num++
-        cart[index].num++;
+        cart[index].number++;
       }
       // 5 把购物车重新添加回缓存中
       uni.setStorageSync("cart", cart);
@@ -407,6 +391,11 @@ var _default =
         });
       }
       this.toConfirmation();
+    },
+    chat: function chat() {
+      uni.reLaunch({
+        url: '/pages/home/chat/chat' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

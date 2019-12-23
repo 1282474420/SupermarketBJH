@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
 	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
@@ -9,7 +8,7 @@
 		"es6": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.9.2",
 	"appid": "touristappid",
 	"projectname": "SupermarketBJH",
 	"simulatorType": "wechat",
@@ -32,36 +31,4 @@
 			"list": []
 		}
 	}
-=======
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.9.2",
-  "appid": "touristappid",
-  "projectname": "SupermarketBJH",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  }
->>>>>>> cde337ca2d31c2c4790683f65f93a1305c3d27cb
 }

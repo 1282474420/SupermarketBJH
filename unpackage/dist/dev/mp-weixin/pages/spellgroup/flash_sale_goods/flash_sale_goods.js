@@ -251,6 +251,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
 {
   components: { uniCountdown: uniCountdown },
   data: function data() {
@@ -309,9 +317,9 @@ __webpack_require__.r(__webpack_exports__);
 
     },
     // 客服
-    share: function share() {
-      uni.navigateTo({
-        url: "" });
+    chat: function chat() {
+      uni.reLaunch({
+        url: '/pages/home/chat/chat' });
 
     },
     //购物车

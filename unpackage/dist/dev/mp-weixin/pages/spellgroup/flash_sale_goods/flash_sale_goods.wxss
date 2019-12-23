@@ -42,7 +42,12 @@ swiper-item image {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 .flashCountdown{
-	background-color: #FF8000;
+	background-image: -webkit-gradient(linear, left top, right top, from(#ffa549), to(#fe5c6a)),
+	                    -webkit-gradient(linear, left top, left bottom, from(#ffa549), to(#ffa549));
+	background-image: -o-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
+	                    -o-linear-gradient(#ffa549, #ffa549);
+	background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
+	                    linear-gradient(#ffa549, #ffa549);
 	color: white;
 	height: 70rpx;
 	padding-top: 10rpx;
@@ -60,9 +65,10 @@ swiper-item image {
 	font-size: 33rpx;
 	margin-left: 20rpx;
 	margin-right: 10rpx;
+	font-weight: bold;
 }
 .f-text2{
-	margin-left: 50rpx;
+	margin-left: 180rpx;
 }
 .flex-item{
 	background-color: white;
@@ -110,7 +116,6 @@ swiper-item image {
 .coupon-tip{
 	color: #8F8F94;
 	font-size: 24rpx;
-	margin-top: -13rpx;
 }
 .info-box3{
 	background-color: white;
