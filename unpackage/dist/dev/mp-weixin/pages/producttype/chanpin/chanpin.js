@@ -86,13 +86,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -123,6 +118,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var SearchInput = function SearchInput() {return __webpack_require__.e(/*! import() | components/SearchInput/SearchInput */ "components/SearchInput/SearchInput").then(__webpack_require__.bind(null, /*! ../../../components/SearchInput/SearchInput */ 257));};var _default =
+
+
+
+
+
+
+
 
 
 
@@ -238,7 +240,20 @@ __webpack_require__.r(__webpack_exports__);
 
       //右侧商品数据
       rightContent: [],
-      fen: "" };
+      fen: "",
+      GoodsInfonew: {},
+      properties: {
+        // 这里定义了innerText属性，属性值可以在组件使用时指定
+        innerTitle: {
+          type: String,
+          value: '产品分类' },
+
+        // 这里是渐变的颜色
+        h_back_color: {
+          col: "ffa04b",
+          col2: "fe5d69" } } };
+
+
 
   },
 
@@ -261,19 +276,23 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   methods: {
-    GouWu: function GouWu() {var _this2 = this;
+    GouWu: function GouWu(e) {
+      console.log(e);
       // 1 获取缓存中的购物车 数组
       var cart = uni.getStorageSync("cart") || [];
       // 2 判断 商品对象是否存在于购物车数组中
-      var index = cart.findIndex(function (v) {return v.id === _this2.rightContent.id;});
+      var index = cart.findIndex(function (v) {return v.id === e.id;});
       if (index === -1) {
         //3  不存在 第一次添加
-        this.rightContent.num = 1;
-        this.rightContent.checked = true;
-        cart.push(this.rightContent);
+        this.GoodsInfonew.goodsName = e.goodsName;
+        this.GoodsInfonew.price = e.price;
+        this.GoodsInfonew.picturepath = e.picturepath;
+        this.GoodsInfonew.number = 1;
+        this.GoodsInfonew.id = e.id;
+        cart.push(this.GoodsInfonew);
       } else {
         // 4 已经存在购物车数据 执行 num++
-        cart[index].num++;
+        cart[index].number++;
       }
       // 5 把购物车重新添加回缓存中
       uni.setStorageSync("cart", cart);
@@ -295,7 +314,7 @@ __webpack_require__.r(__webpack_exports__);
         url: '../ProductDetails/ProductDetails?id=' + e });
 
     },
-    change: function change(e) {var _this3 = this;
+    change: function change(e) {var _this2 = this;
       console.log(e);
       uni.showToast({
         title: "编号" + e.id,
@@ -306,7 +325,7 @@ __webpack_require__.r(__webpack_exports__);
         method: 'POST',
         data: {},
         success: function success(res) {
-          _this3.rightContent = res.data.message;
+          _this2.rightContent = res.data.message;
         },
         fail: function fail() {},
         complete: function complete() {} });

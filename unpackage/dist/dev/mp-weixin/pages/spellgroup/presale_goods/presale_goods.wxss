@@ -4,12 +4,10 @@
 		height: 80rpx;
 		display: -webkit-box;
 		display: -webkit-flex;
-		display: -ms-flexbox;
 		display: flex;
 		/* justify-content: center; */
 		-webkit-box-align: center;
 		-webkit-align-items: center;
-		    -ms-flex-align: center;
 		        align-items: center;
 		font-size: 25rpx;
 		margin-left: 30rpx;
@@ -21,11 +19,9 @@
 	height: 40rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	margin: 0 0 30rpx 0;
 }
@@ -41,11 +37,9 @@
 .show {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .icon {
@@ -59,11 +53,9 @@
 	height: 40rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .face {
@@ -103,12 +95,10 @@
 .eva-section{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	/* padding: 20upx 30upx; */
 	background: #fff;
@@ -117,11 +107,9 @@
 .e-header{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	height: 70rpx;
 	padding: 10rpx 0;
@@ -147,7 +135,6 @@
 .tip{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	text-align: right;
 }
@@ -157,7 +144,6 @@
 .eva-box{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	padding-left: 30rpx;
 	padding-top: 10rpx;
@@ -169,7 +155,6 @@
 }
 .portrait{
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
 	width: 50rpx;
 	height: 50rpx;
@@ -188,11 +173,9 @@
 .bot{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
 .c-list{
@@ -203,11 +186,9 @@
 .c-row{
 	display:-webkit-box;
 	display:-webkit-flex;
-	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:center;
 	-webkit-align-items:center;
-	    -ms-flex-align:center;
 	        align-items:center;
 	padding: 25rpx 33rpx;
 	position:relative;
@@ -224,7 +205,6 @@
 .con{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	color: #F44336;
 }
@@ -248,16 +228,13 @@
 .con-list{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	display:-webkit-box;
 	display:-webkit-flex;
-	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	/* color: $font-color-dark; */
 	/* line-height: 40upx; */
@@ -344,15 +321,12 @@ swiper-item image {
 .indicator{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	padding: 0 25rpx;
 	height: 40rpx;
@@ -378,11 +352,9 @@ swiper-item image {
 	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	margin: 0 0 30rpx 0;
 }
@@ -395,10 +367,8 @@ swiper-item image {
 	font-size: 28rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 }
 .serviceitem{
@@ -408,7 +378,6 @@ swiper-item image {
 	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 }
 .info-box{
@@ -423,12 +392,9 @@ swiper-item image {
 	
 	display:-webkit-flex;
 	
-	display:-ms-flexbox;
-	
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
-	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	height: 65rpx;
 	/* padding: 10upx 0;
@@ -480,20 +446,16 @@ swiper-item image {
 .content{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	  -webkit-box-align: center;
 	  -webkit-align-items: center;
-	      -ms-flex-align: center;
 	          align-items: center;
 	  -webkit-box-orient: horizontal;
 	  -webkit-box-direction: normal;
 	  -webkit-flex-direction: row;
-	      -ms-flex-direction: row;
 	          flex-direction: row; 
 	  -webkit-box-pack: justify; 
 	  -webkit-justify-content: space-between; 
-	      -ms-flex-pack: justify; 
 	          justify-content: space-between;
 	  padding-top: 10rpx;
 }
@@ -503,7 +465,6 @@ swiper-item image {
 	color:#FF3333;
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 }
 .content-item{
@@ -546,7 +507,6 @@ swiper-item image {
 	text-decoration: line-through;
 	-webkit-box-flex: 5;
 	-webkit-flex-grow: 5;
-	    -ms-flex-positive: 5;
 	        flex-grow: 5;
 }
 .imgShang{
@@ -563,21 +523,17 @@ swiper-item image {
 	z-index: 2;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .icons {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	height: 80rpx;
 	margin-left: -4%;
@@ -587,14 +543,11 @@ swiper-item image {
 	height: 80rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 	margin-left: 10rpx;
 }
@@ -607,11 +560,9 @@ swiper-item image {
 .text-di {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	width: 100%;
 	font-size: 22rpx;
@@ -623,7 +574,6 @@ swiper-item image {
 	overflow: hidden;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	margin-right: -2%;
 }
@@ -633,11 +583,9 @@ swiper-item image {
 	color: #fff;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 28rpx;
 }
@@ -660,15 +608,12 @@ swiper-item image {
 	/* z-index: 95; */
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	width: 100%;
 	height: 120rpx;
@@ -680,17 +625,14 @@ swiper-item image {
 .p-b-btn{
 	display:-webkit-box;
 	display:-webkit-flex;
-	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	/* align-items: center; */
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	font-size: 25rpx;
 	/* color: $font-color-base; */
@@ -717,17 +659,13 @@ swiper-item image {
 .action-btn-group{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	height: 76rpx;
 	border-radius: 100px;
 	overflow: hidden;
-	-webkit-box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
-	        box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
-	-webkit-box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
-	        box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
-	background: -webkit-gradient(linear, left top, right top, from(#ffac30),color-stop(#fa436a),to(#F56C6C));
-	background: -o-linear-gradient(left, #ffac30,#fa436a,#F56C6C);
+	box-shadow: 0 20rpx 40rpx -16rpx #fa436a;
+	box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
+	background: -webkit-linear-gradient(left, #ffac30,#fa436a,#F56C6C);
 	background: linear-gradient(to right, #ffac30,#fa436a,#F56C6C);
 	margin-left: 20rpx;
 	position:relative;
@@ -738,7 +676,6 @@ swiper-item image {
 	top: 50%;
 	right: 50%;
 	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
 	        transform: translateY(-50%);
 	height: 28rpx;
 	width: 0;
@@ -747,15 +684,12 @@ swiper-item image {
 .action-btn{
 	display:-webkit-box;
 	display:-webkit-flex;
-	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	width: 180rpx;
 	height: 100%;

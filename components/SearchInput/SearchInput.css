@@ -1,9 +1,10 @@
 .search_input{
-  height:74rpx;
+  height:60rpx;
   padding: 10rpx;
-  background-color: #FF8C00; 
+
 }
-navigator{
+.ss{
+  border-radius: 100rpx;
   height: 100%;
   display: flex;
   font-size: 30rpx;

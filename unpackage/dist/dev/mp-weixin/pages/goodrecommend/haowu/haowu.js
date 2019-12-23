@@ -169,9 +169,8 @@ var _default =
   data: function data() {
     return {
       goodsList: [],
-      advisory: [] };
-
-
+      advisory: [],
+      GoodsInfonew: {} };
 
   },
   onLoad: function onLoad(options) {var _this = this;
@@ -195,17 +194,23 @@ var _default =
 
   },
   methods: {
-    GW: function GW(e) {var _this2 = this;
+    GouWu: function GouWu(e) {
+      console.log(e);
       // 1 获取缓存中的购物车 数组
       var cart = uni.getStorageSync("cart") || [];
       // 2 判断 商品对象是否存在于购物车数组中
-      var index = cart.findIndex(function (v) {return v.id === _this2.goodsList.id;});
+      var index = cart.findIndex(function (v) {return v.id === e.id;});
       if (index === -1) {
         //3  不存在 第一次添加
-        cart.push(this.goodsList);
+        this.GoodsInfonew.goodsName = e.goodsName;
+        this.GoodsInfonew.price = e.price;
+        this.GoodsInfonew.picturepath = e.picturepath;
+        this.GoodsInfonew.number = 1;
+        this.GoodsInfonew.id = e.id;
+        cart.push(this.GoodsInfonew);
       } else {
         // 4 已经存在购物车数据 执行 num++
-        cart[index].num++;
+        cart[index].number++;
       }
       // 5 把购物车重新添加回缓存中
       uni.setStorageSync("cart", cart);

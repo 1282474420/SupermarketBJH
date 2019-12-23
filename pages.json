@@ -6,6 +6,66 @@
 				"navigationBarTitleText": "首页"
 			}
 		}
+		
+		
+		,{
+		    "path" : "pages/shopcart/addresslist/addresslist",
+		    "style" : {
+				"navigationBarTitleText": "地址列表"
+			}
+		},
+		{
+		    "path" : "pages/shopcart/addresslist/addressadd/addressadd",
+		    "style" : {
+				"navigationBarTitleText": "添加地址"
+			}
+		}
+		,{
+		    "path" : "pages/shopcart/addresslist/addressupd/addressupd",
+		    "style" : {
+				"navigationBarTitleText": "编辑地址"
+			}
+		},
+		{
+		    "path" : "pages/my/my/my",
+		    "style" : {
+				"navigationBarTitleText": "我的"
+			}
+		}
+		,{
+		    "path" : "pages/my/vipLogin/vipLogin",
+		    "style" : {
+				"navigationBarTitleText": "会员登录"
+			}
+		}
+		,{
+		    "path" : "pages/my/vipRegister/vipRegister",
+		    "style" : {
+				"navigationBarTitleText": "会员注册"
+			}
+		}
+		,{
+		    "path" : "pages/my/myVipCard/myVipCard",
+		    "style" : {
+				"navigationBarTitleText": "我的会员卡"
+			}
+		}
+		,{
+		    "path" : "pages/my/myFavorite/myFavorite",
+		    "style" : {
+				"navigationBarTitleText": "我的收藏"
+			}
+		}
+		,{
+		    "path" : "pages/my/myCoupons/myCoupons",
+		    "style" : {
+				"navigationBarTitleText": "我的优惠券"
+			}
+		}
+		
+		
+		
+		
 		,{
 			"path": "pages/shopcart/myorder/forpayment/forpayment",
 			"style": {
@@ -32,11 +92,6 @@
 			"path": "pages/goodrecommend/goodrecommend",
 			"style": {
 				"navigationBarTitleText": "好物推荐"
-			}
-		}, {
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "我的"
 			}
 		}, {
 			"path": "pages/bottom/bottom",
@@ -84,6 +139,8 @@
 				"navigationBarTitleText": "支付成功明细"
 			}
 		}
+		
+		
 
 
 
@@ -186,6 +243,8 @@
 				"navigationBarTitleText": "搜索页面"
 			}
 		}
+        
+        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -224,7 +283,7 @@
 			{
 				"iconPath": "static/images/dbimg/sy_05_03.png",
 				"selectedIconPath": "static/images/dbimg/sy_005_03.png",
-				"pagePath": "pages/my/my",
+				"pagePath": "pages/my/my/my",
 				"text": "我的"
 			}
 		]

@@ -1,6 +1,6 @@
 <template>
 <view class="search_input">
-  <navigator url="/pages/home/search_Page/search_Page" open-type="navigate">
+  <navigator class="ss" url="/pages/home/search_Page/search_Page" open-type="navigate">
     搜索
   </navigator>
 </view>
