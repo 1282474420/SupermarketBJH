@@ -15,7 +15,7 @@
 		<view class="flashCountdown">
 			<text class="f-text">限时购</text>抢购中
 			<text class="f-text2">离结束还剩</text>
-			<uni-countdown color="#FFFFFF" background-color="#FF8000" border-color="#FF8000" border-radius="20rpx" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
+			<uni-countdown color="#fe5c6a" border-radius="30rpx" background-color="#F5F5DC" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 		</view>
 		
 		<view class="flex-item">
@@ -102,18 +102,26 @@
 		<!-- 底部菜单 -->
 		<view class="footer">
 			<view class="icons">
-				<view class="box" @tap="share">
-					<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
-					<view class="text-di">首页</view>
+				<navigator open-type="switchTab" url="../../home/home/home">
+					<view class="box">
+						<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
+						<view class="text-di">首页</view>
+					</view>
+				</navigator>
+				
+				<view open-type="switchTab" @tap="chat()">
+					<view class="box">
+						<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
+						<view class="text-di">客服</view>
+					</view>
 				</view>
-				<view class="box" @tap="toChat">
-					<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
-					<view class="text-di">客服</view>
-				</view>
-				<view class="box" @tap="keep">
-					<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
-					<view class="text-di">购物车</view>
-				</view>
+				
+				<navigator open-type="switchTab" url="../../shopcart/cart/cart">
+					<view class="box" @tap="keep">
+						<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
+						<view class="text-di">购物车</view>
+					</view>
+				</navigator>
 			</view>
 			<view class="btn">
 				<view class="joinCart" @tap="joinCart">加入购物车</view>
@@ -185,9 +193,9 @@
 				})
 			},
 			// 客服
-			share(){
-				uni.navigateTo({
-					url:""
+			chat() {
+				uni.reLaunch({
+					url:'/pages/home/chat/chat'
 				})
 			},
 			//购物车
@@ -284,7 +292,8 @@
 	}
 	
 	.flashCountdown{
-		background-color: #FF8000;
+		background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
+		                    linear-gradient(#ffa549, #ffa549);
 		color: white;
 		height: 70rpx;
 		padding-top: 10rpx;
@@ -297,10 +306,11 @@
 		font-size: 33rpx;
 		margin-left: 20rpx;
 		margin-right: 10rpx;
+		font-weight: bold;
 	}
 	
 	.f-text2{
-		margin-left: 50rpx;
+		margin-left: 180rpx;
 	}
 	
 	.flex-item{
@@ -349,7 +359,6 @@
 	.coupon-tip{
 		color: #8F8F94;
 		font-size: 24rpx;
-		margin-top: -13rpx;
 	} 
 	
 	.info-box3{

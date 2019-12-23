@@ -40,7 +40,7 @@
 			<view class="c-list uni-list">
 				<view class="uni-list-cell" hover-class="uni-list-cell-hover">
 					<!-- uni-list-cell-navigate uni-navigate-right -->
-					<navigator url="">
+					<navigator url="../../home/coupons/coupons">
 						<view class="c-row">
 							<text class="tit tt">领券</text>
 							<text class="con red">领取优惠券</text>
@@ -108,21 +108,29 @@
 		<!-- 底部菜单 -->
 		<view class="footer">
 			<view class="icons">
-				<view class="box" @click="home">
-					<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
-					<view class="text-di">首页</view>
+				<navigator open-type="switchTab" url="../../home/home/home">
+					<view class="box">
+						<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
+						<view class="text-di">首页</view>
+					</view>
+				</navigator>
+				
+				<view open-type="switchTab" @tap="chat()">
+					<view class="box">
+						<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
+						<view class="text-di">客服</view>
+					</view>
 				</view>
-				<view class="box" @tap="toChat">
-					<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
-					<view class="text-di">客服</view>
-				</view>
-				<view class="box" @tap="keep">
-					<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
-					<view class="text-di">购物车</view>
-				</view>
+				
+				<navigator open-type="switchTab" url="../../shopcart/cart/cart">
+					<view class="box" @tap="keep">
+						<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
+						<view class="text-di">购物车</view>
+					</view>
+				</navigator>
 			</view>
 			<view class="btn">
-				<view class="joinCart" @tap="joinCart" @click="handleCartAdd">加入购物车</view>
+				<view class="joinCart" @click="handleCartAdd">加入购物车</view>
 				<view class="buy" @tap="buy">立即下单</view>
 			</view>
 		</view>
@@ -134,8 +142,6 @@
 		data() {
 			return {
 				goodsData:{}
-				// list:['领券','库存','规格','说明'],
-				// list2:['用户评价(0)'],
 				// //轮播主图数据
 				// swiperList: [
 				// 	{ id: 1, img: '../../static/images/lunxia.png' },
@@ -146,33 +152,6 @@
 				// currentSwiper: 0,
 				// anchorlist:[],//导航条锚点
 				// selectAnchor:0,//选中锚点
-				// serviceClass: '',//服务弹窗css类，控制开关动画
-				// specClass: '',//规格弹窗css类，控制开关动画
-				// shareClass:'',//分享弹窗css类，控制开关动画
-				// // 商品信息
-				// goodsData:{
-				// 	id:1,
-				// 	name:"【预售】波士顿进口鲜活大龙虾...",
-				// 	goods_text:"波士顿大龙虾进口鲜活大龙虾450g~500g",
-				// 	price:"69.9",
-				// 	mprice:"2599",
-				// 	number:1,
-				// 	service:[
-				// 		{name:"正品保证",description:"此商品官方保证为正品"},
-				// 		{name:"极速退款",description:"此商品享受退货极速退款服务"},
-				// 		{name:"7天退换",description:"此商品享受7天无理由退换服务"}
-				// 	],
-				// 	spec:["XS","S","M","L","XL","XXL"],
-				// 	comment:{
-				// 		number:102,
-				// 		userface:'../../static/images/nabi.jpg',
-				// 		username:'nabi',
-				// 		time:'2019-12-06',
-				// 		contentt:'快递很快，发货到收获不到24小时，收到还很鲜活 口感新鲜，满满的虾肉，尤其是虾钳一口咬下去都是肉'
-				// 	}
-				// },
-				// //商品描述html
-				// descriptionStr:'<div style="text-align:center;"><img width="100%" src="../../static/images/xiangqing.png"/></div>'
 			}
 		},
 		onLoad: function (e) {
@@ -252,28 +231,33 @@
 			},
 			//点击加入购物车
 			handleCartAdd() {
-			    // 1 获取缓存中的购物车 数组
-			    let cart = uni.getStorageSync("cart") || [];
-			    // 2 判断 商品对象是否存在于购物车数组中
-			    let index = cart.findIndex(v => v.goods_id === this.GoodsInfo.goods_id);
-			    if (index === -1) {
-			      //3  不存在 第一次添加
-			      this.GoodsInfo.num = 1;
-			      this.GoodsInfo.checked = true;
-			      cart.push(this.GoodsInfo);
-			    } else {
-			      // 4 已经存在购物车数据 执行 num++
-			      cart[index].num++;
-			    }
-			    // 5 把购物车重新添加回缓存中
-			    uni.setStorageSync("cart", cart);
-			    // 6 弹窗提示
-			    uni.showToast({
-			      title: '加入成功',
-			      icon: 'success',
-			      // true 防止用户 手抖 疯狂点击按钮 
-			      mask: true
-			    });
+				console.log(this.goodsData);
+				// 1 获取缓存中的购物车 数组
+				let cart = uni.getStorageSync("cart") || [];
+				// 2 判断 商品对象是否存在于购物车数组中
+				let index = cart.findIndex(v => v.id === this.goodsData.id);
+				if (index === -1) {
+					//3  不存在 第一次添加
+					this.GoodsInfonew.bigpicturepath = this.goodsData.bigpicturepath;
+					this.GoodsInfonew.activityprice = this.goodsData.activityprice;
+					this.GoodsInfonew.price = this.goodsData.price;
+					this.GoodsInfonew.goodsName = this.goodsData.goodsName;
+					this.GoodsInfonew.number = 1;
+					this.GoodsInfonew.id = this.goodsData.id;
+					cart.push(this.GoodsInfonew);
+				} else {
+					// 4 已经存在购物车数据 执行 num++
+					cart[index].number++;
+				}
+				// 5 把购物车重新添加回缓存中
+				uni.setStorageSync("cart", cart);
+				// 6 弹窗提示
+				uni.showToast({
+					title: '加入成功',
+					icon: 'success',
+					// true 防止用户 手抖 疯狂点击按钮 
+					mask: true
+				});
 			},
 			//立即购买
 			buy(){
@@ -283,6 +267,11 @@
 					});
 				}
 				this.toConfirmation();
+			},
+			chat() {
+				uni.reLaunch({
+					url:'/pages/home/chat/chat'
+				})
 			}
 		}
 	}
@@ -556,7 +545,6 @@
 	.coupon-tip{
 		color: #8F8F94;
 		font-size: 24rpx;
-		margin-top: -13rpx;
 	} 
 	
 	
