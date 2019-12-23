@@ -1,6 +1,25 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/shopcart/addresslist/addresslist",
+		    "style" : {
+				"navigationBarTitleText": "地址列表"
+			}
+		},
+		{
+		    "path" : "pages/shopcart/addresslist/addressadd/addressadd",
+		    "style" : {
+				"navigationBarTitleText": "添加地址"
+			}
+		}
+		,{
+		    "path" : "pages/shopcart/addresslist/addressupd/addressupd",
+		    "style" : {
+				"navigationBarTitleText": "编辑地址"
+			}
+		},
+		
+		{
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页"
@@ -84,6 +103,8 @@
 				"navigationBarTitleText": "支付成功明细"
 			}
 		}
+		
+		
 
 
 
@@ -186,6 +207,8 @@
 				"navigationBarTitleText": "搜索页面"
 			}
 		}
+        
+        
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

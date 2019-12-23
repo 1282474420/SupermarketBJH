@@ -1,0 +1,74 @@
+.bigv{
+  width: 750rpx;
+  height: 1205rpx;
+  background-color: #f5f5f5;
+}
+.v1{
+  font-size: 26rpx;
+  color: #999999;
+  padding-left: 30rpx;
+  padding-top: 40rpx;
+}
+.v2{
+  width: 690rpx;
+  height: 209rpx;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-top: 18rpx;
+}
+.v2_3{
+  width: 690rpx;
+  height: 105rpx;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-top: 18rpx;
+}
+.v3{
+  width: 690rpx;
+  height: 104rpx; 
+  border-top: 1rpx solid #f5f5f5;
+}
+.v3 text{
+  width: 190rpx;
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 110rpx;
+  margin-left: 20rpx;
+}
+.v3 input{
+  font-size: 30rpx;
+  width: 500rpx;
+  height: 105rpx;
+  float:right;
+}
+.v3_1{
+  width: 110rpx;
+  height: 60rpx;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+}
+.v5{
+  width: 750rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 1000rpx;
+}
+.btn1{
+  width: 345rpx;
+  height: 100rpx;
+  float: left;
+  font-size: 34rpx; 
+  color: #fe4531;
+  margin-left: 30rpx;
+}
+.btn2{
+  width: 345rpx;
+  height: 100rpx;
+  float: right;
+  font-size: 34rpx; 
+  background-color: #fe4531;
+  color: white;
+  margin-right: 30rpx;
+}
+

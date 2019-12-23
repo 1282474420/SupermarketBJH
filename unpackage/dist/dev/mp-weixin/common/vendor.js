@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7117,7 +7117,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7138,14 +7138,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7221,7 +7221,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7598,7 +7598,38 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 247:
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 321:
 /*!********************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/components/uni-icons/icons.js ***!
   \********************************************************************/
@@ -7701,90 +7732,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'closefill': "\uE589",
   'sound': "\uE590",
   'scan': "\uE612" };exports.default = _default;
-
-/***/ }),
-
-/***/ 29:
-/*!****************************************************!*\
-  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
-}
-
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
-}
-/** 
-   * 时间戳转化为年 月 日 时 分 秒 
-   * number: 传入时间戳 
-   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
-  */
-
-
-function formatTimeTwo(number, format) {
-  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
-  var returnArr = [];
-  var date = new Date(number * 1000);
-  returnArr.push(date.getFullYear());
-  returnArr.push(formatNumber(date.getMonth() + 1));
-  returnArr.push(formatNumber(date.getDate()));
-  returnArr.push(formatNumber(date.getHours()));
-  returnArr.push(formatNumber(date.getMinutes()));
-  returnArr.push(formatNumber(date.getSeconds()));
-
-  for (var i in returnArr) {
-    format = format.replace(formateArr[i], returnArr[i]);
-  }
-
-  return format;
-}
-
-module.exports = {
-  formatTime: formatTime,
-  formatTimeTwo: formatTimeTwo };
-
-/***/ }),
-
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
 
 /***/ }),
 
@@ -8687,6 +8634,59 @@ main();
 
 /***/ }),
 
+/***/ 53:
+/*!****************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+}
+
+function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+}
+/** 
+   * 时间戳转化为年 月 日 时 分 秒 
+   * number: 传入时间戳 
+   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
+  */
+
+
+function formatTimeTwo(number, format) {
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+  var date = new Date(number * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+
+  return format;
+}
+
+module.exports = {
+  formatTime: formatTime,
+  formatTimeTwo: formatTimeTwo };
+
+/***/ }),
+
 /***/ 6:
 /*!******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
@@ -8706,7 +8706,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/spellgroup/spellgroup": { "navigationBarTitleText": "在线拼团", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心", "usingComponents": {} }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表", "usingComponents": { "uni-section": "/components/uni-section/uni-section", "uni-list": "/components/uni-list/uni-list", "uni-list-item": "/components/uni-list-item/uni-list-item" } }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服", "usingComponents": {} }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表" }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情" }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购" }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情" }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团" }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情" }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表" }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址" }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址" }, "pages/home/home/home": { "navigationBarTitleText": "首页" }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000" }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情" }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐" }, "pages/my/my": { "navigationBarTitleText": "我的" }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航" }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价" }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款" }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情" }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价" }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单" }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg" }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细" }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表" }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情" }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐" }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情" }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表" }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情" }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购" }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情" }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团" }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情" }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团" }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心" }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表" }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服" }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 

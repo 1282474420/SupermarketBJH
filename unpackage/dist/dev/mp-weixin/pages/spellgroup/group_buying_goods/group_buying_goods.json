@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "拼团详情",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
 }

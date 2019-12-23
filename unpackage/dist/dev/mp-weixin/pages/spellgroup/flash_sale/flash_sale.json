@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "限时抢购",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
 }

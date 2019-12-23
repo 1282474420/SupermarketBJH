@@ -5,16 +5,12 @@
 	},
 	"setting": {
 		"urlCheck": false,
+		"minified": false,
 		"es6": true
 	},
 	"compileType": "miniprogram",
-<<<<<<< HEAD
 	"libVersion": "2.9.2",
 	"appid": "wxf64f6a29941fd8bc",
-=======
-	"libVersion": "2.7.0",
-	"appid": "touristappid",
->>>>>>> 720b2ec8da3bd55d91095705b4427a3ad50a5a95
 	"projectname": "SupermarketBJH",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

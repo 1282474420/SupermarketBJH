@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "在线拼团",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown"
+  }
 }
