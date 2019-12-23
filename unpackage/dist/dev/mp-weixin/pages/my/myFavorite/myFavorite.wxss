@@ -1,0 +1,87 @@
+page {
+  background-color: #f5f5f5;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 30rpx;
+}
+.sc {
+  width: 690rpx;
+  height: 280rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+}
+image {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 30rpx 20rpx;
+}
+.bt {
+  width: 390rpx;
+  height: 220rpx;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.bt .ss {
+  width: 100%;
+  height: 80rpx;
+  font-size: 31rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.money {
+  width: 82rpx;
+  height: 30rpx;
+  margin-top: 30rpx;
+  color: red;
+  font-size: 36rpx;
+}
+.money text {
+  font-size: 24rpx;
+}
+.zt {
+  width: 405rpx;
+  height: 55rpx;
+  margin-top: 25rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.zt text {
+  width: 145rpx;
+  height: 55rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  border: 1rpx solid #000;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 55rpx;
+}
+.zt .gm {
+  border: 1rpx solid red;
+  color: red;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+.zt image {
+  width: 55rpx;
+  height: 55rpx;
+}
+.pig{
+  margin-top: 50%;
+  text-align: center;
+  color: rgba(138, 133, 133, 0.976);
+  font-family:"KaiTi";
+}
+

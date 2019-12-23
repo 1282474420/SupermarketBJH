@@ -35,7 +35,7 @@
 					</view>
 						<view >
 						<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
-						</view>
+					</view>
 				</view>
 			</view>
 		</scroll-view>

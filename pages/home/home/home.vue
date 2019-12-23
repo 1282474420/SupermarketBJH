@@ -327,7 +327,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      }, {
 				        img: "../../../static/images/navIcon_07.png",
 				        text: "佳会员",
-				        url: "../my/my"
+				        url: "../../my/myVipCard/myVipCard"
 				      }],
 				      // 服务
 				      service: [{
