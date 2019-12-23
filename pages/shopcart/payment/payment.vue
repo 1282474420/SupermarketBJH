@@ -34,8 +34,8 @@
 			</view>
 		</view>
 		<view style="margin-top: 50upx;">
-			<button class="btnorder">查看订单</button>
-			<button class="btnhome" plain="true" style="color: #ee7f72;">返回首页</button>
+			<button class="btnorder" @click="lookorder">查看订单</button>
+			<button class="btnhome" plain="true" style="color: #ee7f72;" @click="returnhome">返回首页</button>
 		</view>
 	</view>
 </template>
@@ -48,7 +48,16 @@
 			}
 		},
 		methods: {
-			
+			lookorder:function (e){
+				uni.reLaunch({
+					url:"../../shopcart/myorder/forpayment/forpayment"
+				})
+			},
+			returnhome:function (e){
+				uni.reLaunch({
+					url:"../../home/home/home"
+				})
+			},
 		}
 	}
 </script>

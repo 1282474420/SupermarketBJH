@@ -36,13 +36,8 @@
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
 						<view >
-<<<<<<< HEAD
-						<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
-					</view>
-=======
 						<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
 						</view>
->>>>>>> aa9f34f40c177a2a1d0d152d2e41c32138e0ec93
 				</view>
 			</view>
 		</scroll-view>
