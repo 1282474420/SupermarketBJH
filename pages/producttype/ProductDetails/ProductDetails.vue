@@ -29,7 +29,7 @@
 		<view class="youhui">
 			<view class="ys">
 				<text class="mc">领卷</text>
-				<navigator url class="dianji">领取优惠卷
+				<navigator url="../../home/coupons/coupons" class="dianji">领取优惠卷
 					<image class="icon1" src="../../../static/images/img/jiantou.png"></image>
 				</navigator>
 			</view>
@@ -65,7 +65,7 @@
 
 		<!--底部栏-->
 		<view class="btm_tool">
-			<navigator open-type="switchTab" url="../../home/home" class="tool_item">
+			<navigator open-type="switchTab" url="../../home/home/home" class="tool_item">
 				<view class="icon_png">
 					<image class="icon_png" src="../../../static/images/dbimg/sy_01_03.png"></image>
 				</view>

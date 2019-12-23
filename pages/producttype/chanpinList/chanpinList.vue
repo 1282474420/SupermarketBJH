@@ -1,12 +1,7 @@
 <template>
 <view>
-<view class="pyg_index">
-  <!--搜索框开始-->
-    <SearchInput></SearchInput>
-  <!--s搜索框结束-->
-</view>
+
 		 <view scroll-x class="cates_container" >
-			
 				<scroll-view scroll-x="true"   class='yqxz' style="width: 100%" scroll-with-animation> 
 				     <view class="tab" @tap="change(0)" data-index='0' bindtap="switchTab">热卖推荐</view>
 					 <view class="tab" @tap="change(1)" data-index='2' bindtap="switchTab">乳品饮料</view>
@@ -21,16 +16,15 @@
 		<!-- 商品列表 -->
 		<view class="goods-list">
 			<view class="product-list">
-				<view class="product" v-for="(goods) in goodsList" :key="goods.id" @click="XQ(goods.id)">
-					<image mode="widthFix" :src="goods.picturepath"></image>
+				<view class="product" v-for="(goods) in goodsList" :key="goods.id" >
+					<image mode="widthFix" :src="goods.picturepath" @click="XQ(goods.id)"></image>
 					<view class="info">
-					<view class="name">{{goods.goodsName}} </view>
-					<navigator class="imga"  url="../ProductDetails/ProductDetails"><image class="img" src="../../static/icon/jiahao.png"/></navigator>
+						<view class="name">{{goods.goodsName}} </view>
 					</view>
 					<view class="info">
 						<view class="price">￥{{goods.price}}</view>
-						 <view class="slogan" @click="GW">
-							 <image class="slogan"  src="../../../static/images/img/jiahao.png"></image>
+						 <view class="slogan" >
+							 <image class="slogan" @click="GW(goods)" src="../../../static/images/img/jiahao.png"></image>
 						 </view> 
 					</view>
 					
@@ -48,7 +42,8 @@
 	export default {
 		data() {
 			return {
-				goodsList:[]
+				goodsList:[],
+				GoodsInfonew:{}
 			}
 		},
 		components: {
@@ -65,29 +60,34 @@
 			});
 		  },
 		  methods:{
-			  GW(){
-				  // 1 获取缓存中的购物车 数组
-				  let cart = uni.getStorageSync("cart") || [];
-				  // 2 判断 商品对象是否存在于购物车数组中
-				  let index = cart.findIndex(v => v.id === this.goodsList.id);
-				  if (index === -1) {
-				    //3  不存在 第一次添加
-				    
-				    cart.push(this.goodsList);
-				  } else {
-				    // 4 已经存在购物车数据 执行 num++
-				    cart[index].num++;
-				  }
-				  // 5 把购物车重新添加回缓存中
-				  uni.setStorageSync("cart", cart);
-				  // 6 弹窗提示
-				  uni.showToast({
-				    title: '加入成功',
-				    icon: 'success',
-				    // true 防止用户 手抖 疯狂点击按钮 
-				    mask: true
-				  });
-			  },
+			  GW(e){
+				  console.log(e);
+				  	// 1 获取缓存中的购物车 数组
+				  	let cart = uni.getStorageSync("cart") || [];
+				  	// 2 判断 商品对象是否存在于购物车数组中
+				  	let index = cart.findIndex(v => v.id === e.id);
+				  	if (index === -1) {
+				  		//3  不存在 第一次添加
+				  		this.GoodsInfonew.goodsName = e.goodsName;
+				  		this.GoodsInfonew.price = e.price;
+				  		this.GoodsInfonew.picturepath = e.picturepath;
+				  		this.GoodsInfonew.number = 1;
+				  		this.GoodsInfonew.id = e.id;
+				  		cart.push(this.GoodsInfonew);
+				  	} else {
+				  		// 4 已经存在购物车数据 执行 num++
+				  		cart[index].number++;
+				  	}
+				  	// 5 把购物车重新添加回缓存中
+				  	uni.setStorageSync("cart", cart);
+				  	// 6 弹窗提示
+				  	uni.showToast({
+				  		title: '加入成功',
+				  		icon: 'success',
+				  		// true 防止用户 手抖 疯狂点击按钮 
+				  		mask: true
+				  	});
+				  },
 			  XQ:function(e){
 				  uni.navigateTo({
 				  	url:'../ProductDetails/ProductDetails?id='+e
@@ -166,8 +166,13 @@
     white-space: nowrap;
     font-family: Monaco;
 	font-size: 25rpx;
-	background-color: #AAAAAA;
+	background-color: #EFEFEF;
+	/* margin-left: 40rpx;
+	display: inline-block;
+	width: 104rpx;
+	margin-top: 30rpx; */
 }
+
 .tab {
     display: inline-block;
     height: 86rpx;

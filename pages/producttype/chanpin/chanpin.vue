@@ -1,9 +1,11 @@
 <template>
 	<view>
-		<view class="pyg_index">
-			<!--搜索框开始-->
-			<SearchInput></SearchInput>
-			<!--s搜索框结束-->
+		<view class="hh-header" :style="'background: -webkit-linear-gradient(left,#' + properties.h_back_color.col + ',#' + properties.h_back_color.col2 + ')'">
+			<view class="pyg_index">
+				<!--搜索框开始-->
+				<SearchInput></SearchInput>
+				<!--s搜索框结束-->
+			</view>
 		</view>
 		<view class="cates_container">
 			<!--左侧菜单-->
@@ -34,7 +36,7 @@
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
 						<view >
-						<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
+						<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
 						</view>
 				</view>
 			</view>
@@ -114,7 +116,20 @@
 				],
 				//右侧商品数据
 				rightContent: [],
-				fen: ""
+				fen: "",
+				GoodsInfonew:{},
+				properties: {
+					// 这里定义了innerText属性，属性值可以在组件使用时指定
+					innerTitle: {
+					  type: String,
+					  value: '产品分类'
+					},
+				  // 这里是渐变的颜色
+				  h_back_color: {
+				    col: "ffa04b",
+				    col2: "fe5d69"
+				  }
+				}
 			};
 		},
 
@@ -137,28 +152,32 @@
 			});
 		},
 		methods: {
-			GouWu(){
+			GouWu(e){
+				console.log(e);
 				// 1 获取缓存中的购物车 数组
 				let cart = uni.getStorageSync("cart") || [];
 				// 2 判断 商品对象是否存在于购物车数组中
-				let index = cart.findIndex(v => v.id === this.rightContent.id);
+				let index = cart.findIndex(v => v.id === e.id);
 				if (index === -1) {
-				  //3  不存在 第一次添加
-				  this.rightContent.num = 1;
-				  this.rightContent.checked = true;
-				  cart.push(this.rightContent);
+					//3  不存在 第一次添加
+					this.GoodsInfonew.goodsName = e.goodsName;
+					this.GoodsInfonew.price = e.price;
+					this.GoodsInfonew.picturepath = e.picturepath;
+					this.GoodsInfonew.number = 1;
+					this.GoodsInfonew.id = e.id;
+					cart.push(this.GoodsInfonew);
 				} else {
-				  // 4 已经存在购物车数据 执行 num++
-				  cart[index].num++;
+					// 4 已经存在购物车数据 执行 num++
+					cart[index].number++;
 				}
 				// 5 把购物车重新添加回缓存中
 				uni.setStorageSync("cart", cart);
 				// 6 弹窗提示
 				uni.showToast({
-				  title: '加入成功',
-				  icon: 'success',
-				  // true 防止用户 手抖 疯狂点击按钮 
-				  mask: true
+					title: '加入成功',
+					icon: 'success',
+					// true 防止用户 手抖 疯狂点击按钮 
+					mask: true
 				});
 			},
 			XQ:function(e){
@@ -194,8 +213,23 @@
 <style>
 	@import "./chanpin.css";
 
+.hh-title {
+  margin-top: 49rpx;
+  font-size: 38rpx;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-
+.hh-header {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  z-index: 99;
+  line-height: 56rpx;
+}
 	.first_tab .goods_item {
 		display: flex;
 		border-bottom: 1px solid #ccc;
