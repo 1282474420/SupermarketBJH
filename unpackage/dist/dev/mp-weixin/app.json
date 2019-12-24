@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/shopcart/order/order",
     "pages/home/home/home",
     "pages/shopcart/addresslist/addresslist",
     "pages/shopcart/addresslist/addressadd/addressadd",
@@ -19,7 +20,6 @@
     "pages/shopcart/applyRefund/applyRefund",
     "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
     "pages/shopcart/comment/comment",
-    "pages/shopcart/order/order",
     "pages/shopcart/cart/cart",
     "pages/shopcart/payment/payment",
     "pages/producttype/chanpinList/chanpinList",
@@ -83,6 +83,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap4.json"
+  "usingComponents": {}
 }

@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/shopcart/order/order",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, 
+		{
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -126,12 +132,7 @@
 				"navigationBarTitleText": "发表评价"
 			}
 		}, 
-		{
-			"path": "pages/shopcart/order/order",
-			"style": {
-				"navigationBarTitleText": "提交订单"
-			}
-		}, 
+		
 		{
 			"path": "pages/shopcart/cart/cart",
 			"style": {

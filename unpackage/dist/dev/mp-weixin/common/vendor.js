@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7117,7 +7117,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7138,14 +7138,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7221,7 +7221,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7630,9 +7630,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 361:
-/*!*****************************************************************!*\
-  !*** D:/uni-app项目/SupermarketBJH/components/uni-icons/icons.js ***!
-  \*****************************************************************/
+/*!********************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/components/uni-icons/icons.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7736,18 +7736,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!**********************************************!*\
-  !*** D:/uni-app项目/SupermarketBJH/pages.json ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-<<<<<<< HEAD
-=======
-throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-pages-loader/lib/index.js):\nSyntaxError: Unexpected token < in JSON at position 139\n    at JSON.parse (<anonymous>)\n    at parseJson (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\uni-cli-shared\\lib\\json.js:17:20)\n    at parsePagesJson (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\uni-cli-shared\\lib\\pages.js:39:27)\n    at Object.module.exports (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\webpack-uni-pages-loader\\lib\\index-new.js:50:21)\n    at Object.module.exports (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\webpack-uni-pages-loader\\lib\\index.js:45:35)");
->>>>>>> 5d224454d7b4a09bd2cbd12a071084e057ea403b
 
 /***/ }),
 
@@ -8650,25 +8646,21 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ }),
 
 /***/ 7:
-/*!***************************************************************!*\
-  !*** D:/uni-app项目/SupermarketBJH/pages.json?{"type":"style"} ***!
-  \***************************************************************/
+/*!******************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json?{"type":"style"} ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home/home": { "navigationBarTitleText": "首页" }, "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表" }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址" }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址" }, "pages/my/my/my": { "navigationBarTitleText": "我的" }, "pages/my/vipLogin/vipLogin": { "navigationBarTitleText": "会员登录" }, "pages/my/vipRegister/vipRegister": { "navigationBarTitleText": "会员注册" }, "pages/my/myVipCard/myVipCard": { "navigationBarTitleText": "我的会员卡" }, "pages/my/myFavorite/myFavorite": { "navigationBarTitleText": "我的收藏" }, "pages/my/myCoupons/myCoupons": { "navigationBarTitleText": "我的优惠券" }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000" }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情" }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐" }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航" }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价" }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款" }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情" }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价" }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单" }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg" }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细" }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表" }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情" }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐" }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情" }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表" }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情" }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购" }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情" }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团" }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情" }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团" }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心" }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表" }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服" }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
-=======
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表", "usingComponents": {} }, "pages/home/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址", "usingComponents": {} }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址", "usingComponents": {} }, "pages/my/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/my/vipLogin/vipLogin": { "navigationBarTitleText": "会员登录", "usingComponents": {} }, "pages/my/vipRegister/vipRegister": { "navigationBarTitleText": "会员注册", "usingComponents": {} }, "pages/my/myVipCard/myVipCard": { "navigationBarTitleText": "我的会员卡", "usingComponents": {} }, "pages/my/myFavorite/myFavorite": { "navigationBarTitleText": "我的收藏", "usingComponents": {} }, "pages/my/myCoupons/myCoupons": { "navigationBarTitleText": "我的优惠券", "usingComponents": {} }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表", "usingComponents": {} }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情", "usingComponents": {} }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心", "usingComponents": {} }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表", "usingComponents": { "uni-section": "/components/uni-section/uni-section", "uni-list": "/components/uni-list/uni-list", "uni-list-item": "/components/uni-list-item/uni-list-item" } }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服", "usingComponents": {} }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
->>>>>>> 5d224454d7b4a09bd2cbd12a071084e057ea403b
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表", "usingComponents": {} }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址", "usingComponents": {} }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址", "usingComponents": {} }, "pages/my/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/my/vipLogin/vipLogin": { "navigationBarTitleText": "会员登录", "usingComponents": {} }, "pages/my/vipRegister/vipRegister": { "navigationBarTitleText": "会员注册", "usingComponents": {} }, "pages/my/myVipCard/myVipCard": { "navigationBarTitleText": "我的会员卡", "usingComponents": {} }, "pages/my/myFavorite/myFavorite": { "navigationBarTitleText": "我的收藏", "usingComponents": {} }, "pages/my/myCoupons/myCoupons": { "navigationBarTitleText": "我的优惠券", "usingComponents": {} }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表", "usingComponents": {} }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情", "usingComponents": {} }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心", "usingComponents": {} }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表", "usingComponents": { "uni-section": "/components/uni-section/uni-section", "uni-list": "/components/uni-list/uni-list", "uni-list-item": "/components/uni-list-item/uni-list-item" } }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服", "usingComponents": {} }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 
 /***/ 8:
-/*!**************************************************************!*\
-  !*** D:/uni-app项目/SupermarketBJH/pages.json?{"type":"stat"} ***!
-  \**************************************************************/
+/*!*****************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/pages.json?{"type":"stat"} ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8678,9 +8670,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 93:
-/*!*************************************************!*\
-  !*** D:/uni-app项目/SupermarketBJH/utils/util.js ***!
-  \*************************************************/
+/*!****************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
