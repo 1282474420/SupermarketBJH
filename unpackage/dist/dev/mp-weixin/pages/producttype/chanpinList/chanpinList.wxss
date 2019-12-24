@@ -29,7 +29,6 @@
   margin-top: 60rpx;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
 }
@@ -55,15 +54,12 @@
   height: 100px;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
           justify-content: center;
   font-size: 24rpx;
   font-color: #222;
@@ -105,14 +101,11 @@
   height: 79rpx;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
           justify-content: space-around;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
-      -ms-flex-align: end;
           align-items: flex-end;
   position: fixed;
   top: 0;
@@ -125,15 +118,12 @@
     height: 60rpx;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
             align-items: center;
     font-size: 28rpx;
     margin-bottom: -2rpx;
@@ -156,15 +146,12 @@
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
             align-items: center;
     height: 60rpx;
     color: #979797;
@@ -175,14 +162,11 @@
     padding: 0 4% 3vw 4%;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
 .goods-list .product-list .product {
@@ -190,8 +174,7 @@
       border-radius: 20rpx;
       background-color: #fff;
       margin: 0 0 15rpx 0;
-      -webkit-box-shadow: 0rpx 5rpx 25rpx rgba(0, 0, 0, 0.1);
-              box-shadow: 0rpx 5rpx 25rpx rgba(0, 0, 0, 0.1);
+      box-shadow: 0rpx 5rpx 25rpx rgba(0, 0, 0, 0.1);
 }
 .goods-list .product-list .product image {
         width: 100%;
@@ -210,15 +193,12 @@
 .goods-list .product-list .product .info {
         display: -webkit-box;
         display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
                 justify-content: space-between;
         -webkit-box-align: end;
         -webkit-align-items: flex-end;
-            -ms-flex-align: end;
                 align-items: flex-end;
         width: 92%;
         padding: 10rpx 4% 10rpx 4%;

@@ -167,7 +167,7 @@
 	margin-top: 30rpx;
 }
 .uni-media{
-	margin-top: 40rpx;
+	margin-top: 50rpx;
 	width: 400rpx;
 }
 .uni-media-popup{
