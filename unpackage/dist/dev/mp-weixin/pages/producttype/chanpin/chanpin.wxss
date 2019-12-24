@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 .cates_container {
   height:calc(100vh - 90rpx);
   display: -webkit-box;
@@ -23,34 +22,6 @@
   -webkit-box-flex: 18;
   -webkit-flex: 18;
           flex: 18;
-=======
-.cates_container {
-  height:calc(100vh - 90rpx);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.left_menu{
-	  float: left;
-	  width: 186rpx;
-	  height: 1242rpx;
-	  background-color: #EFEFEF;
-	  font-size: 26rpx;
-	  color: #666;
-	  text-align: center;
-  -webkit-box-flex: 6;
-  -webkit-flex: 6;
-      -ms-flex: 6;
-          flex: 6;
-/* 	 */
-}
-.right_content{
-  -webkit-box-flex: 18;
-  -webkit-flex: 18;
-      -ms-flex: 18;
-          flex: 18;
->>>>>>> 9c64949bb42a191bec25a92c740f9fd5d6b9405e
 margin-top:76rpx ;
 }
 .tab1{

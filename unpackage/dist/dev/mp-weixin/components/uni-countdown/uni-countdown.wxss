@@ -49,19 +49,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .uni-countdown.data-v-2224ea26 {
-=======
-<<<<<<< HEAD
-.uni-countdown.data-v-fc8817ec {
-=======
-<<<<<<< HEAD
-.uni-countdown.data-v-bd0b79f2 {
-=======
-.uni-countdown.data-v-2224ea26 {
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
->>>>>>> 9c64949bb42a191bec25a92c740f9fd5d6b9405e
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -74,19 +62,7 @@
           justify-content: flex-start;
   padding: 2rpx 0;
 }
-<<<<<<< HEAD
 .uni-countdown__splitor.data-v-2224ea26 {
-=======
-<<<<<<< HEAD
-.uni-countdown__splitor.data-v-fc8817ec {
-=======
-<<<<<<< HEAD
-.uni-countdown__splitor.data-v-bd0b79f2 {
-=======
-.uni-countdown__splitor.data-v-2224ea26 {
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
->>>>>>> 9c64949bb42a191bec25a92c740f9fd5d6b9405e
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -97,19 +73,7 @@
   padding: 5rpx;
   font-size: 24rpx;
 }
-<<<<<<< HEAD
 .uni-countdown__number.data-v-2224ea26 {
-=======
-<<<<<<< HEAD
-.uni-countdown__number.data-v-fc8817ec {
-=======
-<<<<<<< HEAD
-.uni-countdown__number.data-v-bd0b79f2 {
-=======
-.uni-countdown__number.data-v-2224ea26 {
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
->>>>>>> 9c64949bb42a191bec25a92c740f9fd5d6b9405e
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

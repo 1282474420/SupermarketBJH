@@ -203,7 +203,7 @@
 			//选择收货地址
 			selectAddress() {
 				uni.navigateTo({
-					url: '../user/address/address?type=select'
+					url: '../addresslist/addresslist?type=select'
 				})
 			},
 			bindDateChange: function(e) {
