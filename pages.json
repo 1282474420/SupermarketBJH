@@ -3,16 +3,31 @@
 		{
 			"path": "pages/home/home/home",
 			"style": {
+<<<<<<< HEAD
 				"navigationBarTitleText": "首页"
 			}
 		},
 		{
+=======
+				"navigationBarTitleText": "首页",
+				"usingComponents": {
+					"van-row": "/wxcomponents/vant/dist/row/index",
+					"van-col": "/wxcomponents/vant/dist/col/index"
+				}
+			}
+		},{
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 			"path" : "pages/shopcart/addresslist/addresslist",
 			"style" : {
 					"navigationBarTitleText": "地址列表"
 			}
+<<<<<<< HEAD
 		},
 		{
+=======
+		}
+		,{
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 		    "path" : "pages/shopcart/addresslist/addressadd/addressadd",
 		    "style" : {
 				"navigationBarTitleText": "添加地址"

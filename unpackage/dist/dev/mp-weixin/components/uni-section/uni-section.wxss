@@ -24,7 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .uni-section.data-v-9b2f3a64 {
+=======
+.uni-section.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -44,7 +48,11 @@
   border-bottom-width: 1px;
   font-weight: normal;
 }
+<<<<<<< HEAD
 .uni-section__head.data-v-9b2f3a64 {
+=======
+.uni-section__head.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -57,13 +65,21 @@
           align-items: center;
   margin-right: 10px;
 }
+<<<<<<< HEAD
 .line.data-v-9b2f3a64 {
+=======
+.line.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   height: 15px;
   background-color: #c0c0c0;
   border-radius: 5px;
   width: 3px;
 }
+<<<<<<< HEAD
 .circle.data-v-9b2f3a64 {
+=======
+.circle.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   width: 8px;
   height: 8px;
   border-top-right-radius: 50px;
@@ -72,17 +88,29 @@
   border-bottom-right-radius: 50px;
   background-color: #c0c0c0;
 }
+<<<<<<< HEAD
 .uni-section__content.data-v-9b2f3a64 {
+=======
+.uni-section__content.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
   color: #333;
 }
+<<<<<<< HEAD
 .uni-section__content-title.data-v-9b2f3a64 {
   font-size: 28rpx;
   color: #333;
 }
 .distraction.data-v-9b2f3a64 {
+=======
+.uni-section__content-title.data-v-7116e88c {
+  font-size: 28rpx;
+  color: #333;
+}
+.distraction.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -91,7 +119,11 @@
   -webkit-align-items: center;
           align-items: center;
 }
+<<<<<<< HEAD
 .uni-section__content-sub.data-v-9b2f3a64 {
+=======
+.uni-section__content-sub.data-v-7116e88c {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   font-size: 24rpx;
   color: #999;
 }

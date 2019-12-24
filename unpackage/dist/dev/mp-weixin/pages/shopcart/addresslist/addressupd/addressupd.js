@@ -1,9 +1,15 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/shopcart/addresslist/addressupd/addressupd"],{
 
 /***/ 39:
+<<<<<<< HEAD
 /*!******************************************************************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/main.js?{"page":"pages%2Fshopcart%2Faddresslist%2Faddressupd%2Faddressupd"} ***!
   \******************************************************************************************************************/
+=======
+/*!***************************************************************************************************************!*\
+  !*** D:/uni-app项目/SupermarketBJH/main.js?{"page":"pages%2Fshopcart%2Faddresslist%2Faddressupd%2Faddressupd"} ***!
+  \***************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18,15 +24,25 @@ createPage(_addressupd.default);
 /***/ }),
 
 /***/ 40:
+<<<<<<< HEAD
 /*!*******************************************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue ***!
   \*******************************************************************************************/
+=======
+/*!****************************************************************************************!*\
+  !*** D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue ***!
+  \****************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony import */ var _addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addressupd.vue?vue&type=template&id=7e13526c& */ 41);
+=======
+/* harmony import */ var _addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addressupd.vue?vue&type=template&id=2fe272b6& */ 41);
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /* harmony import */ var _addressupd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addressupd.vue?vue&type=script&lang=js& */ 43);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _addressupd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _addressupd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _addressupd_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addressupd.vue?vue&type=style&index=0&lang=css& */ 45);
@@ -41,8 +57,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _addressupd_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+<<<<<<< HEAD
   _addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__["render"],
   _addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+=======
+  _addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   false,
   null,
   null,
@@ -52,33 +73,56 @@ var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib
 
 /* hot reload */
 if (false) { var api; }
+<<<<<<< HEAD
 component.options.__file = "HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue"
+=======
+component.options.__file = "uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue"
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
 /***/ 41:
+<<<<<<< HEAD
 /*!**************************************************************************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=template&id=7e13526c& ***!
   \**************************************************************************************************************************/
+=======
+/*!***********************************************************************************************************************!*\
+  !*** D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=template&id=2fe272b6& ***!
+  \***********************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./addressupd.vue?vue&type=template&id=7e13526c& */ 42);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_7e13526c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+=======
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./addressupd.vue?vue&type=template&id=2fe272b6& */ 42);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_addressupd_vue_vue_type_template_id_2fe272b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 
 
 
 /***/ }),
 
 /***/ 42:
+<<<<<<< HEAD
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=template&id=7e13526c& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+=======
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=template&id=2fe272b6& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -99,9 +143,15 @@ render._withStripped = true
 /***/ }),
 
 /***/ 43:
+<<<<<<< HEAD
 /*!********************************************************************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************/
+=======
+/*!*****************************************************************************************************************!*\
+  !*** D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -115,9 +165,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 44:
+<<<<<<< HEAD
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+=======
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -171,6 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 var _default =
 
 {
@@ -180,12 +237,29 @@ var _default =
       oid: "",
       dname: "",
       arr: [] };
+=======
+//
+//
+//
+//
+
+// pages/addressedit/addressedit.js
+//获取应用实例
+// const app = getApp().globalData;
+var _default =
+{
+  data: function data() {
+    return {
+      arrys1: [],
+      oid: "" };
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 
   },
 
   components: {},
   props: {},
 
+<<<<<<< HEAD
   onLoad: function onLoad(param) {var _this = this;
     this.dname = param.name;
     console.log("参数", this.dname);
@@ -208,6 +282,17 @@ var _default =
     // that.setData({
     // 	oid: address_id
     // }); //根据id查询地址信息
+=======
+  onLoad: function onLoad(options) {
+    console.log("参数");
+    console.log(options);
+    var that = this;
+    // getApp().globalData.initPage(that);
+    var address_id = options.oid;
+    that.setData({
+      oid: address_id });
+    //根据id查询地址信息
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 
     // uni.request({
     // 	url: getApp().globalData.url + '/address/selectById?address_id=' + address_id,
@@ -239,9 +324,15 @@ var _default =
       var phone = options.detail.value.phone;
       var x_address = options.detail.value.x_address;
       var details_ads = options.detail.value.details_ads;
+<<<<<<< HEAD
       // var address_id = options.detail.value.address_id;
       // var moren = options.detail.value.moren;
       // var member_id = id;
+=======
+      var address_id = options.detail.value.address_id;
+      var moren = options.detail.value.moren;
+      var member_id = id;
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
       var TEL_REGEXP = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
 
       if (name == "") {
@@ -270,6 +361,7 @@ var _default =
           title: '详细地址不能为空' });
 
       } else {
+<<<<<<< HEAD
         that.arrys1.name = name;
         that.arrys1.phone = phone;
         that.arrys1.x_address = x_address;
@@ -388,6 +480,74 @@ var _default =
       // 		console.log(res.data);
       // 	}
       // });
+=======
+        //根据id修改地址信息
+        uni.request({
+          url: getApp().globalData.url + '/address/update',
+          data: {
+            'address_id': address_id,
+            'x_address': x_address,
+            'details_ads': details_ads,
+            'moren': moren,
+            'member_id': member_id,
+            'name': name,
+            'phone': phone },
+
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded" },
+
+          method: 'POST',
+          dataType: 'json',
+          success: function success(res) {
+            that.setData({
+              arrys1: res.data.data });
+
+            uni.showToast({
+              title: '保存成功',
+              duration: 8000,
+              mask: false });
+
+            uni.navigateTo({
+              url: '../addressget/addressget',
+              success: function success(res) {},
+              fail: function fail(res) {},
+              complete: function complete(res) {} });
+
+            console.log(res.data);
+          } });
+
+      }
+    },
+    shanchu: function shanchu(options) {
+      var that = this;
+      var address_id = that.oid; //根据id删除地址信息
+
+      uni.request({
+        url: getApp().globalData.url + '/address/delete?address_id=' + address_id,
+        data: {},
+        header: {
+          'content-type': 'application/json' },
+
+        method: 'POST',
+        dataType: 'json',
+        success: function success(res) {
+          that.setData({
+            arrys1: res.data.data });
+
+          uni.showToast({
+            title: '删除成功',
+            duration: 3000 });
+
+          uni.navigateTo({
+            url: '../addressget/addressget',
+            success: function success(res) {},
+            fail: function fail(res) {},
+            complete: function complete(res) {} });
+
+          console.log(res.data);
+        } });
+
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
     },
     setData: function setData(obj, callback) {
       var that = this;
@@ -416,9 +576,15 @@ var _default =
 /***/ }),
 
 /***/ 45:
+<<<<<<< HEAD
 /*!****************************************************************************************************************************!*\
   !*** E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=style&index=0&lang=css& ***!
   \****************************************************************************************************************************/
+=======
+/*!*************************************************************************************************************************!*\
+  !*** D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -432,9 +598,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 46:
+<<<<<<< HEAD
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!E:/HTML文件/HBX文件/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=style&index=0&lang=css& ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+=======
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/uni-app项目/SupermarketBJH/pages/shopcart/addresslist/addressupd/addressupd.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
