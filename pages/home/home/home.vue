@@ -51,14 +51,14 @@
 		    </view>
 		  </view>
 		  <!-- 产品分类 -->
-		  <view class="product_type">
-		    <block v-for="(item, index) in product" :key="index">
-		      <view :data-productId="item.pcatClassId" @tap="product_type" class="productblock">
-		        <image :src="item.pcatClassImg" class="productblock_img"></image>
-		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
-		      </view>
-		    </block>
-		  </view>
+		  	<view class="product_type">
+		  		<block v-for="(item, index) in product" :key="index">
+		  		    <view class="productblock" @tap="product_type(index)">
+		  		        <image :src="item.pcatClassImg" class="productblock_img"></image>
+		  		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
+		  		    </view>
+		  		</block>
+		  	</view>
 		  <!-- 活动 -->
 		  <view class="hd">
 		    <image src="../../../static/images/horn_03.png" class="horn"></image>
@@ -81,10 +81,10 @@
 					</van-col>
 				</van-row>
 		      </view>
-		      <view class='content1'>
-		        <text>更多优惠</text>
-		        <image src='../../../static/images/djt.png' class='jt'></image>
-		      </view>
+		      <navigator class='content1' url="../../spellgroup/flash_sale/flash_sale">
+		      		<text>更多优惠</text>
+		      		<image src='../../../static/images/djt.png' class='jt'></image>
+		      </navigator>
 		    </view>
 		  <!-- 限时抢购商品 -->
 		  <view class='xsqgsp'>
@@ -106,10 +106,10 @@
 		  <!-- 超值拼团 -->
 		  <view class='xsqg green'>
 		    <image src='../../../static/images/czpt_07.png' class='title'></image>
-		    <view class='content1' @tap="gdpt">
-		      <text>更多拼团</text>
-		      <image src='../../../static/images/djt.png' class='jt'></image>
-		    </view>
+		    <navigator class='content1' url="../../spellgroup/group_buying/group_buying">
+		    	<text>更多拼团</text>
+		    	<image src='../../../static/images/djt.png' class='jt'></image>
+		    </navigator>
 		  </view>
 		  <!-- 超值拼团商品 -->
 		  <view class='czptsp'>
@@ -441,11 +441,12 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				        title: "组合购",
 				        content: "搭配购买更优惠",
 				        img: "../../../static/images/zhg_03.png",
-				        url: "../groupBuy/GroupBuyList"
+				        url: "../../groupBuy/GroupBuyList"
 				      }, {
 				        title: "限量促销",
 				        content: "特价专区 卖完即止",
-				        img: "../../../static/images/xszx_05.png"
+				        img: "../../../static/images/xszx_05.png",
+						url: "../../spellgroup/flash_sale/flash_sale"
 				      }],
 				      // 猜你喜欢商品
 				      cnxhsp: [{
@@ -601,6 +602,27 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				myyhj() {
 					uni.navigateTo({
 						url: '../coupons/coupons',
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
+				},
+				// 预售好物
+				product_type(e){
+					console.log(e)
+					if(e==8){
+						uni.navigateTo({
+							url: '../../spellgroup/presale/presale',
+							success: res => {},
+							fail: () => {},
+							complete: () => {}
+						});
+					}
+				},
+				zhg(e) {
+					console.log(e.currentTarget.dataset.spxqxx)
+					uni.navigateTo({
+						url: e.currentTarget.dataset.spxqxx,
 						success: res => {},
 						fail: () => {},
 						complete: () => {}

@@ -565,11 +565,12 @@ __webpack_require__.r(__webpack_exports__);
         title: "组合购",
         content: "搭配购买更优惠",
         img: "../../../static/images/zhg_03.png",
-        url: "../groupBuy/GroupBuyList" },
+        url: "../../groupBuy/GroupBuyList" },
       {
         title: "限量促销",
         content: "特价专区 卖完即止",
-        img: "../../../static/images/xszx_05.png" }],
+        img: "../../../static/images/xszx_05.png",
+        url: "../../spellgroup/flash_sale/flash_sale" }],
 
       // 猜你喜欢商品
       cnxhsp: [{
@@ -725,6 +726,27 @@ __webpack_require__.r(__webpack_exports__);
     myyhj: function myyhj() {
       uni.navigateTo({
         url: '../coupons/coupons',
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
+
+    },
+    // 预售好物
+    product_type: function product_type(e) {
+      console.log(e);
+      if (e == 8) {
+        uni.navigateTo({
+          url: '../../spellgroup/presale/presale',
+          success: function success(res) {},
+          fail: function fail() {},
+          complete: function complete() {} });
+
+      }
+    },
+    zhg: function zhg(e) {
+      console.log(e.currentTarget.dataset.spxqxx);
+      uni.navigateTo({
+        url: e.currentTarget.dataset.spxqxx,
         success: function success(res) {},
         fail: function fail() {},
         complete: function complete() {} });
