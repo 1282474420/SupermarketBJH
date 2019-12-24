@@ -166,27 +166,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-//index.js
-//获取应用实例
-// const app = getApp().globalData;
+//
+//
 var _default =
+
 {
   data: function data() {
     return {
-      arrys1: [{
-        id: 0,
-        text1: "张三  132****2333",
-        text2: "广东省深圳市龙华区东环二路东侧365花园M1栋" },
-      {
-        id: 1,
-        text1: "李四  132****2333",
-        text2: "广东省深圳市龙华区东环二路东侧365花园M1栋" },
-      {
-        id: 2,
-        text1: "王五  132****2333",
-        text2: "广东省深圳市龙华区东环二路东侧365花园M1栋" }],
-
+      // arrys1: [{
+      // 	id: 0,
+      // 	name: "张三",
+      // 	phone:"132****2333",
+      // 	xAddress:"广东省深圳市龙华区",
+      // 	detailsAds: "东环二路东侧365花园M1栋"
+      // }, {
+      // 	id: 1,
+      // 	name: "李四",
+      // 	phone:"132****2333",
+      // 	xAddress:"广东省深圳市龙华区",
+      // 	detailsAds: "东环二路东侧365花园M1栋"
+      // }, {
+      // 	id: 2,
+      // 	name: "王五",
+      // 	phone:"132****2333",
+      // 	xAddress:"广东省深圳市龙华区",
+      // 	detailsAds: "东环二路东侧365花园M1栋"
+      // }],
+      arrys1: [],
       userInfo: "",
       hasUserInfo: false };
 
@@ -194,37 +200,39 @@ var _default =
 
   components: {},
   props: {},
-  onLoad: function onLoad() {
-    var that = this; // 初始化
+  onShow: function onShow() {var _this = this;
+    var me = this;
+    if (me.num > 0) {
+      uni.getStorage({
+        key: "arr",
+        success: function success(res) {
+          _this.arrys1 = res.data;
+          console.log(_this.arrys1);
+        } });
 
-    // getApp().globalData.initPage(that);
+    }
+    me.num++;
+  },
+  onLoad: function onLoad() {var _this2 = this;
+    // 		var that = this; // 初始化
+    // 		uni.request({
+    // 			url: "http://localhost:8080/queryMember.do",
+    // 			method: 'POST',
+    // 			data: {},
+    // 			success: res => {
+    // 				console.log("json",res);
+    // 			}
 
-    // if (getApp().globalData.userInfo) {
-    // 	this.setData({
-    // 		userInfo: getApp().globalData.userInfo,
-    // 		hasUserInfo: true
-    // 	});
-    // } else if (this.canIUse) {
-    // 	// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    // 	// 所以此处加入 callback 以防止这种情况
-    // 	getApp().globalData.userInfoReadyCallback = res => {
-    // 		this.setData({
-    // 			userInfo: res.userInfo,
-    // 			hasUserInfo: true
     // 		});
-    // 	};
-    // } else {
-    // 	// 在没有 open-type=getUserInfo 版本的兼容处理
-    // 	uni.getUserInfo({
-    // 		success: res => {
-    // 			getApp().globalData.userInfo = res.userInfo;
-    // 			this.setData({
-    // 				userInfo: res.userInfo,
-    // 				hasUserInfo: true
-    // 			});
-    // 		}
-    // 	});
-    // }
+
+    uni.getStorage({
+      key: "arr",
+      success: function success(res) {
+        _this2.arrys1 = res.data;
+        console.log(_this2.arrys1);
+      } });
+
+
   },
   methods: {
     //事件处理函数
@@ -233,13 +241,24 @@ var _default =
         url: '../logs/logs' });
 
     },
+    addresstap: function addresstap(e) {
+      // var arr=[];
+      // arr=JSON.stringify(this.arrys1);
+      uni.showToast({
+        title: '地址' + e.name,
+        icon: "none" });
+
+      uni.navigateTo({
+        url: "addressupd/addressupd?name=" + e.name });
+
+    },
     getUserInfo: function getUserInfo(e) {
       console.log(e);
       // getApp().globalData.userInfo = e.detail.userInfo;
-      this.setData({
-        userInfo: e.detail.userInfo,
-        hasUserInfo: true });
-
+      // this.setData({
+      // 	userInfo: e.detail.userInfo,
+      // 	hasUserInfo: true
+      // });
     },
     setData: function setData(obj, callback) {
       var that = this;

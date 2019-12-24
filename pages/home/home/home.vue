@@ -596,8 +596,14 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				navFun (e) {
 				    var tzlj2 = e.currentTarget.dataset.lj;
 				    uni.navigateTo({
+<<<<<<< HEAD
 				        url: tzlj2
 				    });
+
+=======
+				        url: tzlj2
+				    });
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 				},
 				myyhj() {
 					uni.navigateTo({

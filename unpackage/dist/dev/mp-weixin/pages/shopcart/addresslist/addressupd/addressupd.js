@@ -171,35 +171,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-
-// pages/addressedit/addressedit.js
-//获取应用实例
-// const app = getApp().globalData;
 var _default =
+
 {
   data: function data() {
     return {
-      arrys1: [],
-      oid: "" };
+      arrys1: {},
+      oid: "",
+      dname: "",
+      arr: [] };
 
   },
 
   components: {},
   props: {},
 
-  onLoad: function onLoad(options) {
-    console.log("参数");
-    console.log(options);
+  onLoad: function onLoad(param) {var _this = this;
+    this.dname = param.name;
+    console.log("参数", this.dname);
     var that = this;
+    uni.getStorage({
+      key: "arr",
+      success: function success(res) {
+        // this.arrys1=res.data 
+        for (var i = 0; i < res.data.length; i++) {
+          if (res.data[i].name == _this.dname) {
+            _this.arrys1 = res.data[i];
+          }
+        }
+      } });
+
+
+    // this.arrys1=options;
     // getApp().globalData.initPage(that);
-    var address_id = options.oid;
-    that.setData({
-      oid: address_id });
-    //根据id查询地址信息
+    // var address_id = options.oid;
+    // that.setData({
+    // 	oid: address_id
+    // }); //根据id查询地址信息
 
     // uni.request({
     // 	url: getApp().globalData.url + '/address/selectById?address_id=' + address_id,
@@ -231,9 +239,9 @@ var _default =
       var phone = options.detail.value.phone;
       var x_address = options.detail.value.x_address;
       var details_ads = options.detail.value.details_ads;
-      var address_id = options.detail.value.address_id;
-      var moren = options.detail.value.moren;
-      var member_id = id;
+      // var address_id = options.detail.value.address_id;
+      // var moren = options.detail.value.moren;
+      // var member_id = id;
       var TEL_REGEXP = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
 
       if (name == "") {
@@ -262,72 +270,124 @@ var _default =
           title: '详细地址不能为空' });
 
       } else {
-        //根据id修改地址信息
-        uni.request({
-          url: getApp().globalData.url + '/address/update',
-          data: {
-            'address_id': address_id,
-            'x_address': x_address,
-            'details_ads': details_ads,
-            'moren': moren,
-            'member_id': member_id,
-            'name': name,
-            'phone': phone },
+        that.arrys1.name = name;
+        that.arrys1.phone = phone;
+        that.arrys1.x_address = x_address;
+        that.arrys1.details_ads = details_ads;
+        var arr = uni.getStorageSync("arr") || [];
+        console.log("arr", arr);
+        var index = arr.findIndex(function (v) {return v.name === that.arrys1.name;});
+        console.log("index", index);
+        if (index === -1) {
+          //3  不存在 第一次添加
+          var len = arr.length;
+          for (var i = 0; i < len; i++) {
+            if (this.dname == arr[i].name) {
+              arr.splice(i, 1);
+              break;
+            }
+          }
+          arr.push(that.arrys1);
+        }
+        uni.setStorageSync("arr", arr);
+        console.log("arr2", arr);
+        uni.showToast({
+          title: '保存成功',
+          icon: 'success',
+          // true 防止用户 手抖 疯狂点击按钮 
+          mask: true });
 
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded" },
+        uni.redirectTo({
+          url: "../../addresslist/addresslist" });
 
-          method: 'POST',
-          dataType: 'json',
-          success: function success(res) {
-            that.setData({
-              arrys1: res.data.data });
 
-            uni.showToast({
-              title: '保存成功',
-              duration: 8000,
-              mask: false });
 
-            uni.navigateTo({
-              url: '../addressget/addressget',
-              success: function success(res) {},
-              fail: function fail(res) {},
-              complete: function complete(res) {} });
-
-            console.log(res.data);
-          } });
-
+        // //根据id修改地址信息
+        // uni.request({
+        // 	url: getApp().globalData.url + '/address/update',
+        // 	data: {
+        // 		'address_id': address_id,
+        // 		'x_address': x_address,
+        // 		'details_ads': details_ads,
+        // 		'moren': moren,
+        // 		'member_id': member_id,
+        // 		'name': name,
+        // 		'phone': phone
+        // 	},
+        // 	header: {
+        // 		"Content-Type": "application/x-www-form-urlencoded"
+        // 	},
+        // 	method: 'POST',
+        // 	dataType: 'json',
+        // 	success: function(res) {
+        // 		that.setData({
+        // 			arrys1: res.data.data
+        // 		});
+        // 		uni.showToast({
+        // 			title: '保存成功',
+        // 			duration: 8000,
+        // 			mask: false
+        // 		});
+        // 		uni.navigateTo({
+        // 			url: '../addressget/addressget',
+        // 			success: function(res) {},
+        // 			fail: function(res) {},
+        // 			complete: function(res) {}
+        // 		});
+        // 		console.log(res.data);
+        // 	}
+        // });
       }
     },
     shanchu: function shanchu(options) {
-      var that = this;
-      var address_id = that.oid; //根据id删除地址信息
+      this.arr = uni.getStorageSync("arr");
+      console.log("name:", this.arr[0].name);
+      var len = this.arr.length;
+      for (var i = 0; i < len; i++) {
+        if (this.dname == this.arr[i].name) {
+          this.arr.splice(i, 1);
+          break;
+        }
+      }
+      uni.setStorageSync("arr", this.arr);
+      uni.showToast({
+        title: '删除成功',
+        icon: 'success',
+        // true 防止用户 手抖 疯狂点击按钮 
+        mask: true });
 
-      uni.request({
-        url: getApp().globalData.url + '/address/delete?address_id=' + address_id,
-        data: {},
-        header: {
-          'content-type': 'application/json' },
+      uni.redirectTo({
+        url: "../../addresslist/addresslist" });
 
-        method: 'POST',
-        dataType: 'json',
-        success: function success(res) {
-          that.setData({
-            arrys1: res.data.data });
 
-          uni.showToast({
-            title: '删除成功',
-            duration: 3000 });
+      // var that = this;
+      // var address_id = that.oid; //根据id删除地址信息
 
-          uni.navigateTo({
-            url: '../addressget/addressget',
-            success: function success(res) {},
-            fail: function fail(res) {},
-            complete: function complete(res) {} });
-
-          console.log(res.data);
-        } });
-
+      // uni.request({
+      // 	url: getApp().globalData.url + '/address/delete?address_id=' + address_id,
+      // 	data: {},
+      // 	header: {
+      // 		'content-type': 'application/json'
+      // 	},
+      // 	method: 'POST',
+      // 	dataType: 'json',
+      // 	success: function(res) {
+      // 		that.setData({
+      // 			arrys1: res.data.data
+      // 		});
+      // 		uni.showToast({
+      // 			title: '删除成功',
+      // 			duration: 3000
+      // 		});
+      // 		uni.navigateTo({
+      // 			url: '../addressget/addressget',
+      // 			success: function(res) {},
+      // 			fail: function(res) {},
+      // 			complete: function(res) {}
+      // 		});
+      // 		console.log(res.data);
+      // 	}
+      // });
     },
     setData: function setData(obj, callback) {
       var that = this;

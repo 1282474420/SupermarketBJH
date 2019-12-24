@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+<block wx:if="{{text}}"><text data-event-opts="{{[['tap',[['onClick']]]]}}" class="{{['uni-badge data-v-386d5f0a',inverted?'uni-badge--'+type+' uni-badge--'+size+' uni-badge--'+type+'-inverted':'uni-badge--'+type+' uni-badge--'+size]}}" style="{{(width)}}" bindtap="__e">{{text}}</text></block>
+=======
 <block wx:if="{{text}}"><text data-event-opts="{{[['tap',[['onClick']]]]}}" class="{{['uni-badge data-v-176addf6',inverted?'uni-badge--'+type+' uni-badge--'+size+' uni-badge--'+type+'-inverted':'uni-badge--'+type+' uni-badge--'+size]}}" style="{{(width)}}" bindtap="__e">{{text}}</text></block>
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2

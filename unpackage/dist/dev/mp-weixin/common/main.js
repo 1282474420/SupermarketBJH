@@ -1,8 +1,14 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/main"],[
 /* 0 */
+<<<<<<< HEAD
+/*!**********************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/main.js ***!
+  \**********************************************/
+=======
 /*!*******************************************!*\
   !*** D:/uni-app项目/SupermarketBJH/main.js ***!
   \*******************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31,9 +37,15 @@ createApp(app).$mount();
 /* 7 */,
 /* 8 */,
 /* 9 */
+<<<<<<< HEAD
+/*!**********************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/App.vue ***!
+  \**********************************************/
+=======
 /*!*******************************************!*\
   !*** D:/uni-app项目/SupermarketBJH/App.vue ***!
   \*******************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64,14 +76,24 @@ var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib
 
 /* hot reload */
 if (false) { var api; }
+<<<<<<< HEAD
+component.options.__file = "HBX文件/SupermarketBJH/App.vue"
+=======
 component.options.__file = "uni-app项目/SupermarketBJH/App.vue"
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 /* 10 */
+<<<<<<< HEAD
+/*!***********************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/App.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+=======
 /*!********************************************************************!*\
   !*** D:/uni-app项目/SupermarketBJH/App.vue?vue&type=script&lang=js& ***!
   \********************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -105,9 +127,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 12 */
+<<<<<<< HEAD
+/*!*******************************************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/App.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************/
+=======
 /*!****************************************************************************!*\
   !*** D:/uni-app项目/SupermarketBJH/App.vue?vue&type=style&index=0&lang=css& ***!
   \****************************************************************************/
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

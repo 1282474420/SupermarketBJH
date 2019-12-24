@@ -49,7 +49,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
+.uni-countdown.data-v-2224ea26 {
+=======
 .uni-countdown.data-v-11dabd12 {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -62,7 +66,11 @@
           justify-content: flex-start;
   padding: 2rpx 0;
 }
+<<<<<<< HEAD
+.uni-countdown__splitor.data-v-2224ea26 {
+=======
 .uni-countdown__splitor.data-v-11dabd12 {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -73,7 +81,11 @@
   padding: 5rpx;
   font-size: 24rpx;
 }
+<<<<<<< HEAD
+.uni-countdown__number.data-v-2224ea26 {
+=======
 .uni-countdown__number.data-v-11dabd12 {
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

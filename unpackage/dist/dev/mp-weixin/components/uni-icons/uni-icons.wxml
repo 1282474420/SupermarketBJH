@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+<text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="uni-icons data-v-1dc05e38" style="{{'color:'+(color)+';'+('font-size:'+(size+'px')+';')}}" bindtap="__e">{{icons[type]}}</text>
+=======
 <text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="uni-icons data-v-068445b8" style="{{'color:'+(color)+';'+('font-size:'+(size+'px')+';')}}" bindtap="__e">{{icons[type]}}</text>
+>>>>>>> c612e2d319c30145f678fd4ec574d83fd97651c2

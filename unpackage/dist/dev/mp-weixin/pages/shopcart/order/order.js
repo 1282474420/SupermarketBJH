@@ -337,7 +337,7 @@ var _default =
     //选择收货地址
     selectAddress: function selectAddress() {
       uni.navigateTo({
-        url: '../user/address/address?type=select' });
+        url: '../addresslist/addresslist?type=select' });
 
     },
     bindDateChange: function bindDateChange(e) {

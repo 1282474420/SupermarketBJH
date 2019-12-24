@@ -182,15 +182,15 @@ var _default =
 {
   data: function data() {
     return {
-      "phoneNumber": "13580006666",
-      "purePhoneNumber": "13580006666",
-      "countryCode": "86",
-      "watermark": {
-        "appid": "APPID" },
-
-      address: '',
-      imAddress: '',
-      arrys1: "" };
+      // "phoneNumber": "13580006666",
+      // "purePhoneNumber": "13580006666",
+      // "countryCode": "86",
+      // "watermark": {
+      // 	"appid": "APPID"
+      // },
+      // address: '',
+      // imAddress: '',
+      arrys1: {} };
 
   },
 
@@ -199,54 +199,54 @@ var _default =
 
   onLoad: function onLoad(options) {
     var that = this;
+    var arrr2 = uni.getStorageSync("arr");
+    console.log("arrr2", arrr2);
     // getApp().globalData.initPage(that);
   },
 
+
   methods: {
-    getPhoneNumber: function getPhoneNumber(e) {
-      console.log(e.detail.errMsg);
-      console.log(e.detail.iv);
-      console.log(e.detail.encryptedData);
-    },
+    // getPhoneNumber(e) {
+    // 	console.log(e.detail.errMsg);
+    // 	console.log(e.detail.iv);
+    // 	console.log(e.detail.encryptedData);
+    // },
 
-    getAddress: function getAddress() {
-      var that = this;
-      uni.getLocation({
-        type: "wgs84",
-        success: function success(res) {
-          uni.openLocation({
-            latitude: res.latitude,
-            longitude: res.longitude,
-            success: function success(res) {
-              uni.chooseLocation({
-                success: function success(res) {
-                  console.log(res);
-                  that.setData({
-                    address: res.address,
-                    imAddress: res.name });
-
-                } });
-
-            } });
-
-        } });
-
-    },
+    // getAddress: function() {
+    // 	var that = this;
+    // 	uni.getLocation({
+    // 		type: "wgs84",
+    // 		success: function(res) {
+    // 			uni.openLocation({
+    // 				latitude: res.latitude,
+    // 				longitude: res.longitude,
+    // 				success: function(res) {
+    // 					uni.chooseLocation({
+    // 						success: function(res) {
+    // 							console.log(res);
+    // 							that.setData({
+    // 								address: res.address,
+    // 								imAddress: res.name
+    // 							});
+    // 						}
+    // 					});
+    // 				}
+    // 			});
+    // 		}
+    // 	});
+    // },
     formBindSubmit: function formBindSubmit(options) {
       var that = this;
-      // getApp().globalData.initPage(that);
-      // var id = getApp().globalData.userInfo.userId;
       console.log(options.detail.value.name);
       console.log(options.detail.value.phone);
       console.log(options.detail.value.x_address);
-      console.log(options.detail.value.detail_ads);
-      var that = this;
+      console.log(options.detail.value.details_ads);
       var name = options.detail.value.name;
       var phone = options.detail.value.phone;
       var x_address = options.detail.value.x_address;
       var details_ads = options.detail.value.details_ads;
-      var moren = options.detail.value.moren;
-      var member_id = options.detail.value.member_id;
+      // var moren = options.detail.value.moren;
+      // var member_id = options.detail.value.member_id;
       var TEL_REGEXP = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
 
       if (name == "") {
@@ -275,39 +275,63 @@ var _default =
           title: '详细地址不能为空' });
 
       } else {
-        //新增地址
-        uni.request({
-          url: getApp().globalData.url + '/address/insert',
-          data: {
-            'xAddress': x_address,
-            'detailsAds': details_ads,
-            'moren': moren,
-            'memberId': id,
-            'name': name,
-            'phone': phone },
+        that.arrys1.name = name;
+        that.arrys1.phone = phone;
+        that.arrys1.x_address = x_address;
+        that.arrys1.details_ads = details_ads;
+        var arr = uni.getStorageSync("arr") || [];
+        console.log("arr", arr);
+        var index = arr.findIndex(function (v) {return v.name === that.arrys1.name;});
+        console.log("index", index);
+        if (index === -1) {
+          //3  不存在 第一次添加
+          arr.push(that.arrys1);
+        }
+        uni.setStorageSync("arr", arr);
+        console.log("arr2", arr);
+        uni.showToast({
+          title: '保存成功',
+          icon: 'success',
+          // true 防止用户 手抖 疯狂点击按钮 
+          mask: true });
 
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded" },
+        uni.redirectTo({
+          url: "../../addresslist/addresslist" });
 
-          method: 'POST',
-          dataType: 'json',
-          success: function success(res) {
-            that.setData({
-              arrys1: res.data.data });
-
-            uni.showToast({
-              title: '保存成功',
-              duration: 8000,
-              mask: false });
-
-            uni.navigateTo({
-              url: '../addressget/addressget',
-              success: function success(res) {},
-              fail: function fail(res) {},
-              complete: function complete(res) {} });
-
-            console.log(res.data);
-          } });
+        // //新增地址
+        // uni.request({
+        // 	url: getApp().globalData.url + '/address/insert',
+        // 	data: {
+        // 		'xAddress': x_address,
+        // 		'detailsAds': details_ads,
+        // 		'moren': moren,
+        // 		'memberId': id,
+        // 		'name': name,
+        // 		'phone': phone
+        // 	},
+        // 	header: {
+        // 		"Content-Type": "application/x-www-form-urlencoded"
+        // 	},
+        // 	method: 'POST',
+        // 	dataType: 'json',
+        // 	success: function(res) {
+        // 		that.setData({
+        // 			arrys1: res.data.data
+        // 		});
+        // 		uni.showToast({
+        // 			title: '保存成功',
+        // 			duration: 8000,
+        // 			mask: false
+        // 		});
+        // 		uni.navigateTo({
+        // 			url: '../addressget/addressget',
+        // 			success: function(res) {},
+        // 			fail: function(res) {},
+        // 			complete: function(res) {}
+        // 		});
+        // 		console.log(res.data);
+        // 	}
+        // });
 
       }
     },
