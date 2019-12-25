@@ -42,10 +42,8 @@ swiper-item image {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 .g-information{
-	background-image: -webkit-gradient(linear, left top, right top, from(#ffa549), to(#fe5c6a)),
-	                    -webkit-gradient(linear, left top, left bottom, from(#ffa549), to(#ffa549));
-	background-image: -o-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
-	                    -o-linear-gradient(#ffa549, #ffa549);
+	background-image: -webkit-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
+	                    -webkit-linear-gradient(#ffa549, #ffa549);
 	background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
 	                    linear-gradient(#ffa549, #ffa549);
 	color: white;
@@ -53,6 +51,7 @@ swiper-item image {
 	padding-top: 15rpx;
 	padding-bottom: 15rpx;
 	font-size: 27rpx;
+<<<<<<< HEAD
 	display: -webkit-flex;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -61,6 +60,14 @@ swiper-item image {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+=======
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-align:baseline;
+	-webkit-align-items:baseline;
+	        align-items:baseline;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 }
 .g-info{
 	border: 2rpx white solid;
@@ -90,6 +97,7 @@ swiper-item image {
 	margin: 5rpx 5rpx;
 }
 .g-price{
+<<<<<<< HEAD
 	/* display:flex;
 	align-items:baseline; */
 	display: -webkit-flex;
@@ -100,6 +108,14 @@ swiper-item image {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+=======
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-box-align:baseline;
+	-webkit-align-items:baseline;
+	        align-items:baseline;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 	margin-left: 20rpx;
 }
 .g-time{
@@ -108,11 +124,9 @@ swiper-item image {
 .g-countdown{
 	display:-webkit-box;
 	display:-webkit-flex;
-	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
-	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	margin-left: 80rpx;
 }

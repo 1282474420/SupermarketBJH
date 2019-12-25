@@ -3,7 +3,6 @@
   height:calc(100vh - 90rpx);
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 .left_menu{
@@ -16,14 +15,12 @@
 	  text-align: center;
   -webkit-box-flex: 6;
   -webkit-flex: 6;
-      -ms-flex: 6;
           flex: 6;
 /* 	 */
 }
 .right_content{
   -webkit-box-flex: 18;
   -webkit-flex: 18;
-      -ms-flex: 18;
           flex: 18;
 margin-top:76rpx ;
 }
@@ -40,8 +37,7 @@ margin-top:76rpx ;
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .hh-header {
   position: fixed;
@@ -53,26 +49,21 @@ margin-top:76rpx ;
 .first_tab .goods_item {
 		display: -webkit-box;
 		display: -webkit-flex;
-		display: -ms-flexbox;
 		display: flex;
 		border-bottom: 1px solid #ccc;
 }
 .first_tab .goods_item .goods_img_wrap {
 		-webkit-box-flex: 2;
 		-webkit-flex: 2;
-		    -ms-flex: 2;
 		        flex: 2;
 		display: -webkit-box;
 		display: -webkit-flex;
-		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: start;
 		-webkit-justify-content: flex-start;
-		    -ms-flex-pack: start;
 		        justify-content: flex-start;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
-		    -ms-flex-align: center;
 		        align-items: center;
 }
 .first_tab .goods_item .goods_img_wrap image {
@@ -82,19 +73,15 @@ margin-top:76rpx ;
 .first_tab .goods_item .goods_info_wrap {
 		-webkit-box-flex: 3;
 		-webkit-flex: 3;
-		    -ms-flex: 3;
 		        flex: 3;
 		display: -webkit-box;
 		display: -webkit-flex;
-		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		-webkit-flex-direction: column;
-		    -ms-flex-direction: column;
 		        flex-direction: column;
 		-webkit-justify-content: space-around;
-		    -ms-flex-pack: distribute;
 		        justify-content: space-around;
 }
 .first_tab .goods_item .goods_info_wrap .goods_name {
@@ -130,7 +117,6 @@ margin-top:76rpx ;
 		background-color: #AAAAAA;
 		-webkit-box-flex: 16;
 		-webkit-flex: 16;
-		    -ms-flex: 16;
 		        flex: 16;
 }
 .tab {

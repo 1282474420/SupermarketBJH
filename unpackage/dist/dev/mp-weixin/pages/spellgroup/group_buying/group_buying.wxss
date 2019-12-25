@@ -23,8 +23,12 @@
 	width: 250rpx;
 	overflow: hidden;
 	white-space: nowrap;
+<<<<<<< HEAD
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
+=======
+	text-overflow: ellipsis;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 	font-weight: bold;
 }
 .content-count{
