@@ -33,7 +33,9 @@
 		<view class="flex-item">
 			<!-- 标题 价格 -->
 			<view class="info-box goods-info">
-				<view class="title">{{goodsData.goodsName}}</view>
+				<view class="price-box">
+					<view class="title">{{goodsData.goodsName}}</view>
+				</view>
 				<view class="content-item">
 					<image src="../../../static/groupImg/collect.png" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
 					<view class="coupon-tip">收藏</view>
@@ -41,7 +43,7 @@
 				<view class="content-item2">
 					<image src='../../../static/groupImg/share.png' style="width: 40rpx;height: 40rpx;">
 					<view class="coupon-tip">分享</view>
-					<button open-type="share"></button>
+					<button class="btn-share" open-type="share"></button>
 				</view>
 			</view>
 			<view class="info-box3 goods-info">
@@ -89,8 +91,7 @@
 								<view class="group-text">还差<text class="group-text2">1人</text>成团</view>
 								<uni-countdown class="countdown" background-color="white" color="black" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 							</view>
-							<!-- @click="goodsInfo(goods.id)" -->
-							<view class="cantuan" @tap="toGroup" >去参团</view>
+							<view class="cantuan" @tap="toGroup">去参团</view>
 						</view>
 					</view>
 				</view>
@@ -199,21 +200,9 @@
 		},
 		methods: {
 			//轮播图指示器
-			swiperChange(event) {
-				this.currentSwiper = event.detail.current;
-			},
-			//服务弹窗
-			showService() {
-				console.log('show');
-				this.serviceClass = 'show';
-			},
-			//关闭服务弹窗
-			hideService() {
-				this.serviceClass = 'hide';
-				setTimeout(() => {
-					this.serviceClass = 'none';
-				}, 200);
-			},
+			// swiperChange(event) {
+			// 	this.currentSwiper = event.detail.current;
+			// },
 			//规格弹窗
 			showSpec(fun) {
 				console.log('show');
@@ -225,22 +214,10 @@
 					url:"../group/group"
 				})
 			},
-			// 首页
-			toChat(){
-				uni.navigateTo({
-					url:""
-				})
-			},
 			// 客服
 			chat() {
 				uni.reLaunch({
 					url:'/pages/home/chat/chat'
-				})
-			},
-			//购物车
-			keep(){
-				uni.navigateTo({
-					url:""
 				})
 			},
 			//点击加入购物车
@@ -271,13 +248,7 @@
 					// true 防止用户 手抖 疯狂点击按钮 
 					mask: true
 				});
-			},
-			// goodsInfo:function(e){
-			// 	uni.showToast({
-			// 		title: "编号" + e,
-			// 		icon: "none"
-			// 	});
-			// }
+			}
 		}
 	}
 </script>
@@ -327,18 +298,25 @@
 		                    linear-gradient(#ffa549, #ffa549);
 		color: white;
 		height: 80rpx;
-		padding-top: 20rpx;
+		padding-top: 15rpx;
+		padding-bottom: 15rpx;
 		font-size: 27rpx;
-		display:flex;
-		align-items:baseline;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
 	}
 	
 	.g-info{
 		border: 2rpx white solid;
 		width: 120rpx;
 		height: 45rpx;
-		margin-left: 30rpx;
+		margin-left: 35rpx;
 		border-radius: 10rpx;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
 	}
 	
 	.group-icon{
@@ -350,13 +328,18 @@
 	}
 	
 	.g-icon-text{
-		margin-bottom: 10rpx;
-		font-size: 26rpx;
+		font-size: 25rpx;
+		display: inline-block;
+		margin: 5rpx 5rpx;
 	}
 	
 	.g-price{
-		display:flex;
-		align-items:baseline;
+		/* display:flex;
+		align-items:baseline; */
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
 		margin-left: 20rpx;
 	}
 	
@@ -386,6 +369,10 @@
 		height: 40rpx;
 	}
 	
+	.price-box{
+		width: 100%;
+	}
+	
 	.price {
 		font-size: 50rpx;
 		font-weight: 600;
@@ -407,15 +394,31 @@
 	}
 	
 	.content-item{
-		padding-left: 410rpx;
 		padding-right: 35rpx;
-		margin-right: 35rpx;
 		border-right: 1rpx #D8D8D8 solid;
 	}
 	
+	.content-item2{
+		position: relative;
+		flex-direction: column;
+		margin-left: 35rpx;
+		margin-right: 40rpx;
+	}
+	
+	.btn-share{
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  opacity: 0;
+	}
+	
 	.coupon-tip{
-		color: #8F8F94;
+		width: 50rpx;
+		height: 50rpx;
 		font-size: 24rpx;
+		color: #8F8F94;
 	} 
 	
 	.info-box3{

@@ -21,12 +21,15 @@ swiper-item image {
 .indicator{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	padding: 0 25rpx;
 	height: 40rpx;
@@ -45,21 +48,41 @@ swiper-item image {
 	                    linear-gradient(#ffa549, #ffa549);
 	color: white;
 	height: 80rpx;
-	padding-top: 20rpx;
+	padding-top: 15rpx;
+	padding-bottom: 15rpx;
 	font-size: 27rpx;
+<<<<<<< HEAD
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+=======
 	display:-webkit-box;
 	display:-webkit-flex;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
 	        align-items:baseline;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 }
 .g-info{
 	border: 2rpx white solid;
 	width: 120rpx;
 	height: 45rpx;
-	margin-left: 30rpx;
+	margin-left: 35rpx;
 	border-radius: 10rpx;
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .group-icon{
 	width: 45rpx;
@@ -69,16 +92,30 @@ swiper-item image {
 	border-bottom-left-radius: 10rpx;
 }
 .g-icon-text{
-	margin-bottom: 10rpx;
-	font-size: 26rpx;
+	font-size: 25rpx;
+	display: inline-block;
+	margin: 5rpx 5rpx;
 }
 .g-price{
+<<<<<<< HEAD
+	/* display:flex;
+	align-items:baseline; */
+	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+=======
 	display:-webkit-box;
 	display:-webkit-flex;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
 	        align-items:baseline;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 	margin-left: 20rpx;
 }
 .g-time{
@@ -105,11 +142,16 @@ swiper-item image {
 	padding-bottom: 50rpx;
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	height: 40rpx;
+}
+.price-box{
+	width: 100%;
 }
 .price {
 	font-size: 50rpx;
@@ -129,14 +171,32 @@ swiper-item image {
 	text-decoration: line-through;
 }
 .content-item{
-	padding-left: 410rpx;
 	padding-right: 35rpx;
-	margin-right: 35rpx;
 	border-right: 1rpx #D8D8D8 solid;
 }
+.content-item2{
+	position: relative;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-left: 35rpx;
+	margin-right: 40rpx;
+}
+.btn-share{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 .coupon-tip{
-	color: #8F8F94;
+	width: 50rpx;
+	height: 50rpx;
 	font-size: 24rpx;
+	color: #8F8F94;
 }
 .info-box3{
 	background-color: white;
@@ -162,9 +222,11 @@ swiper-item image {
 .c-row{
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:center;
 	-webkit-align-items:center;
+	    -ms-flex-align:center;
 	        align-items:center;
 	padding: 30rpx 33rpx;
 	position:relative;
@@ -187,10 +249,12 @@ swiper-item image {
 .g-section{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
 	        flex-direction: column;
 	background: #fff;
 	margin-top: 16rpx;
@@ -199,9 +263,11 @@ swiper-item image {
 .g-header{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	height: 70rpx;
 	padding-left: 30rpx;
@@ -220,6 +286,7 @@ swiper-item image {
 .g-box{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	padding-left: 38rpx;
 	/* padding-top: -20rpx; */
@@ -232,9 +299,11 @@ swiper-item image {
 	height: 140rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	margin-top: -20rpx;
 }
@@ -280,10 +349,12 @@ swiper-item image {
 .eva-section{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
 	        flex-direction: column;
 	/* padding: 20upx 30upx; */
 	background: #fff;
@@ -292,9 +363,11 @@ swiper-item image {
 .e-header{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	height: 70rpx;
 	padding: 10rpx 0;
@@ -320,6 +393,7 @@ swiper-item image {
 .tip{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
+	    -ms-flex: 1;
 	        flex: 1;
 	text-align: right;
 }
@@ -329,6 +403,7 @@ swiper-item image {
 .eva-box{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	padding-left: 30rpx;
 	padding-top: 10rpx;
@@ -343,9 +418,11 @@ swiper-item image {
 	height: 40rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 }
 .face {
@@ -377,9 +454,11 @@ swiper-item image {
 	height: 80rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 25rpx;
 	margin-left: 30rpx;
@@ -397,17 +476,21 @@ swiper-item image {
 	z-index: 2;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 }
 .icons {
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	height: 80rpx;
 	margin-left: -4%;
@@ -417,11 +500,14 @@ swiper-item image {
 	height: 80rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 	margin-left: 10rpx;
 }
@@ -434,9 +520,11 @@ swiper-item image {
 .text-di {
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	width: 100%;
 	font-size: 22rpx;
@@ -448,6 +536,7 @@ swiper-item image {
 	overflow: hidden;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	/* margin-right: -2%; */
 }
@@ -457,9 +546,11 @@ swiper-item image {
 	color: #fff;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 26rpx;
 }

@@ -28,10 +28,12 @@
   width: 86%;
   padding: 20rpx 3%;
   margin: 30rpx auto 20rpx auto;
-  box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .addr .icon {
@@ -39,9 +41,11 @@
     height: 80rpx;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .addr .icon image {
@@ -52,6 +56,7 @@
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     font-size: 32rpx;
 }
@@ -67,7 +72,8 @@
   width: 86%;
   padding: 10rpx 3%;
   margin: 30rpx auto 20rpx auto;
-  box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
 }
 .buy-list .row {
@@ -77,6 +83,7 @@
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
 }
 .buy-list .row .goods-info .img {
@@ -85,6 +92,7 @@
         border-radius: 10rpx;
         overflow: hidden;
         -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
                 flex-shrink: 0;
         margin-right: 10rpx;
 }
@@ -98,8 +106,10 @@
         overflow: hidden;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
         position: relative;
 }
@@ -118,9 +128,11 @@
           height: 40rpx;
           display: -webkit-box;
           display: -webkit-flex;
+          display: -ms-flexbox;
           display: flex;
           -webkit-box-align: center;
           -webkit-align-items: center;
+              -ms-flex-align: center;
                   align-items: center;
           padding: 0 10rpx;
           border-radius: 20rpx;
@@ -132,12 +144,15 @@
           bottom: 0rpx;
           display: -webkit-box;
           display: -webkit-flex;
+          display: -ms-flexbox;
           display: flex;
           -webkit-box-pack: justify;
           -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
                   justify-content: space-between;
           -webkit-box-align: end;
           -webkit-align-items: flex-end;
+              -ms-flex-align: end;
                   align-items: flex-end;
           font-size: 28rpx;
           height: 40rpx;
@@ -148,19 +163,23 @@
 .buy-list .row .goods-info .info .price-number .number {
             display: -webkit-box;
             display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
             -webkit-box-pack: center;
             -webkit-justify-content: center;
+                -ms-flex-pack: center;
                     justify-content: center;
             -webkit-box-align: center;
             -webkit-align-items: center;
+                -ms-flex-align: center;
                     align-items: center;
 }
 .order {
   width: 86%;
   padding: 10rpx 3%;
   margin: 30rpx auto 20rpx auto;
-  box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
 }
 .order .row {
@@ -168,6 +187,7 @@
     height: 50rpx;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 .order .row .left {
@@ -185,12 +205,15 @@
   height: 100rpx;
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: center;
   -webkit-align-items: center;
+      -ms-flex-align: center;
           align-items: center;
   font-size: 28rpx;
   position: fixed;
@@ -201,12 +224,15 @@
     width: 80%;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
             justify-content: flex-end;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .footer .settlement .sum {
@@ -215,9 +241,11 @@
       margin-right: 10rpx;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: end;
       -webkit-justify-content: flex-end;
+          -ms-flex-pack: end;
               justify-content: flex-end;
 }
 .footer .settlement .sum .money {
@@ -230,12 +258,15 @@
       color: #fff;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
+          -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-align: center;
       -webkit-align-items: center;
+          -ms-flex-align: center;
               align-items: center;
       font-size: 30rpx;
       border-radius: 40rpx;
@@ -244,19 +275,23 @@
   width: 86%;
   padding: 10rpx 3%;
   margin: 30rpx auto 20rpx auto;
-  box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+          box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
 }
 .detail .row {
     height: 60rpx;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .detail .row .nominal {

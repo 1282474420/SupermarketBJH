@@ -96,7 +96,8 @@
   height: 26rpx;
   font-size: 28rpx;
   color: #fff;
-  box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(0, 123, 131, 0.25);
+  -webkit-box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(0, 123, 131, 0.25);
+          box-shadow: 0rpx 3rpx 7rpx 0rpx rgba(0, 123, 131, 0.25);
   border-radius: 34rpx;
   background-color: rgba(0, 0, 0, 0.3);
   padding-left: 37rpx;

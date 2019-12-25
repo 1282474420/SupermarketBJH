@@ -2,6 +2,7 @@
 .content-count{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	margin-left: 220rpx;
 }
@@ -9,6 +10,7 @@
   -webkit-box-orient:horizontal;
   -webkit-box-direction:normal;
   -webkit-flex-direction:row;
+      -ms-flex-direction:row;
           flex-direction:row;
   /* flex-direction: column;
   justify-content: center; */
@@ -77,9 +79,11 @@
 	/* padding-bottom: 20rpx; */
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	/* height: 65upx; */
 }

@@ -1,1 +1,9 @@
+<<<<<<< HEAD
+<text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="uni-icons data-v-19c92819" style="{{'color:'+(color)+';'+('font-size:'+(size+'px')+';')}}" bindtap="__e">{{icons[type]}}</text>
+=======
+<<<<<<< HEAD
+<text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="uni-icons data-v-19e18c1c" style="{{'color:'+(color)+';'+('font-size:'+(size+'px')+';')}}" bindtap="__e">{{icons[type]}}</text>
+=======
 <text data-event-opts="{{[['tap',[['_onClick',['$event']]]]]}}" class="uni-icons data-v-1dc05e38" style="{{'color:'+(color)+';'+('font-size:'+(size+'px')+';')}}" bindtap="__e">{{icons[type]}}</text>
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a

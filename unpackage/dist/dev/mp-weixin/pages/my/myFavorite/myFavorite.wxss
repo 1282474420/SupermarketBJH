@@ -31,7 +31,8 @@ image {
   height: 80rpx;
   font-size: 31rpx;
   overflow: hidden;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   display: -webkit-box;
   word-break: break-all;
   -webkit-box-orient: vertical;
@@ -53,9 +54,11 @@ image {
   margin-top: 25rpx;
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
+      -ms-flex-align: center;
           align-items: center;
 }
 .zt text {

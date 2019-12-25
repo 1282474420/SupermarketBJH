@@ -15,15 +15,17 @@
 		<view class="flashCountdown">
 			<text class="f-text">限时购</text>抢购中
 			<text class="f-text2">离结束还剩</text>
-			<uni-countdown color="#fe5c6a" border-radius="30rpx" background-color="#F5F5DC" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
+			<uni-countdown color="white" border-radius="30rpx" background-color="#fe5c6a" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 		</view>
 		
 		<view class="flex-item">
 			<!-- 标题 价格 -->
-			<view class="info-box goods-info">
-				<text class="price-tip">¥</text>
-				<text class="price">{{goodsData.activityprice}}</text>
-				<text class="m-price">原价¥{{goodsData.price}}</text>
+			<view class="info-box">
+				<view class="price-box">
+					<text class="price-tip">¥</text>
+					<text class="price">{{goodsData.activityprice}}</text>
+					<text class="m-price">原价¥{{goodsData.price}}</text>
+				</view>
 				<view class="content-item">
 					<image src="../../../static/groupImg/collect.png" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
 					<view class="coupon-tip">收藏</view>
@@ -31,10 +33,10 @@
 				<view class="content-item2">
 					<image src='../../../static/groupImg/share.png' style="width: 40rpx;height: 40rpx;">
 					<view class="coupon-tip">分享</view>
-					<button open-type="share"></button>
+					<button class="btn-share" open-type="share"></button>
 				</view>
 			</view>
-			<view class="info-box3 goods-info">
+			<view class="info-box3">
 				<view class="title">{{goodsData.goodsName}}</view>
 				<!-- <view class="goods_text">{{goodsData.goodsTitle}}</view> -->
 			</view>
@@ -42,22 +44,21 @@
 		
 		<view class="flex-item">
 			<view class="c-list ">
-				<!--class="uni-list-cell" hover-class="uni-list-cell-hover"-->
 				<view>
-					<view class="c-row b-b">
+					<view class="c-row">
 						<text class="tit tt">库存</text>
 						<text class="tit2 tt">999件</text>
 					</view>
 				</view>
 				
 				<!-- <view >
-					<view class="c-row b-b">
+					<view class="c-row">
 						<text class="tit tt">规格</text>
 						<text class="tit2 tt">数量参数选择</text>
 					</view>
 				</view> -->
 				
-				<view class="c-row b-b">
+				<view class="c-row">
 					<text class="tit tt">说明</text>
 					<text class="tit2 tt">购物须知</text>
 				</view>
@@ -139,8 +140,7 @@
 		components: {uniCountdown},
 		data() {
 			return {
-				goodsData:{},
-				comment:{}
+				goodsData:{}
 			}
 		},
 		onLoad: function (e) {
@@ -156,7 +156,6 @@
 				method: 'POST',
 				success: res => {
 					this.goodsData=res.data;
-					this.comment=res.data;
 					console.log(res.data)
 				},
 				fail: () => {},
@@ -165,21 +164,9 @@
 		},
 		methods: {
 			//轮播图指示器
-			swiperChange(event) {
-				this.currentSwiper = event.detail.current;
-			},
-			//服务弹窗
-			showService() {
-				console.log('show');
-				this.serviceClass = 'show';
-			},
-			//关闭服务弹窗
-			hideService() {
-				this.serviceClass = 'hide';
-				setTimeout(() => {
-					this.serviceClass = 'none';
-				}, 200);
-			},
+			// swiperChange(event) {
+			// 	this.currentSwiper = event.detail.current;
+			// },
 			//规格弹窗
 			showSpec(fun) {
 				console.log('show');
@@ -329,6 +316,10 @@
 		height: 65upx;
 	}
 	
+	.price-box{
+		width: 100%;
+	}
+	
 	.price {
 		font-size: 60rpx;
 		font-weight: 600;
@@ -350,16 +341,34 @@
 	}
 	
 	.content-item{
-		padding-left: 250rpx;
 		padding-right: 35rpx;
-		margin-right: 35rpx;
 		border-right: 1rpx #D8D8D8 solid;
 	}
 	
 	.coupon-tip{
-		color: #8F8F94;
+		width: 50rpx;
+		height: 50rpx;
 		font-size: 24rpx;
+		color: #8F8F94;
 	} 
+	
+	.content-item2{
+		position: relative;
+		flex-direction: column;
+		margin-left: 35rpx;
+		margin-right: 40rpx;
+	}
+	
+	.btn-share{
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  opacity: 0;
+	}
+	
+	
 	
 	.info-box3{
 		background-color: white;

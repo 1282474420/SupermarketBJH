@@ -7,7 +7,7 @@
 			<uni-countdown color="#FFFFFF" background-color="#F44336" border-color="#F44336" border-radius="20rpx" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 		</view>
 		
-		<view class='flex-item' v-for="(goods) in goodsList" :key="goods.presell" @click="goodsInfo(goods.id)">
+		<view class='flex-item' v-for="(goods) in goodsList" :key="goods.id" @click="goodsInfo(goods.id)">
 		    <image :src="goods.picturepath" class="slide-image2" mode="widthFix" ></image>
 			<view class="content">
 				<view class="word1">{{goods.goodsName}}</view>

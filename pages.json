@@ -1,6 +1,27 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			"path": "pages/home/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+		,  {
+		    "path" : "pages/shopcart/addresslist/addresslist",
+		    "style" : {
+				"navigationBarTitleText": "地址列表"
+=======
+			"path": "pages/shopcart/order/order",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, 
+		{
+>>>>>>> 47c688255b4f5b1688e31bdc16f0ed0415101578
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -8,6 +29,7 @@
 					"van-row": "/wxcomponents/vant/dist/row/index",
 					"van-col": "/wxcomponents/vant/dist/col/index"
 				}
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 			}
 		},
 		{
@@ -38,8 +60,12 @@
 		    "style" : {
 				"navigationBarTitleText": "编辑地址"
 			}
+<<<<<<< HEAD
+		},{
+=======
 		},
 		{
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 		    "path" : "pages/my/my/my",
 		    "style" : {
 				"navigationBarTitleText": "我的"
@@ -76,7 +102,10 @@
 			}
 		},
 		
+<<<<<<< HEAD
+=======
 		
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 		{
 			"path": "pages/shopcart/myorder/forpayment/forpayment",
 			"style": {

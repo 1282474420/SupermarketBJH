@@ -1,5 +1,12 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "pages/shopcart/order/order",
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
+>>>>>>> 47c688255b4f5b1688e31bdc16f0ed0415101578
     "pages/home/home/home",
     "pages/shopcart/order/order",
     "pages/shopcart/addresslist/addresslist",
@@ -84,5 +91,13 @@
     ]
   },
   "usingComponents": {},
+<<<<<<< HEAD
   "sitemapLocation": "sitemap9.json"
+=======
+<<<<<<< HEAD
+  "sitemapLocation": "sitemap17.json"
+=======
+  "sitemapLocation": "sitemap37.json"
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
+>>>>>>> 47c688255b4f5b1688e31bdc16f0ed0415101578
 }

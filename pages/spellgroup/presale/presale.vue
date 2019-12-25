@@ -3,7 +3,7 @@
 		
 		<image src="../../../static/groupImg/presale.png" class="slide-image" mode="widthFix"></image>
 		
-		<view class='flex-item' v-for="(goods) in goodsList" :key="goods.presell" @click="goodsInfo(goods.id)">
+		<view class='flex-item' v-for="(goods) in goodsList" :key="goods.id" @click="goodsInfo(goods.id)">
 		    <image :src="goods.picturepath" class="slide-image2" mode="widthFix" ></image>
 			<view class="content">
 				<text class="word1">{{goods.goodsName}}</text>
