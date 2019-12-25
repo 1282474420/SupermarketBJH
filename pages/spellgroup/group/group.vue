@@ -25,25 +25,25 @@
 							
 						</view> -->
 						<view class="goods-info">
-							<!-- <image :src="picturepath" class="slide-image"></image>
+							<!-- <image :src="groupList.picturepath" class="slide-image"></image>
 							<view class="goods-info-item">
-								<view class="title">{{goods.goodsName}}</view>
-								<view class="m-price">单买价¥{{goods.price}}</view>
-								<view class="price">拼团价<text>¥{{goods.activityprice}}</text></view>
-								<view class="jiesheng">拼团为您节省{{goods.price-goods.activityprice}}元</view>
+								<view class="title">{{groupList.goodsName}}</view>
+								<view class="m-price">单买价¥{{groupList.price}}</view>
+								<view class="price">拼团价<text>¥{{groupList.activityprice}}</text></view>
+								<view class="jiesheng">拼团为您节省{{groupList.price-goods.activityprice}}元</view>
 							</view> -->
 							
-							<image src="../../../static/groupImg/groupxia.png" class="slide-image"></image>
+							<image src="../../../static/groupImg/yurong.png" class="slide-image"></image>
 							<view class="goods-info-item">
-								<view class="title">大龙虾</view>
-								<view class="m-price">单买价¥89</view>
-								<view class="price">拼团价<text>¥59</text></view>
-								<view class="jiesheng">拼团为您节省501.1元</view>
+								<view class="title">羽绒服</view>
+								<view class="m-price">单买价¥499</view>
+								<view class="price">拼团价<text>¥199</text></view>
+								<view class="jiesheng">拼团为您节省300元</view>
 							</view>
 						</view>
 						
 						<view class="group-info">
-							还差<text class="g-people">{{groupList.gpeople}}</text>人拼团成功，剩余
+							还差<text class="g-people">2</text>人拼团成功，剩余
 								<uni-countdown color="black" background-color="#F0F0F0" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>结束
 						</view>
 						
@@ -54,7 +54,7 @@
 							</view>
 							<!-- :src="groupData.tuanyuan" -->
 							<view class="tuanyuan"><image src="../../../static/groupImg/nabi.jpg" class="gimage"></image></view>
-							<view class="tuanyuan"><image src="../../../static/groupImg/nabi.jpg" class="gimage"></image></view>
+							<view class="tuanyuan2">?</view>
 							<view class="tuanyuan2">?</view>
 						</view>
 						
@@ -62,7 +62,7 @@
 							<view class="g-btn">
 								<view class="g-btn-text"><text>我已参团，</text>再邀请好友参团</view>
 							</view>
-							<view class="g-btn2">
+							<view class="g-btn2" @click="shareFriendcricle()">
 								<view class="g-btn-text2">分享到朋友圈</view>
 							</view>
 						</view>
@@ -105,25 +105,6 @@
 				this.scrollViewHeight = res.height
 			})
 		},
-		// onLoad: function (e) {
-		//   var ids = e.id;
-		// 	uni.showToast({
-		// 		title: "编号" + ids,
-		// 		icon: "none"
-		// 	});
-		//   //获得当前对象
-		//   var that = this
-		// 	uni.request({
-		// 		url: 'http://localhost:8080/commodity/getById?id='+ids,
-		// 		method: 'POST',
-		// 		success: res => {
-		// 			this.groupList=res.data;
-		// 			console.log(res.data)
-		// 		},
-		// 		fail: () => {},
-		// 		complete: () => {}
-		// 	});
-		// },
 		methods: {
 			transition({ detail: { dx } }) { // swiper 运动时触发
 				this.activeBarLeft = this.navItemWidth * this.finishedIndex + this.navItemWidth * (dx / this.screenWidth)
@@ -154,20 +135,24 @@
 					this.$refs.pulldownRefresher.pullup()
 				}, 1234)
 			},
-			//新闻详情
-			// goGoods(item, index) {
-			// 	let data = {
-			// 		id: index,
-			// 		title:'波士顿进口鲜活大龙虾450g~500g',
-			// 		mprice:'88',
-			// 		price:'59',
-			// 		jiesheng:'501.1',
-			// 		gpeople:'2'
-			// 	}
-			// 	uni.navigateTo({
-			// 		url: `/pages/details/${url}?data=${JSON.stringify(data)}`
-			// 	})
-			// },
+			//分享到微信朋友圈
+			shareFriendcricle: function() {
+			    uni.share({
+			        provider: "weixin",
+			        scene: "WXSenceTimeline",
+			        type: 0,
+			        href: "http:*******************",
+			        title: "你笑起来真好看",
+			        summary: "唐艺昕，没有水的地方叫沙漠，没有你的地方，你知道叫什么吗？不知道。叫寂寞。",
+			        imageUrl: "http:*******************",
+			        success: function(res) {
+			            console.log("success:" + JSON.stringify(res));
+			        },
+			        fail: function(err) {
+			            console.log("fail:" + JSON.stringify(err));
+			        }
+			    });
+			}
 		}
 	}
 </script>
@@ -235,7 +220,6 @@
 		height: 1200rpx;
 	}
 	
-	
 	.product{
 		// height: 800rpx;
 	}
@@ -252,8 +236,8 @@
 		
 		.slide-image{
 			width: 240rpx;
-			height: 200rpx;
-			margin-top: 70rpx;
+			height: 270rpx;
+			margin-top: 40rpx;
 			margin-left: 40rpx;
 			vertical-align: middle;
 			float: left;
@@ -329,10 +313,10 @@
 			margin-left: 80rpx;
 			border: 1rpx #999999 dashed;
 			border-radius: 100%;
-			margin-top: 25rpx;
+			margin-top: 30rpx;
 			color: #999999;
 			font-weight: bold;
-			font-size: 50rpx;
+			font-size: 80rpx;
 			text-align: center;
 		}
 		

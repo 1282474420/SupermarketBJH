@@ -6,7 +6,7 @@
 		</view>
 		
 		<view>
-			<block v-for="(goods) in goodsList" :key="goods.activityId">
+			<block v-for="(goods) in goodsList" :key="goods.id">
 			  <view class="groupBlock" @click="goodsInfo(goods.id)">
 			    <image :src="goods.picturepath" mode="widthFix" class="groupImg"></image>
 			    <!-- <text class='shopp_activity' wx:if="{{item.activity}}">{{item.activity}}</text> -->
