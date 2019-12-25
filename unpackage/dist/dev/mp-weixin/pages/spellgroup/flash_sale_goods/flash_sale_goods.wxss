@@ -42,7 +42,10 @@ swiper-item image {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 .flashCountdown{
-	background-color: #FF8000;
+	background-image: -webkit-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
+	                    -webkit-linear-gradient(#ffa549, #ffa549);
+	background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
+	                    linear-gradient(#ffa549, #ffa549);
 	color: white;
 	height: 70rpx;
 	padding-top: 10rpx;
@@ -60,9 +63,10 @@ swiper-item image {
 	font-size: 33rpx;
 	margin-left: 20rpx;
 	margin-right: 10rpx;
+	font-weight: bold;
 }
 .f-text2{
-	margin-left: 50rpx;
+	margin-left: 180rpx;
 }
 .flex-item{
 	background-color: white;
@@ -84,6 +88,9 @@ swiper-item image {
 	        align-items:baseline;
 	height: 65rpx;
 }
+.price-box{
+	width: 100%;
+}
 .price {
 	font-size: 60rpx;
 	font-weight: 600;
@@ -102,15 +109,32 @@ swiper-item image {
 	text-decoration: line-through;
 }
 .content-item{
-	padding-left: 250rpx;
 	padding-right: 35rpx;
-	margin-right: 35rpx;
 	border-right: 1rpx #D8D8D8 solid;
 }
 .coupon-tip{
-	color: #8F8F94;
+	width: 50rpx;
+	height: 50rpx;
 	font-size: 24rpx;
-	margin-top: -13rpx;
+	color: #8F8F94;
+}
+.content-item2{
+	position: relative;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-left: 35rpx;
+	margin-right: 40rpx;
+}
+.btn-share{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 .info-box3{
 	background-color: white;

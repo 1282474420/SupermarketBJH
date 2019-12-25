@@ -49,7 +49,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .uni-countdown.data-v-bd0b79f2 {
+=======
+<<<<<<< HEAD
+.uni-countdown.data-v-fc8817ec {
+=======
+.uni-countdown.data-v-2224ea26 {
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +73,15 @@
           justify-content: flex-start;
   padding: 2rpx 0;
 }
+<<<<<<< HEAD
 .uni-countdown__splitor.data-v-bd0b79f2 {
+=======
+<<<<<<< HEAD
+.uni-countdown__splitor.data-v-fc8817ec {
+=======
+.uni-countdown__splitor.data-v-2224ea26 {
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -78,7 +94,15 @@
   padding: 5rpx;
   font-size: 24rpx;
 }
+<<<<<<< HEAD
 .uni-countdown__number.data-v-bd0b79f2 {
+=======
+<<<<<<< HEAD
+.uni-countdown__number.data-v-fc8817ec {
+=======
+.uni-countdown__number.data-v-2224ea26 {
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

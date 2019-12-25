@@ -51,14 +51,14 @@
 		    </view>
 		  </view>
 		  <!-- 产品分类 -->
-		  <view class="product_type">
-		    <block v-for="(item, index) in product" :key="index">
-		      <view class="productblock" @tap="product_type(index)">
-		        <image :src="item.pcatClassImg" class="productblock_img"></image>
-		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
-		      </view>
-		    </block>
-		  </view>
+		  	<view class="product_type">
+		  		<block v-for="(item, index) in product" :key="index">
+		  		    <view class="productblock" @tap="product_type(index)">
+		  		        <image :src="item.pcatClassImg" class="productblock_img"></image>
+		  		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
+		  		    </view>
+		  		</block>
+		  	</view>
 		  <!-- 活动 -->
 		  <view class="hd">
 		    <image src="../../../static/images/horn_03.png" class="horn"></image>
@@ -74,16 +74,16 @@
 		    <view class='xsqg red'>
 		      <image src='../../../static/images/xsqg_03.png' class='title'></image>
 		      <view class='countdown'>
-		        <text class='time'>距结束</text>
-				<!-- 不显示天数 -->
-				<uni-countdown class="hour" :show-day="false" :hour="12" :minute="12" :second="12"></uni-countdown>
-		        <!-- <text class='hour'>{{countDownHour}}</text> :
-		        <text class='minute'>{{countDownMinute}}</text> :
-		        <text class='second'>{{countDownSecond}}</text> -->
+				<van-row>
+					<van-col span="7"><text class='time'>距结束</text></van-col>
+		            <van-col span="17">
+						<uni-countdown class="hour" :show-day="false" :hour="12" :minute="12" :second="12"></uni-countdown>
+					</van-col>
+				</van-row>
 		      </view>
 		      <navigator class='content1' url="../../spellgroup/flash_sale/flash_sale">
-		        <text>更多优惠</text>
-		        <image src='../../../static/images/djt.png' class='jt'></image>
+		      		<text>更多优惠</text>
+		      		<image src='../../../static/images/djt.png' class='jt'></image>
 		      </navigator>
 		    </view>
 		  <!-- 限时抢购商品 -->
@@ -107,8 +107,8 @@
 		  <view class='xsqg green'>
 		    <image src='../../../static/images/czpt_07.png' class='title'></image>
 		    <navigator class='content1' url="../../spellgroup/group_buying/group_buying">
-		      <text>更多拼团</text>
-		      <image src='../../../static/images/djt.png' class='jt'></image>
+		    	<text>更多拼团</text>
+		    	<image src='../../../static/images/djt.png' class='jt'></image>
 		    </navigator>
 		  </view>
 		  <!-- 超值拼团商品 -->
@@ -137,7 +137,7 @@
 		  </view>
 		  <!-- 天天优惠券及商品 -->
 		  <view class="yhj" v-if="yhj[0].cId!=null">
-		    <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;">
+		    <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;" @tap="myyhj">
 		      <block v-for="(item, index) in yhj" :key="index">
 		        <view class="yhj_block">
 		          <image src="../../../static/images/yhj_03.png" class="yhj_img"></image>
@@ -327,7 +327,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      }, {
 				        img: "../../../static/images/navIcon_07.png",
 				        text: "佳会员",
-				        url: "../my/my"
+				        url: "../../my/myVipCard/myVipCard"
 				      }],
 				      // 服务
 				      service: [{
@@ -441,11 +441,12 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				        title: "组合购",
 				        content: "搭配购买更优惠",
 				        img: "../../../static/images/zhg_03.png",
-				        url: "../groupBuy/GroupBuyList"
+				        url: "../../groupBuy/GroupBuyList"
 				      }, {
 				        title: "限量促销",
 				        content: "特价专区 卖完即止",
-				        img: "../../../static/images/xszx_05.png"
+				        img: "../../../static/images/xszx_05.png",
+						url: "../../spellgroup/flash_sale/flash_sale"
 				      }],
 				      // 猜你喜欢商品
 				      cnxhsp: [{
@@ -594,9 +595,23 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				// 导航栏
 				navFun (e) {
 				    var tzlj2 = e.currentTarget.dataset.lj;
+<<<<<<< HEAD
 				    uni.navigateTo({
 				        url: tzlj2
 				    });
+=======
+				    uni.navigateTo({
+				        url: tzlj2
+				    });
+				},
+				myyhj() {
+					uni.navigateTo({
+						url: '../coupons/coupons',
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 				},
 				// 预售好物
 				product_type(e){
@@ -609,6 +624,15 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 							complete: () => {}
 						});
 					}
+				},
+				zhg(e) {
+					console.log(e.currentTarget.dataset.spxqxx)
+					uni.navigateTo({
+						url: e.currentTarget.dataset.spxqxx,
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
 				}
 		}
 	}
@@ -727,7 +751,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 
 .search .searchText {
   margin-left: 66rpx;
-  margin-top: -42rpx;
+  margin-top: -45rpx;
   font-size: 26rpx;
 }
 
@@ -776,7 +800,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	height: 340rpx;
 }
 
-swiper-item image {
+.adv .advImg {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;
@@ -929,20 +953,10 @@ swiper-item image {
   font-size: 24rpx;
 }
 
-.hour {
-	display: inline-block;
-	position: absolute;
-	right: 245rpx;
-	bottom: -425rpx;
+.hour{
+	position: relative;
+	bottom: 10rpx;
 }
-
-/* .countdown .hour, .minute, .second {
-  border-radius: 5rpx;
-  width: 159rpx;
-  height: 38rpx;
-  background-color: rgba(48, 0, 0, 0.4);
-  padding: 8rpx 10rpx 8rpx 11rpx;
-} */
 
 /* 限时抢购商品 */
 
@@ -992,8 +1006,8 @@ swiper-item image {
 }
 
 .xsqgsp .icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   position: absolute;
   top: 222rpx;
   left: 135rpx;
@@ -1320,8 +1334,8 @@ swiper-item image {
 }
 
 .cnxhsp_icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   position: absolute;
   left: 164rpx;
   top: 301rpx;
@@ -1523,8 +1537,8 @@ swiper-item image {
 }
 
 .shopp_icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   float: right;
   margin-right: 20rpx;
 }

@@ -39,7 +39,7 @@
 				</view>
 			</view>
 		</view>
-		<!-- 提示-备注 -->
+		<!-- 提示-配送方式 -->
 		<view class="order">
 			<view class="row">
 				<view class="left">
@@ -68,7 +68,27 @@
 				</view>
 			</view>
 		</view>
-
+		
+		<!-- <view class="order">
+			<view class="row">
+				<view class="left">
+					<image src="../../../static/images/zf.png" class="zf"></image> 支付方式
+				</view>
+			</view>
+			<view class="row">
+				<view class="webox">
+					<image src="../../../static/images/img/wxzf.png" style="display: none;" class="xz11"></image>
+					<view class="weys" >
+						<view class="wxzfk">
+							<image src="../../../static/images/img/xz2.png" class="wxzf"></image>
+							<text class="wxzfwz">微信支付</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			
+		</view> -->
+		
 		<view class="blck">
 
 		</view>
@@ -203,7 +223,7 @@
 			//选择收货地址
 			selectAddress() {
 				uni.navigateTo({
-					url: '../user/address/address?type=select'
+					url: '../addresslist/addresslist?type=select'
 				})
 			},
 			bindDateChange: function(e) {
@@ -443,4 +463,23 @@
 	.radiotext{
 		margin-left: 20upx;
 	}
+	// .zf{
+	// 	width: 30upx;
+	// 	height: 30upx;
+	// }
+	// .wxbox {
+	//   width: 330rpx;
+	//   height: 90rpx;
+	//   float: left;
+	//   border: 2px solid #999;
+	//   border-radius: 8rpx 8rpx 8rpx 8rpx;
+	//   position: relative;
+	// }
+	// .xz11 {
+	//   position: absolute;
+	//   left: 335rpx;
+	//   width: 34rpx;
+	//   height: 34rpx;
+	// }
+
 </style>

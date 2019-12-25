@@ -9,7 +9,7 @@
 	background-color: #fff;
 	width: 335rpx;
 	position: relative;
-	margin-left: 20rpx;
+	margin-left: 30rpx;
 	margin-top: 20rpx;
 }
 .groupImg{
@@ -23,8 +23,18 @@
 	width: 250rpx;
 	overflow: hidden;
 	white-space: nowrap;
+<<<<<<< HEAD
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
+=======
+<<<<<<< HEAD
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+=======
+	text-overflow: ellipsis;
+>>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
+	font-weight: bold;
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 }
 .content-count{
 	display: -webkit-box;
@@ -88,7 +98,10 @@
 	/* justify-content: space-between; */
 	/* align-items: flex-end; */
 	width: 92%;
-	padding: 10rpx 0rpx 10rpx 25rpx;
+	padding-top: 10rpx;
+	padding-left: 20rpx;
+	padding-bottom: 10rpx;
+	/* padding: 10rpx 0rpx 10rpx 25rpx; */
 	border-bottom: 1rpx #D8D8D8 solid;
 }
 .info-item{
@@ -128,9 +141,12 @@
 	font-family: 华文细黑;
 	margin-top: -6rpx;
 }
+.info2{
+	padding-bottom: 20rpx;
+}
 .people{
 	color: #808080;
 	font-size: 25rpx;
-	/* margin-left: 20rpx; */
+	margin-left: 20rpx;
 }
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .cates_container {
   height:calc(100vh - 90rpx);
@@ -28,3 +29,33 @@ margin-top:76rpx ;
 	text-align: center;
 }
 
+=======
+
+.cates_container {
+  height:calc(100vh - 90rpx);
+  display: flex;
+}
+.left_menu{
+	  float: left;
+	  width: 186rpx;
+	  height: 1242rpx;
+	  background-color: #EFEFEF;
+	  font-size: 26rpx;
+	  color: #666;
+	  text-align: center;
+  flex: 6;
+/* 	 */
+}
+.right_content{
+  flex: 18;
+margin-top:76rpx ;
+}
+
+.tab1{
+	  width: 186rpx;
+	  height: 64rpx;
+	  padding-top: 36rpx;
+	text-align: center;
+}
+
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a

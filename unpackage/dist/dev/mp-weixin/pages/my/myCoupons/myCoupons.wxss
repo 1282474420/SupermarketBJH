@@ -206,7 +206,11 @@ page {
   font-size: 32rpx;
   display: inline-block;
 }
+<<<<<<< HEAD
 .precedenceCont.cur text{color:#FE4531}
+=======
+.precedenceCont.cur text{color:#fe4531}
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 .precedenceCont.cur .ziti {
   color: #fe4531;
   padding-bottom: 46rpx;

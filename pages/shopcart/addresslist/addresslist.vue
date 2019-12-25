@@ -2,27 +2,29 @@
 	<view class="bigv">
 		<view class="xv"></view>
 
-		<navigator url="addressupd/addressupd">
+		<view>
 			<view class="v1" v-for="(item, index) in arrys1" :key="index">
-				<view class="v1_1">
-					<text>{{item.text1}}</text>
-				</view>
-
-				<view class="v1_2">
-					<view class="v2">
-						<image class="img1" src="../../../static/images/img/address/dztb_03.png"></image>
+				<view @tap="addresstap(item)">
+					<view class="v1_1">
+						<text>{{item.name}} {{item.phone}}</text>
 					</view>
 
-					<view class="v3">
-						<image class="img2" src="../../../static/images/img/address/djjr2_03.png"></image>
-					</view>
+					<view class="v1_2">
+						<view class="v2">
+							<image class="img1" src="../../../static/images/img/address/dztb_03.png"></image>
+						</view>
 
-					<view class="v4">
-						<text>{{item.text2}}</text>
+						<view class="v3">
+							<image class="img2" src="../../../static/images/img/address/djjr2_03.png"></image>
+						</view>
+
+						<view class="v4">
+							<text>{{item.x_address}}{{item.details_ads}}</text>
+						</view>
 					</view>
 				</view>
 			</view>
-		</navigator>
+		</view>
 
 		<view class="v5">
 			<navigator url="addressadd/addressadd">
@@ -34,26 +36,30 @@
 </template>
 
 <script>
-	//index.js
-	//获取应用实例
-	// const app = getApp().globalData;
 
 	export default {
 		data() {
 			return {
-				arrys1: [{
-					id: 0,
-					text1: "张三  132****2333",
-					text2: "广东省深圳市龙华区东环二路东侧365花园M1栋"
-				}, {
-					id: 1,
-					text1: "李四  132****2333",
-					text2: "广东省深圳市龙华区东环二路东侧365花园M1栋"
-				}, {
-					id: 2,
-					text1: "王五  132****2333",
-					text2: "广东省深圳市龙华区东环二路东侧365花园M1栋"
-				}],
+				// arrys1: [{
+				// 	id: 0,
+				// 	name: "张三",
+				// 	phone:"132****2333",
+				// 	xAddress:"广东省深圳市龙华区",
+				// 	detailsAds: "东环二路东侧365花园M1栋"
+				// }, {
+				// 	id: 1,
+				// 	name: "李四",
+				// 	phone:"132****2333",
+				// 	xAddress:"广东省深圳市龙华区",
+				// 	detailsAds: "东环二路东侧365花园M1栋"
+				// }, {
+				// 	id: 2,
+				// 	name: "王五",
+				// 	phone:"132****2333",
+				// 	xAddress:"广东省深圳市龙华区",
+				// 	detailsAds: "东环二路东侧365花园M1栋"
+				// }],
+				arrys1: [],
 				userInfo: "",
 				hasUserInfo: false
 			};
@@ -61,37 +67,39 @@
 
 		components: {},
 		props: {},
+		onShow: function() {
+			let me = this;
+			if(me.num>0){
+				uni.getStorage({
+					key:"arr",
+					success: (res) => {
+						this.arrys1=res.data 
+						console.log(this.arrys1)
+					}
+				});
+			}
+			me.num++;
+		},
 		onLoad: function() {
-			var that = this; // 初始化
-
-			// getApp().globalData.initPage(that);
-
-			// if (getApp().globalData.userInfo) {
-			// 	this.setData({
-			// 		userInfo: getApp().globalData.userInfo,
-			// 		hasUserInfo: true
-			// 	});
-			// } else if (this.canIUse) {
-			// 	// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-			// 	// 所以此处加入 callback 以防止这种情况
-			// 	getApp().globalData.userInfoReadyCallback = res => {
-			// 		this.setData({
-			// 			userInfo: res.userInfo,
-			// 			hasUserInfo: true
-			// 		});
-			// 	};
-			// } else {
-			// 	// 在没有 open-type=getUserInfo 版本的兼容处理
-			// 	uni.getUserInfo({
-			// 		success: res => {
-			// 			getApp().globalData.userInfo = res.userInfo;
-			// 			this.setData({
-			// 				userInfo: res.userInfo,
-			// 				hasUserInfo: true
-			// 			});
-			// 		}
-			// 	});
-			// }
+	// 		var that = this; // 初始化
+	// 		uni.request({
+	// 			url: "http://localhost:8080/queryMember.do",
+	// 			method: 'POST',
+	// 			data: {},
+	// 			success: res => {
+	// 				console.log("json",res);
+	// 			}
+	
+	// 		});
+			
+			uni.getStorage({
+				key:"arr",
+				success: (res) => {
+					this.arrys1=res.data 
+					console.log(this.arrys1)
+				}
+			});
+			
 		},
 		methods: {
 			//事件处理函数
@@ -100,13 +108,24 @@
 					url: '../logs/logs'
 				});
 			},
+			addresstap:function(e){
+				// var arr=[];
+				// arr=JSON.stringify(this.arrys1);
+				uni.showToast({
+					title: '地址' + e.name,
+					icon: "none"
+				});
+				uni.navigateTo({
+					url:"addressupd/addressupd?name="+e.name
+				})
+			},
 			getUserInfo: function(e) {
 				console.log(e);
 				// getApp().globalData.userInfo = e.detail.userInfo;
-				this.setData({
-					userInfo: e.detail.userInfo,
-					hasUserInfo: true
-				});
+				// this.setData({
+				// 	userInfo: e.detail.userInfo,
+				// 	hasUserInfo: true
+				// });
 			},
 			setData: function(obj, callback) {
 				let that = this;

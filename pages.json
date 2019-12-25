@@ -2,6 +2,7 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		
 		{
+<<<<<<< HEAD
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页"
@@ -11,200 +12,238 @@
 		    "path" : "pages/shopcart/addresslist/addresslist",
 		    "style" : {
 				"navigationBarTitleText": "地址列表"
+=======
+			"path": "pages/shopcart/order/order",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, 
+		{
+			"path": "pages/home/home/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"usingComponents": {
+					"van-row": "/wxcomponents/vant/dist/row/index",
+					"van-col": "/wxcomponents/vant/dist/col/index"
+				}
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 			}
 		},
+		{
+			"path" : "pages/shopcart/addresslist/addresslist",
+			"style" : {
+					"navigationBarTitleText": "地址列表"
+			}
+		},
+		
 		{
 		    "path" : "pages/shopcart/addresslist/addressadd/addressadd",
 		    "style" : {
 				"navigationBarTitleText": "添加地址"
 			}
-		}
-		,{
+		},
+		
+		
+		
+		{
 		    "path" : "pages/shopcart/addresslist/addressupd/addressupd",
 		    "style" : {
 				"navigationBarTitleText": "编辑地址"
 			}
+<<<<<<< HEAD
 		},{
+=======
+		},
+		{
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 		    "path" : "pages/my/my/my",
 		    "style" : {
 				"navigationBarTitleText": "我的"
 			}
-		}
-		,{
+		},
+		{
 		    "path" : "pages/my/vipLogin/vipLogin",
 		    "style" : {
 				"navigationBarTitleText": "会员登录"
 			}
-		}
-		,{
+		},
+		{
 		    "path" : "pages/my/vipRegister/vipRegister",
 		    "style" : {
 				"navigationBarTitleText": "会员注册"
 			}
-		}
-		,{
+		},
+		{
 		    "path" : "pages/my/myVipCard/myVipCard",
 		    "style" : {
 				"navigationBarTitleText": "我的会员卡"
 			}
-		}
-		,{
+		},
+		{
 		    "path" : "pages/my/myFavorite/myFavorite",
 		    "style" : {
 				"navigationBarTitleText": "我的收藏"
 			}
-		}
-		,{
+		},
+		{
 		    "path" : "pages/my/myCoupons/myCoupons",
 		    "style" : {
 				"navigationBarTitleText": "我的优惠券"
 			}
 		},
 		
+<<<<<<< HEAD
+=======
+		
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 		{
 			"path": "pages/shopcart/myorder/forpayment/forpayment",
 			"style": {
 				"navigationBarTitleText": "我的订单",
 				"navigationBarBackgroundColor": "#FF8000"
 			}
-		}
-		, {
+		},
+		{
 			"path": "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
 			"style": {
 				"navigationBarTitleText": "订单详情"
 			}
-		}
-
-
-		, {
+		}, 
+		
+		{
 			"path": "pages/producttype/producttype",
 			"style": {
 				"navigationBarTitleText": "产品分类"
 			}
-		}
-
-		, {
+		}, 
+		{
 			"path": "pages/goodrecommend/goodrecommend",
 			"style": {
 				"navigationBarTitleText": "好物推荐"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/bottom/bottom",
 			"style": {
 				"navigationBarTitleText": "底部导航"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/shopcart/applyRefund/arefund/arefund",
 			"style": {
 				"navigationBarTitleText": "商品评价"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/shopcart/applyRefund/applyRefund",
 			"style": {
 				"navigationBarTitleText": "申请退款"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
 			"style": {
 				"navigationBarTitleText": "申请退款详情"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/shopcart/comment/comment",
 			"style": {
 				"navigationBarTitleText": "发表评价"
 			}
-		}
-
-
-		, {
-			"path": "pages/shopcart/order/order",
-			"style": {
-				"navigationBarTitleText": "提交订单"
-			}
-		}, {
+		}, 
+		
+		{
 			"path": "pages/shopcart/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车",
 				"navigationBarBackgroundColor": "#FF8000",
 				"titleImage": "static/img/goods/p2.jpg"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/shopcart/payment/payment",
 			"style": {
 				"navigationBarTitleText": "支付成功明细"
 			}
-		}
+		}, 
 		
 		
-
-
-
-
-		, {
+		
+		{
 			"path": "pages/producttype/chanpinList/chanpinList",
 			"style": {
 				"navigationBarTitleText": "产品列表"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/producttype/ProductDetails/ProductDetails",
 			"style": {
 				"navigationBarTitleText": "产品详情"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/producttype/chanpin/chanpin",
 			"style": {
 				"navigationBarTitleText": "产品分类"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/goodrecommend/haowu/haowu",
 			"style": {
 				"navigationBarTitleText": "好物推荐"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
 			"style": {
 				"navigationBarTitleText": "咨询详情"
 			}
-		},{
+		},
+		{
 			"path": "pages/spellgroup/presale/presale",
 			"style": {
 				"navigationBarTitleText": "预售列表"
 			}
-		},{
+		},
+		{
 			"path": "pages/spellgroup/presale_goods/presale_goods",
 			"style": {
 				"navigationBarTitleText": "预售详情"
 			}
-		},{
+		},
+		{
 			"path":"pages/spellgroup/flash_sale/flash_sale",
 			"style": {
 				"navigationBarTitleText": "限时抢购"
 			}
-		},{
+		},
+		{
             "path" : "pages/spellgroup/flash_sale_goods/flash_sale_goods",
             "style" : {
 				"navigationBarTitleText": "抢购详情"
 			}
-        } ,{
+        },
+		{
             "path" : "pages/spellgroup/group_buying/group_buying",
             "style" : {
 				"navigationBarTitleText": "在线拼团"
 			}
-        }
-        ,{
+        },
+		{
             "path" : "pages/spellgroup/group_buying_goods/group_buying_goods",
             "style" : {
 				"navigationBarTitleText": "拼团详情"
 			}
-        },{
+        },
+		{
             "path" : "pages/spellgroup/group/group",
             "style" : {
 				"navigationBarTitleText": "我的团"
 			}
-        }
-
-
-		,{
+        },
+		
+		{
 			"path": "pages/home/coupons/coupons",
 			"style": {
 				"navigationBarTitleText": "领券中心",
@@ -213,12 +252,15 @@
 					"van-cell": "/wxcomponents/vant/dist/cell/index"
 				}
 			}
-		}, {
+		}, 
+		
+		{
 			"path": "pages/home/stores/stores",
 			"style": {
 				"navigationBarTitleText": "门店列表"
 			}
-		}, {
+		}, 
+		{
 			"path": "pages/home/chat/chat",
 			"style": {
 				"navigationBarBackgroundColor": "#f2f2f2",
@@ -230,16 +272,16 @@
 					"bounce": "none"
 				}
 			}
-		}
-
-		, {
+		}, 
+		
+		{
 			"path": "pages/home/search_Page/search_Page",
 			"style": {
 				"navigationBarTitleText": "搜索页面"
 			}
 		}
         
-        
+       
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

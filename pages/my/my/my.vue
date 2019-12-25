@@ -50,17 +50,17 @@
       </image>
       <view class="grzx_title">我的收藏</view>
     </view>
-    <view @tap="nav" class="grzx_block border" data-url="">
+    <view @tap="nav" class="grzx_block border" data-url="../../spellgroup/group/group">
       <image class="grzx_img" src="../../../static/images/img/my/service_07.png" role="img">
       </image>
       <view class="grzx_title">我的拼团</view>
     </view>
-    <view @tap="nav" class="grzx_block border" data-url="">
+    <view @tap="nav" class="grzx_block border" data-url="../../shopcart/addresslist/addresslist">
       <image class="grzx_img" src="../../../static/images/img/my/service_11.png" role="img">
       </image>
       <view class="grzx_title">地址管理</view>
     </view>
-    <view @tap="nav" class="grzx_block" data-url="">
+    <view @tap="nav" class="grzx_block" data-url="../../home/chat/chat">
       <image class="grzx_img" src="../../../static/images/img/my/service_13.png" role="img">
       </image>
       <view class="grzx_title">在线客服</view>
@@ -86,22 +86,22 @@ export default {
         img: "../../../static/images/img/my/icon_03.png",
         title: "待付款",
         num: "1",
-        url: "../../payment/payment"
+        url: "../../shopcart/myorder/forpayment/forpayment"
       }, {
         img: "../../../static/images/img/my/icon_05.png",
         title: "待配送",
         num: "2",
-		url: "../../payment/payment"
+		url: "../../shopcart/myorder/forpayment/forpayment"
       }, {
         img: "../../../static/images/img/my/icon_07.png",
         title: "配送中",
         num: "20",
-		url: "../../payment/payment"
+		url: "../../shopcart/myorder/forpayment/forpayment"
       }, {
         img: "../../../static/images/img/my/icon_09.png",
         title: "售后",
         num: "100",
-		url: "../../payment/payment"
+		url: "../../shopcart/myorder/forpayment/forpayment"
       }]
     };
   },

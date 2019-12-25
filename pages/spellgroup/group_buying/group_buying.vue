@@ -1,13 +1,13 @@
 <template>
 	<view class="flex">
 		<view class="content-count">
-			<view style="margin-top: 5rpx;">距拼购结束还剩</view>
-			<uni-countdown color="#FFFFFF" background-color="#F44336" border-color="#F44336" border-radius="20rpx" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
+			<view style="font-size: 25rpx;margin-right: 5rpx;">距拼购结束还剩</view>
+			<uni-countdown color="#FFFFFF" background-color="#F44336" border-color="#F44336" border-radius="40rpx" :show-day="false" :hour="21" :minute="38" :second="05"></uni-countdown>
 		</view>
 		
 		<view>
-			<block v-for="(goods) in goodsList" :key="goods.activityId">
-			  <view class="groupBlock" @tap="cpxq">
+			<block v-for="(goods) in goodsList" :key="goods.id">
+			  <view class="groupBlock" @click="goodsInfo(goods.id)">
 			    <image :src="goods.picturepath" mode="widthFix" class="groupImg"></image>
 			    <!-- <text class='shopp_activity' wx:if="{{item.activity}}">{{item.activity}}</text> -->
 			    <view class="groupName">{{goods.goodsName}}</view>
@@ -15,11 +15,10 @@
 			    	<view class="info-item">2人团</view>
 			    	<view class="price"><text class="price-tip">¥</text>{{ goods.activityprice }}</view>
 			    </view>
-			    <view class="uni-list-cell-navigate uni-navigate-right">
-			    	<text class="people">已有{{ product.people }}人拼</text>
+			    <view class="info2">
+			    	<text class="people">已有570人拼</text>
 			    </view>
 			  </view>
-			 
 			</block>
 		</view>
 	  
@@ -33,36 +32,6 @@
 		data() {
 			return {
 				goodsList: []
-				// productList: [
-				// 	{
-				// 		goods_id: 0,
-				// 		img: '../../static/images/pinlie.png',
-				// 		name: '波士顿进口鲜活大龙虾450g~500g',
-				// 		price: '1099',
-				// 		people: '570'
-				// 	},
-				// 	{
-				// 		goods_id: 1,
-				// 		img: '../../static/images/pinlie.png',
-				// 		name: '波士顿进口鲜活大龙虾450g~500g',
-				// 		price: '1099',
-				// 		people: '570'
-				// 	},
-				// 	{
-				// 		goods_id: 2,
-				// 		img: '../../static/images/pinlie.png',
-				// 		name: '波士顿进口鲜活大龙虾450g~500g',
-				// 		price: '1099',
-				// 		people: '570'
-				// 	},
-				// 	{
-				// 		goods_id: 3,
-				// 		img: '../../static/images/pinlie.png',
-				// 		name: '波士顿进口鲜活大龙虾450g~500g',
-				// 		price: '1099',
-				// 		people: '570'
-				// 	}
-				// ]
 			}
 		},
 		onLoad:function(){
@@ -111,7 +80,7 @@
 		background-color: #fff;
 		width: 335rpx;
 		position: relative;
-		margin-left: 20rpx;
+		margin-left: 30rpx;
 		margin-top: 20rpx;
 	}
 	
@@ -128,6 +97,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+		font-weight: bold;
 	}
 	
 	
@@ -182,7 +152,10 @@
 		/* justify-content: space-between; */
 		/* align-items: flex-end; */
 		width: 92%;
-		padding: 10rpx 0rpx 10rpx 25rpx;
+		padding-top: 10rpx;
+		padding-left: 20rpx;
+		padding-bottom: 10rpx;
+		/* padding: 10rpx 0rpx 10rpx 25rpx; */
 		border-bottom: 1rpx #D8D8D8 solid;
 	}
 	
@@ -222,9 +195,13 @@
 		margin-top: -6rpx;
 	}
 	
+	.info2{
+		padding-bottom: 20rpx;
+	}
+	
 	.people{
 		color: #808080;
 		font-size: 25rpx;
-		/* margin-left: 20rpx; */
+		margin-left: 20rpx;
 	}
 </style>

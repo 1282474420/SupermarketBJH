@@ -9,7 +9,11 @@
 		"es6": true
 	},
 	"compileType": "miniprogram",
+<<<<<<< HEAD
 	"libVersion": "2.7.0",
+=======
+	"libVersion": "2.9.2",
+>>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
 	"appid": "touristappid",
 	"projectname": "SupermarketBJH",
 	"simulatorType": "wechat",

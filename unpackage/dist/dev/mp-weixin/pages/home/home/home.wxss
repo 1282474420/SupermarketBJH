@@ -106,7 +106,7 @@
 }
 .search .searchText {
   margin-left: 66rpx;
-  margin-top: -42rpx;
+  margin-top: -45rpx;
   font-size: 26rpx;
 }
 
@@ -147,7 +147,7 @@
 .swiper{
 	height: 340rpx;
 }
-swiper-item image {
+.adv .advImg {
   width: 690rpx;
   height: 300rpx;
   margin-left: 30rpx;
@@ -285,20 +285,10 @@ swiper-item image {
 .countdown .time {
   font-size: 24rpx;
 }
-.hour {
-	display: inline-block;
-	position: absolute;
-	right: 245rpx;
-	bottom: -425rpx;
+.hour{
+	position: relative;
+	bottom: 10rpx;
 }
-
-/* .countdown .hour, .minute, .second {
-  border-radius: 5rpx;
-  width: 159rpx;
-  height: 38rpx;
-  background-color: rgba(48, 0, 0, 0.4);
-  padding: 8rpx 10rpx 8rpx 11rpx;
-} */
 
 /* 限时抢购商品 */
 .xsqgsp {
@@ -340,8 +330,8 @@ swiper-item image {
   text-decoration: line-through;
 }
 .xsqgsp .icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   position: absolute;
   top: 222rpx;
   left: 135rpx;
@@ -636,8 +626,8 @@ swiper-item image {
   font-size: 24rpx;
 }
 .cnxhsp_icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   position: absolute;
   left: 164rpx;
   top: 301rpx;
@@ -823,8 +813,8 @@ swiper-item image {
   margin-left: 6rpx;
 }
 .shopp_icon {
-  width: 44rpx;
-  height: 44rpx;
+  width: 55rpx;
+  height: 55rpx;
   float: right;
   margin-right: 20rpx;
 }
