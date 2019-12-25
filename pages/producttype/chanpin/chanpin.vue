@@ -10,11 +10,11 @@
 		<view class="cates_container">
 			<!--左侧菜单-->
 			<scroll-view scroll-y class="left_menu">
-				<view v-for="(item, index) in leftMenuList" :key="item.id">
-					<view @tap="change(item)" :class="'leftMenuList' + (item.id==navchoice?'active1':'')">
-						<view class="tab1">{{item.name}}</view>
-					</view>
-				</view>
+					<block v-for="(item, index) in leftMenuList" :key="item.id">
+					  <view :class="'leftMenuList ' + (index == id?'cur':'')" @tap="change(item)" >
+						 <view class="tab1">{{item.name}}</view>
+					  </view>
+					</block>
 			</scroll-view>
 
 
@@ -36,7 +36,7 @@
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
 						<view >
-						<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
+							<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
 						</view>
 				</view>
 			</view>
@@ -51,6 +51,7 @@
 	export default {
 		data() {
 			return {
+				id:0,
 				//左侧的菜单数据
 				leftMenuList: [{
 						id: 0,

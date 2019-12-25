@@ -23,17 +23,21 @@
 	width: 250rpx;
 	overflow: hidden;
 	white-space: nowrap;
-	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
 }
 .content-count{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	padding-top: 30rpx;
 }
@@ -43,10 +47,12 @@
 	padding-left: 20rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	/* flex-direction: row;
 	justify-content: space-between; */
 	-webkit-flex-wrap: wrap ;
+	    -ms-flex-wrap: wrap ;
 	        flex-wrap: wrap ;
 	margin-top: 30rpx;
 }
@@ -77,6 +83,7 @@
 .info {
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	/* justify-content: space-between; */
 	/* align-items: flex-end; */
@@ -100,8 +107,10 @@
 	font-size: 20rpx;
 	color: #fff;
 	padding-top: 6rpx;
-	background-image: -webkit-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
-	                    -webkit-linear-gradient(#fe4531, #fe4531);
+	background-image: -webkit-gradient(linear, left top, right top, from(#ffa549), to(#fe5c6a)),
+	                    -webkit-gradient(linear, left top, left bottom, from(#fe4531), to(#fe4531));
+	background-image: -o-linear-gradient(left, #ffa549 0%, #fe5c6a 100%),
+	                    -o-linear-gradient(#fe4531, #fe4531);
 	background-image: linear-gradient(90deg, #ffa549 0%, #fe5c6a 100%),
 	                    linear-gradient(#fe4531, #fe4531);
 	border-radius: 20rpx;

@@ -21,12 +21,15 @@ swiper-item image {
 .indicator{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	padding: 0 25rpx;
 	height: 40rpx;
@@ -45,9 +48,11 @@ swiper-item image {
 	padding-top: 10rpx;
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	font-size: 27rpx;
 }
@@ -71,9 +76,11 @@ swiper-item image {
 	padding-bottom: 50rpx;
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:baseline;
 	-webkit-align-items:baseline;
+	    -ms-flex-align:baseline;
 	        align-items:baseline;
 	height: 65rpx;
 }
@@ -129,9 +136,11 @@ swiper-item image {
 .c-row{
 	display:-webkit-box;
 	display:-webkit-flex;
+	display:-ms-flexbox;
 	display:flex;
 	-webkit-box-align:center;
 	-webkit-align-items:center;
+	    -ms-flex-align:center;
 	        align-items:center;
 	padding: 30rpx 33rpx;
 	position:relative;
@@ -154,10 +163,12 @@ swiper-item image {
 .eva-section{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
 	        flex-direction: column;
 	/* padding: 20upx 30upx; */
 	background: #fff;
@@ -166,9 +177,11 @@ swiper-item image {
 .e-header{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	height: 70rpx;
 	padding: 10rpx 0;
@@ -194,6 +207,7 @@ swiper-item image {
 .tip{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
+	    -ms-flex: 1;
 	        flex: 1;
 	text-align: right;
 }
@@ -203,6 +217,7 @@ swiper-item image {
 .eva-box{
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	padding-left: 30rpx;
 	padding-top: 10rpx;
@@ -217,9 +232,11 @@ swiper-item image {
 	height: 40rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 }
 .face {
@@ -254,9 +271,11 @@ swiper-item image {
 	height: 80rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 25rpx;
 	margin-left: 30rpx;
@@ -274,17 +293,21 @@ swiper-item image {
 	z-index: 2;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 }
 .icons {
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	height: 80rpx;
 	margin-left: -4%;
@@ -294,11 +317,14 @@ swiper-item image {
 	height: 80rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 	margin-left: 10rpx;
 }
@@ -311,9 +337,11 @@ swiper-item image {
 .text-di {
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
 	        justify-content: center;
 	width: 100%;
 	font-size: 22rpx;
@@ -325,6 +353,7 @@ swiper-item image {
 	overflow: hidden;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	/* margin-right: -2%; */
 }
@@ -334,9 +363,11 @@ swiper-item image {
 	color: #fff;
 	display: -webkit-box;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
+	    -ms-flex-align: center;
 	        align-items: center;
 	font-size: 28rpx;
 }

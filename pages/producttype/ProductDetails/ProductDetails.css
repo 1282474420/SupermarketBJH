@@ -4,6 +4,12 @@ page{
 .xiangqing,.youhui{
   border-bottom: 6px solid beige;
 }
+.icon-shoucang1 {
+	  background-color: #BA0B14;
+	}
+	.icon-shoucang {
+		background-color: #ABABAB;
+	}
 .tupian{
   display: flex;
 	flex-direction: column;

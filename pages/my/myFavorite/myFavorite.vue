@@ -2,21 +2,20 @@
 <view>
 <!--我的  我的收藏-->
 <view class="main">
-  <block v-for="(item, index) in sc" :key="index">
-    <view class="sc">
-      <image :src="item.ctradeimg"></image>
-      <view class="bt">
-        <text class="ss">{{item.ctradeName}}</text>
-        <view class="money">
-          <text>¥</text>{{item.cprice}}</view>
-        <view class="zt">
-          <text @tap="deleteList" :data-cid="item.cid" :data-index="index">取消关注</text>
-          <text class="gm" :data-cid="item.cid" @tap="nihao">立即购买</text>
-          <image @tap="addShopp" :data-cid="item.cid" src="../../../static/images/wink/jia.jpg"></image>
-        </view>
-      </view>
-    </view>
-  </block>
+	<block v-for="(item, index) in collect" :key="index">
+		<view class="sc" @click="sc(item.id)">
+	           <image mode="widthFix" :src="item.picturepath">
+	         <!-- 右侧 商品容器 -->
+			 <view class="bt">
+			 <text class="ss">{{item.goodsName}}</text>
+	         <view class="money">
+	           <text>¥</text>{{item.price}}</view>
+	         <view class="zt">
+				   <text class="gm" >立即购买</text>
+				 </view>
+			 </view>
+			 </view>
+	 </block> 
 </view>
 <view class="pig" v-if="pig">亲,还没有收藏哦~</view>
 </view>
@@ -27,18 +26,7 @@ export default {
   data() {
     return {
 	  //收藏列表数据
-      sc: [
-		{
-			ctradeimg:"../../../static/images/wink/shoucang01.png",
-			ctradeName:"波士顿进口鲜活大龙虾450g-500g",
-			cprice:"880"
-		},
-		{
-			ctradeimg:"../../../static/images/wink/shoucang02.png",
-			ctradeName:"澳洲进口鲜活大闸蟹350g-400g",
-			cprice:"550"
-		},
-	  ],
+      collect: [],
       // pig: false,
       //api路径
       // url: getApp().globalData.url,
@@ -51,6 +39,15 @@ export default {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  uni.getStorage({
+	  	key:"collect",
+	  	success: (res) => {
+	  		console.log(res.data)
+	  		this.collect=res.data 
+
+	  	}
+	  });
+	  
     // var that = this;
     // var url = that.url; //api路径
 
@@ -93,7 +90,16 @@ export default {
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function (options) {
+	  uni.getStorage({
+	  	key:"collect",
+	  	success: (res) => {
+	  		console.log(res.data)
+	  		this.collect=res.data 
+	  
+	  	}
+	  });
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -120,6 +126,11 @@ export default {
    */
   onShareAppMessage: function () {},
   methods: {
+	  sc:function(e) {
+	  	uni.navigateTo({
+	  		url:"../../producttype/ProductDetails/ProductDetails?id="+e
+	  	})
+	  }
     /**
      * 取消收藏
      */

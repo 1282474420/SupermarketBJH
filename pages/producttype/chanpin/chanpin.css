@@ -4,6 +4,7 @@
   display: flex;
 }
 .left_menu{
+	margin-top:76rpx ;
 	  float: left;
 	  width: 186rpx;
 	  height: 1242rpx;
@@ -14,6 +15,7 @@
   flex: 6;
 /* 	 */
 }
+.leftMenuList.cur view{color:#FE4531}
 .right_content{
   flex: 18;
 margin-top:76rpx ;

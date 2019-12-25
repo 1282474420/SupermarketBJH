@@ -12,8 +12,16 @@
 					<text class="Presentprice">{{GoodsInfo.price}}</text>
 					<text class="originalprice">原价￥259</text>
 				</view>
-				<view class="img">
-					<image class="icon" src="../../../static/images/img/hongWJX.png"></image>
+				<!-- <view class="img"  @click="handleCollect" >
+				    <text class="icon   {{isCollect?'icon-shoucang1':'icon-shoucang'}} "></text>
+				    <view class="collect_text">收藏</view>
+				  </view> -->
+				<view class="img" @click="handleCollect">
+					   <text class="icon   [isCollect?'icon-shoucang1':'icon-shoucang'] ">
+						  <image class="icon" src="../../../static/images/img/hongWJX.png">
+							  
+						  </image></text>
+					<!--  -->
 					<view class="word">收藏</view>
 				</view>
 				<view class="img">
@@ -98,7 +106,9 @@
 			return {
 				GoodsObj: {},
 				GoodsInfo: {},
-				GoodsInfonew: {}
+				GoodsInfonew: {},
+				    // 商品是否被收藏
+				    isCollect:false
 			};
 		},
 
@@ -135,12 +145,7 @@
 				var imgList = event.currentTarget.dataset.list; //获取data-list
 				//图片预览
 
-				wx.previewImage({
-					current: src,
-					// 当前显示图片的http链接
-					urls: imgList // 需要预览的图片http链接列表
 
-				});
 			},
 
 			setData: function(obj, callback) {
@@ -193,10 +198,49 @@
 					// true 防止用户 手抖 疯狂点击按钮 
 					mask: true
 				});
-			}
+			},
+			// 点击 商品收藏图标
+			  handleCollect(){
+				  console.log(this.GoodsInfo);
+			    let isCollect=false;
+			    // 1 获取缓存中的商品收藏数组
+			    let collect=wx.getStorageSync("collect")||[];
+			    // 2 判断该商品是否被收藏过
+			    let index=collect.findIndex(v=>v.id===this.GoodsInfo.id);
+			    // 3 当index！=-1表示 已经收藏过 
+			    if(index!==-1){
+			      // 能找到 已经收藏过了  在数组中删除该商品
+			      collect.splice(index,1);
+			      isCollect=false;
+			      uni.showToast({
+			        title: '取消成功',
+			        icon: 'success',
+			        mask: true
+			      });
+			        
+			    }else{
+			      // 没有收藏过
+			      collect.push(this.GoodsInfo);
+			      isCollect=true;
+			      uni.showToast({
+			        title: '收藏成功',
+			        icon: 'success',
+			        mask: true
+			      });
+			    }
+			    // 4 把数组存入到缓存中
+			    uni.setStorageSync("collect", collect);
+			    // 5 修改data中的属性  isCollect
+			    this.setData({
+			      isCollect
+			    })
+			      
+			      
+			  },
 		}
 	};
 </script>
 <style>
+	
 	@import "./ProductDetails.css";
 </style>
