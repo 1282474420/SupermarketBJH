@@ -1,44 +1,33 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"minified": false,
-		"es6": true
-	},
-	"compileType": "miniprogram",
-<<<<<<< HEAD
-	"libVersion": "2.9.2",
-	"appid": "wxf64f6a29941fd8bc",
-=======
-<<<<<<< HEAD
-	"libVersion": "2.7.0",
-=======
-	"libVersion": "2.9.2",
->>>>>>> f2c476429703104e27cda3c52abf6d4c37451c3a
-	"appid": "touristappid",
->>>>>>> 47c688255b4f5b1688e31bdc16f0ed0415101578
-	"projectname": "SupermarketBJH",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "minified": false,
+    "es6": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.2",
+  "appid": "touristappid",
+  "projectname": "SupermarketBJH",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+  }
 }

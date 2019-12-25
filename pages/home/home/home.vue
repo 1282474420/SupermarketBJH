@@ -595,11 +595,6 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				// 导航栏
 				navFun (e) {
 				    var tzlj2 = e.currentTarget.dataset.lj;
-<<<<<<< HEAD
-				    uni.navigateTo({
-				        url: tzlj2
-				    });
-=======
 				    uni.navigateTo({
 				        url: tzlj2
 				    });
@@ -611,7 +606,6 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 						fail: () => {},
 						complete: () => {}
 					});
->>>>>>> da6863f534960aecaf345a08e9281800dae9e8ca
 				},
 				// 预售好物
 				product_type(e){

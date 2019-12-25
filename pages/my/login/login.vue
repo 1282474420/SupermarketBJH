@@ -2,16 +2,16 @@
 	<!-- 登录页面-->
 	<view class="content1">
 		<view class="header">
-			<image src="../../static/images/logo.png"></image>
+			<image src="../../../static/images/logo.png"></image>
 		</view>
 		<form class="loginView">
 			<view class="list">
 				<view class="list-call">
-					<image class="img" src="/static/image/1.png"></image>
+					<image class="img" src="../../../static/images/wink/login/1.png"></image>
 					<input class="biaoti" v-model="phone" type="number" maxlength="11" placeholder="输入手机号" />
 				</view>
 				<view class="list-call">
-					<image class="img" src="/static/image/2.png"></image>
+					<image class="img" src="../../../static/images/wink/login/2.png"></image>
 					<input class="biaoti" v-model="password" type="text" maxlength="32" placeholder="输入验证码" /> <button class="yzmbutton"
 					 hover-class="dlbutton-hover" open-type="getUserInfo" @getuserinfo="yanzhengma">获取验证码</button>
 				</view>
@@ -49,30 +49,30 @@
 			 */
 			login(e) {
 				var me = this;
-				if (me.phone == '') {
-					uni.showToast({
-						title: '手机号不能为空',
-						icon: 'none',
-						duration: 1500
-					});
-					return false;
-				}
-				if (me.password == '') {
-					uni.showToast({
-						title: '验证码不能为空',
-						icon: 'none',
-						duration: 1500
-					});
-					return false;
-				}
-				if (me.password != this.verification) {
-					uni.showToast({
-						title: '验证码错误',
-						icon: 'none',
-						duration: 1500
-					});
-					return false;
-				}
+				// if (me.phone == '') {
+				// 	uni.showToast({
+				// 		title: '手机号不能为空',
+				// 		icon: 'none',
+				// 		duration: 1500
+				// 	});
+				// 	return false;
+				// }
+				// if (me.password == '') {
+				// 	uni.showToast({
+				// 		title: '验证码不能为空',
+				// 		icon: 'none',
+				// 		duration: 1500
+				// 	});
+				// 	return false;
+				// }
+				// if (me.password != this.verification) {
+				// 	uni.showToast({
+				// 		title: '验证码错误',
+				// 		icon: 'none',
+				// 		duration: 1500
+				// 	});
+				// 	return false;
+				// }
 				uni.reLaunch({
 					url: "../my/my?yonghuwx="
 				});
