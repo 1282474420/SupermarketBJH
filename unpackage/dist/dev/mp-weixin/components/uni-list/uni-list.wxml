@@ -1,9 +1,1 @@
-<<<<<<< HEAD
 <view class="uni-list data-v-a61df100"><slot></slot></view>
-=======
-<<<<<<< HEAD
-<view class="uni-list data-v-15197ebd"><slot></slot></view>
-=======
-<view class="uni-list data-v-91549ec8"><slot></slot></view>
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65

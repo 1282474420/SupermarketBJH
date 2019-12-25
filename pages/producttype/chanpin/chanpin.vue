@@ -21,9 +21,7 @@
 			<!--右侧商品内容-->
 			<scroll-view scroll-y class="right_content">
 				<view class="first_tab">
-					<view class="goods_item" v-for="(right) in rightContent" :key="right.id" 
-					
-					>
+					<view class="goods_item" v-for="(right) in rightContent" :key="right.id" >
 		            <!-- 左侧 图片容器 -->
 		          <view class="goods_img_wrap" @click="XQ(right.id)">
 		          	<image mode="widthFix" :src="right.picturepath" class="img1"></image>
@@ -36,16 +34,14 @@
 						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
 						<view >
-<<<<<<< HEAD
 						<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
 					</view>
-=======
 						<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
 						</view>
->>>>>>> aa9f34f40c177a2a1d0d152d2e41c32138e0ec93
 				</view>
+				</scroll-view>
 			</view>
-		</scroll-view>
+		
 	</view>
 	</view>
 </template>

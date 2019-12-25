@@ -5,8 +5,8 @@
   background-position-x: 20rpx;
 }
 .hh-header {position: fixed;top: 0; width: 100%;z-index: 99;}
-.hh-title{font-size: 38rpx;text-align: center;color: rgb(0, 0, 0);white-space: nowrap;overflow: hidden; text-overflow: ellipsis;}
-.title-bar { display: -webkit-box; display: -webkit-flex; display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;justify-content: space-between;-webkit-box-align: center;-webkit-align-items: center;align-items: center;}
+.hh-title{font-size: 38rpx;text-align: center;color: rgb(0, 0, 0);white-space: nowrap;overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis;}
+.title-bar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}
 .hh-nav-right{ width: 116px;}
 .hh-nav-back{width: 116px;}
 .hh-nav-back ico-back{color: rgb(0, 0, 0)}
@@ -54,6 +54,7 @@ page {
 .flex-wrp {
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 39rpx;
   font-size: 32rpx;
@@ -251,26 +252,32 @@ page {
 }*/
 .personal_image{
  right:2.5%;
+ -o-transition: All 0.4s ease;
  transition: All 0.4s ease; 
  -webkit-transition: All 0.4s ease;
 }
 .rotateRight{
  -webkit-transform: rotate(180deg);
+     -ms-transform: rotate(180deg);
          transform: rotate(180deg);
 }
 .asdadda{
    display: -webkit-box;
    display: -webkit-flex;
+   display: -ms-flexbox;
    display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
+      -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-align: center;
   -webkit-align-items: center;
+      -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
+      -ms-flex-pack: center;
           justify-content: center;
   margin-top: -59rpx
 }

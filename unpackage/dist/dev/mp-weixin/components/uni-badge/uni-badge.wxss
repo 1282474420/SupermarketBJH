@@ -24,21 +24,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .uni-badge.data-v-348e8cee {
-=======
-<<<<<<< HEAD
-.uni-badge.data-v-347628eb {
-=======
-.uni-badge.data-v-386d5f0a {
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
+      -ms-flex-direction: row;
           flex-direction: row;
   height: 40rpx;
   line-height: 40rpx;
@@ -51,110 +45,56 @@
   font-size: 12px;
   padding: 0;
 }
-<<<<<<< HEAD
 .uni-badge--inverted.data-v-348e8cee {
-=======
-<<<<<<< HEAD
-.uni-badge--inverted.data-v-347628eb {
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
   padding: 0 5px 0 0;
   color: #f1f1f1;
 }
-.uni-badge--default.data-v-347628eb {
+.uni-badge--default.data-v-348e8cee {
   color: #333;
   background-color: #f1f1f1;
 }
-.uni-badge--default-inverted.data-v-347628eb {
+.uni-badge--default-inverted.data-v-348e8cee {
   color: #999;
   background-color: transparent;
 }
-.uni-badge--primary.data-v-347628eb {
+.uni-badge--primary.data-v-348e8cee {
   color: #fff;
   background-color: #007aff;
 }
-.uni-badge--primary-inverted.data-v-347628eb {
+.uni-badge--primary-inverted.data-v-348e8cee {
   color: #007aff;
   background-color: transparent;
 }
-.uni-badge--success.data-v-347628eb {
+.uni-badge--success.data-v-348e8cee {
   color: #fff;
   background-color: #4cd964;
 }
-.uni-badge--success-inverted.data-v-347628eb {
+.uni-badge--success-inverted.data-v-348e8cee {
   color: #4cd964;
   background-color: transparent;
 }
-.uni-badge--warning.data-v-347628eb {
+.uni-badge--warning.data-v-348e8cee {
   color: #fff;
   background-color: #f0ad4e;
 }
-.uni-badge--warning-inverted.data-v-347628eb {
+.uni-badge--warning-inverted.data-v-348e8cee {
   color: #f0ad4e;
   background-color: transparent;
 }
-.uni-badge--error.data-v-347628eb {
+.uni-badge--error.data-v-348e8cee {
   color: #fff;
   background-color: #dd524d;
 }
-.uni-badge--error-inverted.data-v-347628eb {
+.uni-badge--error-inverted.data-v-348e8cee {
   color: #dd524d;
   background-color: transparent;
 }
-<<<<<<< HEAD
 .uni-badge--small.data-v-348e8cee {
-=======
-.uni-badge--small.data-v-347628eb {
-=======
-.uni-badge--inverted.data-v-386d5f0a {
-  padding: 0 5px 0 0;
-  color: #f1f1f1;
-}
-.uni-badge--default.data-v-386d5f0a {
-  color: #333;
-  background-color: #f1f1f1;
-}
-.uni-badge--default-inverted.data-v-386d5f0a {
-  color: #999;
-  background-color: transparent;
-}
-.uni-badge--primary.data-v-386d5f0a {
-  color: #fff;
-  background-color: #007aff;
-}
-.uni-badge--primary-inverted.data-v-386d5f0a {
-  color: #007aff;
-  background-color: transparent;
-}
-.uni-badge--success.data-v-386d5f0a {
-  color: #fff;
-  background-color: #4cd964;
-}
-.uni-badge--success-inverted.data-v-386d5f0a {
-  color: #4cd964;
-  background-color: transparent;
-}
-.uni-badge--warning.data-v-386d5f0a {
-  color: #fff;
-  background-color: #f0ad4e;
-}
-.uni-badge--warning-inverted.data-v-386d5f0a {
-  color: #f0ad4e;
-  background-color: transparent;
-}
-.uni-badge--error.data-v-386d5f0a {
-  color: #fff;
-  background-color: #dd524d;
-}
-.uni-badge--error-inverted.data-v-386d5f0a {
-  color: #dd524d;
-  background-color: transparent;
-}
-.uni-badge--small.data-v-386d5f0a {
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65
   -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
           transform: scale(0.8);
   -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
           transform-origin: center center;
 }
 

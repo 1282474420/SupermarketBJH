@@ -1,9 +1,1 @@
-<<<<<<< HEAD
 <view class="uni-section data-v-3cb7feb2"><block wx:if="{{type}}"><view class="uni-section__head data-v-3cb7feb2"><view class="{{['uni-section__head-tag data-v-3cb7feb2',type]}}"></view></view></block><view class="uni-section__content data-v-3cb7feb2"><text class="{{['uni-section__content-title data-v-3cb7feb2',(!subTitle)?'distraction':'']}}">{{title}}</text><block wx:if="{{subTitle}}"><text class="uni-section__content-sub data-v-3cb7feb2">{{subTitle}}</text></block></view><slot></slot></view>
-=======
-<<<<<<< HEAD
-<view class="uni-section data-v-f17157a2"><block wx:if="{{type}}"><view class="uni-section__head data-v-f17157a2"><view class="{{['uni-section__head-tag data-v-f17157a2',type]}}"></view></view></block><view class="uni-section__content data-v-f17157a2"><text class="{{['uni-section__content-title data-v-f17157a2',(!subTitle)?'distraction':'']}}">{{title}}</text><block wx:if="{{subTitle}}"><text class="uni-section__content-sub data-v-f17157a2">{{subTitle}}</text></block></view><slot></slot></view>
-=======
-<view class="uni-section data-v-9b2f3a64"><block wx:if="{{type}}"><view class="uni-section__head data-v-9b2f3a64"><view class="{{['uni-section__head-tag data-v-9b2f3a64',type]}}"></view></view></block><view class="uni-section__content data-v-9b2f3a64"><text class="{{['uni-section__content-title data-v-9b2f3a64',(!subTitle)?'distraction':'']}}">{{title}}</text><block wx:if="{{subTitle}}"><text class="uni-section__content-sub data-v-9b2f3a64">{{subTitle}}</text></block></view><slot></slot></view>
->>>>>>> 078c0e305aea3cfc47f7cfd14cc95e8c3fba6c18
->>>>>>> c57297290374dca6134b1c7ecbaaaab747d9fc65

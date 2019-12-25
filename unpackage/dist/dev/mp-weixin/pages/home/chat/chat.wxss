@@ -174,8 +174,10 @@ page {
 .emoji-box .swiper swiper-item {
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
 .emoji-box .swiper swiper-item view {
@@ -183,9 +185,11 @@ page {
       height: 12vw;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
+          -ms-flex-pack: center;
               justify-content: center;
 }
 .emoji-box .swiper swiper-item view image {
@@ -198,6 +202,7 @@ page {
   background-color: #f2f2f2;
   display: -webkit-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: fixed;
   z-index: 20;
@@ -213,29 +218,36 @@ page {
 }
 .input-box .voice, .input-box .more {
     -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
             flex-shrink: 0;
     width: 90rpx;
     height: 100rpx;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
+        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .input-box .send {
     -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
             flex-shrink: 0;
     width: 100rpx;
     height: 100rpx;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .input-box .send .btn {
@@ -243,14 +255,18 @@ page {
       height: 56rpx;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
+          -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-align: center;
       -webkit-align-items: center;
+          -ms-flex-align: center;
               align-items: center;
-      background: -webkit-linear-gradient(left, #f09b37, #eb632c);
+      background: -webkit-gradient(linear, left top, right top, from(#f09b37), to(#eb632c));
+      background: -o-linear-gradient(left, #f09b37, #eb632c);
       background: linear-gradient(to right, #f09b37, #eb632c);
       color: #fff;
       border-radius: 6rpx;
@@ -268,12 +284,15 @@ page {
       border: solid 1rpx #cdcdcd;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
+          -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-align: center;
       -webkit-align-items: center;
+          -ms-flex-align: center;
               align-items: center;
       font-size: 28rpx;
       background-color: #fff;
@@ -287,6 +306,7 @@ page {
       min-height: 70rpx;
       display: -webkit-box;
       display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       background-color: #fff;
       border-radius: 40rpx;
@@ -297,9 +317,11 @@ page {
         min-height: 70rpx;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
         -webkit-align-items: center;
+            -ms-flex-align: center;
                 align-items: center;
 }
 .input-box .textbox .text-mode .box textarea {
@@ -307,17 +329,21 @@ page {
 }
 .input-box .textbox .text-mode .em {
         -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
                 flex-shrink: 0;
         width: 80rpx;
         height: 70rpx;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
+            -ms-flex-pack: center;
                 justify-content: center;
         -webkit-box-align: center;
         -webkit-align-items: center;
+            -ms-flex-align: center;
                 align-items: center;
 }
 .record {
@@ -334,12 +360,15 @@ page {
     height: 30vw;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
+        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 @-webkit-keyframes volatility {
@@ -401,7 +430,8 @@ page {
 }
 }
 .record .ing .icon {
-      background-image: -webkit-linear-gradient(top, #f09b37, #fff 50%);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f09b37), color-stop(50%, #fff));
+      background-image: -o-linear-gradient(top, #f09b37, #fff 50%);
       background-image: linear-gradient(to bottom, #f09b37, #fff 50%);
       background-size: 100% 200%;
       -webkit-animation: volatility 1.5s ease-in-out -1.5s infinite alternate;
@@ -416,12 +446,15 @@ page {
     height: 30vw;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
+        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
+        -ms-flex-align: center;
             align-items: center;
 }
 .record .cancel .icon {
@@ -433,9 +466,11 @@ page {
     height: 10vw;
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
+        -ms-flex-pack: center;
             justify-content: center;
     font-size: 28rpx;
     color: #fff;
@@ -463,6 +498,7 @@ page {
         width: 100%;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
 }
 .content .msg-list .row .my .left .bubble, .content .msg-list .row .other .right .bubble {
@@ -472,9 +508,11 @@ page {
           padding: 15rpx 20rpx;
           display: -webkit-box;
           display: -webkit-flex;
+          display: -ms-flexbox;
           display: flex;
           -webkit-box-align: center;
           -webkit-align-items: center;
+              -ms-flex-align: center;
                   align-items: center;
           font-size: 32rpx;
           word-break: break-word;
@@ -492,9 +530,11 @@ page {
             font-size: 40rpx;
             display: -webkit-box;
             display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
             -webkit-box-align: center;
             -webkit-align-items: center;
+                -ms-flex-align: center;
                     align-items: center;
 }
 .content .msg-list .row .my .left .bubble.voice .icon:after, .content .msg-list .row .other .right .bubble.voice .icon:after {
@@ -503,13 +543,15 @@ page {
             height: 53rpx;
             border-radius: 100%;
             position: absolute;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
 }
 .content .msg-list .row .my .left .bubble.voice .length, .content .msg-list .row .other .right .bubble.voice .length {
             font-size: 28rpx;
 }
 .content .msg-list .row .my .right, .content .msg-list .row .other .left {
         -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
                 flex-shrink: 0;
         width: 80rpx;
         height: 80rpx;
@@ -523,18 +565,22 @@ page {
         width: 100%;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: end;
         -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
                 justify-content: flex-end;
 }
 .content .msg-list .row .my .left {
           min-height: 80rpx;
           -webkit-box-align: center;
           -webkit-align-items: center;
+              -ms-flex-align: center;
                   align-items: center;
           -webkit-box-pack: end;
           -webkit-justify-content: flex-end;
+              -ms-flex-pack: end;
                   justify-content: flex-end;
 }
 .content .msg-list .row .my .left .bubble {
@@ -579,6 +625,7 @@ page {
         width: 100%;
         display: -webkit-box;
         display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
 }
 .content .msg-list .row .other .left {
@@ -586,6 +633,7 @@ page {
 }
 .content .msg-list .row .other .right {
           -webkit-flex-wrap: wrap;
+              -ms-flex-wrap: wrap;
                   flex-wrap: wrap;
 }
 .content .msg-list .row .other .right .username {
@@ -595,6 +643,7 @@ page {
             color: #999;
             display: -webkit-box;
             display: -webkit-flex;
+            display: -ms-flexbox;
             display: flex;
 }
 .content .msg-list .row .other .right .username .name {
