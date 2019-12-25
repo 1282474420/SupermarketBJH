@@ -1528,6 +1528,59 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
+/***/ 101:
+/*!****************************************************!*\
+  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+}
+
+function formatNumber(n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+}
+/** 
+   * 时间戳转化为年 月 日 时 分 秒 
+   * number: 传入时间戳 
+   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
+  */
+
+
+function formatTimeTwo(number, format) {
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+  var date = new Date(number * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+
+  return format;
+}
+
+module.exports = {
+  formatTime: formatTime,
+  formatTimeTwo: formatTimeTwo };
+
+/***/ }),
+
 /***/ 14:
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -8653,7 +8706,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home/home": { "navigationBarTitleText": "首页", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表", "usingComponents": {} }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址", "usingComponents": {} }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址", "usingComponents": {} }, "pages/my/my/my": { "navigationBarTitleText": "我的", "usingComponents": {} }, "pages/my/vipLogin/vipLogin": { "navigationBarTitleText": "会员登录", "usingComponents": {} }, "pages/my/vipRegister/vipRegister": { "navigationBarTitleText": "会员注册", "usingComponents": {} }, "pages/my/myVipCard/myVipCard": { "navigationBarTitleText": "我的会员卡", "usingComponents": {} }, "pages/my/myFavorite/myFavorite": { "navigationBarTitleText": "我的收藏", "usingComponents": {} }, "pages/my/myCoupons/myCoupons": { "navigationBarTitleText": "我的优惠券", "usingComponents": {} }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000", "usingComponents": {} }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情", "usingComponents": {} }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类", "usingComponents": {} }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航", "usingComponents": {} }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款", "usingComponents": {} }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情", "usingComponents": {} }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价", "usingComponents": {} }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单", "usingComponents": {} }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg", "usingComponents": {} }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细", "usingComponents": {} }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情", "usingComponents": {} }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类", "usingComponents": { "search-input": "/components/SearchInput/SearchInput" } }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐", "usingComponents": {} }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情", "usingComponents": {} }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表", "usingComponents": {} }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情", "usingComponents": {} }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团", "usingComponents": { "uni-countdown": "/components/uni-countdown/uni-countdown" } }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心", "usingComponents": {} }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表", "usingComponents": { "uni-section": "/components/uni-section/uni-section", "uni-list": "/components/uni-list/uni-list", "uni-list-item": "/components/uni-list-item/uni-list-item" } }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服", "usingComponents": {} }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home/home": { "navigationBarTitleText": "首页" }, "pages/shopcart/order/order": { "navigationBarTitleText": "提交订单" }, "pages/shopcart/addresslist/addresslist": { "navigationBarTitleText": "地址列表" }, "pages/shopcart/addresslist/addressadd/addressadd": { "navigationBarTitleText": "添加地址" }, "pages/shopcart/addresslist/addressupd/addressupd": { "navigationBarTitleText": "编辑地址" }, "pages/my/my/my": { "navigationBarTitleText": "我的" }, "pages/my/vipLogin/vipLogin": { "navigationBarTitleText": "会员登录" }, "pages/my/vipRegister/vipRegister": { "navigationBarTitleText": "会员注册" }, "pages/my/myVipCard/myVipCard": { "navigationBarTitleText": "我的会员卡" }, "pages/my/myFavorite/myFavorite": { "navigationBarTitleText": "我的收藏" }, "pages/my/myCoupons/myCoupons": { "navigationBarTitleText": "我的优惠券" }, "pages/shopcart/myorder/forpayment/forpayment": { "navigationBarTitleText": "我的订单", "navigationBarBackgroundColor": "#FF8000" }, "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails": { "navigationBarTitleText": "订单详情" }, "pages/producttype/producttype": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/goodrecommend": { "navigationBarTitleText": "好物推荐" }, "pages/bottom/bottom": { "navigationBarTitleText": "底部导航" }, "pages/shopcart/applyRefund/arefund/arefund": { "navigationBarTitleText": "商品评价" }, "pages/shopcart/applyRefund/applyRefund": { "navigationBarTitleText": "申请退款" }, "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails": { "navigationBarTitleText": "申请退款详情" }, "pages/shopcart/comment/comment": { "navigationBarTitleText": "发表评价" }, "pages/shopcart/cart/cart": { "navigationBarTitleText": "购物车", "navigationBarBackgroundColor": "#FF8000", "titleImage": "static/img/goods/p2.jpg" }, "pages/shopcart/payment/payment": { "navigationBarTitleText": "支付成功明细" }, "pages/producttype/chanpinList/chanpinList": { "navigationBarTitleText": "产品列表" }, "pages/producttype/ProductDetails/ProductDetails": { "navigationBarTitleText": "产品详情" }, "pages/producttype/chanpin/chanpin": { "navigationBarTitleText": "产品分类" }, "pages/goodrecommend/haowu/haowu": { "navigationBarTitleText": "好物推荐" }, "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails": { "navigationBarTitleText": "咨询详情" }, "pages/spellgroup/presale/presale": { "navigationBarTitleText": "预售列表" }, "pages/spellgroup/presale_goods/presale_goods": { "navigationBarTitleText": "预售详情" }, "pages/spellgroup/flash_sale/flash_sale": { "navigationBarTitleText": "限时抢购" }, "pages/spellgroup/flash_sale_goods/flash_sale_goods": { "navigationBarTitleText": "抢购详情" }, "pages/spellgroup/group_buying/group_buying": { "navigationBarTitleText": "在线拼团" }, "pages/spellgroup/group_buying_goods/group_buying_goods": { "navigationBarTitleText": "拼团详情" }, "pages/spellgroup/group/group": { "navigationBarTitleText": "我的团" }, "pages/home/coupons/coupons": { "navigationBarTitleText": "领券中心" }, "pages/home/stores/stores": { "navigationBarTitleText": "门店列表" }, "pages/home/chat/chat": { "navigationBarBackgroundColor": "#f2f2f2", "backgroundColorTop": "#e5e5e5", "backgroundColorBottom": "#e5e5e5", "navigationBarTitleText": "客服" }, "pages/home/search_Page/search_Page": { "navigationBarTitleText": "搜索页面" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 
@@ -8666,59 +8719,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__9752050" };exports.default = _default;
-
-/***/ }),
-
-/***/ 93:
-/*!****************************************************!*\
-  !*** E:/HTML文件/HBX文件/SupermarketBJH/utils/util.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
-}
-
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
-}
-/** 
-   * 时间戳转化为年 月 日 时 分 秒 
-   * number: 传入时间戳 
-   * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
-  */
-
-
-function formatTimeTwo(number, format) {
-  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
-  var returnArr = [];
-  var date = new Date(number * 1000);
-  returnArr.push(date.getFullYear());
-  returnArr.push(formatNumber(date.getMonth() + 1));
-  returnArr.push(formatNumber(date.getDate()));
-  returnArr.push(formatNumber(date.getHours()));
-  returnArr.push(formatNumber(date.getMinutes()));
-  returnArr.push(formatNumber(date.getSeconds()));
-
-  for (var i in returnArr) {
-    format = format.replace(formateArr[i], returnArr[i]);
-  }
-
-  return format;
-}
-
-module.exports = {
-  formatTime: formatTime,
-  formatTimeTwo: formatTimeTwo };
 
 /***/ })
 

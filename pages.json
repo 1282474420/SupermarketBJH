@@ -1,12 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/shopcart/order/order",
-			"style": {
-				"navigationBarTitleText": "提交订单"
-			}
-		}, 
-		{
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -16,6 +10,13 @@
 				}
 			}
 		},
+		{
+			"path": "pages/shopcart/order/order",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, 
+		
 		{
 			"path" : "pages/shopcart/addresslist/addresslist",
 			"style" : {
@@ -262,6 +263,12 @@
 		}
         
        
+        ,{
+            "path" : "pages/my/login/login",
+            "style" : {
+				"navigationBarTitleText": "用户登录"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
