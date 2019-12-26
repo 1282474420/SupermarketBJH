@@ -17,11 +17,7 @@
 				    <view class="collect_text">收藏</view>
 				  </view> -->
 				<view class="img" @click="handleCollect">
-					   <text class="icon   [isCollect?'icon-shoucang1':'icon-shoucang'] ">
-						  <image class="icon" src="../../../static/images/img/hongWJX.png">
-							  
-						  </image></text>
-					<!--  -->
+						  <image class="icon"  :class="[isCollect?'icon-shoucang1':'icon-shoucang']">  </image>
 					<view class="word">收藏</view>
 				</view>
 				<view class="img">
@@ -204,7 +200,7 @@
 				  console.log(this.GoodsInfo);
 			    let isCollect=false;
 			    // 1 获取缓存中的商品收藏数组
-			    let collect=wx.getStorageSync("collect")||[];
+			    let collect=uni.getStorageSync("collect")||[];
 			    // 2 判断该商品是否被收藏过
 			    let index=collect.findIndex(v=>v.id===this.GoodsInfo.id);
 			    // 3 当index！=-1表示 已经收藏过 

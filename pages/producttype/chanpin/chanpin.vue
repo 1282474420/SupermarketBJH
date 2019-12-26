@@ -10,38 +10,37 @@
 		<view class="cates_container">
 			<!--左侧菜单-->
 			<scroll-view scroll-y class="left_menu">
-				<view v-for="(item, index) in leftMenuList" :key="item.id">
-					<view @tap="change(item)" :class="'leftMenuList' + (item.id==navchoice?'active1':'')">
-						<view class="tab1">{{item.name}}</view>
-					</view>
-				</view>
+					<block v-for="(item, index) in leftMenuList" :key="item.id">
+					  <view :class="'leftMenuList ' + (index == id?'cur':'')" @tap="change(item)" >
+						 <view class="tab1">{{item.name}}</view>
+					  </view>
+					</block>
 			</scroll-view>
 
 
 			<!--右侧商品内容-->
 			<scroll-view scroll-y class="right_content">
 				<view class="first_tab">
-					<view class="goods_item" v-for="(right) in rightContent" :key="right.id">
-						<!-- 左侧 图片容器 -->
-						<view class="goods_img_wrap" @click="XQ(right.id)">
-							<image mode="widthFix" :src="right.picturepath" class="img1"></image>
-						</view>
-						<!-- 右侧 商品容器 -->
-						<view class="goods_info_wrap" @click="XQ(right.id)">
-							<view class="goods_name">{{right.goodsName}}</view>
-							<view class="goods_name">{{right.weight}}g </view>
-							<view class="goods_price">￥{{right.price}}</view>
-							<view class="goods_xiaoliang">销量:666</view>
-						</view>
-						<view>
-							<image @click="GouWu" class="img" src="../../../static/images/img/jiahao.png" />
-						</view>
-
+					<view class="goods_item" v-for="(right) in rightContent" :key="right.id" 
+					
+					>
+		            <!-- 左侧 图片容器 -->
+		          <view class="goods_img_wrap" @click="XQ(right.id)">
+		          	<image mode="widthFix" :src="right.picturepath" class="img1"></image>
+		          </view>
+					<!-- 右侧 商品容器 -->
+					<view class="goods_info_wrap" @click="XQ(right.id)">
+						<view class="goods_name">{{right.goodsName}}</view>
+						<view class="goods_name">{{right.weight}}g </view>
+						<view class="goods_price">￥{{right.price}}</view>
+						<view class="goods_xiaoliang">销量:666</view> 
 					</view>
+						<view >
+							<image @click="GouWu(right)" class="img" src="../../../static/images/img/jiahao.png" />
+						</view>
 				</view>
-			</scroll-view>
-		</view>
-
+			</view>
+		</scroll-view>
 	</view>
 	</view>
 </template>
@@ -52,6 +51,7 @@
 	export default {
 		data() {
 			return {
+				id:0,
 				//左侧的菜单数据
 				leftMenuList: [{
 						id: 0,
@@ -118,18 +118,18 @@
 				//右侧商品数据
 				rightContent: [],
 				fen: "",
-				GoodsInfonew: {},
+				GoodsInfonew:{},
 				properties: {
 					// 这里定义了innerText属性，属性值可以在组件使用时指定
 					innerTitle: {
-						type: String,
-						value: '产品分类'
+					  type: String,
+					  value: '产品分类'
 					},
-					// 这里是渐变的颜色
-					h_back_color: {
-						col: "ffa04b",
-						col2: "fe5d69"
-					}
+				  // 这里是渐变的颜色
+				  h_back_color: {
+				    col: "ffa04b",
+				    col2: "fe5d69"
+				  }
 				}
 			};
 		},
@@ -153,7 +153,7 @@
 			});
 		},
 		methods: {
-			GouWu(e) {
+			GouWu(e){
 				console.log(e);
 				// 1 获取缓存中的购物车 数组
 				let cart = uni.getStorageSync("cart") || [];
@@ -181,14 +181,14 @@
 					mask: true
 				});
 			},
-			XQ: function(e) {
+			XQ:function(e){
 
 				uni.showToast({
 					title: "编号" + e,
 					icon: "none"
 				});
 				uni.navigateTo({
-					url: '../ProductDetails/ProductDetails?id=' + e
+					url:'../ProductDetails/ProductDetails?id='+e
 				})
 			},
 			change: function(e) {
@@ -214,24 +214,23 @@
 <style>
 	@import "./chanpin.css";
 
-	.hh-title {
-		margin-top: 49rpx;
-		font-size: 38rpx;
-		text-align: center;
-		color: #fff;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+.hh-title {
+  margin-top: 49rpx;
+  font-size: 38rpx;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-	.hh-header {
-		position: fixed;
-		top: 0rpx;
-		width: 100%;
-		z-index: 99;
-		line-height: 56rpx;
-	}
-
+.hh-header {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  z-index: 99;
+  line-height: 56rpx;
+}
 	.first_tab .goods_item {
 		display: flex;
 		border-bottom: 1px solid #ccc;

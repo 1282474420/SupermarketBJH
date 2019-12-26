@@ -244,22 +244,8 @@ var _default =
       goodsPrice: 0.0, //商品合计价格
       freight: 12.00, //运费
       titlename: "自提时间", //自提时间、配送时间、快递费
-      recinfo: {
-        id: 1,
-        name: "大黑哥",
-        head: "大",
-        tel: "18816881688",
-        address: {
-          region: {
-            "label": "广东省-深圳市-福田区",
-            "value": [18, 2, 1],
-            "cityCode": "440304" },
-
-          detailed: '深南大道1111号无名摩登大厦6楼A2' },
-
-        isDefault: true } };
-
-
+      recinfo: {},
+      isDefault: true };
 
   },
   onShow: function onShow() {var _this = this;
@@ -279,12 +265,15 @@ var _default =
       } });
 
     uni.getStorage({
-      key: 'selectAddress',
+      key: 'arr',
       success: function success(e) {
-        _this.recinfo = e.data;
-        uni.removeStorage({
-          key: 'selectAddress' });
-
+        console.log("e", e);
+        console.log("e2", e.data[0]);
+        _this.recinfo = e.data[0];
+        // this.recinfo = e.data;
+        // uni.removeStorage({
+        // 	key: 'selectAddress'
+        // })
       } });
 
   },
@@ -347,7 +336,7 @@ var _default =
     //商品跳转
     toGoods: function toGoods(e) {
       uni.showToast({
-        title: '商品' + e.id,
+        title: '商品 ' + e.goodsName,
         icon: "none" });
 
       uni.navigateTo({

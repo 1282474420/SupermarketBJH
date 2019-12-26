@@ -9,10 +9,10 @@
 					<image :src="goodsData.bigpicturepath" mode="widthFix"></image>
 				</swiper-item>
 			</swiper>
-			
+
 			<!-- <view class="indicator">{{currentSwiper+1}}/{{bigpicturepath.length}}</view> -->
 		</view>
-		
+
 		<!-- 标题 价格 -->
 		<view class="flex-item">
 			<view class="info-box">
@@ -21,14 +21,14 @@
 					<text class="price">{{goodsData.activityprice}}</text>
 					<text class="m-price">原价¥{{goodsData.price}}</text>
 				</view>
-				<view class="content-item">
-					<image src="../../../static/groupImg/collect.png" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
+				<view class="content-item" @click="handleCollect">
+					<image :class="[isCollect?'icon-shoucang1':'icon-shoucang']" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
 					<view class="coupon-tip">收藏</view>
 				</view>
 				<view class="content-item2">
 					<image src='../../../static/groupImg/share.png' style="width: 42rpx;height: 42rpx;">
-					<view class="coupon-tip">分享</view>
-					<button class="btn-share" open-type="share"></button>
+						<view class="coupon-tip">分享</view>
+						<button class="btn-share" open-type="share"></button>
 				</view>
 			</view>
 			<view class="info-box3">
@@ -36,7 +36,7 @@
 				<!-- <view class="goods_text">{{goodsData.goodsTitle}}</view> -->
 			</view>
 		</view>
-		
+
 		<view class="flex-item">
 			<view class="c-list uni-list">
 				<view class="uni-list-cell" hover-class="uni-list-cell-hover">
@@ -47,29 +47,29 @@
 						</view>
 					</navigator>
 				</view>
-					
+
 				<view class="uni-list-cell" hover-class="uni-list-cell-hover">
 					<view class="c-row">
 						<text class="tit tt">库存</text>
 						<text class="tit2 tt">999件</text>
 					</view>
 				</view>
-				
+
 				<!-- <view class="uni-list-cell" hover-class="uni-list-cell-hover">
 					<view class="c-row ">
 						<text class="tit tt">规格</text>
 						<text class="tit2 tt">数量参数选择</text>
 					</view>
 				</view> -->
-				
+
 				<view class="c-row">
 					<text class="tit tt">说明</text>
 					<text class="tit2 tt">购物须知</text>
 				</view>
 			</view>
-			
+
 		</view>
-		
+
 		<view class="flex-item">
 			<view class="eva-section uni-list">
 				<view class="e-header uni-list-cell" hover-class="uni-list-cell-hover">
@@ -77,12 +77,14 @@
 						<text class="tit5">用户评价(12)</text>
 						<text class="tit6">更多评论></text>
 					</view>
-				</view> 
-				
+				</view>
+
 				<view class="eva-box">
 					<view class="comment" @tap="toRatings">
 						<view class="user-info uni-list-cell-navigate">
-							<view class="face"><image src="../../../static/groupImg/nabi.jpg" class="imagess"></image></view>
+							<view class="face">
+								<image src="../../../static/groupImg/nabi.jpg" class="imagess"></image>
+							</view>
 							<view class="username">nabi</view>
 							<view class="time">时间:2019-12-06</view>
 						</view>
@@ -95,7 +97,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 详情 -->
 		<view class="flex-item">
 			<view class="description">
@@ -105,7 +107,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 底部菜单 -->
 		<view class="footer">
 			<view class="icons">
@@ -115,14 +117,14 @@
 						<view class="text-di">首页</view>
 					</view>
 				</navigator>
-				
+
 				<view open-type="switchTab" @tap="chat()">
 					<view class="box">
 						<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
 						<view class="text-di">客服</view>
 					</view>
 				</view>
-				
+
 				<navigator open-type="switchTab" url="../../shopcart/cart/cart">
 					<view class="box" @tap="keep">
 						<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
@@ -142,8 +144,10 @@
 	export default {
 		data() {
 			return {
-				goodsData:{},
-				GoodsInfonew: {}
+				goodsData: {},
+				GoodsInfonew: {},
+				// 商品是否被收藏
+				isCollect:false
 				// //轮播主图数据
 				// swiperList: [
 				// 	{ id: 1, img: '../../static/images/lunxia.png' },
@@ -156,19 +160,19 @@
 				// selectAnchor:0,//选中锚点
 			}
 		},
-		onLoad: function (e) {
-		  var ids = e.id;
+		onLoad: function(e) {
+			var ids = e.id;
 			uni.showToast({
 				title: "编号" + ids,
 				icon: "none"
 			});
-		  //获得当前对象
-		  var that = this
+			//获得当前对象
+			var that = this
 			uni.request({
-				url: 'http://localhost:8080/commodity/getById?id='+ids,
+				url: 'http://localhost:8080/commodity/getById?id=' + ids,
 				method: 'POST',
 				success: res => {
-					this.goodsData=res.data;
+					this.goodsData = res.data;
 					console.log(res.data)
 				},
 				fail: () => {},
@@ -176,9 +180,9 @@
 			});
 		},
 		methods: {
-			home:function(){
+			home: function() {
 				uni.navigateTo({
-					url:'../../home/home/home'
+					url: '../../home/home/home'
 				})
 			},
 			//轮播图指示器
@@ -194,7 +198,7 @@
 			// 客服
 			chat() {
 				uni.reLaunch({
-					url:'/pages/home/chat/chat'
+					url: '/pages/home/chat/chat'
 				})
 			},
 			//点击加入购物车
@@ -226,37 +230,68 @@
 					// true 防止用户 手抖 疯狂点击按钮 
 					mask: true
 				});
+			},
+			handleCollect() {
+				console.log(this.goodsData);
+				// 1 获取缓存中的商品收藏数组
+				let collect = uni.getStorageSync("collect") || [];
+				// 2 判断该商品是否被收藏过
+				let index = collect.findIndex(v => v.id === this.goodsData.id);
+				// 3 当index！=-1表示 已经收藏过 
+				if (index !== -1) {
+					// 能找到 已经收藏过了  在数组中删除该商品
+					collect.splice(index, 1);
+					this.isCollect = false;
+					uni.showToast({
+						title: '取消成功',
+						icon: 'success',
+						mask: true
+					});
+
+				} else {
+					// 没有收藏过
+					collect.push(this.goodsData);
+					this.isCollect = true;
+					uni.showToast({
+						title: '收藏成功',
+						icon: 'success',
+						mask: true
+					});
+				}
+				// 4 把数组存入到缓存中
+				uni.setStorageSync("collect", collect);
 			}
+
 		}
 	}
 </script>
 
 <style>
-	view{
+	view {
 		font-family: 微软黑体;
 	}
-	
-	.flex{
-		background-color:#F0F0F0;
+
+	.flex {
+		background-color: #F0F0F0;
 	}
-	
+
 	/* 轮播图 */
 	.swiper-box {
 		width: 100%;
 		height: 100vw;
 		position: relative;
 	}
-	
+
 	swiper {
 		width: 100%;
 		height: 100vw;
 	}
-	
+
 	swiper-item image {
 		width: 100%;
 		height: 100vw;
 	}
-	
+
 	/* .indicator{
 		display: flex;
 		justify-content: center;
@@ -271,67 +306,67 @@
 		color: #fff;
 		background-color: rgba(0, 0, 0, 0.2);
 	} */
-	
-	.flex-item{
+
+	.flex-item {
 		margin-bottom: 20rpx;
 		background-color: white;
 	}
-	
-	.info-box{
+
+	.info-box {
 		font-size: 20rpx;
 		height: 65rpx;
 		padding-left: 30rpx;
 		padding-top: 10rpx;
 		padding-bottom: 50rpx;
-		display:flex;
-		align-items:baseline;
+		display: flex;
+		align-items: baseline;
 		background-color: white;
 	}
-	
-	.price-box{
+
+	.price-box {
 		width: 100%;
 	}
-	
-	.price-tip{
+
+	.price-tip {
 		font-size: 30rpx;
-		color:#F44336;
+		color: #F44336;
 		font-weight: 600;
 	}
-	
+
 	.price {
 		font-size: 60rpx;
-		color:#F44336;
+		color: #F44336;
 		font-weight: 600;
 		font-family: 华文细黑;
 	}
-	
-	.m-price{
+
+	.m-price {
 		font-size: 25rpx;
-		color:#8F8F94;
+		color: #8F8F94;
 		text-decoration: line-through;
 		margin-left: 60rpx;
 	}
-	
-	.content-item{
+
+	.content-item {
 		padding-right: 35rpx;
 		border-right: 1rpx #D8D8D8 solid;
 	}
-	
-	.coupon-tip{
+
+	.coupon-tip {
 		width: 50rpx;
 		height: 50rpx;
 		font-size: 24rpx;
 		color: #8F8F94;
-	} 
-	
-	.content-item2{
+	}
+
+	.content-item2 {
 		position: relative;
 		flex-direction: column;
 		margin-left: 35rpx;
 		margin-right: 40rpx;
 	}
-		
-	.btn-share{
+
+	.btn-share {
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -339,139 +374,139 @@
 		opacity: 0;
 		position: absolute;
 	}
-	
-	.info-box3{
+
+	.info-box3 {
 		font-size: 20rpx;
 		padding-left: 20rpx;
 		padding-bottom: 30rpx;
 		background-color: white;
 	}
-	
+
 	.title {
 		font-size: 35rpx;
 		font-weight: 600;
 	}
-	
-	.goods_text{
+
+	.goods_text {
 		font-size: 24rpx;
-		color:#F44336;
+		color: #F44336;
 		font-weight: 600;
 		font-family: 微软黑体;
 		padding-bottom: 30rpx;
 		margin-left: 20rpx;
 	}
-		
-	.c-row{
-		display:flex;
-		align-items:center;
+
+	.c-row {
+		display: flex;
+		align-items: center;
 		padding: 25rpx 33rpx;
-		position:relative;
+		position: relative;
 	}
-	
-	.tit{
+
+	.tit {
 		font-size: 27rpx;
 		color: #8F8F94;
 		padding-left: 8rpx;
 	}
-	
-	.tt{
+
+	.tt {
 		display: inline-block;
 		margin-right: 30upx;
 	}
-	
-	.con{
+
+	.con {
 		font-size: 27rpx;
 		color: #F44336;
 		flex: 1;
 	}
-	
-	.tit2{
+
+	.tit2 {
 		font-size: 27rpx;
 		color: #000000;
 	}
-	
+
 	/* 评价 */
-	.eva-section{
+	.eva-section {
 		display: flex;
 		flex-direction: column;
 		margin-top: 16rpx;
 		background: #fff;
 	}
-		
-	.e-header{
+
+	.e-header {
 		height: 70rpx;
 		display: flex;
 		align-items: center;
 		padding: 10rpx 0;
 		border-bottom: 1rpx #C2C2C2 solid;
 	}
-		
-	.e-view{
+
+	.e-view {
 		margin-left: 30rpx;
 	}
-		
-	.tit5{
+
+	.tit5 {
 		font-size: 25rpx;
 		color: black;
 		margin-right: 4rpx;
 	}
-	
-	.tit6{
+
+	.tit6 {
 		font-size: 25rpx;
-		color:#808080;
+		color: #808080;
 		margin-left: 450rpx;
 	}
-	
-	.eva-box{
+
+	.eva-box {
 		display: flex;
 		padding-left: 30rpx;
 		padding-top: 10rpx;
 		margin-bottom: 20rpx;
 		margin-top: 10rpx;
 	}
-	
+
 	.comment {
 		width: 100%;
 	}
-	
+
 	.user-info {
 		width: 100%;
 		height: 40upx;
 		display: flex;
-		align-items: center;	
+		align-items: center;
 	}
-	
+
 	.face {
 		width: 40upx;
 		height: 40upx;
 		margin-right: 8upx;
 	}
-	
+
 	.imagess {
 		width: 40upx;
 		height: 40upx;
 		border-radius: 100%;
 	}
-	
+
 	.username {
 		font-size: 22rpx;
 	}
-	
-	.time{
+
+	.time {
 		font-size: 22rpx;
-		color:#8F8F94;
+		color: #8F8F94;
 		margin-left: 410rpx;
 	}
-	
+
 	.contentt {
 		margin-top: 10upx;
 		font-size: 25upx;
 	}
-		
+
 	/* .reply{
 		background-color: #BBBBBB;
 	} */
-	
+
 	.titlee {
 		width: 100%;
 		height: 80upx;
@@ -480,7 +515,7 @@
 		font-size: 25upx;
 		margin-left: 30rpx;
 	}
-	
+
 	.footer {
 		position: fixed;
 		bottom: 0upx;
@@ -494,13 +529,13 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-		
+
 	.icons {
 		display: flex;
 		height: 80upx;
 		margin-left: -4%;
 	}
-	
+
 	.box {
 		width: 80upx;
 		height: 80upx;
@@ -509,14 +544,14 @@
 		flex-wrap: wrap;
 		margin-left: 10rpx;
 	}
-	
+
 	.icon-di {
 		font-size: 40upx;
 		color: #828282;
 		width: 50rpx;
 		height: 50rpx;
 	}
-	
+
 	.text-di {
 		display: flex;
 		justify-content: center;
@@ -524,16 +559,17 @@
 		font-size: 22upx;
 		color: #666;
 	}
-	
-	.btn{
+
+	.btn {
 		height: 80rpx;
 		border-radius: 15rpx;
 		overflow: hidden;
 		display: flex;
 		margin-right: -2%;
 	}
-	
-	.joinCart,.buy {
+
+	.joinCart,
+	.buy {
 		height: 80rpx;
 		padding: 0 50rpx;
 		color: #fff;
@@ -541,12 +577,20 @@
 		align-items: center;
 		font-size: 28rpx;
 	}
-	
+
 	.joinCart {
 		background-color: #FF8000;
 	}
-	
+
 	.buy {
-		background-color:#DD524D;
+		background-color: #DD524D;
+	}
+	.icon-shoucang{
+		background-size:cover;
+		background-image:url(../../../static/images/img/hongWJX.png) ;
+	}
+	.icon-shoucang1{
+		background-size:cover;
+		background-image:url(../../../static/images/img/hongWJX2.png);
 	}
 </style>

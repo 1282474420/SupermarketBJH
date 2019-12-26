@@ -177,3 +177,11 @@ page{
 .evaluation .pinlun{
 	float: right;
 }
+.icon-shoucang{
+	background-size:cover;
+	background-image:url(../../../static/images/img/hongWJX.png) ;
+}
+.icon-shoucang1{
+	background-size:cover;
+	background-image:url(../../../static/images/img/hongWJX2.png);
+}

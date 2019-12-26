@@ -99,24 +99,6 @@
 		}, 
 		
 		{
-			"path": "pages/producttype/producttype",
-			"style": {
-				"navigationBarTitleText": "产品分类"
-			}
-		}, 
-		{
-			"path": "pages/goodrecommend/goodrecommend",
-			"style": {
-				"navigationBarTitleText": "好物推荐"
-			}
-		}, 
-		{
-			"path": "pages/bottom/bottom",
-			"style": {
-				"navigationBarTitleText": "底部导航"
-			}
-		}, 
-		{
 			"path": "pages/shopcart/applyRefund/arefund/arefund",
 			"style": {
 				"navigationBarTitleText": "商品评价"

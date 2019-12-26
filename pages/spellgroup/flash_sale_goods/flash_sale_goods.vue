@@ -26,8 +26,8 @@
 					<text class="price">{{goodsData.activityprice}}</text>
 					<text class="m-price">原价¥{{goodsData.price}}</text>
 				</view>
-				<view class="content-item">
-					<image src="../../../static/groupImg/collect.png" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
+				<view class="content-item" @click="handleCollect">
+					<image :class="[isCollect?'icon-shoucang1':'icon-shoucang']" style="width: 45rpx;height: 45rpx;margin-left: 3rpx;">
 					<view class="coupon-tip">收藏</view>
 				</view>
 				<view class="content-item2">
@@ -140,7 +140,9 @@
 		components: {uniCountdown},
 		data() {
 			return {
-				goodsData:{}
+				goodsData:{},
+				// 商品是否被收藏
+				isCollect:false
 			}
 		},
 		onLoad: function (e) {
@@ -224,6 +226,36 @@
 			      // true 防止用户 手抖 疯狂点击按钮 
 			      mask: true
 			    });
+			},
+			handleCollect() {
+				console.log(this.goodsData);
+				// 1 获取缓存中的商品收藏数组
+				let collect = uni.getStorageSync("collect") || [];
+				// 2 判断该商品是否被收藏过
+				let index = collect.findIndex(v => v.id === this.goodsData.id);
+				// 3 当index！=-1表示 已经收藏过 
+				if (index !== -1) {
+					// 能找到 已经收藏过了  在数组中删除该商品
+					collect.splice(index, 1);
+					this.isCollect = false;
+					uni.showToast({
+						title: '取消成功',
+						icon: 'success',
+						mask: true
+					});
+			
+				} else {
+					// 没有收藏过
+					collect.push(this.goodsData);
+					this.isCollect = true;
+					uni.showToast({
+						title: '收藏成功',
+						icon: 'success',
+						mask: true
+					});
+				}
+				// 4 把数组存入到缓存中
+				uni.setStorageSync("collect", collect);
 			},
 			//立即购买
 			buy(){
@@ -586,5 +618,13 @@
 	}
 	.buy {
 		background-color:#DD524D;
+	}
+	.icon-shoucang{
+		background-size:cover;
+		background-image:url(../../../static/images/img/hongWJX.png) ;
+	}
+	.icon-shoucang1{
+		background-size:cover;
+		background-image:url(../../../static/images/img/hongWJX2.png);
 	}
 </style>

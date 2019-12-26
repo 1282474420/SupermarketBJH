@@ -12,7 +12,7 @@
 		<view class="viewpt">
 			<view class="titlename">
 				<view class="viewname">订单编号</view>
-				<view class="viewtext">123123</view>
+				<view class="viewtext">111111</view>
 			</view>
 		</view>
 		<view class="viewpt">
@@ -30,7 +30,7 @@
 		<view class="viewpt">
 			<view class="titlename">
 				<view class="viewname">支付金额</view>
-				<view class="viewtext">100.00</view>
+				<view class="viewtext">407.00</view>
 			</view>
 		</view>
 		<view style="margin-top: 50upx;">
