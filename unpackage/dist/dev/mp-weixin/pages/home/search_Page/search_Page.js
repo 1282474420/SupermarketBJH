@@ -219,27 +219,31 @@ __webpack_require__.r(__webpack_exports__);
       productList: [
       {
         goods_id: 0,
-        img: '../../../static/img/goods/p1.jpg',
-        name: '商品名称商品名称商品名称商品名称商品名称',
-        price: '￥168' },
+        img: '../../../static/images/cnxhsp_12.png',
+        name: '澳洲大龙虾澳洲大龙虾',
+        price: '￥288',
+        url: '../../producttype/chanpin/chanpin' },
 
       {
         goods_id: 1,
-        img: '../../../static/img/goods/p2.jpg',
-        name: '商品名称商品名称商品名称商品名称商品名称',
-        price: '￥168' },
+        img: '../../../static/images/cnxhsp_03.png',
+        name: '澳洲大龙虾澳洲大龙虾',
+        price: '￥288',
+        url: '../../producttype/chanpin/chanpin' },
 
       {
         goods_id: 2,
-        img: '../../../static/img/goods/p3.jpg',
-        name: '商品名称商品名称商品名称商品名称商品名称',
-        price: '￥168' },
+        img: '../../../static/images/cnxhsp_05.png',
+        name: '澳洲大龙虾澳洲大龙虾',
+        price: '￥288',
+        url: '../../producttype/chanpin/chanpin' },
 
       {
         goods_id: 3,
-        img: '../../../static/img/goods/p4.jpg',
-        name: '商品名称商品名称商品名称商品名称商品名称',
-        price: '￥168' }] };
+        img: '../../../static/images/cnxhsp_07.png',
+        name: '澳洲大龙虾澳洲大龙虾',
+        price: '￥288',
+        url: '../../producttype/chanpin/chanpin' }] };
 
 
 
@@ -390,6 +394,14 @@ __webpack_require__.r(__webpack_exports__);
 
           _this4.oldKeywordList = OldKeys; //更新历史搜索
         } });
+
+    },
+    toGoods: function toGoods(e) {
+      uni.reLaunch({
+        url: e.url,
+        success: function success(res) {},
+        fail: function fail() {},
+        complete: function complete() {} });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

@@ -17,9 +17,9 @@
 		<view class="goods-list">
 			<view class="product-list">
 				<view class="product" v-for="(goods) in goodsList" :key="goods.id">
-					<image mode="widthFix" :src="goods.picturepath" @click="XQ(goods.id)"></image>
+					<image mode="widthFix" :src="goods.picture_path" @click="XQ(goods.id)"></image>
 					<view class="info">
-						<view class="name">{{goods.goodsName}} </view>
+						<view class="name">{{goods.goods_name}} </view>
 					</view>
 					<view class="info">
 						<view class="price">￥{{goods.price}}</view>
@@ -50,13 +50,18 @@
 			SearchInput
 		},
 		onLoad: function(options) {
+			var key=options.key;
+			console.log(key);
 			uni.request({
-				url: 'http://localhost:8080/commodity/selectCom',
+				url: 'http://localhost:8080/commodityPub/list?goodsName='+key,
 				method: 'POST',
 				data: {},
 				success: res => {
-					this.goodsList = res.data.message;
-				}
+					this.goodsList=res.data.data;
+					console.log(this.goodsList);
+				},
+				fail: () => {},
+				complete: () => {}
 			});
 		},
 		methods: {

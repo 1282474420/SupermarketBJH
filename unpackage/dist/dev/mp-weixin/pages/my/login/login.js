@@ -211,7 +211,7 @@ var tha;var _default = { data: function data() {return { wxUserInfo: {}, phone: 
       // 	});
       // 	return false;
       // }
-      uni.reLaunch({ url: "../my/my?yonghuwx=" });}, /**			 * 获取验证码方法			 */yanzhengma: function yanzhengma(e) {var _this = this;
+      uni.reLaunch({ url: "../../home/home/home?yonghuwx=" });}, /**			 * 获取验证码方法			 */yanzhengma: function yanzhengma(e) {var _this = this;
       var me = this;
       if (me.phone == '') {
         uni.showToast({

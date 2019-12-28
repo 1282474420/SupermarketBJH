@@ -422,9 +422,9 @@
 	
 	  methods: {
 	    back: function () {
-	      uni.navigateBack({
-	        delta: 1
-	      });
+	      uni.reLaunch({
+	      	url:"../../../my/my/my"
+	      })
 	    },
 	    tagChoose: function (e) {
 	      var that = this;

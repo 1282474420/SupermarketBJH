@@ -12,25 +12,25 @@
 		<view class="viewpt">
 			<view class="titlename">
 				<view class="viewname">订单编号</view>
-				<view class="viewtext">111111</view>
+				<view class="viewtext">{{paylist.orderid}}</view>
 			</view>
 		</view>
 		<view class="viewpt">
 			<view class="titlename">
 				<view class="viewname">下单时间</view>
-				<view class="viewtext">2019-12-11 11:41:00</view>
+				<view class="viewtext">{{paylist.newtimes}}</view>
 			</view>
 		</view>
 		<view class="viewpt">
 			<view class="titlename">
-				<view class="viewname">支付状态</view>
+				<view class="viewname">支付方式</view>
 				<view class="viewtext">微信支付</view>
 			</view>
 		</view>
 		<view class="viewpt">
 			<view class="titlename">
 				<view class="viewname">支付金额</view>
-				<view class="viewtext">407.00</view>
+				<view class="viewtext">{{paylist.goodsPrice}}</view>
 			</view>
 		</view>
 		<view style="margin-top: 50upx;">
@@ -44,8 +44,25 @@
 	export default {
 		data() {
 			return {
-				
+				orderid:"",
+				paylist:{}
 			}
+		},
+		onLoad:function(ex){
+			console.log(ex);
+			this.orderid=ex.orderid;
+		},
+		onShow:function(e){
+			uni.getStorage({
+				key:"paymentOrder",
+				success: (res) => {
+					for(var i=0;i<res.data.length;i++){
+						if(this.orderid==res.data[i].orderid){
+							this.paylist=res.data[i]
+						}
+					}
+				}
+			});
 		},
 		methods: {
 			lookorder:function (e){

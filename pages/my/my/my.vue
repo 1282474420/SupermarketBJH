@@ -23,7 +23,7 @@
 				<text class="state">会员用户</text>
 				<text class="user_integral">积分：{{item.vipIntegral}}</text>
 			</view>
-			<!-- <view class="hydl" @tap="dl">登录 ></view> -->
+			<view class="hydl" @tap="dl">退出登录 ></view>
 		</view>
 		<view class="myorder">
 			<view class="myorder_head">
@@ -163,13 +163,13 @@
 			nav: function(e) {
 				var zz = e.currentTarget.dataset.url;
 				uni.navigateTo({
-					url: zz
+					url: zz+"?cond=1"
 				});
 			},
 			//会员登录页面跳转
 			dl: function(e) {
-				uni.navigateTo({
-					url: '../vipLogin/vipLogin'
+				uni.reLaunch({
+					url: '../login/login'
 				});
 			},
 			//我的订单页面跳转

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "领券中心",
+  "usingComponents": {
+    "van-popup": "/wxcomponents/vant/dist/popup/index",
+    "van-cell": "/wxcomponents/vant/dist/cell/index"
+  }
+}

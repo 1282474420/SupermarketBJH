@@ -161,18 +161,24 @@ var _default =
 {
   data: function data() {
     return {
-      coupons: [{ price: '6', availability: '满29可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' },
-      { price: '10', availability: '满49可用', scope: '全品类（活动商品除外）', period: '有效期至2019年11月27日' }],
+      coupons: [],
+      type: {},
       show: false };
 
   },
-  onLoad: function onLoad() {
+  onLoad: function onLoad() {var _this = this;
     uni.request({
-      url: '',
+      url: 'http://localhost:8080/discount/selectAll',
       method: 'POST',
       data: {},
-      success: function success(res) {},
+      success: function success(res) {
+        _this.coupons = res.data;
+        // 时间问题
+        for (var i in _this.coupons) {
+          _this.coupons[i].endtime = _this.happenTimeFun(_this.coupons[i].endtime);
+        }
+        _this.couponsType();
+      },
       fail: function fail() {},
       complete: function complete() {} });
 
@@ -200,6 +206,32 @@ var _default =
         fail: function fail() {},
         complete: function complete() {} });
 
+    },
+    couponsType: function couponsType() {var _this2 = this;
+      uni.request({
+        url: 'http://localhost:8080/discount/coupontypes',
+        method: 'POST',
+        data: {},
+        success: function success(res) {
+          var data = res.data;
+          for (var i in data) {
+            _this2.$set(_this2.type, data[i].couponTypeId, data[i].couponTypeName);
+          }
+          console.log(_this2.type);
+        },
+        fail: function fail() {},
+        complete: function complete() {} });
+
+    },
+    happenTimeFun: function happenTimeFun(num) {//时间戳数据处理
+      var date = new Date(num);
+      //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+      var y = date.getFullYear();
+      var MM = date.getMonth() + 1;
+      MM = MM < 10 ? '0' + MM : MM; //月补0
+      var d = date.getDate();
+      d = d < 10 ? '0' + d : d; //天补0
+      return y + '年' + MM + '月' + d + '日';
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

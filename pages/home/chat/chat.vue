@@ -172,7 +172,7 @@
 					{id:0,uid:0,username:"大黑哥",face:"../../../static/img/face.jpg",time:"12:56",type:"text",msg:{content:"为什么温度会相差那么大？"}},
 					{id:1,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:"12:57",type:"text",msg:{content:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}},
 					{id:2,uid:0,username:"大黑哥",face:"../../../static/img/face.jpg",time:"13:05",type:"img",msg:{url:"../../../static/img/goods/p10.jpg",w:200,h:200}},
-					{id:3,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:"12:59",type:"img",msg:{url:"../../../static/img/q.jpg",w:1920,h:1080}}
+					{id:3,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:"12:59",type:"img",msg:{url:"../../../static/img/goods/p4.jpg",w:1920,h:1080}}
 				]
 				// 获取消息中的图片,并处理显示尺寸
 				for(let i=0;i<list.length;i++){

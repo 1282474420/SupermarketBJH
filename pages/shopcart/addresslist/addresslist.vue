@@ -15,7 +15,7 @@
 						</view>
 
 						<view class="v3">
-							<image class="img2" src="../../../static/images/img/address/djjr2_03.png"></image>
+							<image @tap="addresstap(item)" class="img2" src="../../../static/images/img/address/djjr2_03.png"></image>
 						</view>
 
 						<view class="v4">
@@ -61,7 +61,8 @@
 				// }],
 				arrys1: [],
 				userInfo: "",
-				hasUserInfo: false
+				hasUserInfo: false,
+				cond:""
 			};
 		},
 
@@ -80,7 +81,7 @@
 			}
 			me.num++;
 		},
-		onLoad: function() {
+		onLoad: function(e) {
 	// 		var that = this; // 初始化
 	// 		uni.request({
 	// 			url: "http://localhost:8080/queryMember.do",
@@ -91,6 +92,9 @@
 	// 			}
 	
 	// 		});
+			console.log("e",e);
+			console.log("e2",e.cond);
+			this.cond=e.cond;
 			
 			uni.getStorage({
 				key:"arr",
@@ -109,16 +113,24 @@
 				});
 			},
 			addresstap:function(e){
-				// var arr=[];
-				// arr=JSON.stringify(this.arrys1);
-				uni.showToast({
-					title: '地址' + e.name,
-					icon: "none"
-				});
+				if(this.cond==1){
+					uni.navigateTo({
+						url:"addressupd/addressupd?name="+e.name
+					})
+				}
+				if(this.cond==2){
+					uni.redirectTo({
+						url:"../order/order?name="+e.name
+					})
+				}
+				
+			},
+			updaddress:function(e){
 				uni.navigateTo({
 					url:"addressupd/addressupd?name="+e.name
 				})
 			},
+			
 			getUserInfo: function(e) {
 				console.log(e);
 				// getApp().globalData.userInfo = e.detail.userInfo;

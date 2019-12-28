@@ -10,12 +10,12 @@
 				<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in coupons" :key="index">
 					<view class="uni-media-list">
 						<view class="uni-media-list-text">
-							<view class="uni-media-list-text-top" id="price">￥{{item.price}}</view>
-							<view class="uni-media-list-text-bottom uni-ellipsis" id="availability">{{item.availability}}</view>
+							<view class="uni-media-list-text-top" id="price">￥{{item.faceValue}}</view>
+							<view class="uni-media-list-text-bottom uni-ellipsis" id="availability">{{item.couponName}}</view>
 						</view>
 						<view class="uni-media-list-body">
-							<view class="uni-media-list-text-top" id="scope">{{item.scope}}</view>
-							<view class="uni-media-list-text-bottom uni-ellipsis" id="period">{{item.period}}</view>
+							<view class="uni-media-list-text-top" id="scope">{{ type[item.couponType.couponTypeId] }}</view>
+							<view class="uni-media-list-text-bottom uni-ellipsis" id="period">有效期至:{{item.endtime}}</view>
 						</view>
 					</view>
 					<view class="uni-media-list-text1">
@@ -37,18 +37,24 @@
 	export default {
 		data() {
 			return {
-				coupons:[{price:'6',availability:'满29可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'},
-				{price:'10',availability:'满49可用',scope:'全品类（活动商品除外）',period:'有效期至2019年11月27日'}],
+				coupons:[],
+				type:{},
 				show: false
 			}
 		},
 		onLoad() {
 			uni.request({
-				url: '',
+				url:'http://localhost:8080/discount/selectAll',
 				method: 'POST',
 				data: {},
-				success: res => {},
+				success: res => {
+					this.coupons=res.data;
+					// 时间问题
+					for (var i in this.coupons) {
+						this.coupons[i].endtime = this.happenTimeFun(this.coupons[i].endtime);
+					}
+					this.couponsType();
+				},
 				fail: () => {},
 				complete: () => {}
 			});
@@ -59,7 +65,7 @@
 			},
 			
 			onClose() {
-			    this.show = false ;
+				this.show = false ;
 			},
 			openchanpin() {
 				uni.reLaunch({
@@ -76,6 +82,32 @@
 				  	fail: () => {},
 				  	complete: () => {}
 				});
+			},
+			couponsType() {
+				uni.request({
+					url:'http://localhost:8080/discount/coupontypes',
+					method: 'POST',
+					data: {},
+					success: res => {
+						var data=res.data;
+						for(var i in data){
+							this.$set(this.type,data[i].couponTypeId,data[i].couponTypeName)
+						}
+						console.log(this.type)
+					},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
+			happenTimeFun(num){//时间戳数据处理
+					let date = new Date(num);
+					 //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+			        let y = date.getFullYear();
+			        let MM = date.getMonth() + 1;
+			        MM = MM < 10 ? ('0' + MM) : MM;//月补0
+			        let d = date.getDate();
+			        d = d < 10 ? ('0' + d) : d;//天补0
+			        return y + '年' + MM + '月' + d + '日';
 			}
 		}
 	}
@@ -100,7 +132,7 @@
 	flex-direction: column;
 	background-color: #F0F0F0;
 	width: 730rpx;
-	height: 1000rpx;
+	height: 120%;
 	margin-left: 10rpx;
 }
 .uni-media-list-text,.uni-media-list-body{
@@ -150,7 +182,7 @@
 #availability{
 	width: 160rpx;
 	background-color:#FFE4E1;
-	font-size: 30rpx;
+	font-size: 20rpx;
 }
 #price{
 	font-size: 60rpx;
@@ -173,9 +205,5 @@
 .uni-media-popup{
 	border-radius:10rpx 10rpx 10rpx 10rpx;
 	width: ;
-}
-#period{
-	font-size: 25rpx;
-	color: #999999;
 }
 </style>

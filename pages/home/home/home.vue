@@ -53,7 +53,7 @@
 		  <!-- 产品分类 -->
 		  	<view class="product_type">
 		  		<block v-for="(item, index) in product" :key="index">
-		  		    <view class="productblock" @tap="product_type(index)">
+		  		    <view class="productblock" @tap="product_type(item)">
 		  		        <image :src="item.pcatClassImg" class="productblock_img"></image>
 		  		        <text class="productblock_text">{{item.pcatClassClassname}}</text>
 		  		    </view>
@@ -66,7 +66,7 @@
 		    <text>坂田公明店超市全新盛大开业，全场满99元减10元</text>
 		  </view>
 		  <!-- 波士顿龙虾 -->
-		  <view @tap="bsdlx">
+		  <view>
 		    <image src="../../../static/images/bsdlx_03.png" class="bsdlx"></image>
 		  </view>
 		  <!-- 限时抢购 -->
@@ -90,7 +90,7 @@
 		  <view class='xsqgsp'>
 		      <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;">
 		        <block v-for="(item,index) in xsqgsp" :key="index">
-		          <view class='xsqgsp_block' :data-id="item.cid" @tap='cpxq'>
+		          <view class='xsqgsp_block' @tap='product_type(item)'>
 		            <image :src='item.ctradeimg' class='xsqgsp_img'></image>
 		            <text>{{item.cSelPointTitle}}</text>
 		            <view class='newPrice'>
@@ -115,7 +115,7 @@
 		  <view class='czptsp'>
 		    <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;">
 		      <block v-for="(item,index) in czptsp" :key="index">
-		        <view class='czptsp_block' @tap='czpt'  :data-id="item.cid">
+		        <view class='czptsp_block' @tap='product_type(item)'>
 		          <image :src='item.img' class='czptsp_img'></image>
 		          <text>{{item.title}}</text>
 		          <view class='people'>
@@ -177,7 +177,7 @@
 		      <text>猜你喜欢</text>
 		      <image src="../../../static/images/yhg_09.png" class="yhg"></image>
 		    </view>
-		    <view class="hyp" @tap="hyp" v-if="hyh">
+		    <view class="hyp">
 		      <image src="../../../static/images/hyp_03.png" class="hyp_img"></image>
 		      <text class="hyp_text">换一批</text>
 		    </view>
@@ -186,7 +186,7 @@
 		 <!-- <view class="cnxhsp" v-if="cnxhsp[0].cid!=null"> -->
 		  <view class='cnxhsp'>
 		    <block v-for="(item, index) in cnxhsp" :key="index">
-		      <view class="cnxhsp_block" :data-id="item.cid" @tap="cpxq">
+		      <view class="cnxhsp_block" @tap="product_type(item)">
 		        <image :src="item.ctradeimg" class="cnxhsp_img"></image>
 		        <view class="cnxhsp_title">{{item.ctradeName}}</view>
 		        <view class="cnxhsp_price">
@@ -207,17 +207,17 @@
 		  </view>
 		  <view class="hwtjsp">
 		    <swiper autoplay="true" interval="3000" circular="true" class="swiper-block" :change="swiperChange" previous-margin="164rpx" next-margin="164rpx" current="0" style="height:580rpx">
-		      <block v-for="(item, index) in hwtjsp" :key="index" :index="index" class="hwtjsp_block">
+		      <block v-for="(item, index) in hwtjsp" :key="index" class="hwtjsp_block">
 		        <swiper-item class="swiper-item">
 		          <view :class="'hwtjsp_item ' + (swiperIndex==index?'active':'')">
 		            <image src="../../../static/images/hwtjbj_03.png" class="hwtjspbj"></image>
 		            <view class="hwtjsp_block">
 		            <view class="hwtjsp_title">{{item.title}}</view>
 		              <image :src="item.img" class="hwtjsp_img"></image>
-		              <view class="hwtjsp_look" @tap="hwtj">
+		              <navigator class="hwtjsp_look" :url="item.url">
 		                <text>去看看</text>
 		                <text>></text>
-		              </view>
+		              </navigator>
 		            </view>
 		          </view>
 		        </swiper-item>
@@ -227,7 +227,7 @@
 		  <!-- 热卖推荐 -->
 		  <scroll-view scroll-x class="product">
 		    <block v-for="(item, index) in productNav" :key="index">
-		      <view @tap="change" :data-navchangeindex="item.pcatClassId" :class="'productNav ' + (item.pcatClassId==navchoice?'productNav_active':'')">
+		      <view :class="'productNav ' + (item.pcatClassId==navchoice?'productNav_active':'')">
 		        <view class="product_block">{{item.pcatClassClassname}}</view>
 		        <view :class="(item.pcatClassId==navchoice?'product_hg':'')"></view>
 		      </view>
@@ -236,7 +236,7 @@
 		  <!-- 商品信息 -->
 		  <view class="shopping">
 		    <block v-for="(item, index) in productList" :key="index">
-		      <view class="shopp_block" :data-id="item.cid" @tap="cpxq">
+		      <view class="shopp_block" @tap="product_type(item)">
 		        <image :src="item.ctradeimg" class="shopp_img"></image>
 		        <!-- <text class='shopp_activity' wx:if="{{item.activity}}">{{item.activity}}</text> -->
 		        <view class="shopp_title">{{item.ctradeName}}</view>
@@ -262,11 +262,11 @@
 		      <scroll-view scroll-y style="height:450px">
 		        <block class="san" v-for="(item, index) in mdName" :key="index">
 		          <view class="ere" @tap="mddz" :data-id="index">
-		            <text>百佳华-{{item.name}}</text>
+		            <text>百佳华-{{item.spName}}</text>
 		            <view class="ersan">
 		              <image src="../../../static/images/01_16.png"></image>
 		              <text>1km</text>
-		              <text>{{item.address}}</text>
+		              <text>{{item.spAddress}}</text>
 		            </view>
 		          </view>
 		        </block>
@@ -285,18 +285,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 		components: {uniCountdown},
 		data() {
 			return {
-				mdName: [{name:'西乡分店',address:'深圳市宝安区西乡街道办富成路91号'},
-				{name:'沙井分店',address:'深圳市宝安区沙井镇新沙路276号'},
-				{name:'松岗分店',address:'深圳市宝安区松岗镇107国道松岗路段293号'},
-				{name:'龙华分店',address:'深圳市宝安区龙华镇人民北路上291号'},
-				{name:'公明分店',address:'深圳市宝安区公明镇长春南路西1号'},
-				{name:'石岩分店',address:'深圳市宝安区石岩街道石岩大道佳华豪苑'},
-				{name:'三联分店',address:'深圳市龙岗区布吉街道联布北路'},
-				{name:'坂田分店',address:'深圳市龙岗区坂田街道吉华路635号佳华领汇广场'},
-				{name:'盐步分店',address:'佛山市南海区大沥镇北路18号青龙新城'},
-				{name:'大沙田分店',address:'南宁市良庆区五象大道一号（大沙田广场）'},
-				{name:'桃源分店',address:'南宁市青秀区教育路22号南湖御景裙楼1-4层'},
-				{name:'领汇广场',address:'深圳市龙岗区坂田街道吉华路635号佳华领汇广场'}],
+				mdName: [],
 				      //门店名称
 				      properties: {
 				        // 这里定义了innerText属性，属性值可以在组件使用时指定 
@@ -319,7 +308,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      nav: [{
 				        img: "../../../static/images/navIcon_05.png",
 				        text: "E卡付",
-				        url: "../chat/chat"
+				        url: ""
 				      }, {
 				        img: "../../../static/images/优惠券2.png",
 				        text: "领券中心",
@@ -347,77 +336,95 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      product: [{ 
 						pcatClassImg: "../../../static/images/product_03.png",
 				        pcatClassClassname: "新鲜蔬菜",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_05.png",
 				        pcatClassClassname: "粮油调味",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_07.png",
 				        pcatClassClassname: "肉蛋家禽",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_09.png",
 				        pcatClassClassname: "平价水果",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_11.png",
 				        pcatClassClassname: "牛奶面包",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_18.png",
 				        pcatClassClassname: "休闲零食",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_19.png",
 				        pcatClassClassname: "酒水饮料",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_20.png",
 				        pcatClassClassname: "日用百货",
+						url:'/pages/producttype/chanpin/chanpin'
 						},{ 
 						pcatClassImg: "../../../static/images/product_21.png",
 				        pcatClassClassname: "预售好物",
+						url:'/pages/spellgroup/presale/presale'
 						},{ 
 						pcatClassImg: "../../../static/images/product_22.png",
 				        pcatClassClassname: "团购优惠",
+						url:'/pages/spellgroup/group_buying/group_buying'
 						}],
 				      // 限时抢购商品
 				      xsqgsp: [{ 
 						ctradeimg: "../../../static/images/xsqgsp_03.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
-						cprice: 350
+						cprice: 350,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_05.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
-						cprice: 350
+						cprice: 350,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_07.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
-						cprice: 350
+						cprice: 350,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_09.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
-						cprice: 350
+						cprice: 350,
+						url:'../../producttype/chanpin/chanpin'
 						}],
 				      // 超值拼团商品
 				      czptsp: [{ 
 							img: "../../../static/images/czptsp_03.png",
 						title: "澳洲大龙虾",
 				        people: 2,
-						price: 280
+						price: 280,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							img: "../../../static/images/czptsp_05.png",
 						title: "澳洲大龙虾",
 				        people: 2,
-						price: 280
+						price: 280,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							img: "../../../static/images/czptsp_07.png",
 						title: "澳洲大龙虾",
 				        people: 2,
-						price: 280
+						price: 280,
+						url:'../../producttype/chanpin/chanpin'
 						},{ 
 							img: "../../../static/images/czptsp_09.png",
 						title: "澳洲大龙虾",
 				        people: 2,
-						price: 280
+						price: 280,
+						url:'../../producttype/chanpin/chanpin'
 						}],
 				      // 优惠券
 				      yhj: [{
@@ -441,7 +448,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				        title: "组合购",
 				        content: "搭配购买更优惠",
 				        img: "../../../static/images/zhg_03.png",
-				        url: "../../groupBuy/GroupBuyList"
+				        url: ""
 				      }, {
 				        title: "限量促销",
 				        content: "特价专区 卖完即止",
@@ -452,27 +459,33 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      cnxhsp: [{
 				        ctradeimg: "../../../static/images/cnxhsp_03.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      },{
 				        ctradeimg: "../../../static/images/cnxhsp_05.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      },{
 				        ctradeimg: "../../../static/images/cnxhsp_07.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      },{
 				        ctradeimg: "../../../static/images/cnxhsp_12.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      },{
 				        ctradeimg: "../../../static/images/cnxhsp_13.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      },{
 				        ctradeimg: "../../../static/images/cnxhsp_14.png",
 						ctradeName: '澳洲大龙虾澳洲大龙虾',
-						cprice: 280
+						cprice: 280,
+						url:'../../producttype/chanpin/chanpin'
 				      }],
 				      // 当前页
 				      pageNo: 1,
@@ -486,15 +499,15 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      hwtjsp: [{
 				        img: "../../../static/images/hwtjsp_03.png",
 				        title: "简约的设计风格搭配黑 色调，使其看上去神秘 而又不乏个性...",
-				        url: "../hwtj/hwtj"
+				        url: "../../goodrecommend/AdvisoryDetails/AdvisoryDetails"
 				      }, {
 				        img: "../../../static/images/hwtjsp_06.png",
 				        title: "简约的设计风格搭配黑 色调，使其看上去神秘 而又不乏个性...",
-				        url: "../hwtj/hwtj"
+				        url: "../../goodrecommend/AdvisoryDetails/AdvisoryDetails"
 				      }, {
 				        img: "../../../static/images/hwtjsp_09.png",
 				        title: "简约的设计风格搭配黑 色调，使其看上去神秘 而又不乏个性...",
-				        url: "../hwtj/hwtj"
+				        url: "../../goodrecommend/AdvisoryDetails/AdvisoryDetails"
 				      }],
 				      swiperIndex: 0,
 				      // 商品分类标题
@@ -522,27 +535,33 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      productList: [{ 
 							ctradeimg: "../../../static/images/productList_03.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/productList_05.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/productList_09.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/productList_10.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/productList_13.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						},{ 
 							ctradeimg: "../../../static/images/productList_14.png",
 							ctradeName: "澳洲大龙虾澳洲大龙虾澳洲大龙虾澳洲大龙虾",
-							cprice: 280
+							cprice: 280,
+							url:'../../producttype/chanpin/chanpin'
 						}],
 				      spxq: "",
 				      cpnblj: "",
@@ -553,7 +572,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				      hyh: true,
 				      //判断换一批按钮是否可以使用
 				      stock: '',
-					  name:'',
+					  name:'西乡分店',
 					  imagesList:[{ 
 							img: "../../../static/images/adv_03.jpg"
 						},{ 
@@ -566,16 +585,23 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 			}
 		},
 		onLoad(e) {
-			if(e.name==''||e.name==null){
-				this.name=this.mdName[0].name;
-			}else{
-				this.name=e.name;
-			}
+			this.name=e.name;
 		},
+		
 		methods: {
 			 // 点击显示门店选择
 			    mdxz () {
 			        this.showModal = true;
+					uni.request({
+						url:'http://localhost:8080/Message/listShopName',
+						method: 'POST',
+						data: {},
+						success: res => {
+							this.mdName=res.data;
+						},
+						fail: () => {},
+						complete: () => {}
+					});
 			    },
 			    // 点击隐藏门店选择
 			    close () {
@@ -584,7 +610,7 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				 //门店选择
 				mddz(e) {
 				    var i = e.currentTarget.dataset.id;
-					this.name=this.mdName[i].name;
+					this.name=this.mdName[i].spName;
 					this.close();
 				},
 				search(){
@@ -610,17 +636,14 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 				// 预售好物
 				product_type(e){
 					console.log(e)
-					if(e==8){
-						uni.navigateTo({
-							url: '../../spellgroup/presale/presale',
-							success: res => {},
-							fail: () => {},
-							complete: () => {}
-						});
-					}
+					uni.reLaunch({
+						url: e.url,
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
 				},
 				zhg(e) {
-					console.log(e.currentTarget.dataset.spxqxx)
 					uni.navigateTo({
 						url: e.currentTarget.dataset.spxqxx,
 						success: res => {},

@@ -74,7 +74,7 @@
 				// 	return false;
 				// }
 				uni.reLaunch({
-					url: "../my/my?yonghuwx="
+					url: "../../home/home/home?yonghuwx="
 				});
 			},
 			/**			 * 获取验证码方法			 */ 

@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/my/login/login",
+    "pages/home/home/home",
+    "pages/shopcart/addresslist/addresslist",
+    "pages/shopcart/order/order",
+    "pages/shopcart/addresslist/addressadd/addressadd",
+    "pages/shopcart/addresslist/addressupd/addressupd",
+    "pages/my/my/my",
+    "pages/my/vipLogin/vipLogin",
+    "pages/my/vipRegister/vipRegister",
+    "pages/my/myVipCard/myVipCard",
+    "pages/my/myFavorite/myFavorite",
+    "pages/my/myCoupons/myCoupons",
+    "pages/shopcart/myorder/forpayment/forpayment",
+    "pages/shopcart/myorder/forpaymentdetails/forpaymentdetails",
+    "pages/shopcart/applyRefund/arefund/arefund",
+    "pages/shopcart/applyRefund/applyRefund",
+    "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
+    "pages/shopcart/comment/comment",
+    "pages/shopcart/cart/cart",
+    "pages/shopcart/payment/payment",
+    "pages/producttype/chanpinList/chanpinList",
+    "pages/producttype/ProductDetails/ProductDetails",
+    "pages/producttype/chanpin/chanpin",
+    "pages/goodrecommend/haowu/haowu",
+    "pages/goodrecommend/AdvisoryDetails/AdvisoryDetails",
+    "pages/spellgroup/presale/presale",
+    "pages/spellgroup/presale_goods/presale_goods",
+    "pages/spellgroup/flash_sale/flash_sale",
+    "pages/spellgroup/flash_sale_goods/flash_sale_goods",
+    "pages/spellgroup/group_buying/group_buying",
+    "pages/spellgroup/group_buying_goods/group_buying_goods",
+    "pages/spellgroup/group/group",
+    "pages/home/coupons/coupons",
+    "pages/home/stores/stores",
+    "pages/home/chat/chat",
+    "pages/home/search_Page/search_Page"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "static/images/dbimg/sy_01_03.png",
+        "selectedIconPath": "static/images/dbimg/sy_001_03.png",
+        "pagePath": "pages/home/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/images/dbimg/sy_02_03.png",
+        "selectedIconPath": "static/images/dbimg/sy_002_03.png",
+        "pagePath": "pages/producttype/chanpin/chanpin",
+        "text": "分类"
+      },
+      {
+        "iconPath": "static/images/dbimg/sy_03_03.png",
+        "selectedIconPath": "static/images/dbimg/sy_003_03.png",
+        "pagePath": "pages/shopcart/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "static/images/dbimg/sy_04_03.png",
+        "selectedIconPath": "static/images/dbimg/sy_004_03.png",
+        "pagePath": "pages/home/stores/stores",
+        "text": "门店"
+      },
+      {
+        "iconPath": "static/images/dbimg/sy_05_03.png",
+        "selectedIconPath": "static/images/dbimg/sy_005_03.png",
+        "pagePath": "pages/my/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

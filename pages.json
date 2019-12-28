@@ -7,6 +7,23 @@
 			}
 		},
 		{
+			"path": "pages/shopcart/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationBarBackgroundColor": "#FF8000",
+				"titleImage": "static/img/goods/p2.jpg"
+			}
+		}, 
+		
+		
+		{
+			"path": "pages/shopcart/payment/payment",
+			"style": {
+				"navigationBarTitleText": "支付成功明细"
+			}
+		}, 
+			
+		{
 			"path": "pages/home/home/home",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -123,23 +140,7 @@
 			}
 		}, 
 		
-		{
-			"path": "pages/shopcart/cart/cart",
-			"style": {
-				"navigationBarTitleText": "购物车",
-				"navigationBarBackgroundColor": "#FF8000",
-				"titleImage": "static/img/goods/p2.jpg"
-			}
-		}, 
-		{
-			"path": "pages/shopcart/payment/payment",
-			"style": {
-				"navigationBarTitleText": "支付成功明细"
-			}
-		}, 
-		
-		
-		
+
 		{
 			"path": "pages/producttype/chanpinList/chanpinList",
 			"style": {
@@ -250,8 +251,7 @@
 				"navigationBarTitleText": "搜索页面"
 			}
 		}
-		
-		
+	
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

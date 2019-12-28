@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/my/login/login",
+    "pages/shopcart/cart/cart",
+    "pages/shopcart/payment/payment",
     "pages/home/home/home",
     "pages/shopcart/addresslist/addresslist",
     "pages/shopcart/order/order",
@@ -18,8 +20,6 @@
     "pages/shopcart/applyRefund/applyRefund",
     "pages/shopcart/applyRefund/applyRefunddetails/applyRefunddetails",
     "pages/shopcart/comment/comment",
-    "pages/shopcart/cart/cart",
-    "pages/shopcart/payment/payment",
     "pages/producttype/chanpinList/chanpinList",
     "pages/producttype/ProductDetails/ProductDetails",
     "pages/producttype/chanpin/chanpin",

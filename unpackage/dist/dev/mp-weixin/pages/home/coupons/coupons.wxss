@@ -27,7 +27,7 @@
 	        flex-direction: column;
 	background-color: #F0F0F0;
 	width: 730rpx;
-	height: 1000rpx;
+	height: 120%;
 	margin-left: 10rpx;
 }
 .uni-media-list-text,.uni-media-list-body{
@@ -75,7 +75,7 @@
 #availability{
 	width: 160rpx;
 	background-color:#FFE4E1;
-	font-size: 30rpx;
+	font-size: 20rpx;
 }
 #price{
 	font-size: 60rpx;
@@ -98,9 +98,5 @@
 .uni-media-popup{
 	border-radius:10rpx 10rpx 10rpx 10rpx;
 	width: ;
-}
-#period{
-	font-size: 25rpx;
-	color: #999999;
 }
 

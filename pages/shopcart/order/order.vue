@@ -6,7 +6,7 @@
 			<view class="icon">
 				<image src="../../../static/images/img/addricon.png" mode=""></image>
 			</view>
-			<view >
+			<view>
 				<view class="tel-name">
 					<view class="name">
 						{{recinfo.name}}
@@ -24,7 +24,7 @@
 		<!-- 购买商品列表 -->
 		<view class="buy-list">
 			<view class="row" v-for="(row,index) in buylist" :key="index">
-				<view class="goods-info"  @tap="toGoods(row)">
+				<view class="goods-info" @tap="toGoods(row)">
 					<view class="img">
 						<image :src="row.picturepath"></image>
 					</view>
@@ -50,14 +50,14 @@
 				<view>
 					<radio-group @change="radioChange" class="radioDelivery">
 						<radio :value="0" class="radiotext" checked />门店自提
-						<radio :value="1" class="radiotext"  />配送到家
-						<radio :value="2" class="radiotext"  />快递配送
+						<radio :value="1" class="radiotext" />配送到家
+						<radio :value="2" class="radiotext" />快递配送
 					</radio-group>
 				</view>
 			</view>
 			<view style="border-bottom: 1px solid #C8C7CC;"></view>
 			<view class="row">
-				<view >
+				<view>
 					<view style="margin-left: 20upx;">
 						<picker mode="date" @change="bindDateChange">
 							<image src="../../../static/images/img/time.png" style="width: 40upx;height: 40upx;"></image>
@@ -68,7 +68,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- <view class="order">
 			<view class="row">
 				<view class="left">
@@ -88,7 +88,7 @@
 			</view>
 			
 		</view> -->
-		
+
 		<view class="blck">
 
 		</view>
@@ -109,12 +109,17 @@
 				buylist: [], //订单列表
 				goodsPrice: 0.0, //商品合计价格
 				freight: 12.00, //运费
-				titlename:"自提时间",	//自提时间、配送时间、快递费
+				titlename: "自提时间", //自提时间、配送时间、快递时间
+				datatimes: "",
 				recinfo: {},
-				isDefault: true
+				isDefault: true,
+				addressname: ""
 			};
 		},
-		onShow() {
+		onLoad: function(exper) {
+			this.addressname = exper.name;
+		},
+		onShow: function(exper) {
 			//页面显示时，加载订单信息
 			uni.getStorage({
 				key: 'buylist',
@@ -130,22 +135,24 @@
 					this.sumPrice = this.goodsPrice - this.deduction + this.freight;
 				}
 			});
+			console.log("addressname", this.addressname);
 			uni.getStorage({
 				key: 'arr',
 				success: (e) => {
-					console.log("e",e)
-					console.log("e2",e.data[0])
-					this.recinfo=e.data[0]
-					// this.recinfo = e.data;
-					// uni.removeStorage({
-					// 	key: 'selectAddress'
-					// })
+					console.log("e", e)
+					console.log("e2", e.data[0])
+					for (var i = 0; i < e.data.length; i++) {
+						if (this.addressname != undefined && this.addressname == e.data[i].name) {
+							this.recinfo = e.data[i]
+						} else {
+							this.recinfo = e.data[0]
+						}
+					}
+
 				}
 			})
 		},
-		onHide() {
 
-		},
 		onBackPress() {
 			//页面后退时候，清除订单信息
 			this.clearOrder();
@@ -165,39 +172,88 @@
 					}
 				});
 			},
+
 			toPay() {
 				//商品列表
 				let paymentOrder = [];
-				let goodsid = [];
+				// let goodsid = [];
 				let len = this.buylist.length;
-				for (let i = 0; i < len; i++) {
-					paymentOrder.push(this.buylist[i]);
-					goodsid.push(this.buylist[i].id);
+				//获取当前系统时间
+				var nowTime = new Date();
+				var month = nowTime.getMonth() + 1; //一定要+1,表示月份的参数介于 0 到 11 之间。也就是说，如果希望把月设置为 8 月，则参数应该是 7。
+				var date = nowTime.getDate();
+				var seperator1 = "-"; //设置成自己想要的年月日格式：年-月-日
+				var seperator2 = ":"; //设置成自己想要的时分秒格式：时:分:秒
+				if (month >= 1 && month <= 9) {
+					month = "0" + month;
 				}
-				if (paymentOrder.length == 0) {
+				if (date <= 9) {
+					date = "0" + date;
+				}
+				var currentDate = nowTime.getFullYear() + seperator1 + month + seperator1 + date + " " + nowTime.getHours() +
+					seperator2 + nowTime.getMinutes() + seperator2 + nowTime.getSeconds();
+				console.log("当前系统时间", currentDate);
+
+				//生成随机订单号
+				var orderCode = '';
+				for (var i = 0; i < 4; i++) //4位随机数，用以加在时间戳后面。
+				{
+					orderCode += Math.floor(Math.random() * 10);
+				}
+				orderCode = new Date().getTime() + orderCode; //时间戳，用来生成订单号。
+				console.log("订单号:",orderCode);
+
+
+				console.log("datatimes", this.datatimes);
+				if (this.datatimes == "") {
 					uni.showToast({
-						title: '订单信息有误，请重新购买',
+						title: '请选择出货时间',
 						icon: 'none'
 					});
-					return;
-				}
-				//本地模拟订单提交UI效果
-				uni.showLoading({
-					title: '正在提交订单...'
-				})
-				setTimeout(() => {
+				} else {
+					for (let i = 0; i < len; i++) {
+						this.buylist[i].newtimes = currentDate;
+						this.buylist[i].orderid = orderCode;
+						this.buylist[i].goodsPrice = this.goodsPrice;
+						paymentOrder.push(this.buylist[i]);
+						// goodsid.push(this.buylist[i].id);
+					}
+					if (paymentOrder.length == 0) {
+						uni.showToast({
+							title: '订单信息有误，请重新购买',
+							icon: 'none'
+						});
+						return;
+					}
+					console.log("paymentOrder", paymentOrder);
+					//本地模拟订单提交UI效果
+					uni.showLoading({
+						title: '正在提交订单...'
+					})
 					uni.setStorage({
 						key: 'paymentOrder',
 						data: paymentOrder,
 						success: () => {
-							uni.hideLoading();
 							uni.redirectTo({
-								url: "../payment/payment?amount=" + this.sumPrice
+								url: "../payment/payment?orderid="+orderCode
 							})
 						}
 					})
-				}, 1000)
 
+
+					// setTimeout(() => {
+					// 	uni.setStorage({
+					// 		key: 'paymentOrder',
+					// 		data: paymentOrder,
+					// 		success: () => {
+					// 			uni.hideLoading();
+					// 			uni.redirectTo({
+					// 				url: "../payment/payment?amount=" + this.sumPrice
+					// 			})
+					// 		}
+					// 	})
+					// }, 1000)
+				}
 			},
 			//商品跳转
 			toGoods(e) {
@@ -212,22 +268,23 @@
 			//选择收货地址
 			selectAddress() {
 				uni.navigateTo({
-					url: '../addresslist/addresslist?type=select'
+					url: '../addresslist/addresslist?cond=2'
 				})
 			},
 			bindDateChange: function(e) {
-			    this.titlename = e.target.value
+				this.titlename = e.target.value
+				this.datatimes = this.titlename;
 			},
 			radioChange: function(evt) {
-				var radioValue=evt.target.value;
-				if(radioValue==0){
-					this.titlename="自提时间";
+				var radioValue = evt.target.value;
+				if (radioValue == 0) {
+					this.titlename = "自提时间";
 				}
-				if(radioValue==1){
-					this.titlename="配送时间";
+				if (radioValue == 1) {
+					this.titlename = "配送时间";
 				}
-				if(radioValue==2){
-					this.titlename="快递费";
+				if (radioValue == 2) {
+					this.titlename = "快递时间";
 				}
 			}
 		}
@@ -449,9 +506,11 @@
 			}
 		}
 	}
-	.radiotext{
+
+	.radiotext {
 		margin-left: 20upx;
 	}
+
 	// .zf{
 	// 	width: 30upx;
 	// 	height: 30upx;
@@ -470,5 +529,4 @@
 	//   width: 34rpx;
 	//   height: 34rpx;
 	// }
-
 </style>

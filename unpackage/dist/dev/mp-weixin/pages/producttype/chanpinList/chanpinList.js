@@ -174,13 +174,18 @@ __webpack_require__.r(__webpack_exports__);
     SearchInput: SearchInput },
 
   onLoad: function onLoad(options) {var _this = this;
+    var key = options.key;
+    console.log(key);
     uni.request({
-      url: 'http://localhost:8080/commodity/selectCom',
+      url: 'http://localhost:8080/commodityPub/list?goodsName=' + key,
       method: 'POST',
       data: {},
       success: function success(res) {
-        _this.goodsList = res.data.message;
-      } });
+        _this.goodsList = res.data.data;
+        console.log(_this.goodsList);
+      },
+      fail: function fail() {},
+      complete: function complete() {} });
 
   },
   methods: {

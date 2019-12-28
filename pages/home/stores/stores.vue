@@ -9,7 +9,7 @@
 		<view v-for="(item,index) in stores" :key="index">
 			<view class="nocard" @tap="openhome(item)">
 				<uni-list>
-					<uni-list-item :title="'百佳华-'+item.name" :note="item.address"></uni-list-item>
+					<uni-list-item :title="'百佳华-'+item.spName" :note="item.spAddress"></uni-list-item>
 				</uni-list>
 			</view>
 		</view>
@@ -24,26 +24,24 @@ import uniListItem from "@/components/uni-list-item/uni-list-item.vue"
 		components: {uniSection,uniList,uniListItem},
 		data() {
 			return {
-				stores:[{name:'西乡分店',address:'深圳市宝安区西乡街道办富成路91号'},
-				{name:'沙井分店',address:'深圳市宝安区沙井镇新沙路276号'},
-				{name:'松岗分店',address:'深圳市宝安区松岗镇107国道松岗路段293号'},
-				{name:'龙华分店',address:'深圳市宝安区龙华镇人民北路上291号'},
-				{name:'公明分店',address:'深圳市宝安区公明镇长春南路西1号'},
-				{name:'石岩分店',address:'深圳市宝安区石岩街道石岩大道佳华豪苑'},
-				{name:'三联分店',address:'深圳市龙岗区布吉街道联布北路'},
-				{name:'坂田分店',address:'深圳市龙岗区坂田街道吉华路635号佳华领汇广场'},
-				{name:'盐步分店',address:'佛山市南海区大沥镇北路18号青龙新城'},
-				{name:'大沙田分店',address:'南宁市良庆区五象大道一号（大沙田广场）'},
-				{name:'桃源分店',address:'南宁市青秀区教育路22号南湖御景裙楼1-4层'},
-				{name:'领汇广场',address:'深圳市龙岗区坂田街道吉华路635号佳华领汇广场'}]
+				stores:[]
 			}
 		},
 		onLoad() {
-			
+			uni.request({
+				url:'http://localhost:8080/Message/listShopName',
+				method: 'POST',
+				data: {},
+				success: res => {
+					this.stores=res.data;
+				},
+				fail: () => {},
+				complete: () => {}
+			});
 		},
 		methods: {
 			openhome(e){
-				let mname=e.name;
+				let mname=e.spName;
 				console.log(mname);
 				uni.reLaunch({
 					url: '/pages/home/home/home?name='+mname,
