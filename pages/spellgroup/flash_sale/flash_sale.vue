@@ -1,6 +1,6 @@
 <template>
 	<view class='flex'>
-		<image src="../../../static/groupImg/flash_sale.png" class="slide-image" mode="widthFix"></image>
+		<image src="http://139.129.97.88:8080/static/groupImg/flash_sale.png" class="slide-image" mode="widthFix"></image>
 		
 		<view class="content-count">
 			<view style="color: #808080;margin-top: 10rpx;font-size: 30rpx;">本场还剩</view>

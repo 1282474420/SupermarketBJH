@@ -24,7 +24,7 @@
 					<view class="info">
 						<view class="price">￥{{goods.price}}</view>
 						<view class="slogan">
-							<image class="slogan" @click="GW(goods)" src="../../../static/images/img/jiahao.png"></image>
+							<image class="slogan" @click="GW(goods)" src="http://139.129.97.88:8080/static/images/img/jiahao.png"></image>
 						</view>
 					</view>
 

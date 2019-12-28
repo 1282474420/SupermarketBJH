@@ -3,7 +3,7 @@
 	<view class="container">
 		<view class="ding2">
 			<view class="ding">
-				<image class="ding1" src="../../../static/images/img/tu1_03.png" @tap="back"></image>
+				<image class="ding1" src="http://139.129.97.88:8080/static/images/img/tu1_03.png" @tap="back"></image>
 				<view class="text1 text4">
 					<text>发表评论</text>
 				</view>
@@ -48,10 +48,10 @@
         <view>这里num给的是几分就显示几颗星星</view> -->
 						<view class="in">
 							<block v-for="(item, index) in one_2" :key="index">
-								<image @tap="in_xin" :id="(index+1)" data-in="use_sc2" src="../../../static/images/img/hongWJX2.png"></image>
+								<image @tap="in_xin" :id="(index+1)" data-in="use_sc2" src="http://139.129.97.88:8080/static/images/img/hongWJX2.png"></image>
 							</block>
 							<block v-for="(item, index) in two_2" :key="index">
-								<image @tap="in_xin" :id="(index+1)" data-in="use_sc" src="../../../static/images/img/hongWJX.png"></image>
+								<image @tap="in_xin" :id="(index+1)" data-in="use_sc" src="http://139.129.97.88:8080/static/images/img/hongWJX.png"></image>
 							</block>
 						</view>
 					</view>
@@ -63,10 +63,10 @@
 
 						<view class="in">
 							<block v-for="(item, index) in one2_2" :key="index">
-								<image @tap="in_xin2" :id="(index+1)" data-in="use2_sc2" src="../../../static/images/img/hongWJX2.png"></image>
+								<image @tap="in_xin2" :id="(index+1)" data-in="use2_sc2" src="http://139.129.97.88:8080/static/images/img/hongWJX2.png"></image>
 							</block>
 							<block v-for="(item, index) in two2_2" :key="index">
-								<image @tap="in_xin2" :id="(index+1)" data-in="use2_sc" src="../../../static/images/img/hongWJX.png"></image>
+								<image @tap="in_xin2" :id="(index+1)" data-in="use2_sc" src="http://139.129.97.88:8080/static/images/img/hongWJX.png"></image>
 							</block>
 						</view>
 					</view>
@@ -86,7 +86,7 @@
 								</view>
 								<!-- 上传按钮+框 -->
 								<view class="ui_uploader" @tap="uploaderNum<2 ?'upload':'findEvent'" v-if="showUpload">
-									<image src="../../../static/images/img/shi.png"></image>
+									<image src="http://139.129.97.88:8080/static/images/img/shi.png"></image>
 								</view>
 							</view>
 						</view>

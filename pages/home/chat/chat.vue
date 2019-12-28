@@ -50,7 +50,7 @@
 			<swiper class="swiper" indicator-dots="true" duration="150">
 				<swiper-item v-for="(page,pid) in emojiList" :key="pid">
 					<view v-for="(em,eid) in page" :key="eid" @tap="addEmoji(em)">
-						<image mode="widthFix" :src="'../../../static/img/emoji/'+em.url"></image>
+						<image mode="widthFix" :src="'http://139.129.97.88:8080/static/img/emoji/'+em.url"></image>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -169,10 +169,10 @@
 			getMsgList(){
 				// 消息列表
 				let list = [
-					{id:0,uid:0,username:"大黑哥",face:"../../../static/img/face.jpg",time:"12:56",type:"text",msg:{content:"为什么温度会相差那么大？"}},
-					{id:1,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:"12:57",type:"text",msg:{content:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}},
-					{id:2,uid:0,username:"大黑哥",face:"../../../static/img/face.jpg",time:"13:05",type:"img",msg:{url:"../../../static/img/goods/p10.jpg",w:200,h:200}},
-					{id:3,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:"12:59",type:"img",msg:{url:"../../../static/img/goods/p4.jpg",w:1920,h:1080}}
+					{id:0,uid:0,username:"大黑哥",face:"http://139.129.97.88:8080/static/img/face.jpg",time:"12:56",type:"text",msg:{content:"为什么温度会相差那么大？"}},
+					{id:1,uid:1,username:"售后客服008",face:"http://139.129.97.88:8080/static/img/im/face/face_2.jpg",time:"12:57",type:"text",msg:{content:"这个是有偏差的，两个温度相差十几二十度是很正常的，如果相差五十度，那即是质量问题了。"}},
+					{id:2,uid:0,username:"大黑哥",face:"http://139.129.97.88:8080/static/img/face.jpg",time:"13:05",type:"img",msg:{url:"http://139.129.97.88:8080/static/img/goods/p10.jpg",w:200,h:200}},
+					{id:3,uid:1,username:"售后客服008",face:"http://139.129.97.88:8080/static/img/im/face/face_2.jpg",time:"12:59",type:"img",msg:{url:"http://139.129.97.88:8080/static/img/goods/p4.jpg",w:1920,h:1080}}
 				]
 				// 获取消息中的图片,并处理显示尺寸
 				for(let i=0;i<list.length;i++){
@@ -295,13 +295,13 @@
 				var nowDate = new Date();
 				let lastid = this.msgList[this.msgList.length-1].id;
 				lastid++;
-				let msg = {id:lastid,uid:0,username:"大黑哥",face:"../../../static/img/face.jpg",time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,msg:content};
+				let msg = {id:lastid,uid:0,username:"大黑哥",face:"http://139.129.97.88:8080/static/img/face.jpg",time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,msg:content};
 				this.screenMsg(msg);
 				// 定时器模拟对方回复,三秒
 				setTimeout(()=>{
 					lastid = this.msgList[this.msgList.length-1].id;
 					lastid++;
-					msg = {id:lastid,uid:1,username:"售后客服008",face:"../../../static/img/im/face/face_2.jpg",time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,msg:content};
+					msg = {id:lastid,uid:1,username:"售后客服008",face:"http://139.129.97.88:8080/static/img/im/face/face_2.jpg",time:nowDate.getHours()+":"+nowDate.getMinutes(),type:type,msg:content};
 					this.screenMsg(msg);
 				},3000)
 			},
@@ -428,7 +428,7 @@
 </script>
 
 <style lang="scss">
-@import "../../../static/iconfont/font.scss";
+@import "http://139.129.97.88:8080/static/iconfont/font.scss";
 page{
 	background-color: #e5e5e5;
 }

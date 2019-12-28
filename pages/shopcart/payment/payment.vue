@@ -4,7 +4,7 @@
 		<view class="viewpt">
 			<view class="titlesuccess">
 				<view class="imgs">
-					<image src="../../../static/images/img/yes_fill.png" style="width: 65upx;height: 65upx;"></image>
+					<image src="http://139.129.97.88:8080/static/images/img/yes_fill.png" style="width: 65upx;height: 65upx;"></image>
 				</view>
 				<view class="successtext">支付成功</view>
 			</view>

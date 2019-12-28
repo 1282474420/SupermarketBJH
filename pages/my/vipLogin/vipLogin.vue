@@ -3,7 +3,7 @@
 <view>
 <view class="zc_body">
 	<!-- ../../../static/images/dbimg/sy_001_03.png -->
-   <image src="../../../static/images/wink/zhuce.png" class="zc_logo"></image>
+   <image src="http://139.129.97.88:8080/static/images/wink/zhuce.png" class="zc_logo"></image>
    <button class="getPhone" type="primary" open-type="getUserInfo" @getuserinfo="bindGetUserInfo">一键授权，快速登录</button>
    <button class="goToZC" type="default" @tap="zc">立即注册</button>
 </view>

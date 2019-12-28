@@ -4,7 +4,7 @@
 		<!-- 收货地址 -->
 		<view class="addr" @tap="selectAddress">
 			<view class="icon">
-				<image src="../../../static/images/img/addricon.png" mode=""></image>
+				<image src="http://139.129.97.88:8080/static/images/img/addricon.png" mode=""></image>
 			</view>
 			<view>
 				<view class="tel-name">
@@ -60,9 +60,9 @@
 				<view>
 					<view style="margin-left: 20upx;">
 						<picker mode="date" @change="bindDateChange">
-							<image src="../../../static/images/img/time.png" style="width: 40upx;height: 40upx;"></image>
+							<image src="http://139.129.97.88:8080/static/images/img/time.png" style="width: 40upx;height: 40upx;"></image>
 							<text style="margin-left: 10upx; color: #808080;">{{titlename}}</text>
-							<image src="../../../static/images/img/jiantou.png" style="margin-left: 350upx;width: 50upx;height: 50upx;"></image>
+							<image src="http://139.129.97.88:8080/static/images/img/jiantou.png" style="margin-left: 350upx;width: 50upx;height: 50upx;"></image>
 						</picker>
 					</view>
 				</view>

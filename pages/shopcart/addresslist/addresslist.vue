@@ -11,11 +11,11 @@
 
 					<view class="v1_2">
 						<view class="v2">
-							<image class="img1" src="../../../static/images/img/address/dztb_03.png"></image>
+							<image class="img1" src="http://139.129.97.88:8080/static/images/img/address/dztb_03.png"></image>
 						</view>
 
 						<view class="v3">
-							<image @tap="addresstap(item)" class="img2" src="../../../static/images/img/address/djjr2_03.png"></image>
+							<image @tap="addresstap(item)" class="img2" src="http://139.129.97.88:8080/static/images/img/address/djjr2_03.png"></image>
 						</view>
 
 						<view class="v4">

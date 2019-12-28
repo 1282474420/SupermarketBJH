@@ -19,7 +19,7 @@
       <block v-for="(item, index) in c_card" :key="index" >
         <view class="c_card">
           <!-- 优惠券背景 -->
-          <image src="../../../static/images/wink/cardback.png" class="card_back"></image>
+          <image src="http://139.129.97.88:8080/static/images/wink/cardback.png" class="card_back"></image>
           <!-- 左边的优惠券介绍 -->
           <view class="card_details">
             <text class="card_icon">￥ </text>
@@ -43,7 +43,7 @@
     <view class="youhuijuan">
 	  <view class="asdadda">
         <text class="guize">优惠券规则</text>
-        <image src="../../../static/images/wink/xiajiantou.png" :class="'yuan personal_image ' + (selectArea ? 'rotateRight' :'')"></image>
+        <image src="http://139.129.97.88:8080/static/images/wink/xiajiantou.png" :class="'yuan personal_image ' + (selectArea ? 'rotateRight' :'')"></image>
       </view>
       <!-- <view class="yu"> -->
       <!-- <canvas canvas-id="canvas" ></canvas> -->

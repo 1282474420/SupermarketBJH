@@ -3,7 +3,7 @@
 <view class="container">
   <view class="ding2">
     <view class="ding">
-      <image class="ding1" src="../../../static/images/img/tu1_03.png" @tap="back"></image>
+      <image class="ding1" src="http://139.129.97.88:8080/static/images/img/tu1_03.png" @tap="back"></image>
       <view class="text1 text4">
         <text>申请退款</text>
       </view>
@@ -49,7 +49,7 @@
           <view class="theorder3 theorder4">
             <view class="serialnumber serialnumber3">
               <text class="numbertext">退货原因</text>
-              <image class="jt" src="../../static/img/jt.png"></image>
+              <image class="jt" src="http://139.129.97.88:8080/static/img/jt.png"></image>
               <text class="num num2">请选择申请原因</text>
             </view>
           </view>
@@ -81,7 +81,7 @@
                 </view>
                 <!-- 上传按钮+框 -->
                 <view class="ui_uploader" @tap="uploaderNum<3 ?'upload':'findEvent'" v-if="showUpload">
-                  <image src="../../../static/images/img/shi.png"></image>
+                  <image src="http://139.129.97.88:8080/static/images/img/shi.png"></image>
                 </view>
               </view>
             </view>

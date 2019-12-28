@@ -2,16 +2,16 @@
 	<!-- 登录页面-->
 	<view class="content1">
 		<view class="header">
-			<image src="../../../static/images/logo.png"></image>
+			<image src="http://139.129.97.88:8080/static/images/logo.png"></image>
 		</view>
 		<form class="loginView">
 			<view class="list">
 				<view class="list-call">
-					<image class="img" src="../../../static/images/wink/login/1.png"></image>
+					<image class="img" src="http://139.129.97.88:8080/static/images/wink/login/1.png"></image>
 					<input class="biaoti" v-model="phone" type="number" maxlength="11" placeholder="输入手机号" />
 				</view>
 				<view class="list-call">
-					<image class="img" src="../../../static/images/wink/login/2.png"></image>
+					<image class="img" src="http://139.129.97.88:8080/static/images/wink/login/2.png"></image>
 					<input class="biaoti" v-model="password" type="text" maxlength="32" placeholder="输入验证码" /> <button class="yzmbutton"
 					 hover-class="dlbutton-hover" open-type="getUserInfo" @getuserinfo="yanzhengma">获取验证码</button>
 				</view>

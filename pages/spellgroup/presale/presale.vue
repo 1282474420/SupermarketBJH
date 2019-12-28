@@ -1,7 +1,7 @@
 <template>
 	<view class='flex'>
 		
-		<image src="../../../static/groupImg/presale.png" class="slide-image" mode="widthFix"></image>
+		<image src="http://139.129.97.88:8080/static/groupImg/presale.png" class="slide-image" mode="widthFix"></image>
 		
 		<view class='flex-item' v-for="(goods) in goodsList" :key="goods.id" @click="goodsInfo(goods.id)">
 		    <image :src="goods.picturepath" class="slide-image2" mode="widthFix" ></image>

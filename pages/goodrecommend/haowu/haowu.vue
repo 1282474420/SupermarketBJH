@@ -10,7 +10,7 @@
 		   			<view class="name">{{goods.goodsName}}</view>
 		   			<view class="info">
 		   				<view class="price">￥{{goods.price}}</view>
-						<image class="slogan" @click="GouWu(goods)"  src="../../../static/images/img/jiahao.png"></image>
+						<image class="slogan" @click="GouWu(goods)"  src="http://139.129.97.88:8080/static/images/img/jiahao.png"></image>
 		   			</view>
 					
 		   		</view>

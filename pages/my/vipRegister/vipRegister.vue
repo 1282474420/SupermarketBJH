@@ -14,7 +14,7 @@
 </view> -->
 
 <view class="section">
-  <image src="../../../static/images/wink/zhuce.png" class="zhuce"></image>
+  <image src="http://139.129.97.88:8080/static/images/wink/zhuce.png" class="zhuce"></image>
   <view class="zhu">
     <view class="page-shouji">
         <view>
@@ -35,7 +35,7 @@
 
 
 <view class="mask" catchtouchmove="preventTouchMove" v-if="showModal">
-  <image class="anniu" @tap="go" src="../../../static/images/wink/quxiao.png"></image>
+  <image class="anniu" @tap="go" src="http://139.129.97.88:8080/static/images/wink/quxiao.png"></image>
 
 </view>
 <view class="modalDlg" v-if="showModal">

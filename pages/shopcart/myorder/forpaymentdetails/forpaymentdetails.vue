@@ -3,7 +3,7 @@
 	<view class="container">
 		<view class="ding2">
 			<view class="ding">
-				<image class="ding1" src="../../../../static/images/img/tu1_03.png" @tap="back"></image>
+				<image class="ding1" src="http://139.129.97.88:8080/static/images/img/tu1_03.png" @tap="back"></image>
 				<view class="text1 text4">
 					<text>订单详情</text>
 				</view>
@@ -31,7 +31,7 @@
 				</view>
 				
 				<view class="ww2">
-				  <image :src="'../../../../static/images/img/daizhifu5.png'"></image>
+				  <image :src="'http://139.129.97.88:8080/static/images/img/daizhifu5.png'"></image>
 				</view>
 				
 			</view>
@@ -46,7 +46,7 @@
 						<text>{{ordersForGoods.contact}} {{ordersForGoods.phone}}</text>
 					</view>
 					<view class="address4">
-						<image src="../../../../static/images/img/tu4.png"></image>
+						<image src="http://139.129.97.88:8080/static/images/img/tu4.png"></image>
 						<view class="address5">
 							<text>{{ordersForGoods.address}}</text>
 						</view>

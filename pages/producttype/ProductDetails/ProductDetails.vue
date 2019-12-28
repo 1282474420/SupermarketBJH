@@ -21,7 +21,7 @@
 					<view class="word">收藏</view>
 				</view>
 				<view class="img">
-					<image class="icon" src="../../../static/images/img/fenxiang.png"></image>
+					<image class="icon" src="http://139.129.97.88:8080/static/images/img/fenxiang.png"></image>
 					<view class="word">分享</view>
 					<button open-type="share"></button>
 				</view>
@@ -34,7 +34,7 @@
 			<view class="ys">
 				<text class="mc">领卷</text>
 				<navigator url="../../home/coupons/coupons" class="dianji">领取优惠卷
-					<image class="icon1" src="../../../static/images/img/jiantou.png"></image>
+					<image class="icon1" src="http://139.129.97.88:8080/static/images/img/jiantou.png"></image>
 				</navigator>
 			</view>
 
@@ -43,13 +43,13 @@
 			<view class="ys">
 				<text class="mc">规格</text>
 				<navigator class="dianji" url>数量参数选择
-					<image class="icon1" src="../../../static/images/img/jiantou.png"></image>
+					<image class="icon1" src="http://139.129.97.88:8080/static/images/img/jiantou.png"></image>
 				</navigator>
 			</view>
 			<view class="ys">
 				<text class="mc">声明</text>
 				<navigator class="dianji" url>购物须知
-					<image class="icon1" src="../../../static/images/img/jiantou.png"></image>
+					<image class="icon1" src="http://139.129.97.88:8080/static/images/img/jiantou.png"></image>
 				</navigator>
 			</view>
 		</view>
@@ -58,33 +58,33 @@
 			用户评价（102）<text class="pinlun">更多评论></text>
 		</view>
 		<view class="evaluation">
-			<image class="icon_touxiang" src="../../../static/images/img/goods/p4.jpg"></image>
+			<image class="icon_touxiang" src="http://139.129.97.88:8080/static/images/img/goods/p4.jpg"></image>
 			二狗子<text class="time">时间：2019-04-27</text>
 		</view>
 		<!--评论内容-->
 		<view>
 			非常满意的一次体验，无论是位置还是装修都很棒，666。
-			<image @tap="imgYu" class="pinluntu" src="../../../static/images/img/goods/p5.jpg"></image>
+			<image @tap="imgYu" class="pinluntu" src="http://139.129.97.88:8080/static/images/img/goods/p5.jpg"></image>
 		</view>
 
 		<!--底部栏-->
 		<view class="btm_tool">
 			<navigator open-type="switchTab" url="../../home/home/home" class="tool_item">
 				<view class="icon_png">
-					<image class="icon_png" src="../../../static/images/dbimg/sy_01_03.png"></image>
+					<image class="icon_png" src="http://139.129.97.88:8080/static/images/dbimg/sy_01_03.png"></image>
 				</view>
 				<view>首页</view>
 			</navigator>
 			<view class="tool_item">
 				<view class="icon_png">
-					<image class="icon_png" src="../../../static/images/img/kefu.png"></image>
+					<image class="icon_png" src="http://139.129.97.88:8080/static/images/img/kefu.png"></image>
 				</view>
 				<view>客服</view>
 				<button open-type="contact"></button>
 			</view>
 			<navigator open-type="switchTab" url="../../shopcart/cart/cart" class="tool_item">
 				<view class="icon_png">
-					<image class="icon_png" src="../../../static/images/dbimg/sy_03_03.png"></image>
+					<image class="icon_png" src="http://139.129.97.88:8080/static/images/dbimg/sy_03_03.png"></image>
 				</view>
 				<view>购物车</view>
 			</navigator>

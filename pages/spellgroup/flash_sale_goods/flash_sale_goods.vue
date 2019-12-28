@@ -31,7 +31,7 @@
 					<view class="coupon-tip">收藏</view>
 				</view>
 				<view class="content-item2">
-					<image src='../../../static/groupImg/share.png' style="width: 40rpx;height: 40rpx;">
+					<image src='http://139.129.97.88:8080/static/groupImg/share.png' style="width: 40rpx;height: 40rpx;">
 					<view class="coupon-tip">分享</view>
 					<button class="btn-share" open-type="share"></button>
 				</view>
@@ -76,7 +76,7 @@
 				<view class="eva-box">
 					<view class="comment" @tap="toRatings">
 						<view class="user-info uni-list-cell-navigate">
-							<view class="face"><image src="../../../static/groupImg/nabi.jpg" class="imagess"></image></view>
+							<view class="face"><image src="http://139.129.97.88:8080/static/groupImg/nabi.jpg" class="imagess"></image></view>
 							<view class="username">nabi</view>
 							<view class="time">时间:2019-12-06</view>
 						</view>
@@ -105,21 +105,21 @@
 			<view class="icons">
 				<navigator open-type="switchTab" url="../../home/home/home">
 					<view class="box">
-						<image src="../../../static/groupImg/home.png" class="icon-di fenxiang"></image>
+						<image src="http://139.129.97.88:8080/static/groupImg/home.png" class="icon-di fenxiang"></image>
 						<view class="text-di">首页</view>
 					</view>
 				</navigator>
 				
 				<view open-type="switchTab" @tap="chat()">
 					<view class="box">
-						<image src="../../../static/groupImg/kefu.png" class="icon-di kefu"></image>
+						<image src="http://139.129.97.88:8080/static/groupImg/kefu.png" class="icon-di kefu"></image>
 						<view class="text-di">客服</view>
 					</view>
 				</view>
 				
 				<navigator open-type="switchTab" url="../../shopcart/cart/cart">
 					<view class="box" @tap="keep">
-						<image src="../../../static/groupImg/shoppingcar.png" class="icon-di cart"></image>
+						<image src="http://139.129.97.88:8080/static/groupImg/shoppingcar.png" class="icon-di cart"></image>
 						<view class="text-di">购物车</view>
 					</view>
 				</navigator>
@@ -621,10 +621,10 @@
 	}
 	.icon-shoucang{
 		background-size:cover;
-		background-image:url(../../../static/images/img/hongWJX.png) ;
+		background-image:url(http://139.129.97.88:8080/static/images/img/hongWJX.png) ;
 	}
 	.icon-shoucang1{
 		background-size:cover;
-		background-image:url(../../../static/images/img/hongWJX2.png);
+		background-image:url(http://139.129.97.88:8080/static/images/img/hongWJX2.png);
 	}
 </style>

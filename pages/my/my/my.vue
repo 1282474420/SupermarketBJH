@@ -2,7 +2,7 @@
 	<!--我的  我的主页面-->
 	<view class="qb">
 		<view class="tb">
-			<image src="../../../static/images/img/my/tbbj_01.png" class="tbbj"></image>
+			<image src="http://139.129.97.88:8080/static/images/img/my/tbbj_01.png" class="tbbj"></image>
 		</view>
 		<!-- 用户信息里面有数据 -->
 		<view class="user" v-for="(item, index) in user" :key="index">
@@ -19,7 +19,7 @@
 				<view class="name">{{yonghuwx.nickName}} </view>
 			</view>
 			<view class="hyxx">
-				<image src="../../../static/images/img/my/state_03.png" class="state_icon"></image>
+				<image src="http://139.129.97.88:8080/static/images/img/my/state_03.png" class="state_icon"></image>
 				<text class="state">会员用户</text>
 				<text class="user_integral">积分：{{item.vipIntegral}}</text>
 			</view>
@@ -28,7 +28,7 @@
 		<view class="myorder">
 			<view class="myorder_head">
 				<text>我的订单</text>
-				<image src="../../../static/images/img/my/jt_03.png" class="jt"></image>
+				<image src="http://139.129.97.88:8080/static/images/img/my/jt_03.png" class="jt"></image>
 			</view>
 			<view>
 				<block v-for="(item, index) in order" :key="index">
@@ -46,32 +46,32 @@
 			<view class="grzx_head"> 个人中心 </view>
 			<button @getphonenumber="getPhoneNumber" open-type="getPhoneNumber" v-if="authorizationPhone"></button>
 			<view @tap="nav" class="grzx_block border" data-url="../myVipCard/myVipCard">
-				<image class="grzx_img" src="../../../static/images/img/my/service_03.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/img/my/service_03.png" role="img">
 				</image>
 				<view class="grzx_title">我的会员卡</view>
 			</view>
 			<view @tap="nav" class="grzx_block border" data-url="../myCoupons/myCoupons">
-				<image class="grzx_img" src="../../../static/images/img/my/service_15.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/img/my/service_15.png" role="img">
 				</image>
 				<view class="grzx_title">我的优惠券</view>
 			</view>
 			<view @tap="nav" class="grzx_block" data-url="../myFavorite/myFavorite">
-				<image class="grzx_img" src="../../../static/images/wink/shoucang.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/wink/shoucang.png" role="img">
 				</image>
 				<view class="grzx_title">我的收藏</view>
 			</view>
 			<view @tap="nav" class="grzx_block border" data-url="../../spellgroup/group/group">
-				<image class="grzx_img" src="../../../static/images/img/my/service_07.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/img/my/service_07.png" role="img">
 				</image>
 				<view class="grzx_title">我的拼团</view>
 			</view>
 			<view @tap="nav" class="grzx_block border" data-url="../../shopcart/addresslist/addresslist">
-				<image class="grzx_img" src="../../../static/images/img/my/service_11.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/img/my/service_11.png" role="img">
 				</image>
 				<view class="grzx_title">地址管理</view>
 			</view>
 			<view @tap="nav" class="grzx_block" data-url="../../home/chat/chat">
-				<image class="grzx_img" src="../../../static/images/img/my/service_13.png" role="img">
+				<image class="grzx_img" src="http://139.129.97.88:8080/static/images/img/my/service_13.png" role="img">
 				</image>
 				<view class="grzx_title">在线客服</view>
 			</view>
@@ -85,29 +85,29 @@
 			return {
 				// 用户信息
 				user: [{
-					vipImages: "../../../static/images/wink/touxiang.jpg",
+					vipImages: "http://139.129.97.88:8080/static/images/wink/touxiang.jpg",
 					vipMname: "winkli",
 					vipIntegral: "550"
 				}],
 				yonghuwx: [],
 				// 我的订单数据及页面跳转
 				order: [{
-					img: "../../../static/images/img/my/icon_03.png",
+					img: "http://139.129.97.88:8080/static/images/img/my/icon_03.png",
 					title: "待付款",
 					num: "1",
 					url: "../../shopcart/myorder/forpayment/forpayment"
 				}, {
-					img: "../../../static/images/img/my/icon_05.png",
+					img: "http://139.129.97.88:8080/static/images/img/my/icon_05.png",
 					title: "待配送",
 					num: "2",
 					url: "../../shopcart/myorder/forpayment/forpayment"
 				}, {
-					img: "../../../static/images/img/my/icon_07.png",
+					img: "http://139.129.97.88:8080/static/images/img/my/icon_07.png",
 					title: "配送中",
 					num: "20",
 					url: "../../shopcart/myorder/forpayment/forpayment"
 				}, {
-					img: "../../../static/images/img/my/icon_09.png",
+					img: "http://139.129.97.88:8080/static/images/img/my/icon_09.png",
 					title: "售后",
 					num: "100",
 					url: "../../shopcart/myorder/forpayment/forpayment"

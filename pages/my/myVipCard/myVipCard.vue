@@ -7,9 +7,9 @@
         <view class="eryi" v-for="(item, index) in hy" :key="index">
           <!-- <image :src="item.headPortrait" class="sany"></image>
           <text class="sanyi">{{item.username}}</text> -->
-		  <image src="../../../static/images/wink/touxiang.jpg" class="sany"></image>
+		  <image src="http://139.129.97.88:8080/static/images/wink/touxiang.jpg" class="sany"></image>
 		  <text class="sanyi">百佳华在线会员卡</text>
-          <image class="sane" src="../../../static/images/wink/huiyuanma.jpg"></image>
+          <image class="sane" src="http://139.129.97.88:8080/static/images/wink/huiyuanma.jpg"></image>
           <text class="saner">会员码</text>
         </view>
         <view class="si">

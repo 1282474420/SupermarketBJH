@@ -11,7 +11,7 @@
 			"style": {
 				"navigationBarTitleText": "购物车",
 				"navigationBarBackgroundColor": "#FF8000",
-				"titleImage": "static/img/goods/p2.jpg"
+				"titleImage": "http://139.129.97.88:8080/static/img/goods/p2.jpg"
 			}
 		}, 
 		

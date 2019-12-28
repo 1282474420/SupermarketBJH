@@ -33,7 +33,7 @@
 								<view class="jiesheng">拼团为您节省{{groupList.price-goods.activityprice}}元</view>
 							</view> -->
 							
-							<image src="../../../static/groupImg/yurong.png" class="slide-image"></image>
+							<image src="http://139.129.97.88:8080/static/groupImg/yurong.png" class="slide-image"></image>
 							<view class="goods-info-item">
 								<view class="title">羽绒服</view>
 								<view class="m-price">单买价¥499</view>
@@ -53,7 +53,7 @@
 									<view class="tz-text"></view>
 							</view>
 							<!-- :src="groupData.tuanyuan" -->
-							<view class="tuanyuan"><image src="../../../static/groupImg/nabi.jpg" class="gimage"></image></view>
+							<view class="tuanyuan"><image src="http://139.129.97.88:8080/static/groupImg/nabi.jpg" class="gimage"></image></view>
 							<view class="tuanyuan2">?</view>
 							<view class="tuanyuan2">?</view>
 						</view>

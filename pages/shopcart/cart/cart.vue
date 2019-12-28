@@ -14,7 +14,7 @@
 				<!-- 删除按钮 -->
 				<view class="menu" @tap.stop="deleteGoods(row.id)">
 					<view class="icon">
-						<image src="../../../static/images/img/goods/del.png" style="width: 80upx;height: 80upx;"></image>
+						<image src="http://139.129.97.88:8080/static/images/img/goods/del.png" style="width: 80upx;height: 80upx;"></image>
 					</view>
 				</view>
 				<!-- 商品 -->
@@ -38,7 +38,7 @@
 								<view class="number">
 									<view class="sub" @tap.stop="sub(index)">
 										<view class="icon jian">
-											<image src="../../../static/images/img/goods/jian.png" style="width: 35upx;height: 35upx;"></image>
+											<image src="http://139.129.97.88:8080/static/images/img/goods/jian.png" style="width: 35upx;height: 35upx;"></image>
 										</view>
 									</view>
 									<view class="input" @tap.stop="discard">
@@ -46,7 +46,7 @@
 									</view>
 									<view class="add" @tap.stop="add(index)">
 										<view class="icon jia">
-											<image src="../../../static/images/img/goods/add.png" style="width: 35upx;height: 35upx;"></image>
+											<image src="http://139.129.97.88:8080/static/images/img/goods/add.png" style="width: 35upx;height: 35upx;"></image>
 										</view>
 									</view>
 								</view>

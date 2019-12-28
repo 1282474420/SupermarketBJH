@@ -26,14 +26,14 @@
 			<scroll-view class="keyword-list-box" v-show="isShowKeywordList" scroll-y>
 				<view class="keyword-entry" hover-class="keyword-entry-tap" v-for="row in keywordList" :key="row.keyword">
 					<view class="keyword-text" @tap="doSearch(row.keyword)"><rich-text :nodes="row.htmlStr"></rich-text></view>
-					<view class="keyword-img" @tap="setkeyword(row)"><image src="../../../static/search/back.png"></image></view>
+					<view class="keyword-img" @tap="setkeyword(row)"><image src="http://139.129.97.88:8080/static/search/back.png"></image></view>
 				</view>
 			</scroll-view>
 			<scroll-view class="keyword-box" v-show="!isShowKeywordList" scroll-y>
 				<view class="keyword-block" v-if="oldKeywordList.length > 0">
 					<view class="keyword-list-header">
 						<view>历史搜索</view>
-						<view><image @tap="oldDelete" src="../../../static/search/delete.png"></image></view>
+						<view><image @tap="oldDelete" src="http://139.129.97.88:8080/static/search/delete.png"></image></view>
 					</view>
 					<view class="keyword">
 						<view v-for="(keyword, index) in oldKeywordList" @tap="doSearch(keyword)" :key="index">{{ keyword }}</view>
@@ -42,7 +42,7 @@
 				<view class="keyword-block">
 					<view class="keyword-list-header">
 						<view>热门搜索</view>
-						<view><image @tap="hotToggle" :src="'../../../static/search/attention' + forbid + '.png'"></image></view>
+						<view><image @tap="hotToggle" :src="'http://139.129.97.88:8080/static/search/attention' + forbid + '.png'"></image></view>
 					</view>
 					<view class="keyword" v-if="forbid == ''">
 						<view v-for="(keyword, index) in hotKeywordList" @tap="doSearch(keyword)" :key="index">{{ keyword }}</view>
@@ -52,10 +52,10 @@
 				<!-- 商品列表 -->
 				<view class="goods-list">
 					<view class="title">
-						<image src="../../../static/images/zhg_06.png" class="zhg"></image>
-						<image src="../../../static/images/cnxh_03.png" class="cnxh_icon"></image>
+						<image src="http://139.129.97.88:8080/static/images/zhg_06.png" class="zhg"></image>
+						<image src="http://139.129.97.88:8080/static/images/cnxh_03.png" class="cnxh_icon"></image>
 						<text>猜你喜欢</text>
-						<image src="../../../static/images/yhg_09.png" class="yhg"></image>
+						<image src="http://139.129.97.88:8080/static/images/yhg_09.png" class="yhg"></image>
 					</view>
 					<view class="product-list">
 						<view
@@ -68,7 +68,7 @@
 							<view class="name">{{ product.name }}</view>
 							<view class="info">
 								<view class="price">{{ product.price }}</view>
-								<view class="slogan"><image src="../../../static/jiahao.png" mode=""></image></view>
+								<view class="slogan"><image src="http://139.129.97.88:8080/static/jiahao.png" mode=""></image></view>
 							</view>
 						</view>
 					</view>
