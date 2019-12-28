@@ -95,28 +95,28 @@ export default {
 			productList: [
 				{
 					goods_id: 0,
-					img: 'http://139.129.97.88:8080/static/images/cnxhsp_12.png',
-					name: '澳洲大龙虾澳洲大龙虾',
-					price: '￥288',
-					url:'../../producttype/chanpin/chanpin'
-				},
-				{
-					goods_id: 1,
 					img: 'http://139.129.97.88:8080/static/images/cnxhsp_03.png',
 					name: '澳洲大龙虾澳洲大龙虾',
 					price: '￥288',
 					url:'../../producttype/chanpin/chanpin'
 				},
 				{
+					goods_id: 1,
+					img: 'http://139.129.97.88:8080/static/images/cnxhsp_07.png',
+					name: '澳洲大龙虾澳洲大龙虾',
+					price: '￥288',
+					url:'../../producttype/chanpin/chanpin'
+				},
+				{
 					goods_id: 2,
-					img: 'http://139.129.97.88:8080/static/images/cnxhsp_05.png',
+					img: 'http://139.129.97.88:8080/static/images/cnxhsp_14.png',
 					name: '澳洲大龙虾澳洲大龙虾',
 					price: '￥288',
 					url:'../../producttype/chanpin/chanpin'
 				},
 				{
 					goods_id: 3,
-					img: 'http://139.129.97.88:8080/static/images/cnxhsp_07.png',
+					img: 'http://139.129.97.88:8080/static/images/cnxhsp_12.png',
 					name: '澳洲大龙虾澳洲大龙虾',
 					price: '￥288',
 					url:'../../producttype/chanpin/chanpin'
