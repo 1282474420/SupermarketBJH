@@ -90,7 +90,7 @@
 		  <view class='xsqgsp'>
 		      <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;">
 		        <block v-for="(item,index) in xsqgsp" :key="index">
-		          <view class='xsqgsp_block' @tap='product_type(item)'>
+		          <navigator style="background-color: #FFFFFF;" class='xsqgsp_block' url="../../spellgroup/flash_sale/flash_sale">
 		            <image :src='item.ctradeimg' class='xsqgsp_img'></image>
 		            <text>{{item.cSelPointTitle}}</text>
 		            <view class='newPrice'>
@@ -98,7 +98,7 @@
 		            <view class='oldPrice'>
 		              <text>¥</text>{{item.cprice}}</view>
 		            <image src='../../../static/images/tj_03.png' class='icon'></image>
-		          </view>
+		          </navigator>
 				  </block>
 		      </scroll-view>
 		    </view>
@@ -115,7 +115,7 @@
 		  <view class='czptsp'>
 		    <scroll-view :scroll-x="true" style=" white-space: nowrap;  width:100%;">
 		      <block v-for="(item,index) in czptsp" :key="index">
-		        <view class='czptsp_block' @tap='product_type(item)'>
+		        <navigator style="background-color: #FFFFFF;" class='czptsp_block' url="../../spellgroup/group_buying/group_buying">
 		          <image :src='item.img' class='czptsp_img'></image>
 		          <text>{{item.title}}</text>
 		          <view class='people'>
@@ -123,7 +123,7 @@
 		          <view class='price'>
 		            <text>¥</text>{{item.price}}
 		          </view>
-		        </view>
+		        </navigator>
 		      </block>
 		    </scroll-view>
 		  </view>
@@ -192,7 +192,7 @@
 		        <view class="cnxhsp_price">
 		          <text>¥</text>{{item.cprice}}
 		        </view>
-		        <image src="../../../static/images/tj_03.png" class="cnxhsp_icon" @tap="gouwu"></image>
+		        <image src="../../../static/images/tj_03.png" class="cnxhsp_icon"></image>
 		      </view>
 		    </block>
 		  </view>
@@ -380,25 +380,25 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
 						cprice: 350,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/flash_sale/flash_sale'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_05.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
 						cprice: 350,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/flash_sale/flash_sale'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_07.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
 						cprice: 350,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/flash_sale/flash_sale'
 						},{ 
 							ctradeimg: "../../../static/images/xsqgsp_09.png",
 						cSelPointTitle: "澳洲大龙虾",
 				        aHdPrice: 280,
 						cprice: 350,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/flash_sale/flash_sale'
 						}],
 				      // 超值拼团商品
 				      czptsp: [{ 
@@ -406,25 +406,25 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 						title: "澳洲大龙虾",
 				        people: 2,
 						price: 280,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/group_buying/group_buying'
 						},{ 
 							img: "../../../static/images/czptsp_05.png",
 						title: "澳洲大龙虾",
 				        people: 2,
 						price: 280,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/group_buying/group_buying'
 						},{ 
 							img: "../../../static/images/czptsp_07.png",
 						title: "澳洲大龙虾",
 				        people: 2,
 						price: 280,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/group_buying/group_buying'
 						},{ 
 							img: "../../../static/images/czptsp_09.png",
 						title: "澳洲大龙虾",
 				        people: 2,
 						price: 280,
-						url:'../../producttype/chanpin/chanpin'
+						url:'../../spellgroup/group_buying/group_buying'
 						}],
 				      // 优惠券
 				      yhj: [{
@@ -587,7 +587,6 @@ import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 		onLoad(e) {
 			this.name=e.name;
 		},
-		
 		methods: {
 			 // 点击显示门店选择
 			    mdxz () {
